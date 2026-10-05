@@ -52,8 +52,20 @@
 
 <main class="container" id="main" tabindex="-1">
 
-  <!-- Jeffran comes AFTER the card in the markup, so he sits on the right (where the hex used to be) -->
-  <div class="userinfo-row userinfo-row--avatar-right">
+  <!-- userinfo-row stacks Jeffran on top, then the {Guerz} card, both centered, at every screen size -->
+  <div class="userinfo-row">
+    <!-- Jeffran replaces the hex on this page only (the homepage keeps the hex); <figure> pairs the image with its caption -->
+    <figure class="jeffran">
+      <!-- <picture> lets the browser grab the light WebP, or fall back to the PNG if it can't read WebP -->
+      <picture>
+        <!-- WebP first: ~50 KB vs ~300 KB for the PNG -->
+        <source srcset="assets/brand/jeffran-440.webp" type="image/webp">
+        <!-- PNG fallback; width/height reserve his space so the page doesn't jump while he loads -->
+        <img class="jeffran-img" src="assets/brand/jeffran-440.png" width="220" height="220" alt="Jeffran, a molting penguin in purple headphones, coding on a laptop with the ))&lt;&gt;(( logo.">
+      </picture>
+      <!-- small muted credit line under him -->
+      <figcaption class="jeffran-caption">illustrated with Gemini</figcaption>
+    </figure>
     <div class="userinfo">
       <div class="userinfo-body">
         <div class="userinfo-name">{Guerz}</div>
@@ -69,18 +81,6 @@
         </div>
       </div>
     </div>
-    <!-- Jeffran replaces the hex on this page only (the homepage keeps the hex); <figure> pairs the image with its caption -->
-    <figure class="jeffran">
-      <!-- <picture> lets the browser grab the light WebP, or fall back to the PNG if it can't read WebP -->
-      <picture>
-        <!-- WebP first: ~50 KB vs ~300 KB for the PNG -->
-        <source srcset="assets/brand/jeffran-440.webp" type="image/webp">
-        <!-- PNG fallback; width/height reserve his space so the page doesn't jump while he loads -->
-        <img class="jeffran-img" src="assets/brand/jeffran-440.png" width="220" height="220" alt="Jeffran, a molting penguin in purple headphones, coding on a laptop with the ))&lt;&gt;(( logo.">
-      </picture>
-      <!-- small muted credit line under him -->
-      <figcaption class="jeffran-caption">illustrated with Gemini</figcaption>
-    </figure>
   </div>
 
   <!-- card--bg-peach = peach background + ink text (was an inline style) -->

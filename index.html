@@ -56,8 +56,11 @@
 
 <main class="container" id="main" tabindex="-1">
 
-  <!-- hexagon comes AFTER the card in the markup; --avatar-right pushes it to the far right -->
-  <div class="userinfo-row userinfo-row--avatar-right">
+  <!-- userinfo-row stacks the hex on top, then the {Guerz} card, both centered, at every screen size -->
+  <div class="userinfo-row">
+    <!-- the hex comes FIRST in the markup, so it sits above the card (and screen readers meet it first too) -->
+    <!-- avatar-frame::after paints the sheen; theme.js swaps the img between the peach and lavender hex -->
+    <span class="avatar-frame"><img class="avatar" id="avatar-img" src="favicon-peach.png" alt="guerz avatar"></span>
     <div class="userinfo">
       <div class="userinfo-body">
         <div class="userinfo-name">{Guerz}</div>
@@ -72,7 +75,6 @@
         </div>
       </div>
     </div>
-    <span class="avatar-frame"><img class="avatar" id="avatar-img" src="favicon-peach.png" alt="guerz avatar"></span>
   </div>
 
   <!-- ===== box 1 of 3: the fall — peach, lavender border ===== -->
