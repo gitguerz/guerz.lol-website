@@ -364,6 +364,7 @@ img { max-width: 100%; display: block; }
 .footer-inner--wide { max-width: 1160px; }
 .footer-copy { font: 12.5px/1.6 'IBM Plex Mono', monospace; color: var(--muted); }
 .footer-nav { display: flex; flex-direction: row; flex-wrap: wrap; gap: 4px 14px; font: 700 12px 'Recursive', sans-serif; text-transform: uppercase; }
+.footer-nav { align-items: center; } /* links were stretching to the full footer-row height (~70px), so the focus ring was a tall box; centering lets each link size to its own text while the text stays exactly where it was (it was already centered inside the tall box) */
 .footer-note { font: 12.5px/1.6 'IBM Plex Mono', monospace; color: var(--muted); text-align: right; }
 .footer-left { display: flex; flex-direction: column; gap: 6px; }
 .footer-social { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; font: 700 11.5px 'Recursive', sans-serif; text-transform: uppercase; letter-spacing: .03em; }
