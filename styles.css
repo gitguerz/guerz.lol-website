@@ -23,6 +23,11 @@
   --muted: #6a5d94; /* 5.2:1 on paper — SC 1.4.3 */
   --shadow: #3a2b22;
   --focus-ring: #3a2b22;
+  /* link colors (day): all 4.5:1+ on peach, lavender, cream and white */
+  --link: #0b27b5;               /* unvisited: deep blue */
+  --link-visited: #5b1a7a;       /* visited: plum */
+  --link-hover: #78003f;         /* hover + keyboard focus: dark berry */
+  --link-active: #7a0f00;        /* active (the moment it's clicked): dark rust */
 }
 
 html[data-theme="night"] {
@@ -37,6 +42,11 @@ html[data-theme="night"] {
   --wine-ink: #f6e9dd;
   --wine-quiet: #cfc6e0;
   --focus-ring: #e8b48f;
+  /* link colors (night, dark surfaces): all 4.5:1+ on #17131f, #221d2d, #241f30 and both wines */
+  --link: #ffe14d;               /* unvisited: warm yellow */
+  --link-visited: #c9a7ff;       /* visited: soft violet */
+  --link-hover: #ff8ad8;         /* hover + keyboard focus: pink */
+  --link-active: #fff4e6;        /* active: near-white */
 }
 
 * { box-sizing: border-box; }
@@ -50,7 +60,27 @@ html, body {
   transition: background .25s ease, color .25s ease;
 }
 
-a { color: inherit; text-decoration: underline; font-family: 'Space Grotesk', sans-serif; }
+/* ---------- links (site-wide) ----------
+   every rule here is wrapped in :where(), which gives it ZERO specificity, so any class rule
+   (buttons, tags, nav, the full sail bar) still wins without a fight. order matters:
+   link → visited → hover → focus → active, so each later state overrides the earlier ones */
+:where(a) {                      /* every link, unvisited */
+  color: var(--link);            /* the link color for whatever surface it sits on */
+  text-decoration-line: underline; /* always underlined: color is never the only cue */
+  text-decoration-thickness: 1px; /* thin underline at rest */
+  text-underline-offset: 2px;    /* a little space between the text and its underline */
+  font-family: 'Space Grotesk', sans-serif; /* same font every link had before */
+}
+:where(a:visited) { color: var(--link-visited); } /* visited: color only (browsers block anything else on :visited for privacy) */
+:where(a:hover) {                /* mouse over */
+  color: var(--link-hover);      /* hover color */
+  text-decoration-thickness: 3px; /* thicker underline, so hover isn't signalled by color alone */
+}
+:where(a:focus-visible) {        /* keyboard focus (the ring itself comes from the :focus-visible rule further down) */
+  color: var(--link-hover);      /* same color as hover */
+  text-decoration-thickness: 3px; /* same thick underline as hover */
+}
+:where(a:active) { color: var(--link-active); } /* the instant it's clicked */
 
 img { max-width: 100%; display: block; }
 
@@ -131,6 +161,10 @@ img { max-width: 100%; display: block; }
 .card--wine {
   background: var(--wine); color: var(--wine-ink);
   box-shadow: 5px 5px 0 var(--peach);
+  --link: #ffe14d;               /* wine is dark in BOTH themes, so links inside use the night colors even by day */
+  --link-visited: #c9a7ff;       /* visited: soft violet */
+  --link-hover: #ff8ad8;         /* hover: pink */
+  --link-active: #fff4e6;        /* active: near-white */
 }
 /* the guestbook bits inside default to ink/muted, which would sink into the wine —
    these four lines re-point them at the light tokens */
@@ -333,8 +367,7 @@ img { max-width: 100%; display: block; }
 .footer-note { font: 12.5px/1.6 'IBM Plex Mono', monospace; color: var(--muted); text-align: right; }
 .footer-left { display: flex; flex-direction: column; gap: 6px; }
 .footer-social { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; font: 700 11.5px 'Recursive', sans-serif; text-transform: uppercase; letter-spacing: .03em; }
-.footer-social a { color: var(--muted); text-decoration: none; }
-.footer-social a:hover { color: var(--ink); text-decoration: underline; }
+/* footer text links (gitguerz, ttv/guerz): no color rule of their own anymore, so they use the site link colors + underline */
 
 /* ---------- support lanes (aside) ---------- */
 .support-lanes { display: flex; flex-direction: column; gap: 10px; }
@@ -530,7 +563,7 @@ img { max-width: 100%; display: block; }
   display: flex; gap: 14px; flex-wrap: wrap;
   font: 800 10px 'Recursive', sans-serif; text-transform: uppercase; letter-spacing: .06em;
 }
-.project-links a { color: var(--muted); border-bottom: 2px solid var(--muted); }
+.project-links a { border-bottom: 2px solid; } /* the bar under "↗ github" etc.; no color given, so it uses the link's own color (and changes with it) */
 
 .code-block { background: #17131f; border: none; box-shadow: 4px 4px 0 var(--lavender); }
 .code-block--peach { box-shadow: 4px 4px 0 var(--peach); }
@@ -605,9 +638,14 @@ img { max-width: 100%; display: block; }
 /* light surfaces (peach/lavender) always get the dark ink focus ring. In night mode the default ring is
    light peach (#e8b48f), which nearly vanishes on these surfaces (about 1.02:1 on peach, 1.21:1 on lavender) */
 :is(.card--bg-peach, .card--bg-lavender, .callout, .userinfo, .support-lane, .module,
-    .section > summary, .phase-header--peach, .phase-header--lavender,
+    .section > summary, .phase-header--peach, .phase-header--lavender, .title-card,
+    .nav, .topbar-left,  /* the nav bar stays cream and the brand box stays peach at night, so they need the ink ring too */
     [style*="background:var(--peach)"], [style*="background:var(--lavender)"]) {
   --focus-ring: var(--ink); /* ink #3a2b22 on peach/lavender is high contrast in both themes */
+  --link: #0b27b5;          /* these surfaces stay peach/lavender at night, so links keep the DAY colors here in both themes */
+  --link-visited: #5b1a7a;  /* day visited */
+  --link-hover: #78003f;    /* day hover */
+  --link-active: #7a0f00;   /* day active */
 }
 .toggle button:focus-visible,
 .view-tab:focus-visible,
@@ -618,8 +656,27 @@ img { max-width: 100%; display: block; }
 .code-block :focus-visible, .code-bar :focus-visible { outline-color: var(--peach); }
 main:focus { outline: none; }
 
-/* hover feedback that never relies on color alone */
-a:hover { text-decoration-thickness: 2px; text-underline-offset: 2px; }
+/* main nav + footer nav: keep their ink/text color (no link colors, no visited recolor), but get clear states */
+.nav a, .footer-nav a {                          /* the two nav bars */
+  color: inherit;                                /* class rule beats the :where() link colors, so these stay ink by day */
+  text-decoration-thickness: auto;               /* keep the browser's default underline at rest, exactly as before */
+  text-underline-offset: auto;                   /* same default underline position as before */
+}
+.nav a:hover, .footer-nav a:hover,               /* mouse over... */
+.nav a:focus-visible, .footer-nav a:focus-visible { /* ...or keyboard focus */
+  text-decoration-thickness: 3px;                /* thick underline: the state shows without changing color */
+}
+.nav a:active, .footer-nav a:active {            /* the instant it's clicked */
+  text-decoration-thickness: 3px;                /* stays thick... */
+  text-underline-offset: 4px;                    /* ...and the underline drops a little, like a key being pressed */
+}
+/* skipped on purpose: image links that are really thumbnails keep their old inherited color */
+.pb-thumb-link, .rm-thumb-link,                 /* playbooks + toolshed screenshot links... */
+.fs-bar a {                                      /* ...and the full sail bar link */
+  color: inherit;                                /* keep their old inherited color */
+  text-decoration-thickness: auto;               /* and their old default underline at rest */
+  text-underline-offset: auto;                   /* in its old position */
+}
 
 /* SC 2.5.8 — 24px minimum target size */
 .nav a, .footer-nav a, .project-links a, .footer-social a {
@@ -841,7 +898,7 @@ html[data-theme="night"] .page-toolshed {         /* night-mode tokens, still th
   --text: #eee6f5; --muted: #b3a8cc; --shadow: #000000;                         /* night text, muted lavender, black shadow */
 }
 .page-toolshed { font-family: 'Eczar', serif; }   /* this page's body font (was html,body; a real class is needed here so it still beats the site-wide body font) */
-:where(.page-toolshed) a { color: inherit; }      /* links take their parent's color (same specificity as the old bare `a` rule) */
+/* (retired: `:where(.page-toolshed) a { color: inherit; }` mirrored the old site-wide `a { color: inherit }`; toolshed links now use the site link colors, and its buttons + thumbnails keep their own colors) */
 :where(.page-toolshed) .rm-main { max-width: 1080px; margin: 0 auto; padding: 28px 20px 48px; } /* centered page column with breathing room */
 :where(.page-toolshed) .rm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; } /* tool card grid */
 :where(.page-toolshed) .rm-card { background: var(--card); border: 2px solid var(--muted); box-shadow: 5px 5px 0 var(--lavender); display: flex; flex-direction: column; overflow: hidden; } /* one tool card */
