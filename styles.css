@@ -319,12 +319,20 @@ img { max-width: 100%; display: block; }
   font: 800 clamp(18px, 3vw, 24px) 'Recursive', sans-serif;
   text-transform: uppercase; letter-spacing: .05em;
 }
-.callout--lavender { box-shadow: 5px 5px 0 var(--lavender); } /* lavender drop shadow, like .card--lavender */
+/* (retired: .callout--lavender, the lavender drop shadow; its only user, the "guerz.lol vibes" box, now uses .callout--bg-lavender) */
+.callout--bg-lavender {                          /* the "guerz.lol vibes" box on the homepage */
+  background: var(--lavender);                   /* lavender surface instead of the default peach */
+  box-shadow: 5px 5px 0 var(--peach);            /* peach drop shadow, the mirror of the peach foundations card's lavender one */
+}
 
 /* stacked one-liners (the "foundations" card) */
 .foundations-list {
   display: flex; flex-direction: column; gap: 6px;   /* one item per row, 6px apart */
   font: 16.5px/1.55 'Space Grotesk', sans-serif;      /* same size it had as an inline style */
+}
+.card--foundations .foundations-list {           /* only the homepage foundations card */
+  flex: 1;                                       /* the list grows to fill the card's leftover height (the heading stays pinned on top) */
+  justify-content: space-evenly;                 /* spreads the three lines evenly through that height; with no spare height (phones) nothing moves */
 }
 
 /* ---------- guestbook ---------- */
@@ -734,6 +742,7 @@ main:focus { outline: none; }
   font: 700 2rem/normal 'Space Grotesk', sans-serif;     /* bold 32px: the look they had as h2.degree */
   margin: .3em 0 .15em;                                  /* the spacing they had as h2.degree */
 }
+.degree-line time { white-space: nowrap; }       /* each date stays whole: "2026-10-05" never splits at its hyphens; the line can still wrap at the — between the two dates */
 /* the hero story titles are now real <h2> headings; a global rule zeroes h2.card-title margins,
    so give back the margin they had as <p class="card-title"> */
 .card--hero h2.card-title { margin: .4em 0; }            /* the .4em they got from `.card p` as <p> titles */

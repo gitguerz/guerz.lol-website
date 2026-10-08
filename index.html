@@ -56,11 +56,8 @@
 
 <main class="container" id="main" tabindex="-1">
 
-  <!-- userinfo-row stacks the hex on top, then the {Guerz} card, both centered, at every screen size -->
+  <!-- userinfo-row stacks the {Guerz} card on top, then the hex under it, both centered, at every screen size -->
   <div class="userinfo-row">
-    <!-- the hex comes FIRST in the markup, so it sits above the card (and screen readers meet it first too) -->
-    <!-- avatar-frame::after paints the sheen; theme.js swaps the img between the peach and lavender hex -->
-    <span class="avatar-frame"><img class="avatar" id="avatar-img" src="favicon-peach.png" alt="guerz avatar"></span>
     <div class="userinfo">
       <div class="userinfo-body">
         <div class="userinfo-name">{Guerz}</div>
@@ -75,37 +72,9 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- ===== box 1 of 3: the fall — peach, lavender border ===== -->
-  <!-- card--hero centers every line in the card (styles.css) -->
-  <div class="card card--lavender card--bg-peach card--hero">
-    <!-- beat 1 — the fall. centered, same wrapper as the other two titles -->
-    <div class="title-wrap title-wrap--center"><h1 class="card-title">my timber soul,
-      <br>creaks. a snap;
-      <br>abhor. felled.</h1></div>
-
-    <p class="lead-line">{ <em>NOTE: Unconventional Home Page Update</em> }</p>
-
-    <!-- the confession -->
-    <p class="stanza">bear with me, please. i promise this home page
-      <br> will be extremely temporary. i just felt what i want to say
-    <br>deserved to live here if only for a moment.</p>
-
-    <p class="stanza">between impending eviction hanging over my life,
-      <br>suicidal thoughts racing for a straight week on end,
-      <br>988 had become a call too regular, too many nights.</p>
-
-    <p class="stanza">yes, folks... i was quite low. i admit that, 
-      <br>and i <i>do</i> wholeheartedly admit it. 
-      <br>i am not ashamed of such happenings; 
-      <br>fucking FAR from ashamed, in fact.</p>
-
-    <p class="stanza">yet even so, to lack motivation to be, 
-      <br>getting through, get on a worn struggle-bus, 
-      <br>entire body, whole mind, faint soul,
-      <br> crawling through proverbial sludge, inch-by-inch, 
-      <br>my entire existence stuck to molasses floorboards, <br><em>barely</em> any wherewithal just to simply respire...</p>
+    <!-- the hex comes AFTER the card in the markup, so it sits below it (and screen readers meet the name first) -->
+    <!-- avatar-frame::after paints the sheen; theme.js swaps the img between the peach and lavender hex -->
+    <span class="avatar-frame"><img class="avatar" id="avatar-img" src="favicon-peach.png" alt="guerz avatar"></span>
   </div>
 
   <!-- ===== box 2 of 3: the turn + day one — lavender, peach border ===== -->
@@ -116,18 +85,16 @@
       <br>alas, tenacity.
       <br></h2></div>
 
-      <!-- the Full Sail bar. &nbsp; = a space that never breaks, so "— DAY ONE" wraps as one piece on phones -->
-    <h3 class="dayone-head"><span class="fs-bar"><a href="https://www.fullsail.edu/" target="_blank" rel="noopener noreferrer">Full Sail University</a> —&nbsp;Day&nbsp;One</span></h3>
-    <p class="degree-line"><time datetime="2026-09-28">September 28, 2026</time></p>
+      <!-- the Full Sail bar. &nbsp; = a space that never breaks, so "— WEEK 2" wraps as one piece on phones -->
+    <h3 class="dayone-head"><span class="fs-bar"><a href="https://www.fullsail.edu/" target="_blank" rel="noopener noreferrer">Full Sail University</a> —&nbsp;Week&nbsp;2</span></h3>
+    <p class="degree-line"><time datetime="2026-10-05">2026-10-05</time> — <time datetime="2026-10-11">2026-10-11</time></p> <!-- update weekly -->
     <!-- .degree-line keeps these at 32px (styles.css) -->
 
-    <p class="lead-line">Today's the day! Today is <em>the</em> DAY!</p>
-
-    <p class="degree-line"><strong>— Web Development— </strong>
+    <p class="degree-line"><strong>— Web Development&#8288;— </strong> <!-- &#8288; = word joiner: keeps the trailing dash glued to "Development" -->
       <br>— Bachelor of Science&nbsp;—</p>
 
     <p class="lead-line">• TWENTY-SEVEN MONTHS STRAIGHT •</p>
-      <p class="lead-line">• <strong>ALL-Online</strong> • Accelerated Pace •</p>
+    <p class="lead-line">• Online • Accelerated&nbsp;•</p> <!-- same plain bookend bullets as the line above; &nbsp; glues the last bullet to "Accelerated" so it can't wrap onto a line by itself -->
 
   </div>
 
@@ -175,20 +142,23 @@
     <div class="row row--lanes">
       <div class="lane">
         <div class="card-eyebrow card-eyebrow--ink">current phase</div>
-        <div class="card-body"><strong>MODULE 1</strong>
-          <a href="https://freecodecamp.org">FCC</a> Responsive Web Design v9
-          <p>Certification Exam — when it's earned; not when scheduled</p></div>
+        <!-- draft wording (Guerz will revise): Full Sail first, the fCC exam on the next line -->
+        <!-- &nbsp;s glue "Month 1 of 27" into one unit, so it never splits as "Month 1" / "of 27" -->
+        <div class="card-body">Full Sail University: Web Development B.S. — Month&nbsp;1&nbsp;of&nbsp;27
+          <p><a href="https://freecodecamp.org">fCC</a> RWD v9 Certification Exam — when it's earned; not when scheduled</p></div>
       </div>
       <div class="lane">
         <div class="card-eyebrow card-eyebrow--ink">current lane</div>
-        <div class="card-body"><strong>main focus:</strong> <a href="https://freecodecamp.org/">FCC</a> RWD v9 Cert Exam
-          <p><strong>support lanes:</strong> <a href="fcc-build-archive.html">FCC Build Archive</a>, <a href="https://www.frontendmentor.io/">Frontend Mentor</a></p></div>
+        <!-- draft wording (Guerz will revise): Full Sail is the main focus; the fCC exam moves to the support lanes -->
+        <div class="card-body"><strong>main focus:</strong> Full Sail University
+          <p><strong>support lanes:</strong> <a href="https://freecodecamp.org/">fCC</a> RWD v9 Cert Exam, <a href="fcc-build-archive.html">fCC Build Archive</a>, <a href="https://www.frontendmentor.io/">Frontend Mentor</a></p></div> <!-- link text now "fCC Build Archive" to match the "fCC" before it; href unchanged -->
       </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="card card--lavender card--bg-peach">
+    <!-- card--foundations: lets its line list stretch to fill the height it gets from sitting beside the vibes box -->
+    <div class="card card--lavender card--bg-peach card--foundations">
       <h2 class="card-eyebrow card-eyebrow--ink">foundations</h2>
       <div class="foundations-list">
         <p><b>STAY THE COURSE</b> | believe what you put forth.</p>
@@ -197,7 +167,8 @@
         
       </div>
     </div>
-    <div class="callout callout--lavender">
+    <!-- callout--bg-lavender = lavender box with a peach drop shadow (the foundations card next to it stays peach) -->
+    <div class="callout callout--bg-lavender">
       <h2 class="callout-title">guerz.lol vibes</h2>
       <div class="card-body">
       <p>warm, livejournal-y2k looks.</p>
