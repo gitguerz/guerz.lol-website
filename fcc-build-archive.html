@@ -73,7 +73,7 @@
     <summary>
       <span class="section-caret">▸</span>
       <span class="section-title">Responsive Web Design v9</span>
-      <span class="section-count">39 built · 67 total · worked chronologically</span> <!-- REMINDER: bump "built" every time a ☐ row becomes a project-box (also update that module's "items · built" count); recounted 2026-10-05: 38 project-boxes out of 67 items; 2026-10-11: +Colored Markers = 39 -->
+      <span class="section-count">40 built · 67 total · worked chronologically</span> <!-- REMINDER: bump "built" every time a ☐ row becomes a project-box (also update that module's "items · built" count); recounted 2026-10-05: 38 project-boxes out of 67 items; 2026-10-11: +Colored Markers = 39; +Colored Boxes = 40 (recounted from the project-boxes) -->
     </summary>
     <div class="section-body">
 <details class="module-group" open>
@@ -3140,7 +3140,7 @@ button:hover {
       <span class="module-caret">▸</span>
       <span class="module-kicker">CSS</span>
       <span class="module-title">Colors</span>
-      <span class="module-count">2 items · 1 built</span> <!-- was "2 items"; Colored Markers built 2026-10-11 -->
+      <span class="module-count">2 items · 2 built</span> <!-- was "2 items"; Colored Markers + Colored Boxes built 2026-10-11 -->
     </summary>
     <div class="module-body">
     <!-- Build a Set of Colored Markers (added 2026-10-11): same project-box layout as the other builds; code panes are Guerz's files word for word -->
@@ -3252,11 +3252,89 @@ button:hover {
         <div class="project-links"><a href="https://builds.guerz.lol/build-a-set-of-colored-markers/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design-v9/blob/main/build-a-set-of-colored-markers/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
       </div>
     </details>
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Design a Set of Colored Boxes</span>
-      <span class="archive-type">lab</span>
-    </div>
+    <!-- Design a Set of Colored Boxes (added 2026-10-11): same project-box layout as the other builds; a lab, so the badge reads "rwd lab"; code panes are Guerz's files word for word -->
+    <details class="project-box">
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd lab</span>
+        <span class="project-name">Design a Set of Colored Boxes</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: hexadecimal (hex) values • base 16 values • rgb() function • hsl() function (hue, saturation, lightness) • hsla() function • alpha value • background-color property • width property • height property • class selector • multiple classes on one element • element selector • named colors (color keywords) • display: flex • flex-wrap property, wrap value • gap property</span></div>
+        </div>
+        <div class="card-body">five 100px squares in a <b>display: flex</b> row that <b>flex-wrap</b>s onto new lines when the screen gets narrow, spaced with <b>gap</b>. each box shows off a different way to write a color: <b>hex</b>, <b>rgb()</b>, a named color (tomato), <b>hsl()</b>, and a slightly see-through <b>hsla()</b>.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt; &lt;!-- tells the browser this is an HTML5 document --&gt;
+&lt;html lang="en"&gt; &lt;!-- root element; lang="en" helps screen readers and search engines --&gt;
+&lt;head&gt; &lt;!-- metadata and linked files; nothing in here shows on the page --&gt;
+&lt;meta charset="utf-8"&gt; &lt;!-- character encoding so symbols and accents display correctly --&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; &lt;!-- makes the page scale properly on phones --&gt;
+&lt;title&gt;Colored Boxes&lt;/title&gt; &lt;!-- text shown in the browser tab --&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt; &lt;!-- connects this page to styles.css --&gt;
+&lt;/head&gt;
+&lt;body&gt; &lt;!-- everything visible on the page lives in here --&gt;
+  &lt;div class="color-grid"&gt; &lt;!-- the flex container; it lays out all five boxes in a row and wraps them --&gt;
+    &lt;div class="color-box color1"&gt;&lt;/div&gt; &lt;!-- box 1: "color-box" gives size, "color1" gives its color (hex) --&gt;
+    &lt;div class="color-box color2"&gt;&lt;/div&gt; &lt;!-- box 2: its color is written with rgb() --&gt;
+    &lt;div class="color-box color3"&gt;&lt;/div&gt; &lt;!-- box 3: its color is a named color (tomato) --&gt;
+    &lt;div class="color-box color4"&gt;&lt;/div&gt; &lt;!-- box 4: its color is written with hsl() --&gt;
+    &lt;div class="color-box color5"&gt;&lt;/div&gt; &lt;!-- box 5: its color is written with hsla(), so it is slightly see-through --&gt;
+  &lt;/div&gt; &lt;!-- end of the color grid --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>body { /* element selector: targets the whole page body */
+  background-color: #f4f4f4; /* hex value for a very light gray page background */
+  }
+  .color-grid { /* class selector: the flex container that holds all five boxes */
+  display: flex; /* turns on flexbox, so the child boxes line up in a row */
+  flex-wrap: wrap; /* lets boxes drop to the next line when there isn't room, instead of squishing */
+  gap: 10px; /* 10px of space between boxes, without needing margins */
+  }
+  .color-box { /* shared shape for every box; the color classes below add the color */
+  width: 100px; /* box width */
+  height: 100px; /* box height; same as the width, so each box is a square */
+  }
+  .color1 { /* box 1 */
+  background-color: #e63946; /* hex: red (e6), green (39), blue (46), each in base 16; a strong red */
+  }
+  .color2 { /* box 2 */
+  background-color: rgb(69, 123, 157); /* rgb(red, green, blue), each 0-255; a muted blue */
+  }
+  .color3 { /* box 3 */
+  background-color: tomato; /* a named color: the browser already knows what "tomato" means */
+  }
+  .color4 { /* box 4 */
+  background-color: hsl(150, 60%, 45%); /* hsl(hue 0-360, saturation %, lightness %); hue 150 is a green */
+  }
+  .color5 { /* box 5 */
+  background-color: hsla(270, 70%, 55%, 0.8); /* hsla adds alpha: 0.8 means 80% opaque, so the gray page shows through a little; hue 270 is a purple */
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/design-a-set-of-colored-boxes/" title="Design a Set of Colored Boxes preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/design-a-set-of-colored-boxes/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design-v9/blob/main/design-a-set-of-colored-boxes/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
     
     </div>
   </details>
