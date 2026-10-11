@@ -73,7 +73,7 @@
     <summary>
       <span class="section-caret">▸</span>
       <span class="section-title">Responsive Web Design v9</span>
-      <span class="section-count">38 built · 67 total · worked chronologically</span> <!-- REMINDER: bump "built" every time a ☐ row becomes a project-box (also update that module's "items · built" count); recounted 2026-10-05: 38 project-boxes out of 67 items -->
+      <span class="section-count">39 built · 67 total · worked chronologically</span> <!-- REMINDER: bump "built" every time a ☐ row becomes a project-box (also update that module's "items · built" count); recounted 2026-10-05: 38 project-boxes out of 67 items; 2026-10-11: +Colored Markers = 39 -->
     </summary>
     <div class="section-body">
 <details class="module-group" open>
@@ -3140,14 +3140,118 @@ button:hover {
       <span class="module-caret">▸</span>
       <span class="module-kicker">CSS</span>
       <span class="module-title">Colors</span>
-      <span class="module-count">2 items</span>
+      <span class="module-count">2 items · 1 built</span> <!-- was "2 items"; Colored Markers built 2026-10-11 -->
     </summary>
     <div class="module-body">
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build a Set of Colored Markers</span>
-      <span class="archive-type">workshop</span>
-    </div>
+    <!-- Build a Set of Colored Markers (added 2026-10-11): same project-box layout as the other builds; code panes are Guerz's files word for word -->
+    <details class="project-box">
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd workshop</span>
+        <span class="project-name">Build a Set of Colored Markers</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: rgb color model • rgb() function • primary colors • secondary colors • tertiary colors • complementary colors • hexadecimal (hex) values • base 16 values • HSL (hue, saturation, lightness) color model • hsl() function • linear-gradient() function • gradientDirection value • color1 argument • color2 argument • color stops • img element • padding-top property • padding-bottom property • padding-left property • padding-right property • background property • offsetX value • offsetY value</span></div>
+        </div>
+        <div class="card-body">three markers on a white strip — each one a cap plus a see-through <b>rgba()</b> sleeve, filled with a top-to-bottom <b>linear-gradient()</b> and lit by a soft <b>box-shadow</b> glow. same idea three ways: the red one is written in <b>rgb()</b>, the green in <b>hex</b>, the blue in <b>hsl()</b>.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt; &lt;!-- tells the browser this is an HTML5 document --&gt;
+&lt;html lang="en"&gt; &lt;!-- root element; lang="en" helps screen readers and search engines --&gt;
+  &lt;head&gt; &lt;!-- metadata and linked files; nothing in here shows on the page --&gt;
+    &lt;meta charset="utf-8"&gt; &lt;!-- character encoding so symbols and accents display correctly --&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; &lt;!-- makes the page scale properly on phones --&gt;
+    &lt;title&gt;Colored Markers&lt;/title&gt; &lt;!-- text shown in the browser tab --&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt; &lt;!-- connects this page to styles.css --&gt;
+  &lt;/head&gt;
+  &lt;body&gt; &lt;!-- everything visible on the page lives in here --&gt;
+    &lt;h1&gt;CSS Color Markers&lt;/h1&gt; &lt;!-- the page's one main heading; centered in the CSS --&gt;
+    &lt;div class="container"&gt; &lt;!-- wrapper box that holds all three markers; gives them a white backdrop --&gt;
+      &lt;div class="marker red"&gt; &lt;!-- one marker; "marker" gives shape, "red" gives its gradient (two classes, one element) --&gt;
+        &lt;div class="cap"&gt;&lt;/div&gt; &lt;!-- the marker's cap; empty on purpose, the CSS draws it --&gt;
+        &lt;div class="sleeve"&gt;&lt;/div&gt; &lt;!-- the translucent sleeve that sits next to the cap --&gt;
+      &lt;/div&gt; &lt;!-- end of the red marker --&gt;
+      &lt;div class="marker green"&gt; &lt;!-- second marker; same structure, "green" gives it a different gradient --&gt;
+        &lt;div class="cap"&gt;&lt;/div&gt; &lt;!-- cap --&gt;
+        &lt;div class="sleeve"&gt;&lt;/div&gt; &lt;!-- sleeve --&gt;
+      &lt;/div&gt; &lt;!-- end of the green marker --&gt;
+      &lt;div class="marker blue"&gt; &lt;!-- third marker; "blue" gradient is written with hsl() instead of rgb() or hex --&gt;
+        &lt;div class="cap"&gt;&lt;/div&gt; &lt;!-- cap --&gt;
+        &lt;div class="sleeve"&gt;&lt;/div&gt; &lt;!-- sleeve --&gt;
+      &lt;/div&gt; &lt;!-- end of the blue marker --&gt;
+    &lt;/div&gt; &lt;!-- end of the container --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>h1 { /* element selector: targets the page heading */
+  text-align: center; /* centers the heading text horizontally */
+}
+
+.container { /* class selector: the white backdrop behind all three markers */
+  background-color: rgb(255, 255, 255); /* rgb(red, green, blue), each 0-255; 255, 255, 255 is white */
+  padding: 10px 0; /* shorthand: 10px top and bottom, 0 left and right */
+}
+
+.marker { /* shared shape for every marker; the color classes below add the look */
+  width: 200px; /* total marker length: cap (60) + sleeve (110) + border (10) + a little breathing room */
+  height: 25px; /* marker thickness */
+  margin: 10px auto; /* 10px above and below; "auto" on the sides centers the block horizontally */
+}
+
+.cap { /* the cap piece of the marker */
+  width: 60px; /* cap length */
+  height: 25px; /* same height as the marker so it fills it */
+}
+
+.sleeve { /* the see-through sleeve piece */
+  width: 110px; /* sleeve length */
+  height: 25px; /* same height as the marker */
+  background-color: rgba(255, 255, 255, 0.5); /* rgba adds a 4th value, alpha: 0 is invisible, 1 is solid; 0.5 is half see-through white */
+  border-left: 10px double rgba(0, 0, 0, 0.75); /* left edge only: 10px wide, double line style, 75% opaque black */
+}
+
+.cap, .sleeve { /* grouped selector: one rule applied to both classes */
+  display: inline-block; /* lets the two divs sit side by side while still accepting width and height */
+}
+
+.red { /* red marker */
+  background: linear-gradient(rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27)); /* top-to-bottom gradient (default direction) with three color-stops, all written as rgb() */
+  box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.8); /* offsetX 0, offsetY 0, blur 20px, spread 0, color: a dark red at 80% opacity (a glow, not a drop shadow) */
+}
+
+.green { /* green marker */
+  background: linear-gradient(#55680D, #71F53E, #116C31); /* same gradient idea, color-stops written as hex values */
+  box-shadow: 0 0 20px 0 #3B7E20CC; /* 8-digit hex: the last two digits (CC) are alpha, roughly 80% opacity */
+}
+
+.blue { /* blue marker */
+  background: linear-gradient(hsl(186, 76%, 16%), hsl(223, 90%, 60%), hsl(240, 56%, 42%)); /* color-stops written as hsl(hue 0-360, saturation %, lightness %) */
+  box-shadow: 0 0 20px 0 hsla(223, 59%, 31%, 0.8); /* hsla adds alpha to hsl, so this glow is 80% opaque */
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-a-set-of-colored-markers/" title="Build a Set of Colored Markers preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-a-set-of-colored-markers/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design-v9/blob/main/build-a-set-of-colored-markers/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
     <div class="archive-row">
       <span class="archive-check">☐</span>
       <span class="archive-name">Design a Set of Colored Boxes</span>
