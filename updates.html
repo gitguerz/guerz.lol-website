@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="day">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Updates | guerz.lol</title>
+<meta name="description" content="A weekly log from guerz.lol: what changed on the site, what I'm studying at Full Sail and freeCodeCamp, and what's coming next.">
+<link rel="canonical" href="https://guerz.lol/updates.html">
+<meta property="og:title" content="Updates | guerz.lol">
+<meta property="og:description" content="A weekly log from guerz.lol: what changed on the site, what I'm studying at Full Sail and freeCodeCamp, and what's coming next.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://guerz.lol/updates.html">
+<meta property="og:image" content="https://guerz.lol/og-banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Updates | guerz.lol">
+<meta name="twitter:description" content="A weekly log from guerz.lol: what changed on the site, what I'm studying at Full Sail and freeCodeCamp, and what's coming next.">
+<meta name="twitter:image" content="https://guerz.lol/og-banner.png">
+<link rel="icon" id="favicon" type="image/png" href="favicon-peach.png">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://guerz.lol/"},{"@type":"ListItem","position":2,"name":"Updates","item":"https://guerz.lol/updates.html"}]}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">skip to main content</a>
+
+<header class="header">
+  <div class="topbar">
+    <div class="topbar-left">
+      <a class="brand" href="index.html">{guerz.lol}</a>
+    </div>
+    <div class="topbar-right">
+      <div class="toggle" role="group" aria-label="color theme">
+        <button type="button" data-theme-btn="day" class="is-active">☼ DAY</button>
+        <button type="button" data-theme-btn="night">☾ NIGHT</button>
+      </div>
+    </div>
+  </div>
+  <nav class="nav" aria-label="primary">
+    <a href="about.html">{about}</a>
+    <a href="fcc-build-archive.html">{fcc build archive}</a>
+    <a href="sandbox.html">{sandbox}</a>
+    <a href="playbooks.html">{playbooks}</a> <!-- moved: playbooks now sits between sandbox and toolshed -->
+    <a href="toolshed.html">{toolshed}</a>
+    <a href="updates.html" aria-current="page">{updates}</a>
+    <a href="https://blogguerz.wordpress.com" target="_blank" rel="noopener noreferrer">{blogguerz}</a>
+  </nav>
+  <div class="marquee" aria-hidden="true">
+    <span>☀ what changed this week, what&rsquo;s coming next ☾ a weekly log, newest on top ☀ shipping over polish ☾ what changed this week, what&rsquo;s coming next ☀ a weekly log, newest on top ☾</span>
+  </div>
+</header>
+
+<main class="container" id="main" tabindex="-1">
+
+  <!-- ===== intro card: peach shadow, lavender fill (same pairing as the About "now" card) ===== -->
+  <article class="card card--peach card--bg-lavender">
+    <h1 class="card-title">Updates</h1>
+    <!-- one short line saying what this page is -->
+    <p>a weekly log: what changed on guerz.lol, what i&rsquo;m studying, and what&rsquo;s coming next. a new entry lands every Sunday or Monday, newest on top.</p>
+  </article>
+
+  <!-- =====================================================================
+       HOW TO ADD A NEW WEEK (copy-paste template, then delete this note if you like)
+       1. On the card that is currently "NEW": delete its <span class="update-badge">NEW</span>
+          and delete the update-card--new class from its <article>.
+       2. Copy the whole Week 4 <article> below, paste it ABOVE it (newest on top), and change:
+          the week number, the two dates (datetime= and visible text), the subject line,
+          the "What changed" and "What's next" paragraphs, and the post link.
+       3. Link pattern for the blogguerz post: https://blog.guerz.lol/YYYY/MM/DD/week-N-subject/
+       4. updates.html is already in sitemap.xml; just bump its lastmod date when you add a week.
+       ===================================================================== -->
+
+  <!-- ===== WEEK 4 (newest): update-card = an Updates entry, update-card--new = the latest one ===== -->
+  <article class="card card--lavender card--bg-peach update-card update-card--new">
+    <!-- NEW badge is real text, so it reads aloud and never depends on color alone -->
+    <span class="update-badge">NEW</span>
+    <!-- same orange Full Sail bar as the homepage; &nbsp; = a space that never breaks, so "Week 4" stays in one piece -->
+    <h2 class="dayone-head"><span class="fs-bar">Week&nbsp;4</span></h2>
+    <!-- the week's dates (Mon to Sun), same look as the homepage date line -->
+    <p class="degree-line"><time datetime="2026-10-19">2026-10-19</time> — <time datetime="2026-10-25">2026-10-25</time></p>
+    <!-- the week's Full Sail subject, same look as the homepage -->
+    <p class="degree-line">Formal Communication</p>
+    <!-- the blurb: what changed + what's next -->
+    <div class="card-body">
+      <p><strong>What changed:</strong> The homepage now tracks the current Full Sail week with its subject line, and this Updates page is new. The About page got reshuffled so Jeffran sits under the {Guerz} card. Over in the Toolshed, the Turntable Line batch tally now keeps its column header pinned while you scroll, the sleeve condition has a new Generic option, and I fixed a bug that was breaking the archive button.</p>
+      <p><strong>What&rsquo;s next:</strong> Week 4 is Formal Communication, and the big one is the award-winning speech due Sunday, Oct 25. I&rsquo;ll keep working through freeCodeCamp&rsquo;s Responsive Web Design v9 toward the cert, and this page gets a new entry every Sunday or Monday.</p>
+    </div>
+    <!-- link to that week's post on the blog; opens in a new tab like the other outside links -->
+    <p><a href="https://blog.guerz.lol/2026/10/19/week-4-formal-communication/" target="_blank" rel="noopener noreferrer">Read the week 4 post →</a></p>
+  </article>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-copy">© guerz.lol<br>no cookies, just cache</div>
+      <ul class="footer-social" aria-label="social">
+        <li><a href="https://github.com/gitguerz" target="_blank" rel="noopener noreferrer">gitguerz</a></li>
+        <li><a href="https://twitch.tv/guerz" target="_blank" rel="noopener noreferrer">ttv/guerz</a></li>
+      </ul>
+    </div>
+    <nav class="footer-nav" aria-label="footer">
+      <a href="index.html">{home}</a>
+      <a href="about.html">{about}</a>
+      <a href="fcc-build-archive.html">{fcc build archive}</a>
+      <a href="sandbox.html">{sandbox}</a>
+      <a href="playbooks.html">{playbooks}</a> <!-- moved: playbooks now sits between sandbox and toolshed -->
+      <a href="toolshed.html">{toolshed}</a>
+      <a href="updates.html">{updates}</a>
+      <a href="https://blogguerz.wordpress.com" target="_blank" rel="noopener noreferrer">{blogguerz}</a>
+    </nav>
+    <div class="footer-note">best viewed at<br>any resolution</div>
+  </div>
+  <!-- penguin sign-off: centered under the footer row (styles.css → FOOTER PENGUIN) -->
+  <div class="footer-mascot">
+    <!-- fixed-height box, so the tagline doesn't jump when the penguins swap -->
+    <div class="footer-penguin-box">
+      <!-- day penguin; styles.css hides it in night mode, and display:none also hides it from screen readers -->
+      <img class="footer-penguin footer-penguin--day" src="assets/brand/guerz-penguin-day.svg" width="30" height="45" alt="Pixel-art penguin">
+      <!-- night penguin with the gray outline; hidden in day mode the same way, so only one is ever announced -->
+      <img class="footer-penguin footer-penguin--night" src="assets/brand/guerz-penguin-darksafe.svg" width="54" height="54" alt="Pixel-art penguin">
+    </div>
+    <!-- tagline is real text, not part of the image, so it flips color with the theme and can be read aloud -->
+    <p class="footer-tagline">it's pronounced: “guerz”</p>
+  </div>
+</footer>
+
+<script src="theme.js"></script>
+</body>
+</html>

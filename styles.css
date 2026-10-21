@@ -825,6 +825,20 @@ h2.card-eyebrow, h3.card-eyebrow, h2.callout-title, h2.card-title, h2.post-title
   font: 15.5px/1.5 'Space Grotesk', sans-serif; /* 15.5px body font, 1.5 line height, same as before */
 }
 
+/* ===== UPDATES PAGE (updates.html only — .update-card, .update-card--new and .update-badge exist nowhere else) ===== */
+.update-card--new {                            /* the newest week's card (remove this class from the old card when a new week is added) */
+  box-shadow: 5px 5px 0 var(--wine);           /* wine drop shadow instead of lavender, so the newest card stands out; the NEW badge says it in text too */
+}
+.update-badge {                                /* the little "NEW" label at the top of the newest card */
+  align-self: flex-start;                      /* the card is a flex column; this keeps the badge its own width, top-left */
+  background: var(--ink);                      /* dark ink box... */
+  color: var(--peach);                         /* ...with peach text: the same pairing as the toolshed .rm-tag, about 7:1 contrast */
+  font: 700 12px/1 'IBM Plex Mono', monospace; /* small mono label, matches the site's other tags */
+  letter-spacing: .08em;                       /* a little room between letters */
+  text-transform: uppercase;                   /* NEW, in caps */
+  padding: 5px 9px;                            /* breathing room inside the box */
+}
+
 /* ===== FOOTER PENGUIN (footer only — .footer-mascot, .footer-penguin* and .footer-tagline exist nowhere else) ===== */
 .footer-mascot {                               /* penguin + tagline, centered under the footer row */
   display: flex;                               /* flex so the two pieces stack and center... */
