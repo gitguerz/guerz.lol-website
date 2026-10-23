@@ -824,6 +824,17 @@ h2.card-eyebrow, h3.card-eyebrow, h2.callout-title, h2.card-title, h2.post-title
   gap: 6px;                                    /* 6px between links, same as before */
   font: 15.5px/1.5 'Space Grotesk', sans-serif; /* 15.5px body font, 1.5 line height, same as before */
 }
+/* the eBay link in "where to find me": reuses .button (ink box, peach text, mono caps) so it stands out from the plain links; this modifier only adapts it to be a link */
+.button--about-feature {
+  display: flex;                               /* an <a> is inline by default, so min-height would be ignored; flex makes it a real box */
+  align-self: flex-start;                      /* the list is a flex column that stretches items; this makes the button hug its text instead of spanning the whole card */
+  align-items: center;                         /* text sits in the vertical middle of the box */
+  min-height: 44px;                            /* comfortable tap target (the plain .button is 32px) */
+  padding: 8px 14px;                           /* .button only sets side padding; add top/bottom so wrapped text at 320px doesn't touch the edges */
+  margin-block: 4px;                           /* a little extra air above and below so it reads as its own thing between the plain links */
+  font-size: 14px;                             /* two notches bigger than .button's 12px so it outweighs the plain links */
+  letter-spacing: .02em;                       /* a touch of tracking to make the mono caps easier to read */
+}
 
 /* ===== UPDATES PAGE (updates.html only — .update-card, .update-card--new and .update-badge exist nowhere else) ===== */
 .update-card--new {                            /* the newest week's card (remove this class from the old card when a new week is added) */

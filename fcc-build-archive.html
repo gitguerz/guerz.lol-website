@@ -3355,6 +3355,9 @@ button:hover {
         <span class="project-stack">html + css</span>
       </summary>
       <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: pattern attribute (regex [a-z0-5]{8,}) • type="password" • type="file" • min-width property • border-bottom property • :last-of-type pseudo-class • unset value<br />Reinforced: Forms</span></div>
+        </div>
         <div class="card-body">the fCC registration form — three <b>fieldset</b> groups (personal details, account type, optional profile), radios, a file picker, a number field with min/max, a select, a textarea, a pattern-validated password and a required terms checkbox. posts to the fCC demo endpoint. every line commented.</div>
         <div class="view-pane" data-pane="html">
           <div class="pane-label">html</div>
@@ -3472,7 +3475,7 @@ input, textarea { /* narrower group: only inputs and text areas get these colors
 } /* closes the input, textarea rule */
 
 .inline { /* class selector (note the leading dot) applied to the radio buttons and the terms checkbox */
-  width: unset; /* unset cancels the width: 100% inherited from the input rule above, letting the box shrink to its natural size */
+  width: unset; /* unset resets width to its starting value, which is auto, so the 100% from the input rule stops applying; .inline wins because a class selector outranks an element selector, and the box shrinks to its natural size */
   margin: 0 0.5em 0 0; /* right margin only, creating a small gap between the box and its label text */
   vertical-align: middle; /* aligns the small box with the middle of the adjacent text instead of sitting on the baseline */
 } /* closes the .inline rule */
