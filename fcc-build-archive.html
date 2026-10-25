@@ -3366,34 +3366,34 @@ button:hover {
               <span class="code-file">index.html</span>
               <button class="code-copy" type="button">copy</button>
             </div>
-            <pre class="code"><code>&lt;!DOCTYPE html&gt; &lt;!-- tells the browser this is a modern HTML5 document; must be the very first line --&gt;
-&lt;html lang="en"&gt; &lt;!-- root element wrapping the whole page; lang="en" tells screen readers and search engines the content is English --&gt;
-&lt;head&gt; &lt;!-- opens the head: metadata the browser needs but the user never sees on the page --&gt;
-  &lt;meta charset="UTF-8"&gt; &lt;!-- sets character encoding to UTF-8 so accented letters, symbols, and emoji render correctly instead of as garbage --&gt;
-  &lt;title&gt;Registration Form&lt;/title&gt; &lt;!-- text shown in the browser tab and used as the default bookmark name; also read first by screen readers --&gt;
-  &lt;link rel="stylesheet" href="styles.css" /&gt; &lt;!-- pulls in the external CSS file; rel says what kind of link it is, href says where the file lives --&gt;
+            <pre class="code"><code>&lt;!DOCTYPE html&gt; &lt;!-- [reinforced] tells the browser this is a modern HTML5 document; must be the very first line --&gt;
+&lt;html lang="en"&gt; &lt;!-- [reinforced] root element wrapping the whole page; lang="en" tells screen readers and search engines the content is English --&gt;
+&lt;head&gt; &lt;!-- [reinforced] opens the head: metadata the browser needs but the user never sees on the page --&gt;
+  &lt;meta charset="UTF-8"&gt; &lt;!-- [reinforced] sets character encoding to UTF-8 so accented letters, symbols, and emoji render correctly instead of as garbage --&gt;
+  &lt;title&gt;Registration Form&lt;/title&gt; &lt;!-- [reinforced] text shown in the browser tab and used as the default bookmark name; also read first by screen readers --&gt;
+  &lt;link rel="stylesheet" href="styles.css" /&gt; &lt;!-- [reinforced] pulls in the external CSS file; rel says what kind of link it is, href says where the file lives --&gt;
 &lt;/head&gt; &lt;!-- closes the head section --&gt;
-&lt;body&gt; &lt;!-- opens the body: everything visible on the page goes here --&gt;
-  &lt;h1&gt;Registration Form&lt;/h1&gt; &lt;!-- the page's main heading; there should only ever be one h1 per page for proper document outline --&gt;
-  &lt;p&gt;Please fill out this form with the required information&lt;/p&gt; &lt;!-- short instruction paragraph telling the user what to do --&gt;
-  &lt;form method="post" action='https://register-demo.freecodecamp.org'&gt; &lt;!-- opens the form; method="post" sends data in the request body (not the URL), action is the server endpoint receiving it --&gt;
-    &lt;fieldset&gt; &lt;!-- groups related form controls together; browsers and screen readers treat the group as one logical unit --&gt;
-      &lt;label for="first-name"&gt;Enter Your First Name: &lt;input id="first-name" name="first-name" type="text" required /&gt;&lt;/label&gt; &lt;!-- label's for matches the input's id, so clicking the text focuses the input; name is the key the server receives; required blocks submit if empty --&gt;
+&lt;body&gt; &lt;!-- [reinforced] opens the body: everything visible on the page goes here --&gt;
+  &lt;h1&gt;Registration Form&lt;/h1&gt; &lt;!-- [reinforced] the page's main heading; there should only ever be one h1 per page for proper document outline --&gt;
+  &lt;p&gt;Please fill out this form with the required information&lt;/p&gt; &lt;!-- [reinforced] short instruction paragraph telling the user what to do --&gt;
+  &lt;form method="post" action='https://register-demo.freecodecamp.org'&gt; &lt;!-- [reinforced] opens the form; method="post" sends data in the request body (not the URL), action is the server endpoint receiving it --&gt;
+    &lt;fieldset&gt; &lt;!-- [reinforced] groups related form controls together; browsers and screen readers treat the group as one logical unit --&gt;
+      &lt;label for="first-name"&gt;Enter Your First Name: &lt;input id="first-name" name="first-name" type="text" required /&gt;&lt;/label&gt; &lt;!-- [reinforced] label's for matches the input's id, so clicking the text focuses the input; name is the key the server receives; required blocks submit if empty --&gt;
       &lt;label for="last-name"&gt;Enter Your Last Name: &lt;input id="last-name" name="last-name" type="text" required /&gt;&lt;/label&gt; &lt;!-- same pattern as above; type="text" is the default single-line text field --&gt;
-      &lt;label for="email"&gt;Enter Your Email: &lt;input id="email" name="email" type="email" required /&gt;&lt;/label&gt; &lt;!-- type="email" makes the browser validate the @ format and shows an email-optimized keyboard on mobile --&gt;
-      &lt;label for="new-password"&gt;Create a New Password: &lt;input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /&gt;&lt;/label&gt; &lt;!-- type="password" masks the characters; pattern is a regex requiring 8+ chars using only a-z and 0-5 --&gt;
+      &lt;label for="email"&gt;Enter Your Email: &lt;input id="email" name="email" type="email" required /&gt;&lt;/label&gt; &lt;!-- [reinforced] type="email" makes the browser validate the @ format and shows an email-optimized keyboard on mobile --&gt;
+      &lt;label for="new-password"&gt;Create a New Password: &lt;input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /&gt;&lt;/label&gt; &lt;!-- [learned] type="password" masks the characters; pattern is a regex requiring 8+ chars using only a-z and 0-5 --&gt;
     &lt;/fieldset&gt; &lt;!-- closes the first fieldset (personal details) --&gt;
     &lt;fieldset&gt; &lt;!-- opens the second fieldset (account type) --&gt;
-      &lt;legend&gt;Account type (required)&lt;/legend&gt; &lt;!-- legend is the visible caption for a fieldset; screen readers announce it before each control in the group --&gt;
-      &lt;label for="personal-account"&gt;&lt;input id="personal-account" type="radio" name="account-type" value="personal" class="inline" checked /&gt; Personal&lt;/label&gt; &lt;!-- radio buttons sharing the same name become mutually exclusive; value is what the server receives; checked makes this the default selection --&gt;
+      &lt;legend&gt;Account type (required)&lt;/legend&gt; &lt;!-- [reinforced] legend is the visible caption for a fieldset; screen readers announce it before each control in the group --&gt;
+      &lt;label for="personal-account"&gt;&lt;input id="personal-account" type="radio" name="account-type" value="personal" class="inline" checked /&gt; Personal&lt;/label&gt; &lt;!-- [reinforced] radio buttons sharing the same name become mutually exclusive; value is what the server receives; checked makes this the default selection --&gt;
       &lt;label for="business-account"&gt;&lt;input id="business-account" type="radio" name="account-type" value="business" class="inline" /&gt; Business&lt;/label&gt; &lt;!-- same name="account-type" as above, so selecting this one automatically deselects Personal --&gt;
     &lt;/fieldset&gt; &lt;!-- closes the account type fieldset --&gt;
     &lt;fieldset&gt; &lt;!-- opens the third fieldset (optional profile info) --&gt;
-      &lt;label for="profile-picture"&gt;Upload a profile picture: &lt;input id="profile-picture" type="file" name="file" /&gt;&lt;/label&gt; &lt;!-- type="file" renders a file picker button that opens the OS file browser --&gt;
-      &lt;label for="age"&gt;Input your age (years): &lt;input id="age" type="number" name="age" min="13" max="120" /&gt;&lt;/label&gt; &lt;!-- type="number" restricts input to digits and adds stepper arrows; min and max set the allowed range --&gt;
+      &lt;label for="profile-picture"&gt;Upload a profile picture: &lt;input id="profile-picture" type="file" name="file" /&gt;&lt;/label&gt; &lt;!-- [learned] type="file" renders a file picker button that opens the OS file browser --&gt;
+      &lt;label for="age"&gt;Input your age (years): &lt;input id="age" type="number" name="age" min="13" max="120" /&gt;&lt;/label&gt; &lt;!-- [reinforced] type="number" restricts input to digits and adds stepper arrows; min and max set the allowed range --&gt;
       &lt;label for="referrer"&gt;How did you hear about us? &lt;!-- label text sits above the dropdown; the for attribute still ties it to the select below --&gt;
-        &lt;select id="referrer" name="referrer"&gt; &lt;!-- select creates a dropdown menu; the chosen option's value is what gets submitted --&gt;
-          &lt;option value=""&gt;(select one)&lt;/option&gt; &lt;!-- empty value acts as a placeholder prompt so no real choice is pre-selected --&gt;
+        &lt;select id="referrer" name="referrer"&gt; &lt;!-- [reinforced] select creates a dropdown menu; the chosen option's value is what gets submitted --&gt;
+          &lt;option value=""&gt;(select one)&lt;/option&gt; &lt;!-- [reinforced] empty value acts as a placeholder prompt so no real choice is pre-selected --&gt;
           &lt;option value="1"&gt;freeCodeCamp News&lt;/option&gt; &lt;!-- each option's value is the data sent to the server; the text between the tags is what the user sees --&gt;
           &lt;option value="2"&gt;freeCodeCamp YouTube Channel&lt;/option&gt; &lt;!-- second choice --&gt;
           &lt;option value="3"&gt;freeCodeCamp Forum&lt;/option&gt; &lt;!-- third choice --&gt;
@@ -3401,15 +3401,15 @@ button:hover {
         &lt;/select&gt; &lt;!-- closes the dropdown --&gt;
       &lt;/label&gt; &lt;!-- closes the referrer label, which wraps both the text and the select --&gt;
       &lt;label for="bio"&gt;Provide a bio: &lt;!-- label text for the multi-line text area below --&gt;
-        &lt;textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."&gt;&lt;/textarea&gt; &lt;!-- textarea is for multi-line input; rows/cols set its default size, placeholder shows greyed hint text that disappears on typing --&gt;
+        &lt;textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."&gt;&lt;/textarea&gt; &lt;!-- [reinforced] textarea is for multi-line input; rows/cols set its default size, placeholder shows greyed hint text that disappears on typing --&gt;
       &lt;/label&gt; &lt;!-- closes the bio label --&gt;
     &lt;/fieldset&gt; &lt;!-- closes the third fieldset --&gt;
-    &lt;a href="https://www.freecodecamp.org/news/terms-of-service"&gt;Read our terms and conditions&lt;/a&gt; &lt;!-- anchor element creating a clickable link; href is the destination URL --&gt;
+    &lt;a href="https://www.freecodecamp.org/news/terms-of-service"&gt;Read our terms and conditions&lt;/a&gt; &lt;!-- [reinforced] anchor element creating a clickable link; href is the destination URL --&gt;
     &lt;label for="terms-and-conditions"&gt; &lt;!-- label for the checkbox below; put on its own line here because the text sits after the input --&gt;
-      &lt;input class="inline" name="terms" id="terms-and-conditions" type="checkbox" required /&gt; &lt;!-- type="checkbox" is an independent on/off toggle; required means the form won't submit unless it's ticked --&gt;
+      &lt;input class="inline" name="terms" id="terms-and-conditions" type="checkbox" required /&gt; &lt;!-- [reinforced] type="checkbox" is an independent on/off toggle; required means the form won't submit unless it's ticked --&gt;
       I accept the terms and conditions &lt;!-- the visible label text, placed after the checkbox so it reads left-to-right naturally --&gt;
     &lt;/label&gt; &lt;!-- closes the terms label --&gt;
-    &lt;input type="submit" value="Submit" /&gt; &lt;!-- type="submit" renders a button that sends the form to the action URL; value sets the button's visible text --&gt;
+    &lt;input type="submit" value="Submit" /&gt; &lt;!-- [reinforced] type="submit" renders a button that sends the form to the action URL; value sets the button's visible text --&gt;
   &lt;/form&gt; &lt;!-- closes the form --&gt;
 &lt;/body&gt; &lt;!-- closes the body --&gt;
 &lt;/html&gt; &lt;!-- closes the root html element; end of document --&gt;</code></pre>
@@ -3422,72 +3422,72 @@ button:hover {
               <span class="code-file">styles.css</span>
               <button class="code-copy" type="button">copy</button>
             </div>
-            <pre class="code"><code>body { /* targets the body element, styling the entire visible page at once */
-  width: 100%; /* body spans the full width of its parent (the html element) */
-  height: 100vh; /* 100vh = 100% of the viewport height, so the dark background covers the whole screen even on short pages */
-  margin: 0; /* kills the browser's default 8px margin around the body, removing the white gap at the page edges */
-  background-color: #1b1b32; /* dark navy page background */
-  color: #f5f6f7; /* near-white default text color; inherited by every child element unless overridden */
-  font-family: Tahoma; /* sets the typeface for all text on the page */
-  font-size: 16px; /* base font size; other elements using rem units will calculate against this */
+            <pre class="code"><code>body { /* [reinforced] targets the body element, styling the entire visible page at once */
+  width: 100%; /* [reinforced] body spans the full width of its parent (the html element) */
+  height: 100vh; /* [reinforced] 100vh = 100% of the viewport height, so the dark background covers the whole screen even on short pages */
+  margin: 0; /* [reinforced] kills the browser's default 8px margin around the body, removing the white gap at the page edges */
+  background-color: #1b1b32; /* [reinforced] dark navy page background */
+  color: #f5f6f7; /* [reinforced] near-white default text color; inherited by every child element unless overridden */
+  font-family: Tahoma; /* [reinforced] sets the typeface for all text on the page */
+  font-size: 16px; /* [reinforced] base font size; other elements using rem units will calculate against this */
 } /* closes the body rule */
 
-h1, p { /* comma-separated selector applies these declarations to both h1 and p elements */
-  margin: 1em auto; /* 1em top/bottom spacing, auto left/right which centers the block horizontally */
-  text-align: center; /* centers the text inside the element */
+h1, p { /* [reinforced] comma-separated selector applies these declarations to both h1 and p elements */
+  margin: 1em auto; /* [reinforced] 1em top/bottom spacing, auto left/right which centers the block horizontally */
+  text-align: center; /* [reinforced] centers the text inside the element */
 } /* closes the h1, p rule */
 
 form { /* targets the form element */
-  width: 60vw; /* 60vw = 60% of the viewport width, so the form scales with the browser window */
-  max-width: 500px; /* caps the width so it never gets uncomfortably wide on large monitors */
-  min-width: 300px; /* floors the width so it never collapses too narrow on small screens */
+  width: 60vw; /* [reinforced] 60vw = 60% of the viewport width, so the form scales with the browser window */
+  max-width: 500px; /* [reinforced] caps the width so it never gets uncomfortably wide on large monitors */
+  min-width: 300px; /* [learned] floors the width so it never collapses too narrow on small screens */
   margin: 0 auto; /* no vertical margin, auto horizontal margin to center the form on the page */
-  padding-bottom: 2em; /* breathing room below the submit button so it isn't flush against the page bottom */
+  padding-bottom: 2em; /* [reinforced] breathing room below the submit button so it isn't flush against the page bottom */
 } /* closes the form rule */
 
 fieldset { /* targets every fieldset element */
-  border: none; /* removes the browser's default box outline around fieldsets */
-  padding: 2rem 0; /* 2rem top/bottom padding, 0 left/right; rem is relative to the root font size */
-  border-bottom: 3px solid #3b3b4f; /* adds a subtle divider line under each group to visually separate sections */
+  border: none; /* [reinforced] removes the browser's default box outline around fieldsets */
+  padding: 2rem 0; /* [reinforced] 2rem top/bottom padding, 0 left/right; rem is relative to the root font size */
+  border-bottom: 3px solid #3b3b4f; /* [learned] adds a subtle divider line under each group to visually separate sections */
 } /* closes the fieldset rule */
 
-fieldset:last-of-type { /* :last-of-type pseudo-class targets only the final fieldset among its siblings */
+fieldset:last-of-type { /* [learned] :last-of-type pseudo-class targets only the final fieldset among its siblings */
   border-bottom: none; /* removes the divider from the last group so the form doesn't end with a dangling line */
 } /* closes the last-of-type rule */
 
 label { /* targets every label element */
-  display: block; /* makes labels full-width block elements so each one starts on its own line */
+  display: block; /* [reinforced] makes labels full-width block elements so each one starts on its own line */
   margin: 0.5rem 0; /* small vertical gap between labels, no horizontal margin */
 } /* closes the label rule */
 
-input, /* first selector in the group: all input elements */
+input, /* [reinforced] first selector in the group: all input elements */
 textarea, /* second selector: the bio text area */
 select { /* third selector: the referrer dropdown */
   margin: 10px 0 0 0; /* 10px top margin only (top, right, bottom, left order) to push the field below its label text */
   width: 100%; /* fields stretch to fill the full width of the form */
-  min-height: 2em; /* guarantees a comfortable tap/click height even for small fields */
+  min-height: 2em; /* [reinforced] guarantees a comfortable tap/click height even for small fields */
 } /* closes the shared input/textarea/select rule */
 
 input, textarea { /* narrower group: only inputs and text areas get these colors, not the select dropdown */
   background-color: #0a0a23; /* very dark field background so it reads as an input well against the navy page */
-  border: 1px solid #0a0a23; /* border matching the background, giving a flat borderless look */
+  border: 1px solid #0a0a23; /* [reinforced] border matching the background, giving a flat borderless look */
   color: #ffffff; /* pure white text so typed characters stay legible on the dark field */
 } /* closes the input, textarea rule */
 
-.inline { /* class selector (note the leading dot) applied to the radio buttons and the terms checkbox */
-  width: unset; /* unset resets width to its starting value, which is auto, so the 100% from the input rule stops applying; .inline wins because a class selector outranks an element selector, and the box shrinks to its natural size */
+.inline { /* [reinforced] class selector (note the leading dot) applied to the radio buttons and the terms checkbox */
+  width: unset; /* [learned] unset resets the property to its starting value, which for width is auto, so the 100% from the input rule stops applying; .inline wins because a class selector outranks an element selector, and the box shrinks to its natural size */
   margin: 0 0.5em 0 0; /* right margin only, creating a small gap between the box and its label text */
-  vertical-align: middle; /* aligns the small box with the middle of the adjacent text instead of sitting on the baseline */
+  vertical-align: middle; /* [reinforced] aligns the small box with the middle of the adjacent text instead of sitting on the baseline */
 } /* closes the .inline rule */
 
-input[type="submit"] { /* attribute selector targeting only inputs whose type attribute equals "submit" */
+input[type="submit"] { /* [reinforced] attribute selector targeting only inputs whose type attribute equals "submit" */
   display: block; /* makes the button a block element so margin: auto can center it */
   width: 60%; /* button spans 60% of the form's width */
   margin: 1em auto; /* 1em vertical spacing, auto horizontal to center the button */
   height: 2em; /* fixed button height */
   font-size: 1.1rem; /* slightly larger than base text so the button label stands out */
   background-color: #3b3b4f; /* muted purple-grey button fill */
-  border-color: white; /* white outline making the button edge visible against the dark page */
+  border-color: white; /* [reinforced] white outline making the button edge visible against the dark page */
   min-width: 300px; /* floor on button width so it stays tappable on narrow screens */
 } /* closes the submit button rule */
 
@@ -3495,7 +3495,7 @@ input[type="file"] { /* attribute selector targeting only the profile picture fi
   padding: 1px 2px; /* tight padding so the native file button isn't stretched by the min-height set earlier */
 } /* closes the file input rule */
 
-a { /* targets every anchor (link) element on the page */
+a { /* [reinforced] targets every anchor (link) element on the page */
   color: #dfdfe2; /* light grey link color, replacing the browser default blue that clashes with the dark theme */
 } /* closes the anchor rule */</code></pre>
           </div>
@@ -3645,7 +3645,7 @@ a { /* targets every anchor (link) element on the page */
       <span class="module-caret">▸</span>
       <span class="module-kicker">CSS</span>
       <span class="module-title">Attribute Selectors</span>
-      <span class="module-count">2 items</span>
+      <span class="module-count">2 items · 1 built</span>
     </summary>
     <div class="module-body">
     <div class="archive-row">
@@ -3653,11 +3653,132 @@ a { /* targets every anchor (link) element on the page */
       <span class="archive-name">Build a Balance Sheet</span>
       <span class="archive-type">workshop</span>
     </div>
-    <div class="archive-row archive-row--cert">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build a Book Inventory App</span>
-      <span class="archive-type">cert project</span>
-    </div>
+    <details class="project-box">
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd lab</span>
+        <span class="project-name">Build a Book Inventory App</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: [attr="value"] exact-match selector on class • [attr^="value"] starts-with selector • [attr~="value"] space-separated word selector • descendant combinator • child combinator (&gt;) • :first-child pseudo-class • :nth-child() with -n+2<br />Reinforced: Tables • gradients</span></div>
+        </div>
+        <div class="card-body">the fCC book inventory table — rows colored by reading status and star-style ratings, all driven by <b>attribute selectors</b> on class: exact match, starts-with, whitespace-separated word, plus descendant and child combinators, :first-child and :nth-child. comments sit only on the new concepts.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Book Inventory&lt;/h1&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Title&lt;/th&gt;&lt;th&gt;Author&lt;/th&gt;&lt;th&gt;Category&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;th&gt;Rate&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr class="read"&gt;
+        &lt;td&gt;Dune&lt;/td&gt;&lt;td&gt;Frank Herbert&lt;/td&gt;&lt;td&gt;Sci-Fi&lt;/td&gt;
+        &lt;td&gt;&lt;span class="status"&gt;Read&lt;/span&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;span class="rate three"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt; &lt;!-- class holds two space-separated words (rate, three); a [class~="three"] selector can match the word three inside it --&gt;
+      &lt;/tr&gt;
+      &lt;tr class="to-read"&gt;
+        &lt;td&gt;The Fifth Season&lt;/td&gt;&lt;td&gt;N. K. Jemisin&lt;/td&gt;&lt;td&gt;Fantasy&lt;/td&gt;
+        &lt;td&gt;&lt;span class="status"&gt;To Read&lt;/span&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;span class="rate"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr class="in-progress"&gt;
+        &lt;td&gt;Project Hail Mary&lt;/td&gt;&lt;td&gt;Andy Weir&lt;/td&gt;&lt;td&gt;Sci-Fi&lt;/td&gt;
+        &lt;td&gt;&lt;span class="status"&gt;In Progress&lt;/span&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;span class="rate"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>span { display: inline-block; }
+
+tr[class="read"] { /* [class="read"] exact-match attribute selector: matches only when the whole class value is exactly "read", so a second class on the tr would break it */
+  background-image: linear-gradient(90deg, #eafbea, #d7f5d7);
+}
+
+tr[class="to-read"] {
+  background-image: linear-gradient(90deg, #fff7e0, #ffeebf);
+}
+
+tr[class="in-progress"] {
+  background-image: linear-gradient(90deg, #e6efff, #cfe0ff);
+}
+
+tr[class="to-read"] span[class="status"] { /* the space is a descendant combinator: matches the status span anywhere inside a to-read row */
+  border: 2px solid #d19a00;
+  background-image: linear-gradient(90deg, #ffe9a8, #ffd766);
+}
+
+tr[class="read"] span[class="status"] {
+  border: 2px solid #2e8b2e;
+  background-image: linear-gradient(90deg, #bff0bf, #8fe08f);
+}
+
+tr[class="in-progress"] span[class="status"] {
+  border: 2px solid #2e5cff;
+  background-image: linear-gradient(90deg, #bcd2ff, #8fb0ff);
+}
+
+span[class="status"], span[class^="rate"] { /* [class^="rate"] starts-with selector: matches any class value that begins with "rate" */
+  height: 20px;
+  width: auto;
+  padding: 4px 8px;
+}
+
+span[class^="rate"] &gt; span { /* &gt; is the child combinator: matches only spans that are direct children of the rate span, not deeper descendants */
+  border: 1px solid #999;
+  border-radius: 50%;
+  margin: 2px;
+  height: 14px;
+  width: 14px;
+  background-color: #ffffff;
+}
+
+span[class~="one"] span:first-child { /* [class~="one"] matches the word one anywhere in a space-separated class list; :first-child matches the span only if it is the first child of its parent */
+  background-image: linear-gradient(45deg, #ffd75e, #ffb300);
+}
+
+span[class~="two"] span:nth-child(-n+2) { /* :nth-child(-n+2) matches the first two children: n counts 0, 1, 2, giving 2, 1, 0 */
+  background-image: linear-gradient(45deg, #ffd75e, #ffb300);
+}
+
+span[class~="three"] span {
+  background-image: linear-gradient(45deg, #ffd75e, #ffb300);
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/book-inventory-app/index.html" title="Build a Book Inventory App preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/book-inventory-app/index.html" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design-v9/blob/main/book-inventory-app/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
     
     </div>
   </details>
