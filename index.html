@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="Learning full-stack web development in public. Build archives, coursework, experiments, and notes from Guerz.">
 <meta name="twitter:image" content="https://guerz.lol/og-banner.png">
 <link rel="icon" id="favicon" type="image/png" href="favicon-peach.png">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=8"> <!-- v=8: cache-bust for the slim column -->
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Nicholas Guerzon","alternateName":"Guerz","url":"https://guerz.lol","jobTitle":"Full-Stack Web Developer (in training)","sameAs":["https://github.com/gitguerz","https://blog.guerz.lol","https://www.instagram.com/guerz/","https://bsky.app/profile/guerz.bsky.social","https://kolektiva.social/@guerz","https://techhub.social/@Guerz","https://djs.social/@guerz"]}
@@ -79,15 +79,16 @@
   </div>
 
   <!-- ===== box 2 of 3: the turn + day one — lavender, peach border ===== -->
-  <div class="card card--peach card--bg-lavender card--hero">
+  <div class="card card--peach card--bg-lavender card--hero card--slim"> <!-- card--slim: same 900px centered column as the molt box below -->
     <!-- beat 2 — the turn -->
-    <div class="title-wrap title-wrap--center"><h2 class="card-title">befallen the seed.
-      <br>resurgences;
-      <br>alas, tenacity.
+    <!-- the title, three lines; each <br> starts the next line -->
+    <div class="title-wrap title-wrap--center"><h2 class="card-title">progressing,
+      <br>consistency;
+      <br>no falter nearest.
       <br></h2></div>
 
-      <!-- the Full Sail bar. &nbsp; = a space that never breaks, so "— WEEK 5" wraps as one piece on phones -->
-    <h3 class="dayone-head"><span class="fs-bar"><a href="https://www.fullsail.edu/" target="_blank" rel="noopener noreferrer">Full Sail University</a> —&nbsp;Week&nbsp;5</span></h3>
+      <!-- the Full Sail bar: <br> puts "Month 2 of 27" on its own line; &nbsp; = a space that never breaks, so "Class 2" and "Month 2 of 27" each stay in one piece -->
+    <h3 class="dayone-head"><span class="fs-bar"><a href="https://www.fullsail.edu/" target="_blank" rel="noopener noreferrer">Full Sail University</a> —&nbsp;Class&nbsp;2 - TEM;<br>Month&nbsp;2&nbsp;of&nbsp;27</span></h3>
     <p class="degree-line"><time datetime="2026-10-26">2026-10-26</time> — <time datetime="2026-11-01">2026-11-01</time></p> <!-- update weekly -->
     <!-- the weekly subject; update it weekly along with the bar and dates; same degree-line look, no new CSS -->
     <p class="degree-line">Technology and the Entertainment and Music Industries (TEM 1001-O 19)</p>
@@ -103,7 +104,7 @@
 
   
   <!-- ===== box 3 of 3: the rise — peach, lavender border ===== -->
-  <div class="card card--lavender card--bg-peach card--hero">
+  <div class="card card--lavender card--bg-peach card--hero card--slim"> <!-- card--slim: shares the 900px centered column -->
     <!-- beat 3 — the rise. the wrapper div matters: without it, the `.card > p` rule
          (18px paragraph font) outranks .card-title and shrinks this to paragraph size -->
     <div class="title-wrap title-wrap--center"><h2 class="card-title">molt; phoenix down.
@@ -125,7 +126,7 @@
   </div>
 
   <!-- ===== card two: the welcome blurb + current phase/lane ===== -->
-  <div class="card card--peach card--bg-lavender">
+  <div class="card card--peach card--bg-lavender card--slim"> <!-- card--slim: shares the 900px centered column -->
     <div class="card-body">
       <h2>welcome to <b>GUERZ's</b> corner of the world wide web!</h2>
       
@@ -155,7 +156,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row row--slim"> <!-- row--slim: foundations + vibes share the 900px centered column -->
     <!-- card--foundations: lets its line list stretch to fill the height it gets from sitting beside the vibes box -->
     <div class="card card--lavender card--bg-peach card--foundations">
       <h2 class="card-eyebrow card-eyebrow--ink">foundations</h2>
@@ -178,7 +179,7 @@
     </div>
   </div>
 
-  <div class="card card--wine" id="guerzbook">
+  <div class="card card--wine card--slim" id="guerzbook"> <!-- card--slim: shares the 900px centered column -->
     <h2 class="card-eyebrow">guerzbook</h2>
     <div class="guestbook-text guestbook-intro">leave a note in the guestbo- errr... guerzbook! ^_^</div>
     <div id="guerzbook-entries">
