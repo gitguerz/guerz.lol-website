@@ -747,6 +747,13 @@ main:focus { outline: none; }
    so give back the margin they had as <p class="card-title"> */
 .card--hero h2.card-title { margin: .4em 0; }            /* the .4em they got from `.card p` as <p> titles */
 
+/* ---------- SLIM COLUMN (homepage: Full Sail box, peach box, welcome box, foundations + vibes row, guerzbook) ---------- */
+.card--slim, .row--slim {   /* the boxes that share the narrower column */
+  width: 100%;              /* fill the page column on phones/tablets, as before */
+  max-width: 900px;         /* on wide screens stop at 900px (full column is 1080px) */
+  align-self: center;       /* .container is a flex column, so this centers the box */
+}                           /* end slim column */
+
 /* ---------- utilities ---------- */
 .center-text { text-align: center; } /* center any block's text */
 
