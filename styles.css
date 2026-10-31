@@ -971,3 +971,104 @@ html[data-theme="night"] .page-toolshed {         /* night-mode tokens, still th
   color: var(--ink);                             /* ink instead of the default muted purple, so it reads on lavender */
 }
 :where(.page-playbooks, .page-toolshed) .title-card { margin: 0 0 28px; } /* these two pages aren't flex columns like fcc's, so give the box the same 28px gap the old subtitle had before the content below */
+
+/* ---------- TIMELINE (homepage): GitHub-style day boxes + milestone list ---------- */
+.card--timeline {                                  /* only the homepage timeline card */
+  --tl-0: #f1e9e0;                                  /* day: a day with no commits */
+  --tl-1: #f9d6bd;                                  /* day: 1-2 commits, palest peach */
+  --tl-2: #F4AD7D;                                  /* day: 3-5 commits, the site peach */
+  --tl-3: #d4783a;                                  /* day: 6-9 commits, deeper */
+  --tl-4: #8f3f1a;                                  /* day: 10+ commits, deepest */
+  --tl-mark: #b3a8cc;                               /* a milestone day: the site lavender */
+  --tl-mark-edge: #3a2b22;                          /* ...with a dark edge so it stands apart from the peaches */
+}
+html[data-theme="night"] .card--timeline {         /* night mode re-tints the same five steps */
+  --tl-0: #2d2739;                                  /* night: empty day, a hair lighter than the card */
+  --tl-1: #5a4254;                                  /* night: palest */
+  --tl-2: #a8634a;                                  /* night: middle */
+  --tl-3: #e08a5a;                                  /* night: bright */
+  --tl-4: #ffc79e;                                  /* night: brightest */
+  --tl-mark: #b3a8cc;                               /* milestone stays lavender */
+  --tl-mark-edge: #eee6f5;                          /* ...with a light edge on the dark card */
+}
+.tl-graph {                                        /* wraps the month labels + the day grid */
+  width: 100%;                                      /* fill the card on phones */
+  max-width: 620px;                                 /* cap it on wide screens so the boxes stay small */
+  margin: 4px auto 0;                               /* centered, a little air above */
+}
+.tl-months, .tl-grid {                             /* both rows share the same 26 week columns, so labels line up */
+  display: grid;                                    /* grid layout */
+  grid-template-columns: repeat(26, 1fr);                /* one column per week */
+  gap: 3px;                                         /* the little gutters between boxes */
+}
+.tl-months { margin-bottom: 4px; }                 /* small gap between the labels and the boxes */
+.tl-month {                                        /* one month label */
+  font: 500 11px 'IBM Plex Mono', monospace;        /* the site's mono label font */
+  color: var(--muted);                              /* quiet text color (passes contrast on the card) */
+  white-space: nowrap;                              /* never wrap "Jun" into two lines */
+  overflow: visible;                                /* let the label spill over the empty columns beside it */
+}
+.tl-month--c1 { grid-column-start: 1; } /* May label sits over week column 1 */
+.tl-month--c5 { grid-column-start: 5; } /* Jun label sits over week column 5 */
+.tl-month--c9 { grid-column-start: 9; } /* Jul label sits over week column 9 */
+.tl-month--c13 { grid-column-start: 13; } /* Aug label sits over week column 13 */
+.tl-month--c18 { grid-column-start: 18; } /* Sep label sits over week column 18 */
+.tl-month--c22 { grid-column-start: 22; } /* Oct label sits over week column 22 */
+.tl-grid {                                         /* the day boxes themselves */
+  grid-template-rows: repeat(7, auto);              /* seven rows: Sunday on top to Saturday on the bottom */
+  grid-auto-flow: column;                           /* fill down each week first, then move right */
+}
+.tl-day {                                          /* one day */
+  display: block;                                   /* spans need this to take a size */
+  aspect-ratio: 1;                                  /* always a square, at any width */
+  background: var(--tl-0);                          /* default: no commits */
+  border-radius: 2px;                               /* barely rounded, to match the soft-brutalist look */
+}
+.tl-day--off { background: transparent; }          /* the days before fCC day one stay blank */
+.tl-day--l1 { background: var(--tl-1); }           /* 1-2 commits */
+.tl-day--l2 { background: var(--tl-2); }           /* 3-5 commits */
+.tl-day--l3 { background: var(--tl-3); }           /* 6-9 commits */
+.tl-day--l4 { background: var(--tl-4); }           /* 10+ commits */
+.tl-day--mark {                                    /* a milestone: wins over any commit shade */
+  background: var(--tl-mark);                       /* lavender fill */
+  box-shadow: inset 0 0 0 2px var(--tl-mark-edge);  /* dark/light edge, drawn inside so the box size never changes */
+}
+.tl-legend {                                       /* the less → more key under the grid */
+  display: flex;                                    /* one row */
+  align-items: center;                              /* line the swatches up with the words */
+  justify-content: center;                          /* centered under the grid */
+  flex-wrap: wrap;                                  /* on a tiny phone it wraps instead of overflowing */
+  gap: 4px;                                         /* space between swatches and words */
+  font: 500 11px 'IBM Plex Mono', monospace;        /* same mono label font as the months */
+  color: var(--muted);                              /* same quiet color */
+}
+.tl-legend .tl-day { width: 12px; }                /* legend swatches: small fixed squares */
+.tl-note {                                         /* the one-line explainer under the legend */
+  margin: 0;                                        /* the card's gap handles spacing */
+  text-align: center;                               /* centered like the graph */
+  font-size: 13px;                                  /* smaller than body copy */
+  color: var(--muted);                              /* quiet */
+}
+.tl-list {                                         /* the milestone list: the accessible version of the story */
+  list-style: none;                                 /* no bullets or numbers; the dates do the job */
+  margin: 6px 0 0;                                  /* a little air above, none beside */
+  padding: 0;                                       /* drop the browser's list indent */
+  display: flex;                                    /* stack the rows */
+  flex-direction: column;                           /* top to bottom, oldest first */
+  gap: 8px;                                         /* space between milestones */
+}
+.tl-item {                                         /* one milestone row */
+  display: grid;                                    /* date on the left, text on the right */
+  grid-template-columns: 7.5em 1fr;                 /* fixed date column so the texts line up */
+  gap: 12px;                                        /* space between date and text */
+  border-left: 3px solid var(--lavender);           /* the site's lane stripe, in lavender */
+  padding: 4px 0 4px 12px;                          /* breathing room beside the stripe */
+}
+.tl-item time {                                    /* the date */
+  font: 700 13px 'IBM Plex Mono', monospace;        /* mono, bold: reads like a log entry */
+  white-space: nowrap;                              /* a date never splits at its hyphens */
+}
+@media (max-width: 560px) {                        /* phones: dates sit above their text instead of beside it */
+  .tl-item { grid-template-columns: 1fr; gap: 2px; } /* one column */
+  .tl-month { font-size: 9px; }                    /* month labels shrink so they don't collide */
+}
