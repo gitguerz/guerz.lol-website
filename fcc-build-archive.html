@@ -3965,7 +3965,7 @@ span[class~="three"] span {
     <summary>
       <span class="section-caret">▸</span> <!-- turns when the section opens -->
       <span class="section-title">Legacy Responsive Web Design V8</span> <!-- section name -->
-      <span class="section-count">6 built · 20 total · fCC's order</span> <!-- update this count as builds land -->
+      <span class="section-count">11 built · 20 total · fCC's order</span> <!-- update this count as builds land -->
     </summary>
     <div class="section-body">
 <details class="module-group" open> <!-- one group holds the whole V8 list (V8 has no sub-modules) -->
@@ -3973,7 +3973,7 @@ span[class~="three"] span {
       <span class="module-caret">▸</span>
       <span class="module-kicker">V8</span> <!-- small tag before the group name -->
       <span class="module-title">Courses + Certification Projects</span> <!-- group name -->
-      <span class="module-count">20 items · 6 built</span> <!-- update as builds land -->
+      <span class="module-count">20 items · 11 built</span> <!-- update as builds land -->
     </summary>
     <div class="module-body">
     <p class="userinfo-role"><a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" target="_blank" rel="noopener noreferrer">↗ fCC's legacy Responsive Web Design (V8) curriculum</a></p> <!-- link to the curriculum itself -->
@@ -4517,7 +4517,7 @@ a {
     <details class="project-box"> <!-- BUILT: Build a Survey Form -->
       <summary>
         <span class="project-caret">▸</span>
-        <span class="badge badge--lavender">legacy rwd v8</span>
+        <span class="badge badge--lavender">legacy cert project</span>
         <span class="project-name">Build a Survey Form</span>
         <span class="project-stack">html</span>
       </summary>
@@ -4601,31 +4601,807 @@ a {
         <div class="project-links"><a href="https://builds.guerz.lol/legacy-rwd-v8/survey-form/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design-v9/tree/main/legacy-rwd-v8/survey-form" target="_blank" rel="noopener noreferrer">↗ github</a></div>
       </div>
     </details>
-    <div class="archive-row"> <!-- not built yet: Learn the CSS Box Model by Building a Rothko Painting -->
-      <span class="archive-check">☐</span> <!-- empty box = still to do -->
-      <span class="archive-name">Learn the CSS Box Model by Building a Rothko Painting</span> <!-- fCC's exact title -->
-      <span class="archive-type">course</span> <!-- course or cert project -->
-    </div>
-    <div class="archive-row"> <!-- not built yet: Learn CSS Flexbox by Building a Photo Gallery -->
-      <span class="archive-check">☐</span> <!-- empty box = still to do -->
-      <span class="archive-name">Learn CSS Flexbox by Building a Photo Gallery</span> <!-- fCC's exact title -->
-      <span class="archive-type">course</span> <!-- course or cert project -->
-    </div>
-    <div class="archive-row"> <!-- not built yet: Learn Typography by Building a Nutrition Label -->
-      <span class="archive-check">☐</span> <!-- empty box = still to do -->
-      <span class="archive-name">Learn Typography by Building a Nutrition Label</span> <!-- fCC's exact title -->
-      <span class="archive-type">course</span> <!-- course or cert project -->
-    </div>
-    <div class="archive-row"> <!-- not built yet: Learn Accessibility by Building a Quiz -->
-      <span class="archive-check">☐</span> <!-- empty box = still to do -->
-      <span class="archive-name">Learn Accessibility by Building a Quiz</span> <!-- fCC's exact title -->
-      <span class="archive-type">course</span> <!-- course or cert project -->
-    </div>
-    <div class="archive-row archive-row--cert"> <!-- not built yet: Build a Tribute Page -->
-      <span class="archive-check">☐</span> <!-- empty box = still to do -->
-      <span class="archive-name">Build a Tribute Page</span> <!-- fCC's exact title -->
-      <span class="archive-type">cert project</span> <!-- course or cert project -->
-    </div>
+    <details class="project-box"> <!-- BUILT: Learn the CSS Box Model by Building a Rothko Painting -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">legacy rwd v8</span>
+        <span class="project-name">Learn the CSS Box Model by Building a Rothko Painting</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Concepts Learned</span><span class="meta-val">HTML: div · class · nesting · CSS: box model · width · height · border · padding · margin · margin: auto · overflow · background-color · box-shadow · border-radius · transform · rotate() · filter · blur() · percentage sizes · selector list</span></div>
+        </div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt; &lt;!-- tells the browser this is modern HTML5 --&gt;
+&lt;html lang="en"&gt; &lt;!-- root element; lang="en" says the page is in English --&gt;
+  &lt;head&gt; &lt;!-- page info that is not displayed --&gt;
+    &lt;meta charset="UTF-8"&gt; &lt;!-- character encoding so symbols render right --&gt;
+    &lt;title&gt;Rothko Painting&lt;/title&gt; &lt;!-- browser tab title --&gt;
+    &lt;link href="./styles.css" rel="stylesheet"&gt; &lt;!-- connects the CSS file; ./ means "same folder as this page" --&gt;
+  &lt;/head&gt; &lt;!-- end of head --&gt;
+  &lt;body&gt; &lt;!-- everything visible lives in here --&gt;
+    &lt;div class="frame"&gt; &lt;!-- outer box: the picture frame (its border, padding and margin are the box model demo) --&gt;
+      &lt;div class="canvas"&gt; &lt;!-- the painting surface, nested inside the frame --&gt;
+        &lt;div class="one"&gt;&lt;/div&gt; &lt;!-- top color block (gold) --&gt;
+        &lt;div class="two"&gt;&lt;/div&gt; &lt;!-- middle color block (dark red) --&gt;
+        &lt;div class="three"&gt;&lt;/div&gt; &lt;!-- bottom color block (bright red) --&gt;
+      &lt;/div&gt; &lt;!-- end of canvas --&gt;
+    &lt;/div&gt; &lt;!-- end of frame --&gt;
+  &lt;/body&gt; &lt;!-- end of visible page --&gt;
+&lt;/html&gt; &lt;!-- end of document --&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>.canvas { /* the painting surface */
+  width: 500px; /* content width of the canvas */
+  height: 600px; /* content height (no padding or border here, so this is the full height) */
+  background-color: #4d0f00; /* dark maroon behind the color blocks */
+  overflow: hidden; /* anything spilling outside the box gets clipped */
+  filter: blur(2px); /* blur() softens the element and everything inside it, like paint bleeding */
+}
+
+.frame { /* the picture frame around the canvas */
+  border: 50px solid black; /* border shorthand: width, style, color */
+  width: 500px; /* content width; padding and border add on top of it */
+  padding: 50px; /* space between the border and the content, inside the border */
+  margin: 20px auto; /* two values: top/bottom 20px, left/right auto (auto centers a block with a set width) */
+}
+
+.one { /* top block */
+  width: 425px; /* narrower than the canvas, so margin auto has room to center it */
+  height: 150px; /* block height */
+  background-color: #efb762; /* gold */
+  margin: 20px auto; /* 20px above and below, auto left/right centers it */
+  box-shadow: 0 0 3px 3px #efb762; /* x offset, y offset, blur, spread, color; same color as the block so it glows */
+  border-radius: 9px; /* one value rounds all four corners */
+  transform: rotate(-0.6deg); /* tilts the block slightly so it looks hand-painted; negative = counterclockwise */
+}
+
+.two { /* middle block */
+  width: 475px; /* block width */
+  height: 200px; /* block height */
+  background-color: #8f0401; /* dark red */
+  margin: 0 auto 20px; /* three values: top | left+right | bottom */
+  box-shadow: 0 0 3px 3px #8f0401; /* same-color glow, same order as above */
+  border-radius: 8px 10px; /* two values: top-left+bottom-right | top-right+bottom-left */
+  transform: rotate(0.4deg); /* positive = clockwise */
+}
+
+.one, .two { /* selector list: one rule styles both blocks */
+  filter: blur(1px); /* light blur on both blocks */
+}
+
+.three { /* bottom block */
+  width: 91%; /* percent of the parent (.canvas) width */
+  height: 28%; /* percent of the parent height; works because .canvas has a set height */
+  background-color: #b20403; /* bright red */
+  margin: auto; /* one value for all sides; auto centers it left/right */
+  filter: blur(2px); /* extra blur on the bottom block */
+  box-shadow: 0 0 5px 5px #b20403; /* bigger glow than the other blocks */
+  border-radius: 30px 25px 60px 12px; /* four values, clockwise from top-left: TL, TR, BR, BL */
+  transform: rotate(-0.2deg) /* tiny tilt (last declaration, so the semicolon is optional) */
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/legacy-rwd-v8/rothko-painting/" title="Learn the CSS Box Model by Building a Rothko Painting preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/legacy-rwd-v8/rothko-painting/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design-v9/tree/main/legacy-rwd-v8/rothko-painting" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Learn CSS Flexbox by Building a Photo Gallery -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">legacy rwd v8</span>
+        <span class="project-name">Learn CSS Flexbox by Building a Photo Gallery</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Concepts Learned</span><span class="meta-val">HTML: header · h1 · div · img · alt · class · CSS: flexbox · display: flex · flex-direction · flex-wrap · justify-content · align-items · gap · box-sizing: border-box · universal selector · descendant selector · max-width · margin: auto · object-fit · border-radius · text-transform · ::after · content</span></div>
+        </div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt; &lt;!-- tells the browser this is modern HTML5 --&gt;
+&lt;html lang="en"&gt; &lt;!-- root element; lang="en" says the page is in English --&gt;
+  &lt;head&gt; &lt;!-- page info that is not displayed --&gt;
+    &lt;meta charset="utf-8"&gt; &lt;!-- character encoding so symbols render right --&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; &lt;!-- makes the page scale to the screen width on phones --&gt;
+    &lt;title&gt;Photo Gallery&lt;/title&gt; &lt;!-- browser tab title --&gt;
+    &lt;link rel="stylesheet" href="./styles.css"&gt; &lt;!-- connects the CSS file; ./ means "same folder as this page" --&gt;
+  &lt;/head&gt; &lt;!-- end of head --&gt;
+  &lt;body&gt; &lt;!-- everything visible lives in here --&gt;
+    &lt;header class="header"&gt; &lt;!-- banner across the top --&gt;
+      &lt;h1&gt;css flexbox photo gallery&lt;/h1&gt; &lt;!-- page heading (the CSS shows it in capitals) --&gt;
+    &lt;/header&gt; &lt;!-- end of .header --&gt;
+    &lt;div class="gallery"&gt; &lt;!-- the flex container; the 9 images are its flex items --&gt;
+      &lt;img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/1.jpg" alt="cat-leaf"&gt; &lt;!-- photo; alt text describes the image for screen readers --&gt;
+      &lt;img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/2.jpg" alt="stretchy"&gt; &lt;!-- photo; alt text describes the image for screen readers --&gt;
+      &lt;img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/3.jpg" alt="looking-cat"&gt; &lt;!-- photo; alt text describes the image for screen readers --&gt;
+      &lt;img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/4.jpg" alt="cat-mlem"&gt; &lt;!-- photo; alt text describes the image for screen readers --&gt;
+      &lt;img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/5.jpg" alt="cat-basket"&gt; &lt;!-- photo; alt text describes the image for screen readers --&gt;
+      &lt;img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/6.jpg" alt="sleepy-cat"&gt; &lt;!-- photo; alt text describes the image for screen readers --&gt;
+      &lt;img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg" alt="pale-cat"&gt; &lt;!-- photo; alt text describes the image for screen readers --&gt;
+      &lt;img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/8.jpg" alt="peak-a-cat"&gt; &lt;!-- photo; alt text describes the image for screen readers --&gt;
+      &lt;img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/9.jpg" alt="cat-derp"&gt; &lt;!-- photo; alt text describes the image for screen readers --&gt;
+    &lt;/div&gt; &lt;!-- end of .gallery --&gt;
+  &lt;/body&gt; &lt;!-- end of body --&gt;
+&lt;/html&gt; &lt;!-- end of html --&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>* { /* universal selector: matches every element */
+  box-sizing: border-box; /* width and height include padding and border, so sizes are easier to predict */
+}
+
+body { /* the whole page */
+  margin: 0; /* removes the default margin */
+  font-family: sans-serif; /* any sans-serif font the visitor has */
+  background: #f5f6f7; /* light gray page background */
+}
+
+.header { /* the banner */
+  text-align: center; /* centers the text */
+  text-transform: uppercase; /* shows the text in capitals without changing the HTML */
+  padding: 32px; /* space inside the banner on all four sides */
+  background-color: #0a0a23; /* dark navy */
+  color: #fff; /* white text */
+  border-bottom: 4px solid #fdb347; /* gold line under the banner (width, style, color) */
+}
+
+.gallery { /* the flex container */
+  display: flex; /* turns the element into a flex container; its children become flex items */
+  flex-direction: row; /* main axis runs left to right (this is also the default) */
+  flex-wrap: wrap; /* items drop to a new row when they run out of room */
+  justify-content: center; /* centers the items along the main axis (horizontally) */
+  align-items: center; /* centers the items along the cross axis (vertically) */
+  gap: 16px; /* 16px of space between items, rows and columns */
+  max-width: 1400px; /* never grows wider than 1400px */
+  margin: 0 auto; /* 0 top/bottom; auto left/right centers the block */
+  padding: 20px 10px; /* two values: 20px top/bottom, 10px left/right */
+}
+
+.gallery img { /* descendant selector: only images inside .gallery */
+  width: 100%; /* fills the available width... */
+  max-width: 350px; /* ...but never wider than 350px */
+  height: 300px; /* fixed height so every photo is the same size */
+  object-fit: cover; /* crops the image to fill its box without squishing it */
+  border-radius: 10px; /* rounded corners */
+}
+
+.gallery::after { /* pseudo-element: an extra box added after the last image */
+  content: ""; /* a pseudo-element needs content to exist; an empty string shows nothing */
+  width: 350px; /* same width as a photo, so it acts like an invisible extra photo that keeps the last row lined up */
+}
+</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/legacy-rwd-v8/photo-gallery/" title="Learn CSS Flexbox by Building a Photo Gallery preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/legacy-rwd-v8/photo-gallery/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design-v9/tree/main/legacy-rwd-v8/photo-gallery" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Learn Typography by Building a Nutrition Label -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">legacy rwd v8</span>
+        <span class="project-name">Learn Typography by Building a Nutrition Label</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Concepts Learned</span><span class="meta-val">HTML: header · h1 · h2 · p · span · i · div · class · link to Google Fonts · CSS: font-family · font stack · font-size · rem · em · font-weight · letter-spacing · text-indent · text-align · negative margin · display: flex · justify-content: space-between · align-items · :not() · selector list · descendant selector · box-sizing · border · height</span></div>
+        </div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt; &lt;!-- tells the browser this is modern HTML5 --&gt;
+&lt;html lang="en"&gt; &lt;!-- root element; lang="en" says the page is in English --&gt;
+
+&lt;head&gt; &lt;!-- page info that is not displayed --&gt;
+  &lt;meta charset="UTF-8"&gt; &lt;!-- character encoding so symbols render right --&gt;
+  &lt;title&gt;Nutrition Label&lt;/title&gt; &lt;!-- browser tab title --&gt;
+  &lt;link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet"&gt; &lt;!-- loads the Open Sans font (weights 400, 700, 800) from Google Fonts --&gt;
+  &lt;link href="./styles.css" rel="stylesheet"&gt; &lt;!-- connects the CSS file; ./ means "same folder as this page" --&gt;
+&lt;/head&gt; &lt;!-- end of head --&gt;
+
+&lt;body&gt; &lt;!-- everything visible lives in here --&gt;
+  &lt;div class="label"&gt; &lt;!-- the whole label; the CSS gives it the black border --&gt;
+    &lt;header&gt; &lt;!-- top of the label --&gt;
+      &lt;h1 class="bold"&gt;Nutrition Facts&lt;/h1&gt; &lt;!-- title; .bold makes it extra bold --&gt;
+      &lt;div class="divider"&gt;&lt;/div&gt; &lt;!-- thin gray rule (an empty div with a bottom border) --&gt;
+      &lt;p&gt;8 servings per container&lt;/p&gt; &lt;!-- p is a flex row, so its pieces can sit at opposite edges --&gt;
+      &lt;p class="bold"&gt;Serving size &lt;span&gt;2/3 cup (55g)&lt;/span&gt;&lt;/p&gt; &lt;!-- the span is the piece that gets pushed to the right edge --&gt;
+    &lt;/header&gt; &lt;!-- end of header --&gt;
+    &lt;div class="divider large"&gt;&lt;/div&gt; &lt;!-- thick black bar --&gt;
+    &lt;div class="calories-info"&gt; &lt;!-- flex row: the left block and the calorie number --&gt;
+      &lt;div class="left-container"&gt; &lt;!-- holds the two left-hand lines --&gt;
+        &lt;h2 class="bold small-text"&gt;Amount per serving&lt;/h2&gt; &lt;!-- small bold heading --&gt;
+        &lt;p&gt;Calories&lt;/p&gt; &lt;!-- the word "Calories"; the CSS makes it big --&gt;
+      &lt;/div&gt; &lt;!-- end of .left-container --&gt;
+      &lt;span&gt;230&lt;/span&gt; &lt;!-- the calorie number; the CSS makes it even bigger --&gt;
+    &lt;/div&gt; &lt;!-- end of .calories-info --&gt;
+    &lt;div class="divider medium"&gt;&lt;/div&gt; &lt;!-- medium black bar --&gt;
+    &lt;div class="daily-value small-text"&gt; &lt;!-- all the nutrient rows, in small text --&gt;
+      &lt;p class="bold right no-divider"&gt;% Daily Value *&lt;/p&gt; &lt;!-- right-aligned heading; no-divider skips the line under it --&gt;
+      &lt;div class="divider"&gt;&lt;/div&gt; &lt;!-- thin gray rule (an empty div with a bottom border) --&gt;
+      &lt;p&gt;&lt;span&gt;&lt;span class="bold"&gt;Total Fat&lt;/span&gt; 8g&lt;/span&gt; &lt;span class="bold"&gt;10%&lt;/span&gt;&lt;/p&gt; &lt;!-- nutrient row: bold name + amount on the left, % daily value pushed right --&gt;
+      &lt;p class="indent no-divider"&gt;Saturated Fat 1g &lt;span class="bold"&gt;5%&lt;/span&gt;&lt;/p&gt; &lt;!-- indented row (margin-left); % value pushed to the right --&gt;
+      &lt;div class="divider"&gt;&lt;/div&gt; &lt;!-- thin gray rule (an empty div with a bottom border) --&gt;
+      &lt;p class="indent no-divider"&gt;&lt;span&gt;&lt;i&gt;Trans&lt;/i&gt; Fat 0g&lt;/span&gt;&lt;/p&gt; &lt;!-- indented row; <i> italicizes the word Trans --&gt;
+      &lt;div class="divider"&gt;&lt;/div&gt; &lt;!-- thin gray rule (an empty div with a bottom border) --&gt;
+      &lt;p&gt;&lt;span&gt;&lt;span class="bold"&gt;Cholesterol&lt;/span&gt; 0mg&lt;/span&gt; &lt;span class="bold"&gt;0%&lt;/span&gt;&lt;/p&gt; &lt;!-- nutrient row: bold name + amount on the left, % daily value pushed right --&gt;
+      &lt;p&gt;&lt;span&gt;&lt;span class="bold"&gt;Sodium&lt;/span&gt; 160mg&lt;/span&gt; &lt;span class="bold"&gt;7%&lt;/span&gt;&lt;/p&gt; &lt;!-- nutrient row: bold name + amount on the left, % daily value pushed right --&gt;
+      &lt;p&gt;&lt;span&gt;&lt;span class="bold"&gt;Total Carbohydrate&lt;/span&gt; 37g&lt;/span&gt; &lt;span class="bold"&gt;13%&lt;/span&gt;&lt;/p&gt; &lt;!-- nutrient row: bold name + amount on the left, % daily value pushed right --&gt;
+      &lt;p class="indent no-divider"&gt;Dietary Fiber 4g&lt;/p&gt; &lt;!-- indented row (margin-left); % value pushed to the right --&gt;
+      &lt;div class="divider"&gt;&lt;/div&gt; &lt;!-- thin gray rule (an empty div with a bottom border) --&gt;
+      &lt;p class="indent no-divider"&gt;Total Sugars 12g&lt;/p&gt; &lt;!-- indented row (margin-left); % value pushed to the right --&gt;
+      &lt;div class="divider double-indent"&gt;&lt;/div&gt; &lt;!-- rule indented twice, to line up with the sub-rows --&gt;
+      &lt;p class="double-indent no-divider"&gt;Includes 10g Added Sugars &lt;span class="bold"&gt;20%&lt;/span&gt;&lt;/p&gt; &lt;!-- indented twice; % value pushed to the right --&gt;
+      &lt;div class="divider"&gt;&lt;/div&gt; &lt;!-- thin gray rule (an empty div with a bottom border) --&gt;
+      &lt;p class="no-divider"&gt;&lt;span&gt;&lt;span class="bold"&gt;Protein&lt;/span&gt; 3g&lt;/span&gt;&lt;/p&gt; &lt;!-- bold name + amount; no-divider skips the line under it --&gt;
+      &lt;div class="divider large"&gt;&lt;/div&gt; &lt;!-- thick black bar --&gt;
+      &lt;p&gt;Vitamin D 2mcg &lt;span&gt;10%&lt;/span&gt;&lt;/p&gt; &lt;!-- name + amount on the left, % pushed to the right --&gt;
+      &lt;p&gt;Calcium 260mg &lt;span&gt;20%&lt;/span&gt;&lt;/p&gt; &lt;!-- same pattern as the row above --&gt;
+      &lt;p&gt;Iron 8mg &lt;span&gt;45%&lt;/span&gt;&lt;/p&gt; &lt;!-- same pattern as the row above --&gt;
+      &lt;p class="no-divider"&gt;Potassium 235mg &lt;span&gt;6%&lt;/span&gt;&lt;/p&gt; &lt;!-- last row, no line under it --&gt;
+    &lt;/div&gt; &lt;!-- end of .daily-value --&gt;
+    &lt;div class="divider medium"&gt;&lt;/div&gt; &lt;!-- medium black bar --&gt;
+    &lt;p class="note"&gt;* The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily &lt;!-- footnote paragraph (text continues on the next line) --&gt;
+      diet. 2,000 calories a day is used for general nutrition advice.&lt;/p&gt; &lt;!-- rest of the footnote text, then end of the paragraph --&gt;
+  &lt;/div&gt; &lt;!-- end of .label --&gt;
+&lt;/body&gt; &lt;!-- end of body --&gt;
+&lt;/html&gt; &lt;!-- end of html --&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>* { /* universal selector: matches every element */
+  box-sizing: border-box; /* padding and border count inside the width and height */
+}
+
+html { /* the root element */
+  font-size: 16px; /* base size that every rem unit multiplies */
+}
+
+body { /* the whole page */
+  font-family: 'Open Sans', sans-serif; /* Open Sans from Google Fonts; sans-serif is the fallback if it fails to load */
+}
+
+.label { /* the whole label */
+  border: 2px solid black; /* border shorthand: width, style, color */
+  width: 270px; /* fixed label width */
+  margin: 20px auto; /* 20px top/bottom; auto left/right centers it */
+  padding: 0 7px; /* 0 top/bottom, 7px left/right */
+}
+
+header h1 { /* descendant selector: the h1 inside the header */
+  text-align: center; /* centers the text */
+  margin: -4px 0; /* negative margin pulls neighbors closer; 0 left/right */
+  letter-spacing: 0.15px /* tiny extra space between letters (last declaration, so the semicolon is optional) */
+}
+
+p { /* every paragraph */
+  margin: 0; /* removes the default spacing */
+  display: flex; /* makes it a flex row */
+  justify-content: space-between; /* pushes the first and last items to opposite edges */
+}
+
+.divider { /* the thin gray rules */
+  border-bottom: 1px solid #888989; /* thin gray line */
+  margin: 2px 0; /* 2px above and below */
+}
+
+.bold { /* extra-bold helper class */
+  font-weight: 800; /* extra bold (Open Sans 800 is loaded in the HTML) */
+}
+
+.large { /* the thick bar */
+  height: 10px; /* thick bar height */
+}
+
+.large, .medium { /* selector list: both bars share these rules */
+  background-color: black; /* fills the bar black */
+  border: 0; /* removes the gray border it got from .divider */
+}
+
+.medium { /* the medium bar */
+  height: 5px; /* medium bar height */
+}
+
+.small-text { /* small text helper class */
+  font-size: 0.85rem; /* 0.85 x the 16px base = 13.6px */
+}
+
+
+.calories-info { /* the calories row */
+  display: flex; /* makes it a flex row */
+  justify-content: space-between; /* pushes the first and last items to opposite edges */
+  align-items: flex-end; /* lines the items up along their bottom edge */
+}
+
+.calories-info h2 { /* descendant selector: the h2 in the calories row */
+  margin: 0; /* removes the default spacing */
+}
+
+.left-container p { /* descendant selector: paragraphs in the left block */
+  margin: -5px -2px; /* negative margins tuck it closer to its neighbors */
+  font-size: 2em; /* 2 x the parent font size */
+  font-weight: 700; /* bold */
+}
+
+.calories-info span { /* the calorie number */
+  margin: -7px -2px; /* negative margins tuck it closer */
+  font-size: 2.4em; /* 2.4 x the parent font size */
+  font-weight: 700; /* bold */
+}
+
+.right { /* right-aligned row */
+  justify-content: flex-end; /* packs the items against the right edge */
+}
+
+.indent { /* one level of indent */
+  margin-left: 1em; /* indents by one em (about one character width) */
+}
+
+.double-indent { /* two levels of indent */
+  margin-left: 2em; /* indents by two ems */
+}
+
+.daily-value p:not(.no-divider) { /* :not() pseudo-class: every p in .daily-value EXCEPT the ones with no-divider */
+  border-bottom: 1px solid #888989; /* thin gray line */
+}
+
+.note { /* the footnote */
+  font-size: 0.6rem; /* tiny text (9.6px) */
+  margin: 5px 0; /* 5px above and below */
+  padding: 0; /* resets all padding */
+  padding-left: 8px; /* room on the left for the hanging indent */
+  padding-right: 8px; /* room on the right */
+  text-indent: -8px; /* pulls the first line out to the left (hanging indent) */
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/legacy-rwd-v8/nutrition-label/" title="Learn Typography by Building a Nutrition Label preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/legacy-rwd-v8/nutrition-label/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design-v9/tree/main/legacy-rwd-v8/nutrition-label" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Learn Accessibility by Building a Quiz -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">legacy rwd v8</span>
+        <span class="project-name">Learn Accessibility by Building a Quiz</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Concepts Learned</span><span class="meta-val">HTML: header · nav · ul · a href="#id" · main · form · method · action · section · role="region" · aria-labelledby · label · for · input · text · email · date · fieldset · legend · radio · name · value · select · option · required · textarea · rows · cols · button · footer · address · br · sr-only · CSS: @media · prefers-reduced-motion · scroll-behavior · max() · min() · aspect-ratio · child combinator · :hover · color: inherit · padding-inline-start · margin-block · ::before · content · list-style · display: inline-block · clip · clip-path · selector list</span></div>
+        </div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt; &lt;!-- tells the browser this is modern HTML5 --&gt;
+&lt;html lang="en"&gt; &lt;!-- root element; lang="en" says the page is in English --&gt;
+  &lt;head&gt; &lt;!-- page info that is not displayed --&gt;
+    &lt;meta charset="UTF-8" /&gt; &lt;!-- character encoding so symbols render right --&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt; &lt;!-- makes the page scale to the screen width on phones --&gt;
+    &lt;meta name="description" content="freeCodeCamp Accessibility Quiz practice project" /&gt; &lt;!-- short page summary that search engines can show --&gt;
+    &lt;title&gt;Accessibility Quiz&lt;/title&gt; &lt;!-- browser tab title --&gt;
+    &lt;link rel="stylesheet" href="styles.css" /&gt; &lt;!-- connects the CSS file --&gt;
+  &lt;/head&gt; &lt;!-- end of head --&gt;
+  &lt;body&gt; &lt;!-- everything visible lives in here --&gt;
+    &lt;header&gt; &lt;!-- top bar: logo, title and nav --&gt;
+      &lt;img id="logo" alt="freeCodeCamp" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"&gt; &lt;!-- logo; alt names it for screen readers; id lets the CSS target it --&gt;
+      &lt;h1&gt;HTML/CSS Quiz&lt;/h1&gt; &lt;!-- page heading --&gt;
+      &lt;nav&gt; &lt;!-- navigation landmark --&gt;
+        &lt;ul&gt; &lt;!-- list of nav links --&gt;
+          &lt;li&gt;&lt;a href="#student-info"&gt;INFO&lt;/a&gt;&lt;/li&gt; &lt;!-- href="#id" jumps to the element with that id on this page --&gt;
+          &lt;li&gt;&lt;a href="#html-questions"&gt;HTML&lt;/a&gt;&lt;/li&gt; &lt;!-- jumps to the HTML questions section --&gt;
+          &lt;li&gt;&lt;a href="#css-questions"&gt;CSS&lt;/a&gt;&lt;/li&gt; &lt;!-- jumps to the CSS questions section --&gt;
+        &lt;/ul&gt; &lt;!-- end of ul --&gt;
+      &lt;/nav&gt; &lt;!-- end of nav --&gt;
+    &lt;/header&gt; &lt;!-- end of header --&gt;
+    &lt;main&gt; &lt;!-- main landmark: the page's primary content --&gt;
+      &lt;form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz"&gt; &lt;!-- form: method is how the data is sent, action is where it goes --&gt;
+        &lt;section role="region" aria-labelledby="student-info"&gt; &lt;!-- region landmark; aria-labelledby points at the heading id that names it --&gt;
+          &lt;h2 id="student-info"&gt;Student Info&lt;/h2&gt; &lt;!-- section heading; the nav link and aria-labelledby both point at this id --&gt;
+          &lt;div class="info"&gt; &lt;!-- one row: a label and its input --&gt;
+            &lt;label for="student-name"&gt;Name:&lt;/label&gt; &lt;!-- for="id" ties the label to the input with that id --&gt;
+            &lt;input type="text" name="student-name" id="student-name" /&gt; &lt;!-- type="text": one-line text; id matches the label's for --&gt;
+          &lt;/div&gt; &lt;!-- end of .info --&gt;
+          &lt;div class="info"&gt; &lt;!-- one row: a label and its input --&gt;
+            &lt;label for="student-email"&gt;Email:&lt;/label&gt; &lt;!-- label tied to the email input --&gt;
+            &lt;input type="email" name="student-email" id="student-email" /&gt; &lt;!-- type="email": built-in email validation --&gt;
+          &lt;/div&gt; &lt;!-- end of .info --&gt;
+          &lt;div class="info"&gt; &lt;!-- one row: a label and its input --&gt;
+            &lt;label for="birth-date"&gt;Date of Birth:&lt;/label&gt; &lt;!-- label tied to the date input --&gt;
+            &lt;input type="date" name="birth-date" id="birth-date" /&gt; &lt;!-- type="date": shows a date picker --&gt;
+          &lt;/div&gt; &lt;!-- end of .info --&gt;
+        &lt;/section&gt; &lt;!-- end of section --&gt;
+        &lt;section role="region" aria-labelledby="html-questions"&gt; &lt;!-- region landmark named by the h2 with id="html-questions" --&gt;
+          &lt;h2 id="html-questions"&gt;HTML&lt;/h2&gt; &lt;!-- section heading with its own id --&gt;
+          &lt;div class="question-block"&gt; &lt;!-- wrapper for one question --&gt;
+            &lt;h3&gt;&lt;span class="sr-only"&gt;Question&lt;/span&gt;1&lt;/h3&gt; &lt;!-- sr-only text is spoken by screen readers; the CSS ::before adds the visible "Question #" --&gt;
+            &lt;fieldset class="question" name="html-question-one"&gt; &lt;!-- fieldset groups the radio buttons of one question --&gt;
+              &lt;legend&gt; &lt;!-- caption for the fieldset (text on the next lines) --&gt;
+                The legend element represents a caption for the content of its &lt;!-- question text for question 1 (line 1) --&gt;
+                parent fieldset element &lt;!-- question text for question 1 (line 2) --&gt;
+              &lt;/legend&gt; &lt;!-- end of legend --&gt;
+              &lt;ul class="answers-list"&gt; &lt;!-- list of the answer choices --&gt;
+                &lt;li&gt; &lt;!-- one answer choice --&gt;
+                  &lt;label for="q1-a1"&gt; &lt;!-- label wraps its input AND uses for=, so clicking the text picks the radio --&gt;
+                    &lt;input type="radio" id="q1-a1" name="q1" value="true" /&gt; &lt;!-- radio: same name = only one can be picked; value is what gets sent --&gt;
+                    True &lt;!-- visible answer text --&gt;
+                  &lt;/label&gt; &lt;!-- end of label --&gt;
+                &lt;/li&gt; &lt;!-- end of li --&gt;
+                &lt;li&gt; &lt;!-- one answer choice --&gt;
+                  &lt;label for="q1-a2"&gt; &lt;!-- label for the second answer --&gt;
+                    &lt;input type="radio" id="q1-a2" name="q1" value="false" /&gt; &lt;!-- second radio in the same q1 group --&gt;
+                    False &lt;!-- visible answer text --&gt;
+                  &lt;/label&gt; &lt;!-- end of label --&gt;
+                &lt;/li&gt; &lt;!-- end of li --&gt;
+              &lt;/ul&gt; &lt;!-- end of .answers-list --&gt;
+            &lt;/fieldset&gt; &lt;!-- end of .question --&gt;
+          &lt;/div&gt; &lt;!-- end of .question-block --&gt;
+          &lt;div class="question-block"&gt; &lt;!-- wrapper for one question --&gt;
+            &lt;h3&gt;&lt;span class="sr-only"&gt;Question&lt;/span&gt;2&lt;/h3&gt; &lt;!-- same pattern for question 2 --&gt;
+            &lt;fieldset class="question" name="html-question-two"&gt; &lt;!-- fieldset for question 2 --&gt;
+              &lt;legend&gt; &lt;!-- caption for the fieldset (text on the next lines) --&gt;
+                A label element nesting an input element is required to have a &lt;!-- question text for question 2 (line 1) --&gt;
+                for attribute with the same value as the input's id &lt;!-- question text for question 2 (line 2) --&gt;
+              &lt;/legend&gt; &lt;!-- end of legend --&gt;
+              &lt;ul class="answers-list"&gt; &lt;!-- list of the answer choices --&gt;
+                &lt;li&gt; &lt;!-- one answer choice --&gt;
+                  &lt;label for="q2-a1"&gt; &lt;!-- label for question 2, answer 1 --&gt;
+                    &lt;input type="radio" id="q2-a1" name="q2" value="true" /&gt; &lt;!-- radio for question 2 (group name q2) --&gt;
+                    True &lt;!-- visible answer text --&gt;
+                  &lt;/label&gt; &lt;!-- end of label --&gt;
+                &lt;/li&gt; &lt;!-- end of li --&gt;
+                &lt;li&gt; &lt;!-- one answer choice --&gt;
+                  &lt;label for="q2-a2"&gt; &lt;!-- label for question 2, answer 2 --&gt;
+                    &lt;input type="radio" id="q2-a2" name="q2" value="false" /&gt; &lt;!-- second radio in the q2 group --&gt;
+                    False &lt;!-- visible answer text --&gt;
+                  &lt;/label&gt; &lt;!-- end of label --&gt;
+                &lt;/li&gt; &lt;!-- end of li --&gt;
+              &lt;/ul&gt; &lt;!-- end of .answers-list --&gt;
+            &lt;/fieldset&gt; &lt;!-- end of .question --&gt;
+          &lt;/div&gt; &lt;!-- end of .question-block --&gt;
+        &lt;/section&gt; &lt;!-- end of section --&gt;
+        &lt;section role="region" aria-labelledby="css-questions"&gt; &lt;!-- region landmark named by the h2 with id="css-questions" --&gt;
+          &lt;h2 id="css-questions"&gt;CSS&lt;/h2&gt; &lt;!-- section heading with its own id --&gt;
+          &lt;div class="formrow"&gt; &lt;!-- wrapper for the two CSS-section fields --&gt;
+            &lt;div class="question-block"&gt; &lt;!-- wrapper for one question --&gt;
+              &lt;label for="selector"&gt;Can the CSS margin property accept negative values?&lt;/label&gt; &lt;!-- the question, as a label for the dropdown --&gt;
+            &lt;/div&gt; &lt;!-- end of .question-block --&gt;
+            &lt;div class="answer"&gt; &lt;!-- wrapper for the answer field --&gt;
+              &lt;select name="selector" id="selector" required&gt; &lt;!-- dropdown; required means it must be filled in before submitting --&gt;
+                &lt;option value=""&gt;Select an option&lt;/option&gt; &lt;!-- empty value = the placeholder choice --&gt;
+                &lt;option value="yes"&gt;Yes&lt;/option&gt; &lt;!-- choice; value is what gets sent --&gt;
+                &lt;option value="no"&gt;No&lt;/option&gt; &lt;!-- choice; value is what gets sent --&gt;
+              &lt;/select&gt; &lt;!-- end of #selector --&gt;
+            &lt;/div&gt; &lt;!-- end of .answer --&gt;
+            &lt;div class="question-block"&gt; &lt;!-- wrapper for one question --&gt;
+              &lt;label for="css-textarea"&gt;Do you have any questions:&lt;/label&gt; &lt;!-- label tied to the textarea --&gt;
+            &lt;/div&gt; &lt;!-- end of .question-block --&gt;
+            &lt;div class="answer"&gt; &lt;!-- wrapper for the answer field --&gt;
+              &lt;textarea id="css-textarea" name="css-questions" rows="5" cols="24"&gt;&lt;/textarea&gt; &lt;!-- multi-line box; rows and cols set its starting size --&gt;
+            &lt;/div&gt; &lt;!-- end of .answer --&gt;
+          &lt;/div&gt; &lt;!-- end of .formrow --&gt;
+        &lt;/section&gt; &lt;!-- end of section --&gt;
+        &lt;button type="submit"&gt;Send&lt;/button&gt; &lt;!-- sends the form --&gt;
+      &lt;/form&gt; &lt;!-- end of form --&gt;
+    &lt;/main&gt; &lt;!-- end of main --&gt;
+    &lt;footer&gt; &lt;!-- bottom of the page --&gt;
+      &lt;address&gt; &lt;!-- contact info element --&gt;
+        &lt;a href="https://freecodecamp.org"&gt;freeCodeCamp&lt;/a&gt;&lt;br /&gt; &lt;!-- link + br (line break) --&gt;
+        San Francisco&lt;br /&gt; &lt;!-- address line + line break --&gt;
+        California&lt;br /&gt; &lt;!-- address line + line break --&gt;
+        USA &lt;!-- last address line --&gt;
+      &lt;/address&gt; &lt;!-- end of a --&gt;
+    &lt;/footer&gt; &lt;!-- end of address --&gt;
+  &lt;/body&gt; &lt;!-- end of footer --&gt;
+&lt;/html&gt; &lt;!-- end of body --&gt;
+</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>@media (prefers-reduced-motion: no-preference) { /* media query: runs only if the visitor has NOT asked their system to reduce motion */
+  * { /* universal selector: matches every element */
+    scroll-behavior: smooth; /* anchor jumps (like the nav links) glide instead of snapping */
+  }
+}
+
+body { /* the whole page */
+  background: #f5f6f7; /* light gray page background */
+  color: #1b1b32; /* dark navy text */
+  font-family: Helvetica; /* Helvetica for body text */
+  margin: 0; /* removes the default page margin */
+}
+
+header { /* the top bar */
+  width: 100%; /* full width of the parent */
+  height: 50px; /* fixed height */
+  background-color: #1b1b32; /* dark navy */
+  display: flex; /* makes it a flex container */
+  justify-content: space-between; /* pushes the first and last items to opposite edges */
+  align-items: center; /* centers the items vertically */
+  top: 0; /* does nothing here: top only works on positioned elements and no position is set */
+}
+
+#logo { /* id selector: the element with id="logo" */
+  width: max(10rem, 18vw); /* max() picks the bigger value: at least 10rem, or 18% of the viewport width */
+  background-color: #0a0a23; /* darker navy behind the logo */
+  aspect-ratio: 35 / 4; /* keeps width : height at 35 to 4, so the height follows the width */
+  padding: 0.4rem; /* space around the logo */
+}
+
+h1 { /* the page heading */
+  color: #f1be32; /* gold */
+  font-size: min(5vw, 1.2em); /* min() picks the smaller value: 5% of the viewport width, never more than 1.2em */
+  text-align: center; /* centers the text */
+}
+
+nav { /* the navigation */
+  width: 50%; /* half the width of the parent */
+  max-width: 300px; /* never wider than 300px */
+  height: 50px; /* fixed height */
+}
+
+nav &gt; ul { /* child combinator: only the ul directly inside nav */
+  display: flex; /* makes it a flex container */
+  justify-content: space-evenly; /* equal space around every item */
+  flex-wrap: wrap; /* items drop to a new row when they run out of room */
+  align-items: center; /* centers the items vertically */
+  padding-inline-start: 0; /* removes the list's default left indent (logical property: the start side) */
+  margin-block: 0; /* removes the top and bottom margin (logical property) */
+  height: 100%; /* as tall as the nav */
+}
+
+nav &gt; ul &gt; li { /* child combinators: li directly inside that ul */
+  color: #dfdfe2; /* light gray text */
+  margin: 0 0.2rem; /* 0 top/bottom, 0.2rem left/right */
+  padding: 0.2rem; /* a little space inside each link area */
+  display: block; /* block-level box (takes the full width available) */
+}
+
+nav &gt; ul &gt; li:hover { /* :hover pseudo-class: applies while the mouse is over the li */
+  background-color: #dfdfe2; /* light gray */
+  color: #1b1b32; /* dark navy text */
+  cursor: pointer; /* hand cursor */
+}
+
+li &gt; a { /* child combinator: links directly inside an li */
+  color: inherit; /* links take the color of their parent instead of default blue */
+  text-decoration: none; /* removes the underline */
+}
+
+main { /* the main content */
+  padding-top: 50px; /* room at the top (the same as the header height) */
+}
+
+section { /* every section */
+  width: 80%; /* 80% of the parent width */
+  margin: 0 auto 10px auto; /* four values clockwise: top 0, right auto, bottom 10px, left auto */
+  max-width: 600px; /* never wider than 600px */
+}
+
+h1, /* selector list: h1 and h2 share the next rule */
+h2 { /* second selector in the list: h1 and h2 share this rule */
+  font-family: Verdana, Tahoma; /* font stack: tries Verdana, then Tahoma */
+}
+
+h2 { /* the section headings */
+  border-bottom: 4px solid #dfdfe2; /* light gray line under the heading */
+  margin-top: 0px; /* no space above */
+  padding-top: 60px; /* space above the heading */
+}
+
+.info { /* a label + input row */
+  padding: 10px 0 0 5px; /* four values clockwise: top 10px, right 0, bottom 0, left 5px */
+}
+
+.formrow { /* wrapper for the CSS-section fields */
+  margin-top: 30px; /* space above */
+  padding: 0px 15px; /* 0 top/bottom, 15px left/right */
+}
+
+input { /* every input */
+  font-size: 1rem; /* 1 x the root font size */
+}
+
+.info label, .info input { /* selector list of two descendant selectors */
+  display: inline-block; /* sits in line with its neighbors but accepts width and height */
+}
+
+.info input { /* inputs inside .info */
+  width: 50%; /* half the width of the parent */
+  text-align: left; /* text starts on the left */
+}
+
+.info label { /* labels inside .info */
+  width: 10%; /* 10% of the parent width */
+  min-width: 55px; /* never narrower than 55px */
+  text-align: right; /* pushes the label text against the input */
+}
+
+.question-block { /* wrapper for one question */
+  text-align: left; /* text starts on the left */
+  display: block; /* block-level box (takes the full width available) */
+  width: 100%; /* full width of the parent */
+  margin-top: 20px; /* space above */
+  padding-top: 5px; /* a little space inside the top */
+}
+
+h3 { /* the question numbers */
+  margin-top: 5px; /* small space above */
+  padding-left: 15px; /* indents the number */
+  font-size: 1.375rem; /* 22px at the default root size */
+}
+
+h3::before { /* pseudo-element: generated content placed before the h3 text */
+  content: "Question #"; /* the text that appears before the question number */
+}
+
+.question { /* the fieldset around a question */
+  border: none; /* removes the default fieldset border */
+  padding-bottom: 0; /* no space inside the bottom */
+}
+
+.answers-list { /* the answer lists */
+  list-style: none; /* removes the bullets */
+  padding: 0; /* resets the default list indent */
+}
+
+button { /* the Send button */
+  display: block; /* block-level box (takes the full width available) */
+  margin: 40px auto; /* 40px top/bottom; auto left/right centers the block button */
+  width: 40%; /* 40% of the parent width */
+  padding: 15px; /* space inside the button */
+  font-size: 1.438rem; /* about 23px at the default root size */
+  background: #d0d0d5; /* light gray button */
+  border: 3px solid #3b3b4f; /* border shorthand: width, style, color */
+}
+
+footer { /* the bottom bar */
+  background-color: #2a2a40; /* dark navy */
+  display: flex; /* makes it a flex container */
+  justify-content: center; /* centers the items horizontally */
+}
+
+footer, /* selector list: footer and footer links share the next rule */
+footer a { /* second selector in the list: footer and its links share this rule */
+  color: #dfdfe2; /* light gray text */
+}
+
+address { /* the address block */
+  text-align: center; /* centers the text */
+  padding: 0.3em; /* a little space inside */
+}
+
+.sr-only { /* screen-reader-only: hidden visually but still read aloud by assistive tech */
+  position: absolute; /* takes it out of the normal flow */
+  width: 1px; /* shrunk to 1px */
+  height: 1px; /* shrunk to 1px */
+  overflow: hidden; /* cuts off anything bigger than the box */
+  clip: rect(0, 0, 0, 0); /* old way to clip the box down to nothing */
+  clip-path: inset(50%); /* modern way to clip it away */
+  white-space: nowrap; /* stops the text wrapping onto extra lines */
+}
+</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/legacy-rwd-v8/accessibility-quiz/" title="Learn Accessibility by Building a Quiz preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/legacy-rwd-v8/accessibility-quiz/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design-v9/tree/main/legacy-rwd-v8/accessibility-quiz" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Build a Tribute Page -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">legacy cert project</span>
+        <span class="project-name">Build a Tribute Page</span>
+        <span class="project-stack">html</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Concepts Learned</span><span class="meta-val">HTML: main · h1 · figure · figcaption · img · src · alt · section · p · a · href · target="_blank" · id · style element · CSS: id selector · display: block · max-width: 100% · height: auto · margin: 0 auto</span></div>
+        </div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt; &lt;!-- tells the browser this is modern HTML5 --&gt;
+&lt;html lang="en"&gt; &lt;!-- root element; lang="en" says the page is in English --&gt;
+&lt;head&gt; &lt;!-- page info that is not displayed --&gt;
+&lt;meta charset="UTF-8"&gt; &lt;!-- character encoding so symbols render right --&gt;
+&lt;style&gt; &lt;!-- CSS written right in the page (an internal stylesheet) --&gt;
+#image { /* id selector: the element with id="image" */
+  display: block; /* makes the image a block so margin auto can center it */
+  max-width: 100%; /* never wider than its container */
+  height: auto; /* keeps the picture's proportions when the width shrinks */
+  margin: 0 auto; /* 0 top/bottom; auto left/right centers it */
+}
+&lt;/style&gt; &lt;!-- end of style --&gt;
+&lt;/head&gt; &lt;!-- end of head --&gt;
+&lt;body&gt; &lt;!-- everything visible lives in here --&gt;
+&lt;main id="main"&gt; &lt;!-- main landmark; the id is required by the project --&gt;
+  &lt;h1 id="title"&gt;Chris&lt;/h1&gt; &lt;!-- the page title; required id="title" --&gt;
+  &lt;figure id="img-div"&gt; &lt;!-- figure wraps the image and its caption; required id --&gt;
+    &lt;img id="image" src="chris.jpg" alt="a photo of Chris"&gt; &lt;!-- the photo; id="image" is required; alt describes it for screen readers --&gt;
+    &lt;figcaption id="img-caption"&gt;Chris — music in his ears, a cat in his lap.&lt;/figcaption&gt; &lt;!-- caption for the figure; required id --&gt;
+  &lt;/figure&gt; &lt;!-- end of #img-div --&gt;
+  &lt;section id="tribute-info"&gt; &lt;!-- the tribute text; required id --&gt;
+    &lt;p&gt;Chris loved music the way few people do — not as background noise, but as a whole language.&lt;/p&gt; &lt;!-- paragraph --&gt;
+    &lt;p&gt;He loved cats just as fiercely — quiet, stubborn, loyal. it's why they still show up in everything I build.&lt;/p&gt; &lt;!-- paragraph --&gt;
+    &lt;p&gt;And he loved me. he believed in this before I did. every set and every line of code carries a little of him.&lt;/p&gt; &lt;!-- paragraph --&gt;
+  &lt;/section&gt; &lt;!-- end of #tribute-info --&gt;
+  &lt;a id="tribute-link" href="https://twitch.tv/guerz" target="_blank"&gt;the music keeps going — {decompress}&lt;/a&gt; &lt;!-- link; target="_blank" opens a new tab; required id --&gt;
+&lt;/main&gt; &lt;!-- end of #main --&gt;
+&lt;/body&gt; &lt;!-- end of body --&gt;
+&lt;/html&gt; &lt;!-- end of html --&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/legacy-rwd-v8/tribute-page/" title="Build a Tribute Page preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/legacy-rwd-v8/tribute-page/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design-v9/tree/main/legacy-rwd-v8/tribute-page" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
     <div class="archive-row"> <!-- not built yet: Learn More About CSS Pseudo Selectors by Building A Balance Sheet -->
       <span class="archive-check">☐</span> <!-- empty box = still to do -->
       <span class="archive-name">Learn More About CSS Pseudo Selectors by Building A Balance Sheet</span> <!-- fCC's exact title -->
