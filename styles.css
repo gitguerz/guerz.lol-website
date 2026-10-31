@@ -746,6 +746,13 @@ main:focus { outline: none; }
 /* the hero story titles are now real <h2> headings; a global rule zeroes h2.card-title margins,
    so give back the margin they had as <p class="card-title"> */
 .card--hero h2.card-title { margin: .4em 0; }            /* the .4em they got from `.card p` as <p> titles */
+.card-title--poem {                                     /* homepage hero poem only: smaller so it fits phone and desktop */
+  font: 900 clamp(24px, 7.6vw, 41px)/.92 'Recursive', sans-serif; /* 24px phone floor, 41px desktop cap; line-height .92 as before */
+}
+.card > p.degree-line.degree-line--compact {            /* homepage hero's three weekly lines: a notch smaller than the shared 2rem */
+  font: 700 1.7rem/normal 'Space Grotesk', sans-serif;  /* bold 27px instead of 32px */
+  margin: .2em 0 .15em;                                 /* tighter top spacing to match */
+}
 
 /* ---------- SLIM COLUMN (homepage: Full Sail box, peach box, welcome box, foundations + vibes row, guerzbook) ---------- */
 .card--slim, .row--slim {   /* the boxes that share the narrower column */
@@ -983,8 +990,9 @@ html[data-theme="night"] .page-toolshed {         /* night-mode tokens, still th
   --tl-mark-edge: #3a2b22;                          /* ...with a dark edge so it stands apart from the peaches */
 }
 html[data-theme="night"] .card--timeline {         /* night mode re-tints the same five steps */
-  --tl-0: #2d2739;                                  /* night: empty day, a hair lighter than the card */
-  --tl-1: #5a4254;                                  /* night: palest */
+  background: #2e2740;                              /* night: a lifted plum, so the card stands off the dark page instead of blending into it */
+  --tl-0: #403858;                                  /* night: empty day, lighter than the lifted card so the empty boxes still show */
+  --tl-1: #6e4d63;                                  /* night: palest, nudged up so it still reads against the lighter empty boxes */
   --tl-2: #a8634a;                                  /* night: middle */
   --tl-3: #e08a5a;                                  /* night: bright */
   --tl-4: #ffc79e;                                  /* night: brightest */

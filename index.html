@@ -44,9 +44,9 @@
   <nav class="nav" aria-label="primary">
     <a href="about.html">{about}</a>
     <a href="updates.html">{updates}</a>
+    <a href="playbooks.html">{playbooks}</a> <!-- moved: playbooks now sits right after updates -->
     <a href="fcc-build-archive.html">{fcc build archive}</a>
     <a href="sandbox.html">{sandbox}</a>
-    <a href="playbooks.html">{playbooks}</a> <!-- moved: playbooks now sits between sandbox and toolshed -->
     <a href="toolshed.html">{toolshed}</a>
     <a href="https://blogguerz.wordpress.com" target="_blank" rel="noopener noreferrer">{blogguerz}</a>
   </nav>
@@ -78,80 +78,60 @@
     <span class="avatar-frame"><img class="avatar" id="avatar-img" src="favicon-peach.png" alt="guerz avatar"></span>
   </div>
 
-  <!-- ===== box 2 of 3: the turn + day one — lavender, peach border ===== -->
-  <div class="card card--peach card--bg-lavender card--hero card--slim"> <!-- card--slim: same 900px centered column as the molt box below -->
-    <!-- beat 2 — the turn -->
-    <!-- the title, three lines; each <br> starts the next line -->
-    <div class="title-wrap title-wrap--center"><h2 class="card-title">progressing,
-      <br>consistency;
-      <br>no falter nearest.
-      <br></h2></div>
+  <!-- ===== the poem — peach, lavender border (its own box now) ===== -->
+  <div class="card card--lavender card--bg-peach card--hero card--slim"> <!-- card--slim: shares the 900px centered column -->
+    <!-- the poem, four lines; each <br> starts the next line -->
+    <div class="title-wrap title-wrap--center"><h2 class="card-title card-title--poem">both playbooks progress,
+      <br>code. build. document.
+      <br>steadfast and deliberate.
+      <br>less hazily ; more forward.</h2></div> <!-- card-title--poem: the smaller poem size lives in styles.css, so other pages' titles keep theirs; the old <p> inside the h2 became <br>s (a <p> can't live inside a heading) -->
+  </div> <!-- end of the poem box -->
+
+  <!-- ===== Full Sail + weekly info — lavender, peach border ===== -->
+  <div class="card card--peach card--bg-lavender card--hero card--slim"> <!-- same 900px centered column -->
 
       <!-- the Full Sail bar: <br> puts "Month 2 of 27" on its own line; &nbsp; = a space that never breaks, so "Class 2" and "Month 2 of 27" each stay in one piece -->
-    <h3 class="dayone-head"><span class="fs-bar"><a href="https://www.fullsail.edu/" target="_blank" rel="noopener noreferrer">Full Sail University</a> —&nbsp;Class&nbsp;2 - TEM;<br>Month&nbsp;2&nbsp;of&nbsp;27</span></h3>
-    <p class="degree-line"><time datetime="2026-10-26">2026-10-26</time> — <time datetime="2026-11-01">2026-11-01</time></p> <!-- update weekly -->
+    <h3 class="dayone-head"><span class="fs-bar"><a href="https://www.fullsail.edu/" target="_blank" rel="noopener noreferrer">Full Sail University</a> 
+      <br>Web Development B.S.</span></h3> <!-- fixed: the broken "<brOnline" tag is gone, so the span and h3 close properly -->
+    <!-- update weekly -->
     <!-- the weekly subject; update it weekly along with the bar and dates; same degree-line look, no new CSS -->
-    <p class="degree-line">Technology and the Entertainment and Music Industries (TEM 1001-O 19)</p>
-    <!-- .degree-line keeps these at 32px (styles.css) -->
-
-    <p class="degree-line"><strong>— Web Development&#8288;— </strong> <!-- &#8288; = word joiner: keeps the trailing dash glued to "Development" -->
-      <br>— Bachelor of Science&nbsp;—</p>
-
-    <p class="lead-line">• TWENTY-SEVEN MONTHS STRAIGHT •</p>
-    <p class="lead-line">• Online • Accelerated&nbsp;•</p> <!-- same plain bookend bullets as the line above; &nbsp; glues the last bullet to "Accelerated" so it can't wrap onto a line by itself -->
+    <!-- degree-line--compact: the smaller 1.7rem version (styles.css); plain .degree-line stays 2rem for updates.html -->
+    <p class="degree-line degree-line--compact">Technology and the Entertainment and Music Industries 
+      <br><em>[TEM 1001-O 19]</em></p>
+    <p class="degree-line degree-line--compact">Class 2; Month 2 of 27</p>
+    <p class="degree-line degree-line--compact">October 26th — November 1st</p> <!-- removed the stray </time> (no <time> was opened) -->
+    <!-- removed the empty <p><strong> </strong> line and its leftover &#8288; comment -->
 
   </div>
 
   
-  <!-- ===== box 3 of 3: the rise — peach, lavender border ===== -->
-  <div class="card card--lavender card--bg-peach card--hero card--slim"> <!-- card--slim: shares the 900px centered column -->
-    <!-- beat 3 — the rise. the wrapper div matters: without it, the `.card > p` rule
-         (18px paragraph font) outranks .card-title and shrinks this to paragraph size -->
-    <div class="title-wrap title-wrap--center"><h2 class="card-title">molt; phoenix down.
-      <br>rise up. begin anew.</h2></div>
-    
-    <p class="stanza">This now marks the beginnings
-      <br>of my <a href="playbooks/fullsail-playbook.html"><strong>Full Sail Playbook</strong></a>!!</p>
-
-    <p class="stanza">And, boi, I better, chop, chop, 
-      <br>and start gettin' after it,
-      <br>cuz i still got my ongoing 
-      <br><a href="playbooks/web-dev-playbook.html"><strong>freeCodeCamp Playbook</strong>!!</a></p>
-
-        <p class="stanza">There is SOO much more ahead, 
-          <br>and I just simply cannot WAIT!!</p>
-
-    <p><em>Liner Note:</em> I appreciate any and everyone of you who stuck with me and those who still continue to this day. Cuz for a while there,
-      too long, I was not ever here for me. &lt;3</p>
-  </div>
-
   <!-- ===== card two: the welcome blurb + current phase/lane ===== -->
-  <div class="card card--peach card--bg-lavender card--slim"> <!-- card--slim: shares the 900px centered column -->
+  <div class="card card--lavender card--bg-peach card--slim"> <!-- peach box, lavender border/shadow; card--slim: shares the 900px centered column -->
     <div class="card-body">
       <h2>welcome to <b>GUERZ's</b> corner of the world wide web!</h2>
       
-      <p>my online gravity blanket fort for learning in public!</p>
+      <p>this is my cyber gravity blanket fort, dedicated to learning in public, and sharing my journey with the world, flaws and all. this is where i log and document my progress towards becoming a <strong>Full-Stack Web Developer</strong>.</p>
       
-      <p>this is a space to log and document my progress towards a full-stack web developer.</p>
+      <p>follow along as i navigate both of my self-designed <a href="playbooks.html">Playbooks</a> focused on:</p> <!-- closed here: an <ol> can't live inside a <p>, and the browser would have split it anyway, leaving an empty <p> below -->
+        <ol>
+          <li><a href="https://freecodecamp.org">freeCodeCamp</a>'s Certified Full-Stack Developer Curriculum, having already attained the <a href="https://www.freecodecamp.org/learn/responsive-web-design-v9/">Responsive Web Design Cert.</a>, and now currently starting the curriculum for the <a href="https://www.freecodecamp.org/learn/javascript-v9/">JavaScript Cert.</a></li>
+          <li><a href="https://catalog.fullsail.edu/degrees/web-development-bachelor-of-science/online">Full Sail University Web Development B.S.</a>, all-online classes at an accelerated pace</li>
+        </ol>
       
-      <p>follow along as the journey unfolds navigating my self-designed playbook rooted in <a href="https://freecodecamp.org">freeCodeCamp</a>'s Responsive Web Design curriculum, then forks from there — plus whatever neat little reinforcement loops i happen upon that will help the code click.</p>
-      
-      <p>that said, what you see is mostly representative of where i am at in my studies plus built with the slight help of Bonabelle (Claude) to get the <a href="#guerzbook">GuerzBook</a> operable, as well as adding in the builds to <a href="fcc-build-archive.html">FCC Build Archive</a> & <a href="sandbox.html">Sandbox</a>.</p>
+      <p>what you see throughout this site is mostly representative of what i have accomplished as well as where i am at in my studies and adjacent endeavors.</p>
+      <p>all webpages self-constructed with some assistance by Bonnabelle (name i call Claude), especially to get the <a href="#guerzbook">GuerzBook</a> operable and adding in the builds to <a href="fcc-build-archive.html">FCC Build Archive</a>, <a href="sandbox.html">Sandbox</a>, & <a href="toolshed.html">Toolshed</a>, and also to run WCAG and a11y checks site-wide.</p>
     </div>
 
-    <div class="row row--lanes">
-      <div class="lane">
+    <div class="row row--lanes"> <!-- one lane now; the row keeps its spacing under the paragraphs -->
+      <div class="lane lane--lavender"> <!-- lavender stripe, so it shows on the peach box -->
         <div class="card-eyebrow card-eyebrow--ink">current phase</div>
-        <!-- draft wording (Guerz will revise): Full Sail first, the fCC exam on the next line -->
-        <!-- &nbsp;s glue "Month 1 of 27" into one unit, so it never splits as "Month 1" / "of 27" -->
-        <div class="card-body">Full Sail University: Web Development B.S. — Month&nbsp;1&nbsp;of&nbsp;27
-          <p><a href="https://freecodecamp.org">fCC</a> RWD v9 Certification Exam — when it's earned; not when scheduled</p></div>
-      </div>
-      <div class="lane">
-        <div class="card-eyebrow card-eyebrow--ink">current lane</div>
-        <!-- draft wording (Guerz will revise): Full Sail is the main focus; the fCC exam moves to the support lanes -->
-        <div class="card-body"><strong>main focus:</strong> Full Sail University
-          <p><strong>support lanes:</strong> <a href="https://freecodecamp.org/">fCC</a> RWD v9 Cert Exam, <a href="fcc-build-archive.html">fCC Build Archive</a>, <a href="https://www.frontendmentor.io/">Frontend Mentor</a></p></div> <!-- link text now "fCC Build Archive" to match the "fCC" before it; href unchanged -->
+        <div class="card-body">
+          <ul>
+            <li>Full Sail University: Web Development B.S. — Class 2; Month 2 of 27</li> <!-- update weekly with the hero box -->
+            <li><a href="https://www.freecodecamp.org/learn/javascript-v9/">freeCodeCamp JavaScript Curriculum</a></li>
+            <li><strong>Support Lanes:</strong> <a href="https://mimo.org/">Mimo</a>, <a href="https://coddy.tech/">Coddy</a>, &amp; <a href="https://learnencode.com/">Encode</a></li> <!-- moved here from the old "current lane" box; fixed the "Coddy." period and the unclosed <ul>/<li> -->
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -178,7 +158,7 @@
       <span class="tl-day"></span>
       <span class="tl-day"></span>
       <span class="tl-day"></span>
-      <span class="tl-day"></span>
+      <span class="tl-day tl-day--mark" title="2026-05-11 · milestone"></span>
       <span class="tl-day"></span>
       <span class="tl-day"></span>
       <span class="tl-day"></span>
@@ -365,6 +345,7 @@
     <p class="tl-note">one box per day, 2026-05-06 to 2026-10-31, shaded by commits to guerz.lol and the builds repo (178 so far).</p>
     <ol class="tl-list">
     <li class="tl-item"><time datetime="2026-05-06">2026-05-06</time><span>Started freeCodeCamp.</span></li>
+    <li class="tl-item"><time datetime="2026-05-11">2026-05-11</time><span>First blogguerz post.</span></li>
     <li class="tl-item"><time datetime="2026-06-10">2026-06-10</time><span>First commit on guerz.lol.</span></li>
     <li class="tl-item tl-item--cert"><time datetime="2026-07-25">2026-07-25</time><span>Earned the Legacy Responsive Web Design (V8) certification, from its certification projects. <a href="https://www.freecodecamp.org/certification/freecodeguerz/responsive-web-design" target="_blank" rel="noopener noreferrer">verify</a></span></li>
     <li class="tl-item"><time datetime="2026-07-27">2026-07-27</time><span>First commit to the builds repo.</span></li>
@@ -376,26 +357,14 @@
     </ol>
   </div>
 
-  <div class="row row--slim"> <!-- row--slim: foundations + vibes share the 900px centered column -->
-    <!-- card--foundations: lets its line list stretch to fill the height it gets from sitting beside the vibes box -->
-    <div class="card card--lavender card--bg-peach card--foundations">
-      <h2 class="card-eyebrow card-eyebrow--ink">foundations</h2>
-      <div class="foundations-list">
-        <p><b>STAY THE COURSE</b> | believe what you put forth.</p>
-        <p><b>SHIP WHAT COUNTS</b> | projects with purpose.</p>
-        <p><strong>LEARN IN PUBLIC</strong> | the pride of process.</p>
-        
-      </div>
-    </div>
-    <!-- callout--bg-lavender = lavender box with a peach drop shadow (the foundations card next to it stays peach) -->
-    <div class="callout callout--bg-lavender">
-      <h2 class="callout-title">guerz.lol vibes</h2>
-      <div class="card-body">
-      <p>warm, livejournal-y2k looks.</p>
-      <p>lil crafty internet-heirloom.</p> 
-      <p>less of a sterile portfolio;</p>
-      <p>more of a humble domicile.</p>
-      </div>
+  <!-- foundations: now a single slim card (the vibes box was cut) -->
+  <!-- card--foundations: lets its line list stretch to fill the card; card--slim: shares the 900px centered column -->
+  <div class="card card--lavender card--bg-peach card--foundations card--hero card--slim"> <!-- card--hero: the existing "center every line in this card" class (text-align: center), so the title and all three lines center with no new CSS -->
+    <h2 class="card-eyebrow card-eyebrow--ink">foundations</h2>
+    <div class="foundations-list">
+      <p><b>STAY THE COURSE</b> | believe what you put forth.</p>
+      <p><b>SHIP WHAT COUNTS</b> | projects with purpose.</p>
+      <p><strong>LEARN IN PUBLIC</strong> | the pride of process.</p>
     </div>
   </div>
 
@@ -446,9 +415,9 @@
       <a href="index.html">{home}</a>
       <a href="about.html">{about}</a>
       <a href="updates.html">{updates}</a>
+      <a href="playbooks.html">{playbooks}</a> <!-- moved: playbooks now sits right after updates -->
       <a href="fcc-build-archive.html">{fcc build archive}</a>
       <a href="sandbox.html">{sandbox}</a>
-      <a href="playbooks.html">{playbooks}</a> <!-- moved: playbooks now sits between sandbox and toolshed -->
       <a href="toolshed.html">{toolshed}</a>
       <a href="https://blogguerz.wordpress.com" target="_blank" rel="noopener noreferrer">{blogguerz}</a>
     </nav>
