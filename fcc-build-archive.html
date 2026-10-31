@@ -3965,7 +3965,7 @@ span[class~="three"] span {
     <summary>
       <span class="section-caret">▸</span> <!-- turns when the section opens -->
       <span class="section-title">Legacy Responsive Web Design V8</span> <!-- section name -->
-      <span class="section-count">1 built · 20 total · fCC's order</span> <!-- update this count as builds land -->
+      <span class="section-count">6 built · 20 total · fCC's order</span> <!-- update this count as builds land -->
     </summary>
     <div class="section-body">
 <details class="module-group" open> <!-- one group holds the whole V8 list (V8 has no sub-modules) -->
@@ -3973,35 +3973,634 @@ span[class~="three"] span {
       <span class="module-caret">▸</span>
       <span class="module-kicker">V8</span> <!-- small tag before the group name -->
       <span class="module-title">Courses + Certification Projects</span> <!-- group name -->
-      <span class="module-count">20 items · 1 built</span> <!-- update as builds land -->
+      <span class="module-count">20 items · 6 built</span> <!-- update as builds land -->
     </summary>
     <div class="module-body">
     <p class="userinfo-role"><a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" target="_blank" rel="noopener noreferrer">↗ fCC's legacy Responsive Web Design (V8) curriculum</a></p> <!-- link to the curriculum itself -->
-    <div class="archive-row"> <!-- not built yet: Learn HTML by Building a Cat Photo App -->
-      <span class="archive-check">☐</span> <!-- empty box = still to do -->
-      <span class="archive-name">Learn HTML by Building a Cat Photo App</span> <!-- fCC's exact title -->
-      <span class="archive-type">course</span> <!-- course or cert project -->
-    </div>
-    <div class="archive-row"> <!-- not built yet: Learn Basic CSS by Building a Cafe Menu -->
-      <span class="archive-check">☐</span> <!-- empty box = still to do -->
-      <span class="archive-name">Learn Basic CSS by Building a Cafe Menu</span> <!-- fCC's exact title -->
-      <span class="archive-type">course</span> <!-- course or cert project -->
-    </div>
-    <div class="archive-row"> <!-- not built yet: Learn CSS Colors by Building a Set of Colored Markers -->
-      <span class="archive-check">☐</span> <!-- empty box = still to do -->
-      <span class="archive-name">Learn CSS Colors by Building a Set of Colored Markers</span> <!-- fCC's exact title -->
-      <span class="archive-type">course</span> <!-- course or cert project -->
-    </div>
-    <div class="archive-row"> <!-- not built yet: Learn HTML Forms by Building a Registration Form -->
-      <span class="archive-check">☐</span> <!-- empty box = still to do -->
-      <span class="archive-name">Learn HTML Forms by Building a Registration Form</span> <!-- fCC's exact title -->
-      <span class="archive-type">course</span> <!-- course or cert project -->
-    </div>
-    <div class="archive-row archive-row--cert"> <!-- not built yet: Build a Survey Form -->
-      <span class="archive-check">☐</span> <!-- empty box = still to do -->
-      <span class="archive-name">Build a Survey Form</span> <!-- fCC's exact title -->
-      <span class="archive-type">cert project</span> <!-- course or cert project -->
-    </div>
+    <details class="project-box"> <!-- BUILT: Learn HTML by Building a Cat Photo App -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">legacy rwd v8</span>
+        <span class="project-name">Learn HTML by Building a Cat Photo App</span>
+        <span class="project-stack">html</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Concepts Learned</span><span class="meta-val">h1 · h2 · h3 · p · a · href · target="_blank" · img · src · alt · ul · ol · li · figure · figcaption · em · strong · main · section · form · action · fieldset · legend · input · radio · checkbox · text · name · value · checked · placeholder · required · label · for · id · button · submit</span></div>
+        </div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;html&gt;
+  &lt;body&gt;
+    &lt;main&gt; &lt;!-- main element identifies the main content of the webpage --&gt;
+      &lt;h1&gt;CatPhotoApp&lt;/h1&gt; &lt;!-- h1 element is the main title of the webpage --&gt;
+      &lt;section&gt; &lt;!-- section element groups related content into one section of the page --&gt;
+        &lt;h2&gt;Cat Photos&lt;/h2&gt; &lt;!-- h2 element is a second-level heading, a subheading under the h1 --&gt;
+        &lt;p&gt;Everyone loves &lt;a href="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg"&gt;cute cats&lt;/a&gt; online!&lt;/p&gt; &lt;!-- p element is a paragraph. a (anchor) element makes a link. href attribute is where the link goes. the text between the tags is what you click --&gt;
+        &lt;p&gt;See more &lt;a target="_blank" href="https://freecatphotoapp.com"&gt;cat photos&lt;/a&gt; in our gallery.&lt;/p&gt; &lt;!-- target attribute with the _blank value opens the link in a new tab --&gt;
+        &lt;a href="https://freecatphotoapp.com"&gt;&lt;img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."&gt;&lt;/a&gt; &lt;!-- img element adds an image and has no closing tag. src attribute is where the image file lives. alt attribute is the text description for screen readers and for when the image fails to load. wrapping the img in an anchor element makes the image itself a link --&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;h2&gt;Cat Lists&lt;/h2&gt;
+        &lt;h3&gt;Things cats love:&lt;/h3&gt; &lt;!-- h3 element is a third-level heading, a sub-subheading under an h2 --&gt;
+        &lt;ul&gt; &lt;!-- ul element creates an unordered (bulleted) list --&gt;
+          &lt;li&gt;catnip&lt;/li&gt; &lt;!-- li element is one item in a list --&gt;
+          &lt;li&gt;laser pointers&lt;/li&gt;
+          &lt;li&gt;lasagna&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;figure&gt; &lt;!-- figure element groups an image with its caption --&gt;
+          &lt;img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate."&gt;
+          &lt;figcaption&gt;Cats &lt;em&gt;love&lt;/em&gt; lasagna.&lt;/figcaption&gt; &lt;!-- figcaption element is the caption for the figure. em element adds emphasis (italic) to the word inside --&gt;
+        &lt;/figure&gt;
+        &lt;h3&gt;Top 3 things cats hate:&lt;/h3&gt;
+        &lt;ol&gt; &lt;!-- ol element creates an ordered (numbered) list --&gt;
+          &lt;li&gt;flea treatment&lt;/li&gt;
+          &lt;li&gt;thunder&lt;/li&gt;
+          &lt;li&gt;other cats&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;figure&gt;
+          &lt;img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Two tabby kittens sleeping together on a couch."&gt;
+          &lt;figcaption&gt;Cats &lt;strong&gt;hate&lt;/strong&gt; other cats.&lt;/figcaption&gt; &lt;!-- strong element marks the word inside as strongly important (bold) --&gt;
+        &lt;/figure&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;h2&gt;Cat Form&lt;/h2&gt;
+        &lt;form action="https://freecatphotoapp.com/submit-cat-photo"&gt; &lt;!-- form element collects input from the user. action attribute is the URL the form data is sent to when submitted --&gt;
+          &lt;fieldset&gt; &lt;!-- fieldset element groups related form controls together --&gt;
+            &lt;legend&gt;Is your cat an indoor or outdoor cat?&lt;/legend&gt; &lt;!-- legend element is the title for its fieldset --&gt;
+            &lt;label&gt;&lt;input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked&gt; Indoor&lt;/label&gt; &lt;!-- label element names a form control (here it wraps the input). input element is a form control. type="radio" lets the user pick only one option in a group. name attribute puts radios in the same group. value attribute is what gets sent. id attribute is a unique name for the element. checked attribute selects it by default --&gt;
+            &lt;label&gt;&lt;input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"&gt; Outdoor&lt;/label&gt;
+          &lt;/fieldset&gt;
+          &lt;fieldset&gt;
+            &lt;legend&gt;What's your cat's personality?&lt;/legend&gt;
+            &lt;input id="loving" type="checkbox" name="personality" value="loving" checked&gt; &lt;label for="loving"&gt;Loving&lt;/label&gt; &lt;!-- type="checkbox" lets the user pick any number of options. the label's for attribute matches the input's id, which links them so clicking the label toggles the checkbox --&gt;
+            &lt;input id="lazy" type="checkbox" name="personality" value="lazy"&gt; &lt;label for="lazy"&gt;Lazy&lt;/label&gt;
+            &lt;input id="energetic" type="checkbox" name="personality" value="energetic"&gt; &lt;label for="energetic"&gt; Energetic&lt;/label&gt;
+          &lt;/fieldset&gt;
+          &lt;input type="text" name="catphotourl" placeholder="cat photo URL" required&gt; &lt;!-- type="text" is a single-line text field. placeholder attribute is the hint shown while the field is empty. required attribute blocks submitting until the field is filled --&gt;
+          &lt;button type="submit"&gt;Submit&lt;/button&gt; &lt;!-- button element is a clickable button. type="submit" sends the form --&gt;
+        &lt;/form&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/legacy-rwd-v8/cat-photo-app/" title="Learn HTML by Building a Cat Photo App preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/legacy-rwd-v8/cat-photo-app/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design-v9/tree/main/legacy-rwd-v8/cat-photo-app" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Learn Basic CSS by Building a Cafe Menu -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">legacy rwd v8</span>
+        <span class="project-name">Learn Basic CSS by Building a Cafe Menu</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Concepts Learned</span><span class="meta-val">HTML: link · rel="stylesheet" · class · div · hr · article · footer · viewport meta · CSS: background-image · url() · font-family · font-size · font-style · text-align · width · max-width · background-color · margin · auto margins · padding · display · block · inline-block · height · border-color · comma selectors · class selectors · descendant selectors · a:visited · a:hover · a:active</span></div>
+        </div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt; &lt;!-- tells browsers that the document is an HTML5 document --&gt;
+&lt;html lang="en"&gt; &lt;!-- html element is the root of the page. lang attribute sets the language, en is English --&gt;
+  &lt;head&gt; &lt;!-- head element holds meta information about the page --&gt;
+    &lt;meta charset="utf-8" /&gt; &lt;!-- meta element charset attribute sets the character encoding. utf-8 covers nearly all characters, symbols, and emoji --&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt; &lt;!-- the viewport meta tag controls how the page scales on mobile. width=device-width matches the page width to the screen. initial-scale=1.0 sets the starting zoom --&gt;
+    &lt;title&gt;Cafe Menu&lt;/title&gt; &lt;!-- title element is the text shown in the browser tab --&gt;
+    &lt;link href="styles.css" rel="stylesheet"/&gt; &lt;!-- link element connects an external file. href attribute is the path to the CSS file. rel="stylesheet" says the file is a stylesheet --&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="menu"&gt; &lt;!-- div element is a generic container. class attribute names a group of styles, so the CSS can target .menu --&gt;
+      &lt;main&gt;
+        &lt;h1&gt;CAMPER CAFE&lt;/h1&gt;
+        &lt;p class="established"&gt;Est. 2020&lt;/p&gt;
+        &lt;hr&gt; &lt;!-- hr element draws a horizontal line to separate content --&gt;
+        &lt;section&gt;
+          &lt;h2&gt;Coffee&lt;/h2&gt;
+          &lt;img src="https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg" alt="coffee icon"/&gt;
+          &lt;article class="item"&gt; &lt;!-- article element wraps one self-contained piece of content, here one menu item --&gt;
+            &lt;p class="flavor"&gt;French Vanilla&lt;/p&gt;&lt;p class="price"&gt;3.00&lt;/p&gt;
+          &lt;/article&gt;
+          &lt;article class="item"&gt;
+            &lt;p class="flavor"&gt;Caramel Macchiato&lt;/p&gt;&lt;p class="price"&gt;3.75&lt;/p&gt;
+          &lt;/article&gt;
+          &lt;article class="item"&gt;
+            &lt;p class="flavor"&gt;Pumpkin Spice&lt;/p&gt;&lt;p class="price"&gt;3.50&lt;/p&gt;
+          &lt;/article&gt;
+          &lt;article class="item"&gt;
+            &lt;p class="flavor"&gt;Hazelnut&lt;/p&gt;&lt;p class="price"&gt;4.00&lt;/p&gt;
+          &lt;/article&gt;
+          &lt;article class="item"&gt;
+            &lt;p class="flavor"&gt;Mocha&lt;/p&gt;&lt;p class="price"&gt;4.50&lt;/p&gt;
+          &lt;/article&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+          &lt;h2&gt;Desserts&lt;/h2&gt;
+          &lt;img src="https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg" alt="pie icon"/&gt;
+          &lt;article class="item"&gt;
+            &lt;p class="dessert"&gt;Donut&lt;/p&gt;&lt;p class="price"&gt;1.50&lt;/p&gt;
+          &lt;/article&gt;
+          &lt;article class="item"&gt;
+            &lt;p class="dessert"&gt;Cherry Pie&lt;/p&gt;&lt;p class="price"&gt;2.75&lt;/p&gt;
+          &lt;/article&gt;
+          &lt;article class="item"&gt;
+            &lt;p class="dessert"&gt;Cheesecake&lt;/p&gt;&lt;p class="price"&gt;3.00&lt;/p&gt;
+          &lt;/article&gt;
+          &lt;article class="item"&gt;
+            &lt;p class="dessert"&gt;Cinnamon Roll&lt;/p&gt;&lt;p class="price"&gt;2.50&lt;/p&gt;
+          &lt;/article&gt;
+        &lt;/section&gt;
+      &lt;/main&gt;
+      &lt;hr class="bottom-line"&gt; &lt;!-- a second hr with its own class so the CSS can give it extra top margin --&gt;
+      &lt;footer&gt; &lt;!-- footer element holds closing info for the page, like a link and the address --&gt;
+        &lt;p&gt;
+          &lt;a href="https://www.freecodecamp.org" target="_blank"&gt;Visit our website&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;p class="address"&gt;123 Free Code Camp Drive&lt;/p&gt;
+      &lt;/footer&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>body {
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg); /* background-image property sets an image behind the element. url() function gives the path to the image */
+  font-family: sans-serif; /* font-family property sets the font. sans-serif is a generic family of fonts without small strokes on the letters */
+  padding: 20px; /* padding property adds space inside the element, between its content and its edge */
+}
+
+h1 {
+  font-size: 40px; /* font-size property sets the size of the text. px is a pixel length */
+  margin-top: 0; /* margin-top property sets the space above the element. 0 removes it */
+  margin-bottom: 15px; /* margin-bottom property sets the space below the element */
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.established { /* a dot selector targets every element with that class name */
+  font-style: italic; /* font-style property sets the slant of the text. italic slants it */
+}
+
+h1, h2, p { /* a comma lets one rule style several selectors at once */
+  text-align: center; /* text-align property sets the horizontal alignment of text. center puts it in the middle of its container */
+}
+
+.menu {
+  width: 80%; /* width property sets the width. a percentage is relative to the parent's width */
+  background-color: burlywood; /* background-color property sets the fill color. burlywood is a named color */
+  margin-left: auto; /* auto margins on the left and right split the leftover space evenly, which centers a block element */
+  margin-right: auto;
+  padding: 20px;
+  max-width: 500px; /* max-width property stops the element from growing wider than this, even if 80% would be more */
+}
+
+img {
+  display: block; /* display property sets how the element behaves in the layout. block makes the image its own line so auto margins can center it */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -25px; /* a negative margin pulls the element up toward what is above it */
+}
+
+hr {
+  height: 2px;
+  background-color: brown;
+  border-color: brown; /* border-color property sets the color of the element's border, matching the line's fill */
+}
+
+.bottom-line {
+  margin-top: 25px;
+}
+
+h1, h2 {
+  font-family: Impact, serif; /* a font-family list is a fallback chain: the browser uses Impact if it has it, otherwise serif */
+}
+
+.item p {
+  display: inline-block; /* inline-block lets elements sit side by side on one line while still accepting width and margins. .item p targets paragraphs inside an item */
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.flavor, .dessert {
+  text-align: left;
+  width: 75%; /* 75% plus the price's 25% fills the row, putting the name on the left and the price on the right */
+}
+
+.price {
+  text-align: right;
+  width: 25%;
+}
+
+/* FOOTER */
+
+footer {
+  font-size: 14px;
+}
+
+.address {
+  margin-bottom: 5px;
+}
+
+a {
+  color: black; /* color property sets the text color */
+}
+
+a:visited { /* a:visited pseudo-class targets links the user has already visited */
+  color: black;
+}
+
+a:hover { /* a:hover pseudo-class targets a link while the mouse is over it */
+  color: brown;
+}
+
+a:active { /* a:active pseudo-class targets a link while it is being clicked */
+  color: brown;
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/legacy-rwd-v8/cafe-menu/" title="Learn Basic CSS by Building a Cafe Menu preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/legacy-rwd-v8/cafe-menu/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design-v9/tree/main/legacy-rwd-v8/cafe-menu" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Learn CSS Colors by Building a Set of Colored Markers -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">legacy rwd v8</span>
+        <span class="project-name">Learn CSS Colors by Building a Set of Colored Markers</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Concepts Learned</span><span class="meta-val">HTML: multiple classes on one element · CSS: rgb() · rgba() · hex colors · 8-digit hex (alpha) · hsl() · hsla() · alpha channel · linear-gradient() · box-shadow · border-left · double border · background shorthand · padding shorthand · margin: auto · display: inline-block · comma selectors</span></div>
+        </div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt; &lt;!-- tells browsers that the document is an HTML5 document --&gt;
+&lt;html lang="en"&gt; &lt;!-- html element is the root of the page. lang attribute sets the language, en is English --&gt;
+  &lt;head&gt; &lt;!-- head element holds meta information about the page --&gt;
+    &lt;meta charset="utf-8"&gt; &lt;!-- meta element charset attribute sets the character encoding. utf-8 covers nearly all characters, symbols, and emoji --&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; &lt;!-- the viewport meta tag controls how the page scales on mobile. width=device-width matches the page width to the screen. initial-scale=1.0 sets the starting zoom --&gt;
+    &lt;title&gt;Colored Markers&lt;/title&gt; &lt;!-- title element is the text shown in the browser tab --&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt; &lt;!-- link element connects an external file. rel="stylesheet" says the file is a stylesheet. href attribute is the path to the CSS file --&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;CSS Color Markers&lt;/h1&gt;
+    &lt;div class="container"&gt; &lt;!-- div element is a generic container. class attribute names a group of styles, so the CSS can target .container --&gt;
+      &lt;div class="marker red"&gt; &lt;!-- an element can have more than one class. marker holds the shared size and spacing, red adds this marker's own colors --&gt;
+        &lt;div class="cap"&gt;&lt;/div&gt; &lt;!-- the cap is an empty div, so all of its look comes from the CSS --&gt;
+        &lt;div class="sleeve"&gt;&lt;/div&gt; &lt;!-- the sleeve is the see-through part of the marker, styled in the CSS --&gt;
+      &lt;/div&gt;
+      &lt;div class="marker green"&gt;
+        &lt;div class="cap"&gt;&lt;/div&gt;
+        &lt;div class="sleeve"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="marker blue"&gt;
+        &lt;div class="cap"&gt;&lt;/div&gt;
+        &lt;div class="sleeve"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>h1 {
+  text-align: center; /* text-align property sets the horizontal alignment of text. center puts it in the middle of its container */
+}
+
+.container { /* a dot selector targets every element with that class name */
+  background-color: rgb(255, 255, 255); /* background-color property sets the fill color. rgb() function mixes red, green, and blue from 0 to 255. all three at 255 is white */
+  padding: 10px 0; /* padding property adds space inside the element. with two values, the first is top and bottom and the second is left and right */
+}
+
+.marker {
+  width: 200px; /* width property sets the width. px is a pixel length */
+  height: 25px; /* height property sets the height */
+  margin: 10px auto; /* margin property adds space outside the element. 10px is top and bottom. auto on the left and right splits the leftover space evenly, which centers the block */
+}
+
+.cap {
+  width: 60px;
+  height: 25px;
+}
+
+.sleeve {
+  width: 110px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.5); /* rgba() function is rgb() plus a fourth value for alpha, the opacity from 0 (invisible) to 1 (solid). 0.5 makes white half see-through, so the marker color shows through the sleeve */
+  border-left: 10px double rgba(0, 0, 0, 0.75); /* border-left property is shorthand for the left border's width, style, and color. double draws two parallel lines. the color is black at 75% opacity */
+}
+
+.cap, .sleeve { /* a comma lets one rule style several selectors at once */
+  display: inline-block; /* display property sets how the element behaves in the layout. inline-block lets elements sit side by side on one line while still accepting width and height */
+}
+
+.red {
+  background: linear-gradient(rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27)); /* background shorthand can set a gradient. linear-gradient() function blends between the colors listed, top to bottom by default, spaced evenly. these colors are written with rgb() */
+  box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.8); /* box-shadow property draws a shadow around the element. the values are horizontal offset, vertical offset, blur radius, and spread radius, then the color. 0 offsets center the shadow and 20px blurs it into a glow */
+}
+
+.green {
+  background: linear-gradient(#55680D, #71F53E, #116C31); /* hex colors are # followed by red, green, and blue as two-digit base 16 values (00 to FF) */
+  box-shadow: 0 0 20px 0 #3B7E20CC; /* an 8-digit hex color adds two more digits at the end for alpha. CC is about 80% opacity */
+}
+
+.blue {
+  background: linear-gradient(hsl(186, 76%, 16%), hsl(223, 90%, 60%), hsl(240, 56%, 42%)); /* hsl() function sets a color by hue (an angle from 0 to 360 on the color wheel), saturation (how vivid, as a percent), and lightness (how bright, as a percent) */
+  box-shadow: 0 0 20px 0 hsla(223, 59%, 31%, 0.8); /* hsla() function is hsl() plus an alpha value for opacity */
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/legacy-rwd-v8/colored-markers/" title="Learn CSS Colors by Building a Set of Colored Markers preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/legacy-rwd-v8/colored-markers/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design-v9/tree/main/legacy-rwd-v8/colored-markers" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Learn HTML Forms by Building a Registration Form -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">legacy rwd v8</span>
+        <span class="project-name">Learn HTML Forms by Building a Registration Form</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Concepts Learned</span><span class="meta-val">HTML: form · method · action · fieldset · legend · label · for · input · text · email · password · pattern · radio · checkbox · file · number · min · max · submit · value · select · option · textarea · rows · cols · placeholder · required · checked · name · id · class · CSS: vh · vw · em · rem · min-width · max-width · min-height · margin shorthand · padding shorthand · border shorthand · border-bottom · :last-of-type · attribute selector · unset · vertical-align · display: block</span></div>
+        </div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt; &lt;!-- tells browsers that the document is an HTML5 document --&gt;
+&lt;html lang="en"&gt; &lt;!-- html element is the root of the page. lang attribute sets the language, en is English --&gt;
+  &lt;head&gt; &lt;!-- head element holds meta information about the page --&gt;
+    &lt;meta charset="UTF-8"&gt; &lt;!-- meta element charset attribute sets the character encoding. UTF-8 covers nearly all characters, symbols, and emoji --&gt;
+    &lt;title&gt;Registration Form&lt;/title&gt; &lt;!-- title element is the text shown in the browser tab --&gt;
+    &lt;link rel="stylesheet" href="styles.css" /&gt; &lt;!-- link element connects an external file. rel="stylesheet" says the file is a stylesheet. href attribute is the path to the CSS file --&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Registration Form&lt;/h1&gt;
+    &lt;p&gt;Please fill out this form with the required information&lt;/p&gt;
+    &lt;form method="post" action='https://register-demo.freecodecamp.org'&gt; &lt;!-- form element collects input from the user. method attribute sets how the data is sent, and post sends it in the body of the request instead of the URL. action attribute is the URL the data is sent to on submit --&gt;
+      &lt;fieldset&gt; &lt;!-- fieldset element groups related form controls together --&gt;
+        &lt;label for="first-name"&gt;Enter Your First Name: &lt;input id="first-name" name="first-name" type="text" required /&gt;&lt;/label&gt; &lt;!-- label element names a form control. its for attribute matches the input's id, linking them so clicking the label focuses the input. input element is a form control. type="text" is a single-line text field. name attribute is the key the value is sent under. id attribute is a unique name for the element. required attribute blocks submitting until the field is filled --&gt;
+        &lt;label for="last-name"&gt;Enter Your Last Name: &lt;input id="last-name" name="last-name" type="text" required /&gt;&lt;/label&gt;
+        &lt;label for="email"&gt;Enter Your Email: &lt;input id="email" name="email" type="email" required /&gt;&lt;/label&gt; &lt;!-- type="email" checks that the value looks like an email address before submitting --&gt;
+        &lt;label for="new-password"&gt;Create a New Password: &lt;input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /&gt;&lt;/label&gt; &lt;!-- type="password" hides the characters as they are typed. pattern attribute is a regular expression the value must match. [a-z0-5] allows the letters a to z and the digits 0 to 5, and {8,} means at least 8 characters --&gt;
+      &lt;/fieldset&gt;
+      &lt;fieldset&gt;
+        &lt;legend&gt;Account type (required)&lt;/legend&gt; &lt;!-- legend element is the title for its fieldset --&gt;
+        &lt;label for="personal-account"&gt;&lt;input id="personal-account" type="radio" name="account-type" class="inline" checked /&gt; Personal&lt;/label&gt; &lt;!-- type="radio" lets the user pick only one option in a group. the same name attribute puts radios in the same group. checked attribute selects it by default. class attribute names a group of styles, so the CSS can target .inline --&gt;
+        &lt;label for="business-account"&gt;&lt;input id="business-account" type="radio" name="account-type" class="inline" /&gt; Business&lt;/label&gt;
+      &lt;/fieldset&gt;
+      &lt;fieldset&gt;
+        &lt;label for="profile-picture"&gt;Upload a profile picture: &lt;input id="profile-picture" type="file" name="file" /&gt;&lt;/label&gt; &lt;!-- type="file" adds a button for choosing a file from the device --&gt;
+        &lt;label for="age"&gt;Input your age (years): &lt;input id="age" type="number" name="age" min="13" max="120" /&gt;&lt;/label&gt; &lt;!-- type="number" only accepts numbers. min and max attributes set the smallest and largest allowed values --&gt;
+        &lt;label for="referrer"&gt;How did you hear about us?
+          &lt;select id="referrer" name="referrer"&gt; &lt;!-- select element creates a drop-down list --&gt;
+            &lt;option value=""&gt;(select one)&lt;/option&gt; &lt;!-- option element is one choice in the list. value attribute is what gets sent. an empty value means nothing is chosen yet --&gt;
+            &lt;option value="1"&gt;freeCodeCamp News&lt;/option&gt;
+            &lt;option value="2"&gt;freeCodeCamp YouTube Channel&lt;/option&gt;
+            &lt;option value="3"&gt;freeCodeCamp Forum&lt;/option&gt;
+            &lt;option value="4"&gt;Other&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/label&gt;
+        &lt;label for="bio"&gt;Provide a bio:
+          &lt;textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."&gt;&lt;/textarea&gt; &lt;!-- textarea element is a multi-line text field. rows and cols attributes set its starting height and width in characters. placeholder attribute is the hint shown while the field is empty --&gt;
+        &lt;/label&gt;
+      &lt;/fieldset&gt;
+      &lt;label for="terms-and-conditions"&gt;
+        &lt;input class="inline" id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /&gt; I accept the &lt;a href="https://www.freecodecamp.org/news/terms-of-service/"&gt;terms and conditions&lt;/a&gt; &lt;!-- type="checkbox" lets the user turn one option on or off. with required, the form can't be submitted until it is checked. a (anchor) element makes a link and href attribute is where it goes --&gt;
+      &lt;/label&gt;
+      &lt;input type="submit" value="Submit" /&gt; &lt;!-- type="submit" makes a button that sends the form. value attribute is the text on the button --&gt;
+    &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>body {
+  width: 100%; /* width property sets the width. a percentage is relative to the parent's width */
+  height: 100vh; /* height property sets the height. vh is a viewport height unit, so 100vh is the full height of the browser window */
+  margin: 0; /* margin property adds space outside the element. 0 removes the browser's default margin */
+  background-color: #1b1b32; /* background-color property sets the fill color. a hex color is # followed by red, green, and blue as two-digit base 16 values */
+  color: #f5f6f7; /* color property sets the text color */
+  font-family: Tahoma; /* font-family property sets the font */
+  font-size: 16px; /* font-size property sets the size of the text. px is a pixel length */
+}
+
+h1, p { /* a comma lets one rule style several selectors at once */
+  margin: 1em auto; /* with two values, the first is top and bottom and the second is left and right. em is relative to the font size. auto on the sides splits the leftover space evenly, which centers the block */
+  text-align: center; /* text-align property sets the horizontal alignment of text. center puts it in the middle of its container */
+}
+
+form {
+  width: 60vw; /* vw is a viewport width unit, so 60vw is 60% of the browser window's width */
+  max-width: 500px; /* max-width property stops the element from growing wider than this */
+  min-width: 300px; /* min-width property stops the element from shrinking narrower than this */
+  margin: 0 auto; /* no space on the top and bottom, and auto on the sides centers the form */
+  padding-bottom: 2em; /* padding-bottom property adds space inside the element at the bottom */
+}
+
+fieldset {
+  border: none; /* border property is shorthand for width, style, and color. none removes the default border */
+  padding: 2rem 0; /* padding adds space inside the element. rem is relative to the root font size. 2rem on the top and bottom and 0 on the sides */
+  border-bottom: 3px solid #3b3b4f; /* border-bottom draws a line only on the bottom edge: 3px wide, solid style, and this color */
+}
+
+fieldset:last-of-type { /* :last-of-type pseudo-class targets the last element of its type among its siblings */
+  border-bottom: none; /* removes the line from the last fieldset */
+}
+
+label {
+  display: block; /* display property sets how the element behaves in the layout. block puts each label on its own line */
+  margin: 0.5rem 0;
+}
+
+input,
+textarea,
+select {
+  margin: 10px 0 0 0; /* with four values the order is top, right, bottom, left (clockwise from the top). this adds 10px above the control only */
+  width: 100%;
+  min-height: 2em; /* min-height property stops the element from being shorter than this */
+}
+
+input, textarea {
+  background-color: #0a0a23;
+  border: 1px solid #0a0a23;
+  color: #ffffff;
+}
+
+.inline { /* a dot selector targets every element with that class name */
+  width: unset; /* unset resets the property to what it would be without any rule, here undoing the width of 100% for radios and checkboxes */
+  margin: 0 0.5em 0 0;
+  vertical-align: middle; /* vertical-align property lines up inline elements next to their text. middle centers them vertically */
+}
+
+input[type="submit"] { /* an attribute selector targets elements that have an attribute with this value, here only the submit button */
+  display: block;
+  width: 60%;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: #3b3b4f;
+  border-color: white; /* border-color property sets the color of the border. white is a named color */
+  min-width: 300px;
+}
+
+input[type="file"] {
+  padding: 1px 2px; /* with two values, the first is top and bottom and the second is left and right */
+}
+
+a {
+  color: #dfdfe2;
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/legacy-rwd-v8/registration-form/" title="Learn HTML Forms by Building a Registration Form preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/legacy-rwd-v8/registration-form/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design-v9/tree/main/legacy-rwd-v8/registration-form" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Build a Survey Form -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">legacy rwd v8</span>
+        <span class="project-name">Build a Survey Form</span>
+        <span class="project-stack">html</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Concepts Learned</span><span class="meta-val">form · id attribute · label · for · input · text · email · number · min · max · placeholder · required · select · option · disabled · selected · fieldset · legend · radio · checkbox · value · textarea · button · submit · shared name for radio groups</span></div>
+        </div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt; &lt;!-- sets character encoding so special chars render right --&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; &lt;!-- makes the page scale right on mobile --&gt;
+  &lt;title&gt;Survey Form&lt;/title&gt; &lt;!-- browser tab title --&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt; &lt;!-- links your CSS file, required by the test note --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1 id="title"&gt;freeCodeCamp Survey Form&lt;/h1&gt; &lt;!-- required: h1, id="title" --&gt;
+  &lt;p id="description"&gt;Thanks for taking the time to help us improve the platform&lt;/p&gt; &lt;!-- required: p, id="description" --&gt;
+
+  &lt;form id="survey-form"&gt; &lt;!-- required: form, id="survey-form", everything below lives inside it --&gt;
+
+    &lt;label id="name-label" for="name"&gt;Name &lt;!-- required id="name-label"; "for" ties the label to the input --&gt;
+      &lt;input id="name" type="text" placeholder="Enter your name" required&gt; &lt;!-- type="text", placeholder, required --&gt;
+    &lt;/label&gt;
+
+    &lt;label id="email-label" for="email"&gt;Email &lt;!-- required id="email-label" --&gt;
+      &lt;input id="email" type="email" placeholder="Enter your email" required&gt; &lt;!-- type="email" gives free HTML5 validation --&gt;
+    &lt;/label&gt;
+
+    &lt;label id="number-label" for="number"&gt;Age &lt;!-- required id="number-label" --&gt;
+      &lt;input id="number" type="number" min="1" max="120" placeholder="Age in years" required&gt; &lt;!-- min/max required, type="number" blocks non-numbers --&gt;
+    &lt;/label&gt;
+
+    &lt;label for="dropdown"&gt;Which option best describes your current role?
+      &lt;select id="dropdown"&gt; &lt;!-- required id="dropdown", needs 2+ selectable options --&gt;
+        &lt;option value="" disabled selected&gt;Select an option&lt;/option&gt; &lt;!-- disabled so it doesn't count toward the "2 selectable" requirement --&gt;
+        &lt;option value="student"&gt;Student&lt;/option&gt;
+        &lt;option value="dev"&gt;Full Time Developer&lt;/option&gt;
+        &lt;option value="hobby"&gt;Hobbyist&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/label&gt;
+
+    &lt;fieldset&gt; &lt;!-- groups related radios visually and semantically --&gt;
+      &lt;legend&gt;How did you hear about freeCodeCamp?&lt;/legend&gt;
+      &lt;label&gt;&lt;input type="radio" name="referrer" value="search"&gt; Search&lt;/label&gt; &lt;!-- radios in a group share the same name --&gt;
+      &lt;label&gt;&lt;input type="radio" name="referrer" value="friend"&gt; Friend&lt;/label&gt;
+      &lt;label&gt;&lt;input type="radio" name="referrer" value="other"&gt; Other&lt;/label&gt;
+    &lt;/fieldset&gt;
+
+    &lt;fieldset&gt;
+      &lt;legend&gt;What would you like to see improved?&lt;/legend&gt;
+      &lt;label&gt;&lt;input type="checkbox" value="frontend"&gt; Front-end projects&lt;/label&gt; &lt;!-- each checkbox just needs a value attr --&gt;
+      &lt;label&gt;&lt;input type="checkbox" value="backend"&gt; Back-end projects&lt;/label&gt;
+      &lt;label&gt;&lt;input type="checkbox" value="data"&gt; Data visualization&lt;/label&gt;
+    &lt;/fieldset&gt;
+
+    &lt;label for="comments"&gt;Any comments or suggestions?
+      &lt;textarea id="comments" placeholder="Enter your comment here"&gt;&lt;/textarea&gt; &lt;!-- any textarea satisfies the test --&gt;
+    &lt;/label&gt;
+
+    &lt;button id="submit" type="submit"&gt;Submit&lt;/button&gt; &lt;!-- required id="submit", type="submit" --&gt;
+
+  &lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/legacy-rwd-v8/survey-form/" title="Build a Survey Form preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/legacy-rwd-v8/survey-form/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design-v9/tree/main/legacy-rwd-v8/survey-form" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
     <div class="archive-row"> <!-- not built yet: Learn the CSS Box Model by Building a Rothko Painting -->
       <span class="archive-check">☐</span> <!-- empty box = still to do -->
       <span class="archive-name">Learn the CSS Box Model by Building a Rothko Painting</span> <!-- fCC's exact title -->
