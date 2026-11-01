@@ -34,7 +34,7 @@ My corner of the world wide web: part web dev portfolio, part brain dump, part p
 | Folder | What lives there |
 |---|---|
 | `playbooks/` | Both playbook pages, plus `thumbs/` for their preview cards |
-| *(fCC builds)* | Moved to their own repo, [freecodecamp-responsive-web-design-v9](https://github.com/gitguerz/freecodecamp-responsive-web-design-v9), live at [builds.guerz.lol](https://builds.guerz.lol). `fcc-build-archive.html` still shows the code + live previews |
+| *(fCC builds)* | Moved to their own repo, [freecodecamp-responsive-web-design](https://github.com/gitguerz/freecodecamp-responsive-web-design), live at [builds.guerz.lol](https://builds.guerz.lol). `fcc-build-archive.html` still shows the code + live previews |
 | `sandbox/` | One folder per sandbox experiment |
 | `toolshed/` | The tools listed above |
 
