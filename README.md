@@ -64,7 +64,7 @@ My corner of the world wide web: part web dev portfolio, part brain dump, part p
 
 ```bash
 # go into the repo folder
-cd ~/gitguerz/gitguerz.github.io
+cd ~/gitguerz/guerz.lol-website
 
 # start a tiny local web server on port 8000 using Python's built-in module
 python3 -m http.server 8000
