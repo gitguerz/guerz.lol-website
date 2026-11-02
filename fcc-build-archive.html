@@ -74,7 +74,7 @@
     <summary>
       <span class="section-caret">▸</span>
       <span class="section-title">Responsive Web Design v9</span>
-      <span class="section-count">50 built · 67 total · worked chronologically</span> <!-- REMINDER: bump "built" every time a ☐ row becomes a project-box (also update that module's "items · built" count); recounted 2026-10-05: 38 project-boxes out of 67 items; 2026-10-11: +Colored Markers = 39; +Colored Boxes = 40 (recounted from the project-boxes); 2026-10-31: recounted 41 (Registration Form + Book Inventory had not been bumped), +Game Settings Panel +Feature Selection Page = 43; 2026-10-31: +Design a Contact Form = 44; 2026-11-01: +Design a Rothko Painting +Build a Confidential Email Page = 46; +Flexbox Photo Gallery +Colorful Boxes +Pricing Plans Layout Page +Page of Playing Cards = 50 -->
+      <span class="section-count">54 built · 67 total · worked chronologically</span> <!-- REMINDER: bump "built" every time a ☐ row becomes a project-box (also update that module's "items · built" count); recounted 2026-10-05: 38 project-boxes out of 67 items; 2026-10-11: +Colored Markers = 39; +Colored Boxes = 40 (recounted from the project-boxes); 2026-10-31: recounted 41 (Registration Form + Book Inventory had not been bumped), +Game Settings Panel +Feature Selection Page = 43; 2026-10-31: +Design a Contact Form = 44; 2026-11-01: +Design a Rothko Painting +Build a Confidential Email Page = 46; +Flexbox Photo Gallery +Colorful Boxes +Pricing Plans Layout Page +Page of Playing Cards = 50; 2026-11-01: +Nutritional Label +Newspaper Article +Quiz Webpage +Tribute Page = 54 -->
     </summary>
     <div class="section-body">
 <details class="module-group" open>
@@ -4560,20 +4560,356 @@ h1 {
       <span class="module-caret">▸</span>
       <span class="module-kicker">CSS</span>
       <span class="module-title">Typography</span>
-      <span class="module-count">2 items</span>
+      <span class="module-count">2 items · 2 built</span> <!-- was "2 items"; built 2026-11-01 -->
     </summary>
     <div class="module-body">
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build a Nutritional Label</span>
-      <span class="archive-type">workshop</span>
-    </div>
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build a Newspaper Article</span>
-      <span class="archive-type">lab</span>
-    </div>
-    
+    <details class="project-box"> <!-- BUILT: Build a Nutritional Label -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd workshop</span>
+        <span class="project-name">Build a Nutritional Label</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: font-weight property • text-indent property • negative margin values • Google Fonts link element<br />Reinforced: font-family • font stack • rem unit • em unit • letter-spacing • display: flex • justify-content • align-items • :not() pseudo-class • border-bottom • descendant combinator • box-sizing</span></div>
+        </div>
+        <div class="card-body">a recreation of a nutrition facts label: Open Sans in several weights, thick and thin divider lines, and flexbox rows that push each nutrient to the left and its daily value to the right.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Nutrition Label&lt;/title&gt;
+  &lt;link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet"&gt;  &lt;!-- loads the Open Sans font from Google Fonts in weights 400, 700 and 800 --&gt;
+  &lt;link href="./styles.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div class="label"&gt;
+    &lt;header&gt;
+      &lt;h1 class="bold"&gt;Nutrition Facts&lt;/h1&gt;
+      &lt;div class="divider"&gt;&lt;/div&gt;
+      &lt;p&gt;8 servings per container&lt;/p&gt;
+      &lt;p class="bold"&gt;Serving size &lt;span&gt;2/3 cup (55g)&lt;/span&gt;&lt;/p&gt;
+    &lt;/header&gt;
+    &lt;div class="divider large"&gt;&lt;/div&gt;
+    &lt;div class="calories-info"&gt;
+      &lt;div class="left-container"&gt;
+        &lt;h2 class="bold small-text"&gt;Amount per serving&lt;/h2&gt;
+        &lt;p&gt;Calories&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;span&gt;230&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="divider medium"&gt;&lt;/div&gt;
+    &lt;div class="daily-value small-text"&gt;
+      &lt;p class="bold right no-divider"&gt;% Daily Value *&lt;/p&gt;
+      &lt;div class="divider"&gt;&lt;/div&gt;
+      &lt;p&gt;&lt;span&gt;&lt;span class="bold"&gt;Total Fat&lt;/span&gt; 8g&lt;/span&gt; &lt;span class="bold"&gt;10%&lt;/span&gt;&lt;/p&gt;
+      &lt;p class="indent no-divider"&gt;Saturated Fat 1g &lt;span class="bold"&gt;5%&lt;/span&gt;&lt;/p&gt;
+      &lt;div class="divider"&gt;&lt;/div&gt;
+      &lt;p class="indent no-divider"&gt;&lt;span&gt;&lt;i&gt;Trans&lt;/i&gt; Fat 0g&lt;/span&gt;&lt;/p&gt;
+      &lt;div class="divider"&gt;&lt;/div&gt;
+      &lt;p&gt;&lt;span&gt;&lt;span class="bold"&gt;Cholesterol&lt;/span&gt; 0mg&lt;/span&gt; &lt;span class="bold"&gt;0%&lt;/span&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;span&gt;&lt;span class="bold"&gt;Sodium&lt;/span&gt; 160mg&lt;/span&gt; &lt;span class="bold"&gt;7%&lt;/span&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;span&gt;&lt;span class="bold"&gt;Total Carbohydrate&lt;/span&gt; 37g&lt;/span&gt; &lt;span class="bold"&gt;13%&lt;/span&gt;&lt;/p&gt;
+      &lt;p class="indent no-divider"&gt;Dietary Fiber 4g&lt;/p&gt;
+      &lt;div class="divider"&gt;&lt;/div&gt;
+      &lt;p class="indent no-divider"&gt;Total Sugars 12g&lt;/p&gt;
+      &lt;div class="divider double-indent"&gt;&lt;/div&gt;
+      &lt;p class="double-indent no-divider"&gt;Includes 10g Added Sugars &lt;span class="bold"&gt;20%&lt;/span&gt;&lt;/p&gt;
+      &lt;div class="divider"&gt;&lt;/div&gt;
+      &lt;p class="no-divider"&gt;&lt;span&gt;&lt;span class="bold"&gt;Protein&lt;/span&gt; 3g&lt;/span&gt;&lt;/p&gt;
+      &lt;div class="divider large"&gt;&lt;/div&gt;
+      &lt;p&gt;Vitamin D 2mcg &lt;span&gt;10%&lt;/span&gt;&lt;/p&gt;
+      &lt;p&gt;Calcium 260mg &lt;span&gt;20%&lt;/span&gt;&lt;/p&gt;
+      &lt;p&gt;Iron 8mg &lt;span&gt;45%&lt;/span&gt;&lt;/p&gt;
+      &lt;p class="no-divider"&gt;Potassium 235mg &lt;span&gt;6%&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="divider medium"&gt;&lt;/div&gt;
+    &lt;p class="note"&gt;* The % Daily Value (DV) tells you how much a nutrient in a serving of food contributes to a daily
+      diet. 2,000 calories a day is used for general nutrition advice.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.label {
+  border: 2px solid black;
+  width: 270px;
+  margin: 20px auto;
+  padding: 0 7px;
+}
+
+header h1 {
+  text-align: center;
+  margin: -4px 0;  /* negative margin pulls the heading closer to its neighbors */
+  letter-spacing: 0.15px
+}
+
+p {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.divider {
+  border-bottom: 1px solid #888989;
+  margin: 2px 0;
+}
+
+.bold {
+  font-weight: 800;  /* 800 = extra bold; numeric weights run from 100 to 900 */
+}
+
+.large {
+  height: 10px;
+}
+
+.large, .medium {
+  background-color: black;
+  border: 0;
+}
+
+.medium {
+  height: 5px;
+}
+
+.small-text {
+  font-size: 0.85rem;
+}
+
+
+.calories-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.calories-info h2 {
+  margin: 0;
+}
+
+.left-container p {
+  margin: -5px -2px;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.calories-info span {
+  margin: -7px -2px;
+  font-size: 2.4em;
+  font-weight: 700;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.indent {
+  margin-left: 1em;
+}
+
+.double-indent {
+  margin-left: 2em;
+}
+
+.daily-value p:not(.no-divider) {
+  border-bottom: 1px solid #888989;
+}
+
+.note {
+  font-size: 0.6rem;
+  margin: 5px 0;
+  padding: 0 8px;
+  text-indent: -8px;  /* negative indent pulls the first line left, so the * hangs outside the text */
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-a-nutritional-label/" title="Build a Nutritional Label preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-a-nutritional-label/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-a-nutritional-label/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Build a Newspaper Article -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd lab</span>
+        <span class="project-name">Build a Newspaper Article</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: ::first-letter pseudo-element • media queries (@media with max-width) • border-block shorthand • overflow-wrap property<br />Reinforced: font-weight • font-size • font-style • text-transform • text-indent • letter-spacing • line-height • text-align • border-style: double • box-shadow • max-width • box-sizing</span></div>
+        </div>
+        <div class="card-body">a newspaper article, "The Daily Side-Eye", styled mostly with typography: a double-ruled masthead, uppercase byline, italic sub-headline, an enlarged first letter, and a media query for small screens.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;The Daily Side-Eye&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main class="newspaper"&gt;
+    &lt;p class="name"&gt;The Daily Side-Eye&lt;/p&gt;
+    &lt;p class="date"&gt;November 1, 2026 · All the news fit to procrastinate with&lt;/p&gt;
+    &lt;h1 class="headline"&gt;Local Developer Opens 47 Tabs, Calls It Research&lt;/h1&gt;
+    &lt;p class="sub-headline"&gt;One missing semicolon. Three cold coffees. Absolutely no suspects.&lt;/p&gt;
+    &lt;p class="author"&gt;By Guerz · Chief Procrastination Correspondent&lt;/p&gt;
+    &lt;p class="text"&gt;Witnesses report that a local developer sat down to fix one tiny CSS issue and resurfaced four hours later with a new color palette, strong opinions about fonts, and the original problem completely untouched. “I am building a workflow,” the developer explained, opening an eighth tutorial on productivity. The workflow could not be reached for comment.&lt;/p&gt;
+    &lt;p class="text"&gt;The breakthrough arrived when the developer discovered that the stylesheet was never linked. Experts described the incident as “deeply avoidable” and “basically Tuesday.” A nearby rubber duck has requested a raise. At press time, the page finally looked correct, prompting the developer to celebrate by changing everything.&lt;/p&gt;
+    &lt;p class="edition"&gt;Independent journalism. Questionable time management. · Price: one working stylesheet.&lt;/p&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>html { 
+   font-size: 24px; 
+}
+
+* { 
+   box-sizing: border-box; 
+}
+
+body { 
+   margin: 0; 
+   padding: 28px 16px; 
+   background: #29232e; 
+   color: #29232e; 
+}
+
+.newspaper { 
+   font-size: 16px; 
+   font-family: 'Open Sans', sans-serif; 
+   max-width: 800px; 
+   margin: auto; 
+   padding: 32px; 
+   background: #f7efdf; 
+   border-top: 8px solid #ac6252; 
+   box-shadow: 8px 8px 0 #161219; 
+}
+
+.name { 
+   font-size: 2rem; 
+   font-family: 'Times New Roman', serif; 
+   text-transform: uppercase; 
+   text-align: center; 
+   margin: 0; 
+   padding-bottom: 18px; 
+   border-bottom: 5px double #29232e; 
+   letter-spacing: -2px; 
+}
+
+.date { 
+   text-align: center; 
+   padding-bottom: 16px; 
+   border-bottom: 1px solid #29232e; 
+}
+
+.headline { 
+   font-size: 2em; 
+   font-weight: bold; 
+   margin-bottom: 12px; 
+   line-height: 1.15; 
+}
+
+.sub-headline { 
+   font-weight: 100; 
+   font-size: 1.5em; 
+   font-style: italic; 
+   color: #784735; 
+   margin-top: 0; 
+}
+
+.author { 
+   font-weight: bold; 
+   text-transform: uppercase; 
+   border-block: 1px solid #29232e;  /* border-block = top and bottom borders in one line */
+   padding: 12px 0; 
+   letter-spacing: 1px; 
+}
+
+.text { 
+   text-indent: 20px;  /* indents only the first line of each paragraph */
+   line-height: 2em; 
+}
+
+.text::first-letter {  /* ::first-letter styles just the first letter of the paragraph */
+   font-weight: bold; 
+   font-size: 2em; 
+   color: #784735; 
+}
+
+.edition { 
+   border-top: 5px double #29232e; 
+   padding-top: 16px; 
+   font-size: 12px; 
+   text-align: center; 
+}
+
+@media (max-width: 480px) {  /* media query: these rules only apply on screens 480px wide or narrower */
+   .newspaper { 
+      padding: 20px; 
+   } 
+   .name { 
+      letter-spacing: -1px; 
+      overflow-wrap: anywhere;  /* lets long words break so they don't overflow on small screens */
+   } 
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-a-newspaper-article/" title="Build a Newspaper Article preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-a-newspaper-article/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-a-newspaper-article/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
     </div>
   </details>
 <details class="module-group" open>
@@ -4581,20 +4917,483 @@ h1 {
       <span class="module-caret">▸</span>
       <span class="module-kicker">CSS</span>
       <span class="module-title">Accessibility</span>
-      <span class="module-count">2 items</span>
+      <span class="module-count">2 items · 2 built</span> <!-- was "2 items"; built 2026-11-01 -->
     </summary>
     <div class="module-body">
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build a Quiz Webpage</span>
-      <span class="archive-type">workshop</span>
-    </div>
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build a Tribute Page</span>
-      <span class="archive-type">lab</span>
-    </div>
-    
+    <details class="project-box"> <!-- BUILT: Build a Quiz Webpage -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd workshop</span>
+        <span class="project-name">Build a Quiz Webpage</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: prefers-reduced-motion media feature • scroll-behavior property • aspect-ratio property • max() function • position: absolute • sr-only (visually hidden) technique • clip property • list-style property • logical properties (padding-inline-start, margin-block) • role and aria-labelledby attributes<br />Reinforced: min() function • vw unit • child combinator (&gt;) • :hover pseudo-class • ::before pseudo-element • content property • fieldset and legend • label for attribute • select and textarea • address element • display: flex</span></div>
+        </div>
+        <div class="card-body">an accessible quiz page: a header with anchor-link navigation, a form with labeled inputs, fieldsets, a select and a textarea, screen-reader-only question text, and smooth scrolling that respects reduced-motion settings.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;meta name="description" content="freeCodeCamp Accessibility Quiz practice project" /&gt;
+    &lt;title&gt;Accessibility Quiz&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;img id="logo" alt="freeCodeCamp" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"&gt;
+      &lt;h1&gt;HTML/CSS Quiz&lt;/h1&gt;
+      &lt;nav&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#student-info"&gt;INFO&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#html-questions"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#css-questions"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+      &lt;form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz"&gt;
+        &lt;section role="region" aria-labelledby="student-info"&gt;  &lt;!-- role + aria-labelledby name this section for screen readers, using the h2 below --&gt;
+          &lt;h2 id="student-info"&gt;Student Info&lt;/h2&gt;
+          &lt;div class="info"&gt;
+            &lt;label for="student-name"&gt;Name:&lt;/label&gt;
+            &lt;input type="text" name="student-name" id="student-name" /&gt;
+          &lt;/div&gt;
+          &lt;div class="info"&gt;
+            &lt;label for="student-email"&gt;Email:&lt;/label&gt;
+            &lt;input type="email" name="student-email" id="student-email" /&gt;
+          &lt;/div&gt;
+          &lt;div class="info"&gt;
+            &lt;label for="birth-date"&gt;Date of Birth:&lt;/label&gt;
+            &lt;input type="date" name="birth-date" id="birth-date" /&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section role="region" aria-labelledby="html-questions"&gt;
+          &lt;h2 id="html-questions"&gt;HTML&lt;/h2&gt;
+          &lt;div class="question-block"&gt;
+            &lt;h3&gt;&lt;span class="sr-only"&gt;Question&lt;/span&gt;1&lt;/h3&gt;  &lt;!-- sr-only text is hidden visually but still read by screen readers --&gt;
+            &lt;fieldset class="question" name="html-question-one"&gt;
+              &lt;legend&gt;
+                The legend element represents a caption for the content of its
+                parent fieldset element
+              &lt;/legend&gt;
+              &lt;ul class="answers-list"&gt;
+                &lt;li&gt;
+                  &lt;label for="q1-a1"&gt;
+                    &lt;input type="radio" id="q1-a1" name="q1" value="true" /&gt;
+                    True
+                  &lt;/label&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;label for="q1-a2"&gt;
+                    &lt;input type="radio" id="q1-a2" name="q1" value="false" /&gt;
+                    False
+                  &lt;/label&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/fieldset&gt;
+          &lt;/div&gt;
+          &lt;div class="question-block"&gt;
+            &lt;h3&gt;&lt;span class="sr-only"&gt;Question&lt;/span&gt;2&lt;/h3&gt;
+            &lt;fieldset class="question" name="html-question-two"&gt;
+              &lt;legend&gt;
+                A label element nesting an input element is required to have a
+                for attribute with the same value as the input's id
+              &lt;/legend&gt;
+              &lt;ul class="answers-list"&gt;
+                &lt;li&gt;
+                  &lt;label for="q2-a1"&gt;
+                    &lt;input type="radio" id="q2-a1" name="q2" value="true" /&gt;
+                    True
+                  &lt;/label&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;label for="q2-a2"&gt;
+                    &lt;input type="radio" id="q2-a2" name="q2" value="false" /&gt;
+                    False
+                  &lt;/label&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/fieldset&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section role="region" aria-labelledby="css-questions"&gt;
+          &lt;h2 id="css-questions"&gt;CSS&lt;/h2&gt;
+          &lt;div class="formrow"&gt;
+            &lt;div class="question-block"&gt;
+              &lt;label for="selector"&gt;Can the CSS margin property accept negative values?&lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class="answer"&gt;
+              &lt;select name="selector" id="selector" required&gt;
+                &lt;option value=""&gt;Select an option&lt;/option&gt;
+                &lt;option value="yes"&gt;Yes&lt;/option&gt;
+                &lt;option value="no"&gt;No&lt;/option&gt;
+              &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div class="question-block"&gt;
+              &lt;label for="css-textarea"&gt;Do you have any questions:&lt;/label&gt;
+            &lt;/div&gt;
+            &lt;div class="answer"&gt;
+              &lt;textarea id="css-textarea" name="css-questions" rows="5" cols="24"&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;button type="submit"&gt;Send&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+      &lt;address&gt;
+        &lt;a href="https://freecodecamp.org"&gt;freeCodeCamp&lt;/a&gt;&lt;br /&gt;
+        San Francisco&lt;br /&gt;
+        California&lt;br /&gt;
+        USA
+      &lt;/address&gt;
+    &lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>@media (prefers-reduced-motion: no-preference) {  /* only animate scrolling for people who haven't asked their system to reduce motion */
+  * {
+    scroll-behavior: smooth;  /* anchor-link jumps glide instead of snapping */
+  }
+}
+
+body {
+  background: #f5f6f7;
+  color: #1b1b32;
+  font-family: Helvetica;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  background-color: #1b1b32;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  width: max(10rem, 18vw);  /* max() picks the larger of the two values */
+  background-color: #0a0a23;
+  aspect-ratio: 35 / 4;  /* keeps the logo's width-to-height shape as it scales */
+  padding: 0.4rem;
+}
+
+h1 {
+  color: #f1be32;
+  font-size: min(5vw, 1.2em);
+  text-align: center;
+}
+
+nav {
+  width: 50%;
+  max-width: 300px;
+  height: 50px;
+}
+
+nav &gt; ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-inline-start: 0;  /* logical property: padding on the start side of the text direction (left in English) */
+  margin-block: 0;
+  height: 100%;
+}
+
+nav &gt; ul &gt; li {
+  color: #dfdfe2;
+  margin: 0 0.2rem;
+  padding: 0.2rem;
+  display: block;
+}
+
+nav &gt; ul &gt; li:hover {
+  background-color: #dfdfe2;
+  color: #1b1b32;
+  cursor: pointer;
+}
+
+li &gt; a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  padding-top: 50px;
+}
+
+section {
+  width: 80%;
+  margin: 0 auto 10px auto;
+  max-width: 600px;
+}
+
+h1,
+h2 {
+  font-family: Verdana, Tahoma;
+}
+
+h2 {
+  border-bottom: 4px solid #dfdfe2;
+  margin-top: 0px;
+  padding-top: 60px;
+}
+
+.info {
+  padding: 10px 0 0 5px;
+}
+
+.formrow {
+  margin-top: 30px;
+  padding: 0px 15px;
+}
+
+input {
+  font-size: 1rem;
+}
+
+.info label, .info input {
+  display: inline-block;
+}
+
+.info input {
+  width: 50%;
+  text-align: left;
+}
+
+.info label {
+  width: 10%;
+  min-width: 55px;
+  text-align: right;
+}
+
+.question-block {
+  text-align: left;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 5px;
+}
+
+h3 {
+  margin-top: 5px;
+  padding-left: 15px;
+  font-size: 1.375rem;
+}
+
+h3::before {
+  content: "Question #";
+}
+
+.question {
+  border: none;
+  padding-bottom: 0;
+}
+
+.answers-list {
+  list-style: none;  /* removes the bullet markers */
+  padding: 0;
+}
+
+button {
+  display: block;
+  margin: 40px auto;
+  width: 40%;
+  padding: 15px;
+  font-size: 1.438rem;
+  background: #d0d0d5;
+  border: 3px solid #3b3b4f;
+}
+
+footer {
+  background-color: #2a2a40;
+  display: flex;
+  justify-content: center;
+}
+
+footer,
+footer a {
+  color: #dfdfe2;
+}
+
+address {
+  text-align: center;
+  padding: 0.3em;
+}
+
+.sr-only {  /* visually hidden, but still read aloud by screen readers */
+  position: absolute;  /* takes the element out of the page flow so it takes up no space */
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);  /* clips the element down to nothing so it can't be seen */
+  white-space: nowrap;
+}
+  border: 0;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-a-quiz-webpage/" title="Build a Quiz Webpage preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-a-quiz-webpage/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-a-quiz-webpage/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Build a Tribute Page -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd lab</span>
+        <span class="project-name">Build a Tribute Page</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: figure and figcaption elements • text-underline-offset property • ch unit • height: auto with max-width: 100% (responsive image)<br />Reinforced: id selectors • clamp() function • media queries • :focus-visible pseudo-class • outline-offset property • :hover pseudo-class • line-height • border-radius • max-width • box-sizing • font-family</span></div>
+        </div>
+        <div class="card-body">a tribute page for Chris: a centered card with a photo and caption, three short paragraphs and a link, using the id selectors the project calls for and a visible keyboard focus ring.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;title&gt;For Chris&lt;/title&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;main id="main"&gt;
+  &lt;h1 id="title"&gt;Chris&lt;/h1&gt;
+  &lt;figure id="img-div"&gt;  &lt;!-- figure wraps the image and its caption as one unit --&gt;
+    &lt;img id="image" src="https://scontent-lga3-2.xx.fbcdn.net/v/t39.30808-6/503479222_9694169590705619_5018422014817152818_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx547x960&amp;ctp=s547x960&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=a5f93a&amp;_nc_ohc=lB_O1ynGJQAQ7kNvwH97l1w&amp;_nc_oc=Adq58B3QJAZYujtegt399PDZTvMbOXC4CfUR9HXyz8QQoSEe_ToBNuVGZEIypGtd_KFKomGDj0WQtpR48U_RvnG_&amp;_nc_zt=23&amp;_nc_ht=scontent-lga3-2.xx&amp;_nc_gid=hFTmOjsCf9VtFzAoW1V_BQ&amp;_nc_ss=7b2a8&amp;oh=00_AQRmgv5200eTRcdgPMtHU-H_1wbhaMbsBz6u6596nMBnsg&amp;oe=6AEB3CDC" alt="a photo of Chris"&gt;
+    &lt;figcaption id="img-caption"&gt;Chris — music in his ears, a cat in his lap.&lt;/figcaption&gt;  &lt;!-- figcaption = the caption for the figure --&gt;
+  &lt;/figure&gt;
+  &lt;section id="tribute-info"&gt;
+    &lt;p&gt;Chris loved music the way few people do — not as background noise, but as a whole language.&lt;/p&gt;
+    &lt;p&gt;He loved cats just as fiercely — quiet, stubborn, loyal. it's why they still show up in everything I build.&lt;/p&gt;
+    &lt;p&gt;And he loved me. he believed in this before I did. every set and every line of code carries a little of him.&lt;/p&gt;
+  &lt;/section&gt;
+  &lt;a id="tribute-link" href="https://twitch.tv/guerz" target="_blank"&gt;the music keeps going — {decompress}&lt;/a&gt;
+&lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>* { 
+   box-sizing: border-box; 
+}
+body { 
+   margin: 0; 
+   padding: 32px 16px; 
+   background: #211e26; 
+   color: #eee5df; 
+   font-family: Georgia, serif; 
+   line-height: 1.8; 
+}
+
+#main { 
+   max-width: 760px; 
+   margin: 0 auto; 
+   padding: 32px; 
+   background: #302b35; 
+   border-top: 4px solid #c3999d; 
+}
+
+#title { 
+   margin: 0 0 24px; 
+   color: #dec1b2; 
+   font-size: clamp(2.5rem, 8vw, 4rem); 
+   text-align: center; 
+}
+
+#img-div { 
+   margin: 0; 
+}
+
+#image { 
+   display: block; 
+   max-width: 100%; 
+   height: auto;  /* keeps the image's proportions when max-width shrinks it */
+   margin: 0 auto; 
+   border-radius: 3px; 
+}
+
+#img-caption { 
+   margin-top: 16px; 
+   text-align: center; 
+   color: #c8b9cd; 
+   font-style: italic; 
+}
+
+#tribute-info { 
+   margin: 32px auto; 
+   max-width: 60ch;  /* ch = width of the 0 character, so this is roughly 60 characters per line */
+}
+
+#tribute-link { 
+   display: block; 
+   text-align: center; 
+   color: #edbfa9; 
+   text-underline-offset: 5px;  /* moves the underline 5px away from the text */
+}
+
+#tribute-link:hover { 
+   color: #fff; 
+}
+
+#tribute-link:focus-visible { 
+   outline: 2px solid #edbfa9; 
+   outline-offset: 6px; 
+}
+
+@media (max-width: 480px) { 
+   #main { 
+      padding: 20px; 
+   } 
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-a-tribute-page/" title="Build a Tribute Page preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-a-tribute-page/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-a-tribute-page/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
     </div>
   </details>
 <details class="module-group" open>
