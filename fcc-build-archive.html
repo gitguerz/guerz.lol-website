@@ -74,7 +74,7 @@
     <summary>
       <span class="section-caret">▸</span>
       <span class="section-title">Responsive Web Design v9</span>
-      <span class="section-count">54 built · 67 total · worked chronologically</span> <!-- REMINDER: bump "built" every time a ☐ row becomes a project-box (also update that module's "items · built" count); recounted 2026-10-05: 38 project-boxes out of 67 items; 2026-10-11: +Colored Markers = 39; +Colored Boxes = 40 (recounted from the project-boxes); 2026-10-31: recounted 41 (Registration Form + Book Inventory had not been bumped), +Game Settings Panel +Feature Selection Page = 43; 2026-10-31: +Design a Contact Form = 44; 2026-11-01: +Design a Rothko Painting +Build a Confidential Email Page = 46; +Flexbox Photo Gallery +Colorful Boxes +Pricing Plans Layout Page +Page of Playing Cards = 50; 2026-11-01: +Nutritional Label +Newspaper Article +Quiz Webpage +Tribute Page = 54 -->
+      <span class="section-count">57 built · 67 total · worked chronologically</span> <!-- REMINDER: bump "built" every time a ☐ row becomes a project-box (also update that module's "items · built" count); recounted 2026-10-05: 38 project-boxes out of 67 items; 2026-10-11: +Colored Markers = 39; +Colored Boxes = 40 (recounted from the project-boxes); 2026-10-31: recounted 41 (Registration Form + Book Inventory had not been bumped), +Game Settings Panel +Feature Selection Page = 43; 2026-10-31: +Design a Contact Form = 44; 2026-11-01: +Design a Rothko Painting +Build a Confidential Email Page = 46; +Flexbox Photo Gallery +Colorful Boxes +Pricing Plans Layout Page +Page of Playing Cards = 50; 2026-11-01: +Nutritional Label +Newspaper Article +Quiz Webpage +Tribute Page = 54; 2026-11-02: +Cat Painting +House Painting +Balance Sheet = 57 -->
     </summary>
     <div class="section-body">
 <details class="module-group" open>
@@ -5401,47 +5401,21 @@ body {
       <span class="module-caret">▸</span>
       <span class="module-kicker">CSS</span>
       <span class="module-title">Positioning</span>
-      <span class="module-count">2 items</span>
+      <span class="module-count">2 items · 2 built</span> <!-- was "2 items"; built 2026-11-02 -->
     </summary>
     <div class="module-body">
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build a Cat Painting</span>
-      <span class="archive-type">workshop</span>
-    </div>
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build a House Painting</span>
-      <span class="archive-type">lab</span>
-    </div>
-    
-    </div>
-  </details>
-<details class="module-group" open>
-    <summary class="module">
-      <span class="module-caret">▸</span>
-      <span class="module-kicker">CSS</span>
-      <span class="module-title">Attribute Selectors</span>
-      <span class="module-count">2 items · 1 built</span>
-    </summary>
-    <div class="module-body">
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build a Balance Sheet</span>
-      <span class="archive-type">workshop</span>
-    </div>
-    <details class="project-box">
+    <details class="project-box"> <!-- BUILT: Build a Cat Painting -->
       <summary>
         <span class="project-caret">▸</span>
-        <span class="badge badge--lavender">rwd lab</span>
-        <span class="project-name">Build a Book Inventory App</span>
+        <span class="badge badge--lavender">rwd workshop</span>
+        <span class="project-name">Build a Cat Painting</span>
         <span class="project-stack">html + css</span>
       </summary>
       <div class="project-inner">
         <div class="project-meta">
-          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: [attr="value"] exact-match selector on class • [attr^="value"] starts-with selector • [attr~="value"] space-separated word selector • descendant combinator • child combinator (&gt;) • :first-child pseudo-class • :nth-child() with -n+2<br />Reinforced: Tables • gradients</span></div>
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: top, right, bottom and left offset properties • z-index property • CSS shapes made with borders (border triangles) • elliptical border-radius (slash syntax) • border-color with four values • transparent keyword<br />Reinforced: position: absolute • linear-gradient() function • transform: rotate() • border-radius • margin: auto • box-sizing • width and height • background-color</span></div>
         </div>
-        <div class="card-body">the fCC book inventory table — rows colored by reading status and star-style ratings, all driven by <b>attribute selectors</b> on class: exact match, starts-with, whitespace-separated word, plus descendant and child combinators, :first-child and :nth-child. comments sit only on the new concepts.</div>
+        <div class="card-body">a cat's face painted entirely in CSS: ears made from border triangles, eyes, nose, mouth curves and whiskers, all absolutely positioned inside the head.</div>
         <div class="view-pane" data-pane="html">
           <div class="pane-label">html</div>
           <div class="code-block code-block--peach">
@@ -5452,35 +5426,53 @@ body {
             <pre class="code"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;link rel="stylesheet" href="styles.css"&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;fCC Cat Painting&lt;/title&gt;
+    &lt;link rel="stylesheet" href="./styles.css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;h1&gt;Book Inventory&lt;/h1&gt;
-  &lt;table&gt;
-    &lt;thead&gt;
-      &lt;tr&gt;
-        &lt;th&gt;Title&lt;/th&gt;&lt;th&gt;Author&lt;/th&gt;&lt;th&gt;Category&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;th&gt;Rate&lt;/th&gt;
-      &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-      &lt;tr class="read"&gt;
-        &lt;td&gt;Dune&lt;/td&gt;&lt;td&gt;Frank Herbert&lt;/td&gt;&lt;td&gt;Sci-Fi&lt;/td&gt;
-        &lt;td&gt;&lt;span class="status"&gt;Read&lt;/span&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;span class="rate three"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt; &lt;!-- class holds two space-separated words (rate, three); a [class~="three"] selector can match the word three inside it --&gt;
-      &lt;/tr&gt;
-      &lt;tr class="to-read"&gt;
-        &lt;td&gt;The Fifth Season&lt;/td&gt;&lt;td&gt;N. K. Jemisin&lt;/td&gt;&lt;td&gt;Fantasy&lt;/td&gt;
-        &lt;td&gt;&lt;span class="status"&gt;To Read&lt;/span&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;span class="rate"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr class="in-progress"&gt;
-        &lt;td&gt;Project Hail Mary&lt;/td&gt;&lt;td&gt;Andy Weir&lt;/td&gt;&lt;td&gt;Sci-Fi&lt;/td&gt;
-        &lt;td&gt;&lt;span class="status"&gt;In Progress&lt;/span&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;span class="rate"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
+    &lt;main&gt;
+      &lt;div class="cat-head"&gt;  &lt;!-- every cat part is nested in .cat-head, so the absolutely positioned pieces line up to the head --&gt;
+        &lt;div class="cat-ears"&gt;
+          &lt;div class="cat-left-ear"&gt;
+            &lt;div class="cat-left-inner-ear"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="cat-right-ear"&gt;
+            &lt;div class="cat-right-inner-ear"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="cat-eyes"&gt;
+          &lt;div class="cat-left-eye"&gt;
+            &lt;div class="cat-left-inner-eye"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="cat-right-eye"&gt;
+            &lt;div class="cat-right-inner-eye"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="cat-nose"&gt;&lt;/div&gt;
+
+        &lt;div class="cat-mouth"&gt;
+          &lt;div class="cat-mouth-line-left"&gt;&lt;/div&gt;
+          &lt;div class="cat-mouth-line-right"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="cat-whiskers"&gt;
+          &lt;div class="cat-whiskers-left"&gt;
+            &lt;div class="cat-whisker-left-top"&gt;&lt;/div&gt;
+            &lt;div class="cat-whisker-left-middle"&gt;&lt;/div&gt;
+            &lt;div class="cat-whisker-left-bottom"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="cat-whiskers-right"&gt;
+            &lt;div class="cat-whisker-right-top"&gt;&lt;/div&gt;
+            &lt;div class="cat-whisker-right-middle"&gt;&lt;/div&gt;
+            &lt;div class="cat-whisker-right-bottom"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+    &lt;/main&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
           </div>
@@ -5492,68 +5484,990 @@ body {
               <span class="code-file">styles.css</span>
               <button class="code-copy" type="button">copy</button>
             </div>
-            <pre class="code"><code>span { display: inline-block; }
-
-tr[class="read"] { /* [class="read"] exact-match attribute selector: matches only when the whole class value is exactly "read", so a second class on the tr would break it */
-  background-image: linear-gradient(90deg, #eafbea, #d7f5d7);
+            <pre class="code"><code>* {
+  box-sizing: border-box;
 }
 
-tr[class="to-read"] {
-  background-image: linear-gradient(90deg, #fff7e0, #ffeebf);
+body {
+  background-color: #c9d2fc;
 }
 
-tr[class="in-progress"] {
-  background-image: linear-gradient(90deg, #e6efff, #cfe0ff);
+.cat-head {
+  position: absolute;  /* takes the head out of normal flow so top, right, bottom and left can place it */
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;  /* with top, right, bottom and left all 0, auto margins center the head both ways */
+  background: linear-gradient(#5e5e5e 85%, #45454f 100%);
+  width: 205px;
+  height: 180px;
+  border: 1px solid #000;
+  border-radius: 46%;
 }
 
-tr[class="to-read"] span[class="status"] { /* the space is a descendant combinator: matches the status span anywhere inside a to-read row */
-  border: 2px solid #d19a00;
-  background-image: linear-gradient(90deg, #ffe9a8, #ffd766);
+.cat-left-ear {
+  position: absolute;
+  top: -26px;
+  left: -31px;
+  z-index: 1;  /* z-index controls stacking: higher numbers sit on top */
+  border-top-left-radius: 90px;
+  border-top-right-radius: 10px;
+  transform: rotate(-45deg);
+  border-left: 35px solid transparent;  /* transparent side borders + a colored bottom border = a triangle (the ear) */
+  border-right: 35px solid transparent;
+  border-bottom: 70px solid #5e5e5e;  /* the colored bottom border is the visible part of the triangle */
 }
 
-tr[class="read"] span[class="status"] {
-  border: 2px solid #2e8b2e;
-  background-image: linear-gradient(90deg, #bff0bf, #8fe08f);
+.cat-right-ear {
+  position: absolute;
+  top: -26px;
+  left: 163px;
+  z-index: 1;
+  transform: rotate(45deg);
+  border-top-left-radius: 90px;
+  border-top-right-radius: 10px;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  border-bottom: 70px solid #5e5e5e;
 }
 
-tr[class="in-progress"] span[class="status"] {
-  border: 2px solid #2e5cff;
-  background-image: linear-gradient(90deg, #bcd2ff, #8fb0ff);
+.cat-left-inner-ear {
+  position: absolute;
+  top: 22px;
+  left: -20px;
+  border-top-left-radius: 90px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 40%;
+  border-bottom-left-radius: 40%;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #3b3b4f;
 }
 
-span[class="status"], span[class^="rate"] { /* [class^="rate"] starts-with selector: matches any class value that begins with "rate" */
+.cat-right-inner-ear {
+  position: absolute;
+  top: 22px;
+  left: -20px;
+  border-top-left-radius: 90px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 40%;
+  border-bottom-left-radius: 40%;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #3b3b4f;
+}
+
+.cat-left-eye {
+  position: absolute;
+  top: 54px;
+  left: 39px;
+  border-radius: 60%;
+  transform: rotate(25deg);
+  width: 30px;
+  height: 40px;
+  background-color: #000;
+}
+
+.cat-right-eye {
+  position: absolute;
+  top: 54px;
+  left: 134px;
+  border-radius: 60%;
+  transform: rotate(-25deg);
+  width: 30px;
+  height: 40px;
+  background-color: #000;
+}
+
+.cat-left-inner-eye {
+  position: absolute;
+  top: 8px;
+  left: 2px;
+  width: 10px;
   height: 20px;
-  width: auto;
-  padding: 4px 8px;
+  transform: rotate(10deg);
+  background-color: #fff;
+  border-radius: 60%;
 }
 
-span[class^="rate"] &gt; span { /* &gt; is the child combinator: matches only spans that are direct children of the rate span, not deeper descendants */
-  border: 1px solid #999;
-  border-radius: 50%;
-  margin: 2px;
-  height: 14px;
-  width: 14px;
-  background-color: #ffffff;
+.cat-right-inner-eye {
+  position: absolute;
+  top: 8px;
+  left: 18px;
+  transform: rotate(-5deg);
+  width: 10px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 60%;
 }
 
-span[class~="one"] span:first-child { /* [class~="one"] matches the word one anywhere in a space-separated class list; :first-child matches the span only if it is the first child of its parent */
-  background-image: linear-gradient(45deg, #ffd75e, #ffb300);
+.cat-nose {
+  position: absolute;
+  top: 108px;
+  left: 85px;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  transform: rotate(180deg);
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid #442c2c;
 }
 
-span[class~="two"] span:nth-child(-n+2) { /* :nth-child(-n+2) matches the first two children: n counts 0, 1, 2, giving 2, 1, 0 */
-  background-image: linear-gradient(45deg, #ffd75e, #ffb300);
+.cat-mouth div {
+  width: 30px;
+  height: 50px;
+  border: 2px solid #000;
+  border-radius: 190%/190px 150px 0 0;  /* slash = horizontal radii / vertical radii, which makes elliptical curves */
+  border-color: black transparent transparent transparent;  /* four values go top, right, bottom, left: only the top border shows, giving a curved line */
 }
 
-span[class~="three"] span {
-  background-image: linear-gradient(45deg, #ffd75e, #ffb300);
+.cat-mouth-line-left {
+  position: absolute;
+  top: 88px;
+  left: 74px;
+  transform: rotate(170deg);
+}
+
+.cat-mouth-line-right {
+  position: absolute;
+  top: 88px;
+  left: 91px;
+  transform: rotate(165deg);
+}
+
+.cat-whiskers-left div {
+  width: 40px;
+  height: 1px;
+  background-color: #000;
+}
+
+.cat-whiskers-right div {
+  width: 40px;
+  height: 1px;
+  background-color: #000;
+}
+
+.cat-whisker-left-top {
+  position: absolute;
+  top: 120px;
+  left: 52px;
+  transform: rotate(10deg);
+}
+
+.cat-whisker-left-middle {
+  position: absolute;
+  top: 127px;
+  left: 52px;
+  transform: rotate(3deg);
+}
+
+.cat-whisker-left-bottom {
+  position: absolute;
+  top: 134px;
+  left: 52px;
+  transform: rotate(-3deg);
+}
+
+.cat-whisker-right-top {
+  position: absolute;
+  top: 120px;
+  left: 109px;
+  transform: rotate(-10deg);
+}
+
+.cat-whisker-right-middle {
+  position: absolute;
+  top: 127px;
+  left: 109px;
+  transform: rotate(-3deg);
+}
+
+.cat-whisker-right-bottom {
+  position: absolute;
+  top: 134px;
+  left: 109px;
+  transform: rotate(3deg);  
 }</code></pre>
           </div>
         </div>
         <div class="view-pane" data-pane="preview">
           <div class="pane-label">preview</div>
-          <iframe class="preview-frame" data-src="https://builds.guerz.lol/book-inventory-app/index.html" title="Build a Book Inventory App preview" loading="lazy"></iframe>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-a-cat-painting/" title="Build a Cat Painting preview" loading="lazy"></iframe>
         </div>
-        <div class="project-links"><a href="https://builds.guerz.lol/book-inventory-app/index.html" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/book-inventory-app/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-a-cat-painting/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-a-cat-painting/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Build a House Painting -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd lab</span>
+        <span class="project-name">Build a House Painting</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: position: relative • repeating-linear-gradient() function • isolation property • negative z-index • hard color stops • aria-label attribute<br />Reinforced: position: absolute • top, right, bottom and left offsets • z-index • ::before and ::after pseudo-elements • content property • calc() function • child combinator (&gt;) • id selectors • box-shadow • border-radius • linear-gradient() function • box-sizing</span></div>
+        </div>
+        <div class="card-body">a night-time cottage painted in CSS: brick-striped walls, a chimney, glowing windows with ::before and ::after crossbars, and a door, all positioned inside one relative parent.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;The Midnight Cottage&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;The Midnight Cottage&lt;/h1&gt;
+  &lt;p&gt;lights on. world off.&lt;/p&gt;
+  &lt;div id="house" role="img" aria-label="A peach cottage with a lavender roof, chimney, two glowing windows, and a purple door beneath a night sky."&gt;  &lt;!-- role="img" + aria-label: tells screen readers this CSS drawing is one image, and describes it --&gt;
+    &lt;div id="chimney"&gt;&lt;/div&gt;
+    &lt;div id="roof"&gt;&lt;/div&gt;
+    &lt;div id="window-1"&gt;&lt;/div&gt;
+    &lt;div id="window-2"&gt;&lt;/div&gt;
+    &lt;div id="door"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>* { 
+   box-sizing: border-box; 
+}
+
+body { 
+   margin: 0; 
+   padding: 36px 20px 80px; 
+   min-height: 100vh; 
+   background: linear-gradient(#191625 70%, #363447 70%);  /* both stops at 70% = a hard edge between the sky and the ground */
+   color: #efd3c2; 
+   font-family: Georgia, serif; 
+   text-align: center; 
+   isolation: isolate;  /* gives the page its own stacking context, so the chimney's z-index: -1 can't slip behind the body background */
+}
+
+h1 { 
+   font-size: 2.2rem; 
+   margin-bottom: 0; 
+}
+
+p { 
+   color: #b8a7c9; 
+   letter-spacing: 3px; 
+   margin-bottom: 100px; 
+}
+
+#house { 
+   position: relative;  /* makes #house the positioning parent for its absolutely placed pieces */
+   width: 500px; 
+   height: 400px; 
+   border: 6px solid #302333; 
+   background-color: #bb8473; 
+   margin: 0 auto; 
+   background-image: repeating-linear-gradient(0deg, transparent 0 29px, #a77265 29px 31px);  /* repeating-linear-gradient repeats the stripe: 29px clear, then a 2px line, over and over */
+   box-shadow: 0 18px 0 #1c1925; 
+}
+
+#house &gt; div { 
+   position: absolute; 
+}
+
+#chimney { 
+   width: 64px; 
+   height: 110px; 
+   border: 5px solid #302333; 
+   background-color: #8d697b; 
+   top: -110px; 
+   right: 65px; 
+   z-index: -1;  /* a negative z-index puts the chimney behind the house */
+   background-image: repeating-linear-gradient(0deg, transparent 0 22px, #302333 22px 26px); 
+}
+
+#roof { 
+   width: 488px; height: 105px; 
+   border: 5px solid #302333; 
+   background-color: #6d597e; 
+   top: 0; 
+   left: 0; 
+   border-radius: 80px 80px 0 0; 
+   background-image: repeating-linear-gradient(0deg, transparent 0 22px, #564461 22px 25px); 
+}
+
+#window-1, #window-2 { 
+   width: 100px; 
+   height: 100px; 
+   border: 7px solid #302333; 
+   background-color: #f4ca86; 
+   top: 150px; 
+   box-shadow: 0 0 24px #efbe7c55; 
+}
+
+#window-1 { 
+   left: 40px; 
+}
+
+#window-2 { 
+   right: 40px; 
+}
+
+#window-1::before, 
+#window-2::before { 
+   content: ''; 
+   position: absolute; 
+   width: 6px; 
+   height: 100%; 
+   left: calc(50% - 3px);  /* calc() does the math: halfway across, minus half the bar's width, centers the bar */
+   background: #302333; 
+}
+
+#window-1::after, 
+#window-2::after { 
+   content: ''; position: 
+   absolute; height: 
+   6px; width: 100%; 
+   top: calc(50% - 3px); 
+   left: 0; 
+   background: #302333; 
+}
+
+#door { 
+   width: 100px; 
+   height: 160px; 
+   border: 6px solid #302333; 
+   background-color: #625075; 
+   bottom: 0; left: 194px; 
+   border-radius: 45px 45px 0 0; 
+}
+
+#door::after { 
+   content: ''; 
+   position: absolute; 
+   width: 10px; 
+   height: 10px; 
+   border-radius: 50%; 
+   background: #f4ca86; 
+   right: 12px; 
+   top: 85px; 
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-a-house-painting/" title="Build a House Painting preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-a-house-painting/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-a-house-painting/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    </div>
+  </details>
+<details class="module-group" open>
+    <summary class="module">
+      <span class="module-caret">▸</span>
+      <span class="module-kicker">CSS</span>
+      <span class="module-title">Attribute Selectors</span>
+      <span class="module-count">2 items · 2 built</span> <!-- was "2 items · 1 built"; Balance Sheet built 2026-11-02 -->
+    </summary>
+    <div class="module-body">
+    <details class="project-box"> <!-- BUILT: Build a Balance Sheet -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd workshop</span>
+        <span class="project-name">Build a Balance Sheet</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: !important declaration • position: sticky • clip-path property • border-collapse property • :nth-of-type() pseudo-class • vertical-align property • aria-hidden attribute<br />Reinforced: attribute selectors ([class~="..."], [class="..."]) • descendant combinator • sr-only technique • clip property • calc() function • :hover pseudo-class • linear-gradient() function • border-style: double • display: flex • gap • Tables • caption • rem unit</span></div>
+        </div>
+        <div class="card-body">an accessible balance sheet: three tables (assets, liabilities, net worth) with a sticky year header, screen-reader-only labels, and attribute selectors like [class~="sr-only"] doing the styling.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Balance Sheet&lt;/title&gt;
+    &lt;link rel="stylesheet" href="./styles.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;
+      &lt;section&gt;
+        &lt;h1&gt;
+          &lt;span class="flex"&gt;
+            &lt;span&gt;AcmeWidgetCorp&lt;/span&gt;
+            &lt;span&gt;Balance Sheet&lt;/span&gt;
+          &lt;/span&gt;
+        &lt;/h1&gt;
+        &lt;div id="years" aria-hidden="true"&gt;  &lt;!-- aria-hidden hides this visual-only year row from screen readers; the table headers already announce the years --&gt;
+          &lt;span class="year"&gt;2019&lt;/span&gt;
+          &lt;span class="year"&gt;2020&lt;/span&gt;
+          &lt;span class="year"&gt;2021&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="table-wrap"&gt;
+          &lt;table&gt;
+            &lt;caption&gt;  &lt;!-- caption gives the table a title that screen readers announce --&gt;
+              Assets
+            &lt;/caption&gt;
+            &lt;thead&gt;
+              &lt;tr&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;th&gt;&lt;span class="sr-only year"&gt;2019&lt;/span&gt;&lt;/th&gt;
+                &lt;th&gt;&lt;span class="sr-only year"&gt;2020&lt;/span&gt;&lt;/th&gt;
+                &lt;th class="current"&gt;&lt;span class="sr-only year"&gt;2021&lt;/span&gt;&lt;/th&gt;
+              &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+              &lt;tr class="data"&gt;
+                &lt;th&gt;Cash &lt;span class="description"&gt;This is the cash we currently have on hand.&lt;/span&gt;&lt;/th&gt;
+                &lt;td&gt;$25&lt;/td&gt;
+                &lt;td&gt;$30&lt;/td&gt;
+                &lt;td class="current"&gt;$28&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr class="data"&gt;
+                &lt;th&gt;Checking &lt;span class="description"&gt;Our primary transactional account.&lt;/span&gt;&lt;/th&gt;
+                &lt;td&gt;$54&lt;/td&gt;
+                &lt;td&gt;$56&lt;/td&gt;
+                &lt;td class="current"&gt;$53&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr class="data"&gt;
+                &lt;th&gt;Savings &lt;span class="description"&gt;Funds set aside for emergencies.&lt;/span&gt;&lt;/th&gt;
+                &lt;td&gt;$500&lt;/td&gt;
+                &lt;td&gt;$650&lt;/td&gt;
+                &lt;td class="current"&gt;$728&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr class="total"&gt;
+                &lt;th&gt;Total &lt;span class="sr-only"&gt;Assets&lt;/span&gt;&lt;/th&gt;
+                &lt;td&gt;$579&lt;/td&gt;
+                &lt;td&gt;$736&lt;/td&gt;
+                &lt;td class="current"&gt;$809&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+          &lt;table&gt;
+            &lt;caption&gt;
+              Liabilities
+            &lt;/caption&gt;
+            &lt;thead&gt;
+              &lt;tr&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;th&gt;&lt;span class="sr-only"&gt;2019&lt;/span&gt;&lt;/th&gt;
+                &lt;th&gt;&lt;span class="sr-only"&gt;2020&lt;/span&gt;&lt;/th&gt;
+                &lt;th&gt;&lt;span class="sr-only"&gt;2021&lt;/span&gt;&lt;/th&gt;
+              &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+              &lt;tr class="data"&gt;
+                &lt;th&gt;Loans &lt;span class="description"&gt;The outstanding balance on our startup loan.&lt;/span&gt;&lt;/th&gt;
+                &lt;td&gt;$500&lt;/td&gt;
+                &lt;td&gt;$250&lt;/td&gt;
+                &lt;td class="current"&gt;$0&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr class="data"&gt;
+                &lt;th&gt;Expenses &lt;span class="description"&gt;Annual anticipated expenses, such as payroll.&lt;/span&gt;&lt;/th&gt;
+                &lt;td&gt;$200&lt;/td&gt;
+                &lt;td&gt;$300&lt;/td&gt;
+                &lt;td class="current"&gt;$400&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr class="data"&gt;
+                &lt;th&gt;Credit &lt;span class="description"&gt;The outstanding balance on our credit card.&lt;/span&gt;&lt;/th&gt;
+                &lt;td&gt;$50&lt;/td&gt;
+                &lt;td&gt;$50&lt;/td&gt;
+                &lt;td class="current"&gt;$75&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr class="total"&gt;
+                &lt;th&gt;Total &lt;span class="sr-only"&gt;Liabilities&lt;/span&gt;&lt;/th&gt;
+                &lt;td&gt;$750&lt;/td&gt;
+                &lt;td&gt;$600&lt;/td&gt;
+                &lt;td class="current"&gt;$475&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+          &lt;table&gt;
+            &lt;caption&gt;
+              Net Worth
+            &lt;/caption&gt;
+            &lt;thead&gt;
+              &lt;tr&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;th&gt;&lt;span class="sr-only"&gt;2019&lt;/span&gt;&lt;/th&gt;
+                &lt;th&gt;&lt;span class="sr-only"&gt;2020&lt;/span&gt;&lt;/th&gt;
+                &lt;th&gt;&lt;span class="sr-only"&gt;2021&lt;/span&gt;&lt;/th&gt;
+              &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+              &lt;tr class="total"&gt;
+                &lt;th&gt;Total &lt;span class="sr-only"&gt;Net Worth&lt;/span&gt;&lt;/th&gt;
+                &lt;td&gt;$-171&lt;/td&gt;
+                &lt;td&gt;$136&lt;/td&gt;
+                &lt;td class="current"&gt;$334&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>span[class~="sr-only"] {
+  border: 0 !important;  /* !important beats any other rule for this property, whatever the specificity */
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  clip-path: inset(50%) !important;  /* clips the element down to nothing so it can't be seen */
+  height: 1px !important;
+  width: 1px !important;
+  position: absolute !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  padding: 0 !important;
+  margin: -1px !important;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  color: #0a0a23;
+}
+
+h1 {
+  max-width: 37.25rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+}
+
+h1 .flex {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1rem;
+}
+
+h1 .flex span:first-of-type {
+  font-size: 0.7em;
+}
+
+h1 .flex span:last-of-type {
+  font-size: 1.2em;
+}
+
+section {
+  max-width: 40rem;
+  margin: 0 auto;
+  border: 2px solid #d0d0d5;
+}
+
+#years {
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;  /* sticks the year row to the top of the screen while you scroll */
+  z-index: 999;
+  top: 0;
+  background: #0a0a23;
+  color: #fff;
+  padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+  margin: 0 -2px;
+}
+
+#years span[class] {
+  font-weight: bold;
+  width: 4.5rem;
+  text-align: right;
+}
+
+.table-wrap {
+  padding: 0 0.75rem 1.5rem 0.75rem;
+}
+
+table {
+  border-collapse: collapse;  /* merges neighboring cell borders into one line */
+  border: 0;
+  width: 100%;
+  position: relative;
+  margin-top: 3rem;
+}
+
+table caption {
+  color: #356eaf;
+  font-size: 1.3em;
+  font-weight: normal;
+  position: absolute;
+  top: -2.25rem;
+  left: 0.5rem;
+}
+
+tbody td {
+  width: 4rem;
+}
+
+tbody th {
+  width: calc(100% - 12rem);
+}
+
+tr[class="total"] {
+  border-bottom: 4px double #0a0a23;
+  font-weight: bold;
+}
+
+tr[class="total"] th {
+  text-align: left;
+  padding: 0.5rem 0 0.25rem 0.5rem;
+}
+
+tr.total td {
+  text-align: right;
+  padding: 0 0.25rem;
+}
+
+tr.total td:nth-of-type(3) {  /* :nth-of-type(3) = the third td in its row */
+  padding-right: 0.5rem;
+}
+
+tr.total:hover {
+  background-color: #99c9ff;
+}
+
+td.current {
+  font-style: italic;
+}
+
+tr.data {
+  background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+}
+
+tr.data th {
+  text-align: left;
+  padding-top: 0.3rem;
+  padding-left: 0.5rem;
+}
+
+tr.data th .description {
+  display: block;
+  font-weight: normal;
+  font-style: italic;
+  padding: 1rem 0 0.75rem;
+  margin-right: -13.5rem;
+}
+
+tr.data td {
+  vertical-align: top;  /* lines cell text up with the top of the row */
+  padding: 0.3rem 0.25rem 0;
+  text-align: right;
+}
+
+
+tr.data td:last-of-type {
+  padding-right: 0.5rem;
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-a-balance-sheet/" title="Build a Balance Sheet preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-a-balance-sheet/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-a-balance-sheet/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Build a Book Inventory App (rebuilt 2026-11-02; replaces the first version) -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd lab</span>
+        <span class="project-name">Build a Book Inventory App</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: [attr="value"] exact-match selector on class • [attr^="value"] starts-with selector • [attr~="value"] space-separated word selector • descendant combinator • child combinator (&gt;) • :first-child pseudo-class • :nth-child() with -n+2 • overflow-x property • white-space: nowrap • font shorthand with line-height • scope attribute<br />Reinforced: Tables • caption • aria-label attribute • border-collapse property • linear-gradient() function • border-radius • box-sizing • font-family</span></div>
+        </div>
+        <div class="card-body">a book inventory table: rows colored by reading status, status pills and dot ratings, all driven by <b>attribute selectors</b> on class (exact match, starts-with, whitespace-separated word), inside a wrapper that scrolls sideways on narrow screens.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;title&gt;Book Inventory&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;
+      &lt;h1&gt;Book Inventory&lt;/h1&gt;
+      &lt;p&gt;The shelf is full. The reading list is winning.&lt;/p&gt;
+      &lt;div class="table-wrap"&gt;
+        &lt;table&gt;
+          &lt;caption&gt;A small shelf of stories, tracked one book at a time.&lt;/caption&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;
+              &lt;th scope="col"&gt;Title&lt;/th&gt;  &lt;!-- scope="col" tells screen readers this header labels the whole column --&gt;
+              &lt;th scope="col"&gt;Author&lt;/th&gt;&lt;th scope="col"&gt;Category&lt;/th&gt;
+              &lt;th scope="col"&gt;Status&lt;/th&gt;
+              &lt;th scope="col"&gt;Rate&lt;/th&gt;
+            &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;tr class="read"&gt;
+              &lt;td&gt;Ghost World&lt;/td&gt;
+              &lt;td&gt;Daniel Clowes&lt;/td&gt;
+              &lt;td&gt;Graphic novel&lt;/td&gt;
+              &lt;td&gt;
+                &lt;span class="status"&gt;Read&lt;/span&gt;
+              &lt;/td&gt;
+              &lt;td&gt;
+                &lt;span class="rate three" aria-label="3 out of 3"&gt;  &lt;!-- aria-label gives the dot rating a text version for screen readers; "rate three" is two classes, which is why the CSS uses [class~="three"] --&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                &lt;/span&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr class="read"&gt;
+              &lt;td&gt;Blankets&lt;/td&gt;
+              &lt;td&gt;Craig Thompson&lt;/td&gt;
+              &lt;td&gt;Graphic memoir&lt;/td&gt;
+              &lt;td&gt;
+                &lt;span class="status"&gt;Read&lt;/span&gt;
+              &lt;/td&gt;
+              &lt;td&gt;
+                &lt;span class="rate two" aria-label="2 out of 3"&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                &lt;/span&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr class="read"&gt;
+              &lt;td&gt;Player Piano (aka Utopia 14)&lt;/td&gt;
+              &lt;td&gt;Kurt Vonnegut&lt;/td&gt;
+              &lt;td&gt;Science fiction&lt;/td&gt;
+              &lt;td&gt;
+                &lt;span class="status"&gt;Read&lt;/span&gt;
+              &lt;/td&gt;
+              &lt;td&gt;
+                &lt;span class="rate one" aria-label="1 out of 3"&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                &lt;/span&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr class="in-progress"&gt;
+              &lt;td&gt;Habibi&lt;/td&gt;
+              &lt;td&gt;Craig Thompson&lt;/td&gt;
+              &lt;td&gt;Graphic novel&lt;/td&gt;
+              &lt;td&gt;
+                &lt;span class="status"&gt;In Progress&lt;/span&gt;
+              &lt;/td&gt;
+              &lt;td&gt;
+                &lt;span class="rate" aria-label="Not rated"&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                &lt;/span&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr class="to-read"&gt;
+              &lt;td&gt;Building Stories&lt;/td&gt;
+              &lt;td&gt;Chris Ware&lt;/td&gt;
+              &lt;td&gt;Graphic Novel&lt;/td&gt;
+              &lt;td&gt;
+                &lt;span class="status"&gt;To Read&lt;/span&gt;
+              &lt;/td&gt;
+              &lt;td&gt;
+                &lt;span class="rate" aria-label="Not rated"&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                  &lt;span&gt;&lt;/span&gt;
+                &lt;/span&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 40px 20px;
+	background: #282330;
+	color: #292333;
+	font-family: Georgia, serif;
+}
+
+main {
+	max-width: 1050px;
+	margin: auto;
+}
+
+h1 {
+	margin-bottom: 8px;
+	color: #edc2ab;
+	font-size: 2.5rem;
+}
+
+main &gt; p {
+	margin-bottom: 28px;
+	color: #c9b6d4;
+}
+
+.table-wrap {
+	overflow-x: auto;  /* adds a horizontal scrollbar to the wrapper only when the table is too wide */
+	border: 2px solid #b19abc;
+	border-radius: 8px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	background: #f6efe7;
+}
+
+caption {
+	padding: 16px;
+	background: #3d3348;
+	color: #f6efe7;
+	text-align: left;
+}
+
+th {
+	padding: 18px 16px;
+	background: #51415d;
+	color: #fff;
+	text-align: left;
+}
+
+td {
+	padding: 18px 16px;
+	border-bottom: 1px solid #c6bdc7;
+}
+
+td:first-child {
+	font-weight: bold;
+}
+
+span[class="status"],  /* [class="status"] = exact match; [class^="rate"] = class value starts with "rate" */
+span[class^="rate"] {
+	width: 120px;
+	height: 36px;
+	padding: 6px 8px;
+	white-space: nowrap;  /* keeps the text on one line */
+	vertical-align: middle;
+	text-align: center;
+}
+
+span[class="status"] {
+	border-radius: 20px;
+	font: 14px/20px sans-serif;  /* font shorthand: size/line-height family */
+}
+
+span {
+	display: inline-block;
+}
+
+tr[class="read"] {
+	background-image: linear-gradient(90deg, #eafbea, #d7f5d7);
+}
+
+tr[class="to-read"] {
+	background-image: linear-gradient(90deg, #fff7e0, #ffeebf);
+}
+
+tr[class="in-progress"] {
+	background-image: linear-gradient(90deg, #e6efff, #cfe0ff);
+}
+
+tr[class="to-read"] span[class="status"] {
+	border: 2px solid #936d00;
+	background-image: linear-gradient(90deg, #ffe9a8, #ffd766);
+}
+
+tr[class="read"] span[class="status"] {
+	border: 2px solid #2e702e;
+	background-image: linear-gradient(90deg, #bff0bf, #8fe08f);
+}
+
+tr[class="in-progress"] span[class="status"] {
+	border: 2px solid #39549b;
+	background-image: linear-gradient(90deg, #bcd2ff, #8fb0ff);
+}
+
+span[class^="rate"] &gt; span {
+	width: 14px;
+	height: 14px;
+	margin: 2px;
+	border: 1px solid #77627c;
+	border-radius: 50%;
+	background-color: #fff;
+}
+
+span[class~="one"] span:first-child {  /* [class~="one"] matches the word one inside a space-separated class list */
+	background-image: linear-gradient(45deg, #ffd75e, #ffb300);
+}
+
+span[class~="two"] span:nth-child(-n+2) {  /* :nth-child(-n+2) = the first two children */
+	background-image: linear-gradient(45deg, #ffd75e, #ffb300);
+}
+
+span[class~="three"] span {
+	background-image: linear-gradient(45deg, #ffd75e, #ffb300);
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/book-inventory-app/" title="Build a Book Inventory App preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/book-inventory-app/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/book-inventory-app/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
       </div>
     </details>
     
