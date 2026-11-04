@@ -74,7 +74,7 @@
     <summary>
       <span class="section-caret">▸</span>
       <span class="section-title">Responsive Web Design v9</span>
-      <span class="section-count">57 built · 67 total · worked chronologically</span> <!-- REMINDER: bump "built" every time a ☐ row becomes a project-box (also update that module's "items · built" count); recounted 2026-10-05: 38 project-boxes out of 67 items; 2026-10-11: +Colored Markers = 39; +Colored Boxes = 40 (recounted from the project-boxes); 2026-10-31: recounted 41 (Registration Form + Book Inventory had not been bumped), +Game Settings Panel +Feature Selection Page = 43; 2026-10-31: +Design a Contact Form = 44; 2026-11-01: +Design a Rothko Painting +Build a Confidential Email Page = 46; +Flexbox Photo Gallery +Colorful Boxes +Pricing Plans Layout Page +Page of Playing Cards = 50; 2026-11-01: +Nutritional Label +Newspaper Article +Quiz Webpage +Tribute Page = 54; 2026-11-02: +Cat Painting +House Painting +Balance Sheet = 57 -->
+      <span class="section-count">64 built · 68 total · worked chronologically</span> <!-- REMINDER: bump "built" every time a ☐ row becomes a project-box (also update that module's "items · built" count); recounted 2026-10-05: 38 project-boxes out of 67 items; 2026-10-11: +Colored Markers = 39; +Colored Boxes = 40 (recounted from the project-boxes); 2026-10-31: recounted 41 (Registration Form + Book Inventory had not been bumped), +Game Settings Panel +Feature Selection Page = 43; 2026-10-31: +Design a Contact Form = 44; 2026-11-01: +Design a Rothko Painting +Build a Confidential Email Page = 46; +Flexbox Photo Gallery +Colorful Boxes +Pricing Plans Layout Page +Page of Playing Cards = 50; 2026-11-01: +Nutritional Label +Newspaper Article +Quiz Webpage +Tribute Page = 54; 2026-11-02: +Cat Painting +House Painting +Balance Sheet = 57; 2026-11-04: +Design a Piano +Technical Documentation Page +City Skyline +Availability Table +Magazine (new Grid row, so total 67 -> 68) +Newspaper Layout +Product Landing Page = 64 -->
     </summary>
     <div class="section-body">
 <details class="module-group" open>
@@ -6478,19 +6478,323 @@ span[class~="three"] span {
       <span class="module-caret">▸</span>
       <span class="module-kicker">CSS</span>
       <span class="module-title">Responsive Design</span>
-      <span class="module-count">2 items</span>
+      <span class="module-count">2 items · 2 built</span> <!-- was "2 items"; Piano + Technical Documentation Page built 2026-11-04 -->
     </summary>
     <div class="module-body">
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Design a Piano</span>
-      <span class="archive-type">workshop</span>
-    </div>
-    <div class="archive-row archive-row--cert">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build a Technical Documentation Page</span>
-      <span class="archive-type">cert project</span>
-    </div>
+    <details class="project-box"> <!-- BUILT: Design a Piano -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd workshop</span>
+        <span class="project-name">Design a Piano</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: float property • min-width media feature • combining media conditions with and (a breakpoint range) • compound class selector (.key.black--key) • box-sizing: inherit • negative offset value (left: -18px)<br />Reinforced: media queries (@media with max-width) • ::after pseudo-element • content property • position: relative • position: absolute • top, right, bottom and left offset properties • overflow property • border-radius property • margin: auto centering • universal selector (*) • box-sizing: border-box • width and height • viewport meta tag</span></div>
+        </div>
+        <div class="card-body">a piano made of <b>divs</b>: white keys <b>float</b> side by side, black keys are <b>::after</b> pieces nudged over the gaps, and two <b>media queries</b> resize the whole piano for phone, tablet and desktop.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;Piano&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;link rel="stylesheet" href="./styles.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="piano"&gt;
+      &lt;img class="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" alt="freeCodeCamp Logo" /&gt;
+      &lt;div class="keys"&gt;
+        &lt;div class="key"&gt;&lt;/div&gt;
+        &lt;div class="key black--key"&gt;&lt;/div&gt;  &lt;!-- two classes on one element: the first sizes and colors the key, the second turns it into a black key (drawn with ::after in the css) --&gt;
+        &lt;div class="key black--key"&gt;&lt;/div&gt;
+        &lt;div class="key"&gt;&lt;/div&gt;
+        &lt;div class="key black--key"&gt;&lt;/div&gt;
+        &lt;div class="key black--key"&gt;&lt;/div&gt;
+        &lt;div class="key black--key"&gt;&lt;/div&gt;
+
+        &lt;div class="key"&gt;&lt;/div&gt;
+        &lt;div class="key black--key"&gt;&lt;/div&gt;
+        &lt;div class="key black--key"&gt;&lt;/div&gt;
+        &lt;div class="key"&gt;&lt;/div&gt;
+        &lt;div class="key black--key"&gt;&lt;/div&gt;
+        &lt;div class="key black--key"&gt;&lt;/div&gt;
+        &lt;div class="key black--key"&gt;&lt;/div&gt;
+
+        &lt;div class="key"&gt;&lt;/div&gt;
+        &lt;div class="key black--key"&gt;&lt;/div&gt;
+        &lt;div class="key black--key"&gt;&lt;/div&gt;
+        &lt;div class="key"&gt;&lt;/div&gt;
+        &lt;div class="key black--key"&gt;&lt;/div&gt;
+        &lt;div class="key black--key"&gt;&lt;/div&gt;
+        &lt;div class="key black--key"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;  /* inherit = copy the parent's value; html is set once and every element follows */
+}
+
+#piano {
+  background-color: #00471b;
+  width: 992px;
+  height: 290px;
+  margin: 80px auto;
+  padding: 90px 20px 0 20px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.keys {
+  background-color: #040404;
+  width: 949px;
+  height: 180px;
+  padding-left: 2px;
+  overflow: hidden;  /* clips the floated keys at the box edge and makes this box contain its floats */
+}
+
+.key {
+  background-color: #ffffff;
+  position: relative;
+  width: 41px;
+  height: 175px;
+  margin: 2px;
+  float: left;  /* pulls each key out of the normal flow and lines them up side by side, left to right */
+  border-radius: 0 0 3px 3px;
+}
+
+.key.black--key::after {  /* compound selector: only elements with both classes; ::after draws the black key on top */
+  background-color: #1d1e22;
+  content: "";
+  position: absolute;
+  left: -18px;  /* a negative offset nudges the black key left so it straddles the gap between two white keys */
+  width: 32px;
+  height: 100px;
+  border-radius: 0 0 3px 3px;
+}
+
+.logo {
+  width: 200px;
+  position: absolute;
+  top: 23px;
+}
+
+@media (max-width: 768px) {  /* breakpoint: these rules only apply when the viewport is 768px wide or narrower */
+  #piano {
+    width: 358px;
+  }
+
+  .keys {
+    width: 318px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 769px) {  /* and joins two conditions into a range: only tablet widths (769px to 1199px) match */
+  #piano {
+    width: 675px;
+  }  
+  .keys {
+    width: 633px;
+  }
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/design-a-piano/" title="Design a Piano preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/design-a-piano/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/design-a-piano/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Build a Technical Documentation Page -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd cert project</span>
+        <span class="project-name">Build a Technical Documentation Page</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: position: fixed • position: static • overflow-y property • fragment links (href="#id") • code element • margin-left to clear a fixed sidebar<br />Reinforced: media queries (@media with max-width) • nav, header, main and section elements • display: block • border-top, border-right and border-bottom • line-height property • monospace font stack • max-width • padding • box-sizing: border-box • universal selector (*)</span></div>
+        </div>
+        <div class="card-body">a documentation page with a <b>position: fixed</b> navbar of <b>fragment links</b> that jump to each section; at 768px a media query sets the navbar to <b>static</b> so it stacks on top.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;title&gt;CSS Documentation&lt;/title&gt;  &lt;!-- the tab title and the main thing search engines and screen readers announce first --&gt;
+&lt;meta name="description" content="A short reference to core CSS ideas: selectors, the box model, positioning and more."&gt;  &lt;!-- the summary search engines can show under the page title --&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;nav id="navbar"&gt;
+&lt;header&gt;CSS Documentation&lt;/header&gt;
+&lt;a class="nav-link" href="#Introduction"&gt;Introduction&lt;/a&gt;  &lt;!-- fragment link: # plus an id jumps to the element with that id on this page --&gt;
+&lt;a class="nav-link" href="#Selectors"&gt;Selectors&lt;/a&gt;
+&lt;a class="nav-link" href="#The_Box_Model"&gt;The Box Model&lt;/a&gt;
+&lt;a class="nav-link" href="#Positioning"&gt;Positioning&lt;/a&gt;
+&lt;a class="nav-link" href="#Responsive_Design"&gt;Responsive Design&lt;/a&gt;
+&lt;/nav&gt;
+&lt;main id="main-doc"&gt;
+&lt;section class="main-section" id="Introduction"&gt;  &lt;!-- this id is where the Introduction nav link jumps to --&gt;
+&lt;header&gt;Introduction&lt;/header&gt;
+&lt;p&gt;CSS (Cascading Style Sheets) is the language used to style the visual presentation of web
+pages.&lt;/p&gt;
+&lt;p&gt;It works alongside HTML, which provides structure, while CSS controls color, layout, and
+typography.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CSS separates content from presentation.&lt;/li&gt;
+&lt;li&gt;One stylesheet can style many pages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section class="main-section" id="Selectors"&gt;
+&lt;header&gt;Selectors&lt;/header&gt;
+&lt;p&gt;A selector targets the HTML elements you want to style.&lt;/p&gt;
+&lt;p&gt;You can select by tag, class, id, or attribute.&lt;/p&gt;
+&lt;code&gt;p { color: navy; }&lt;/code&gt;  &lt;!-- code marks a snippet of code; the css makes it a block with a monospace font --&gt;
+&lt;code&gt;.button { padding: 8px; }&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;Tag selectors target every element of a type.&lt;/li&gt;
+&lt;li&gt;Class selectors are reusable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section class="main-section" id="The_Box_Model"&gt;
+&lt;header&gt;The Box Model&lt;/header&gt;
+&lt;p&gt;Every element is a rectangular box made of content, padding, border, and margin.&lt;/p&gt;
+&lt;code&gt;div { padding: 16px; border: 1px solid; }&lt;/code&gt;
+&lt;p&gt;Understanding the box model is key to controlling spacing.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="main-section" id="Positioning"&gt;
+&lt;header&gt;Positioning&lt;/header&gt;
+&lt;p&gt;The position property controls how an element sits in the document flow.&lt;/p&gt;
+&lt;code&gt;.box { position: absolute; }&lt;/code&gt;
+&lt;p&gt;Values include static, relative, absolute, fixed, and sticky.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="main-section" id="Responsive_Design"&gt;
+&lt;header&gt;Responsive Design&lt;/header&gt;
+&lt;p&gt;Responsive design lets one site adapt to any screen size.&lt;/p&gt;
+&lt;code&gt;@media (min-width: 768px) { }&lt;/code&gt;
+&lt;p&gt;Media queries apply styles based on the device.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use relative units for fluid layouts.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>* { box-sizing: border-box; }
+body {
+margin: 0;
+font-family: -apple-system, Helvetica, Arial, sans-serif;
+color: #2a2e3a;
+line-height: 1.6;
+}
+/* fixed navbar on the left edge (test 21) */
+#navbar {
+position: fixed;  /* pins the navbar to the viewport so it stays put while the page scrolls */
+top: 0;
+left: 0;
+width: 280px;
+height: 100%;
+border-right: 2px solid #e2e5ec;
+background: #f6f7fa;
+padding: 20px;
+overflow-y: auto;  /* adds a vertical scrollbar to the navbar only if its links don't fit */
+}
+#navbar header {
+font-size: 1.4rem;
+font-weight: 700;
+margin-bottom: 16px;
+}
+.nav-link {
+display: block;
+padding: 8px 0;
+color: #3a5a8a;
+text-decoration: none;
+border-top: 1px solid #e2e5ec;
+}
+/* main content sits to the right of the fixed navbar */
+#main-doc {
+margin-left: 300px;  /* pushes the content right so the fixed navbar (280px wide) doesn't cover it */
+padding: 24px 32px;
+max-width: 800px;
+}
+.main-section header {
+font-size: 1.6rem;
+margin-top: 28px;
+}
+code {
+display: block;
+background: #f3f4f7;
+padding: 8px 12px;
+border-radius: 4px;
+font-family: Menlo, Consolas, monospace;
+margin: 8px 0;
+}
+/* media query (test 22): stack navbar on top for small screens */
+@media (max-width: 768px) {
+#navbar {
+position: static;  /* static = back in the normal flow, so the navbar sits on top instead of floating at the side */
+width: 100%;
+height: auto;
+border-right: none;
+border-bottom: 2px solid #e2e5ec;
+}
+#main-doc {
+margin-left: 0;
+}
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-a-technical-documentation-page/" title="Build a Technical Documentation Page preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-a-technical-documentation-page/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-a-technical-documentation-page/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
     
     </div>
   </details>
@@ -6499,19 +6803,725 @@ span[class~="three"] span {
       <span class="module-caret">▸</span>
       <span class="module-kicker">CSS</span>
       <span class="module-title">Variables</span>
-      <span class="module-count">2 items</span>
+      <span class="module-count">2 items · 2 built</span> <!-- was "2 items"; City Skyline + Availability Table built 2026-11-04 -->
     </summary>
     <div class="module-body">
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build a City Skyline</span>
-      <span class="archive-type">workshop</span>
-    </div>
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build an Availability Table</span>
-      <span class="archive-type">lab</span>
-    </div>
+    <details class="project-box"> <!-- BUILT: Build a City Skyline -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd workshop</span>
+        <span class="project-name">Build a City Skyline</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: custom properties (CSS variables) • :root selector • var() function • redefining variables inside a media query • radial-gradient() function • multiple background layers • vh unit • justify-content: space-evenly value<br />Reinforced: linear-gradient() function • repeating-linear-gradient() function • hard color stops • color stops • transparent keyword • CSS shapes made with borders (border triangles) • display: flex • flex-direction property • flex-wrap property • align-items property • position: absolute • position: relative • border-radius property • media queries (@media with max-width) • vw unit • overflow property • box-sizing: border-box • universal selector (*)</span></div>
+        </div>
+        <div class="card-body">a skyline drawn with divs and gradients: eight <b>custom properties</b> in <b>:root</b> color every building, a <b>radial-gradient</b> sun lights the sky, and below 1000px a media query <b>redefines the variables</b> to turn it into a night scene.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;    
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;City Skyline&lt;/title&gt;
+    &lt;link href="styles.css" rel="stylesheet" /&gt;   
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;div class="background-buildings sky"&gt;  &lt;!-- background-buildings lays out the row; sky paints the radial-gradient behind it --&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div class="bb1 building-wrap"&gt;
+        &lt;div class="bb1a bb1-window"&gt;&lt;/div&gt;
+        &lt;div class="bb1b bb1-window"&gt;&lt;/div&gt;
+        &lt;div class="bb1c bb1-window"&gt;&lt;/div&gt;
+        &lt;div class="bb1d"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="bb2"&gt;
+        &lt;div class="bb2a"&gt;&lt;/div&gt;
+        &lt;div class="bb2b"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="bb3"&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div class="bb4 building-wrap"&gt;
+        &lt;div class="bb4a"&gt;&lt;/div&gt;
+        &lt;div class="bb4b"&gt;&lt;/div&gt;
+        &lt;div class="bb4c window-wrap"&gt;
+          &lt;div class="bb4-window"&gt;&lt;/div&gt;
+          &lt;div class="bb4-window"&gt;&lt;/div&gt;
+          &lt;div class="bb4-window"&gt;&lt;/div&gt;
+          &lt;div class="bb4-window"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="foreground-buildings"&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div class="fb1 building-wrap"&gt;
+        &lt;div class="fb1a"&gt;&lt;/div&gt;
+        &lt;div class="fb1b"&gt;&lt;/div&gt;
+        &lt;div class="fb1c"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="fb2"&gt;
+        &lt;div class="fb2a"&gt;&lt;/div&gt;
+        &lt;div class="fb2b window-wrap"&gt;
+          &lt;div class="fb2-window"&gt;&lt;/div&gt;
+          &lt;div class="fb2-window"&gt;&lt;/div&gt;
+          &lt;div class="fb2-window"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div class="fb3 building-wrap"&gt;
+        &lt;div class="fb3a window-wrap"&gt;
+          &lt;div class="fb3-window"&gt;&lt;/div&gt;
+          &lt;div class="fb3-window"&gt;&lt;/div&gt;
+          &lt;div class="fb3-window"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="fb3b"&gt;&lt;/div&gt;
+        &lt;div class="fb3a"&gt;&lt;/div&gt;
+        &lt;div class="fb3b"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="fb4"&gt;
+        &lt;div class="fb4a"&gt;&lt;/div&gt;
+        &lt;div class="fb4b"&gt;
+          &lt;div class="fb4-window"&gt;&lt;/div&gt;
+          &lt;div class="fb4-window"&gt;&lt;/div&gt;
+          &lt;div class="fb4-window"&gt;&lt;/div&gt;
+          &lt;div class="fb4-window"&gt;&lt;/div&gt;
+          &lt;div class="fb4-window"&gt;&lt;/div&gt;
+          &lt;div class="fb4-window"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="fb5"&gt;&lt;/div&gt;
+      &lt;div class="fb6"&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>:root {  /* :root = the html element, so variables declared here work anywhere on the page */
+  --building-color1: #aa80ff;  /* custom property (css variable): a --name that stores a value to reuse */
+  --building-color2: #66cc99;
+  --building-color3: #cc6699;
+  --building-color4: #538cc6;
+  --window-color1: #bb99ff;
+  --window-color2: #8cd9b3;
+  --window-color3: #d98cb3;
+  --window-color4: #8cb3d9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;  /* vh = 1% of the viewport height, so 100vh fills the whole window */
+  margin: 0;
+  overflow: hidden;
+}
+
+.background-buildings, .foreground-buildings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;  /* space-evenly = equal gaps between the buildings and at both ends */
+  position: absolute;
+  top: 0;
+}
+
+.building-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.window-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.sky {
+  background: radial-gradient(
+      closest-corner circle at 15% 15%,  /* radial-gradient shape: a circle sized to the closest corner, centered 15% across and 15% down (the sun) */
+      #ffcf33,
+      #ffcf33 20%,
+      #ffff66 21%,
+      #bbeeff 100%
+    );
+}
+
+/* BACKGROUND BUILDINGS - "bb" stands for "background building" */
+.bb1 {
+  width: 10%;
+  height: 70%;
+}
+
+.bb1a {
+  width: 70%;
+}
+  
+.bb1b {
+  width: 80%;
+}
+  
+.bb1c {
+  width: 90%;
+}
+
+.bb1d {
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(
+      var(--building-color1) 50%,  /* var() reads the value stored in --building-color1 */
+      var(--window-color1)
+    );
+}
+
+.bb1-window {
+  height: 10%;
+  background: linear-gradient(
+      var(--building-color1),
+      var(--window-color1)
+    );
+}
+
+.bb2 {
+  width: 10%;
+  height: 50%;
+}
+
+.bb2a {
+  border-bottom: 5vh solid var(--building-color2);  /* border triangle for the roof; vh and vw scale it with the window */
+  border-left: 5vw solid transparent;
+  border-right: 5vw solid transparent;
+}
+
+.bb2b {
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+      var(--building-color2),
+      var(--building-color2) 6%,
+      var(--window-color2) 6%,
+      var(--window-color2) 9%
+    );
+}
+
+.bb3 {
+  width: 10%;
+  height: 55%;
+  background: repeating-linear-gradient(
+      90deg,
+      var(--building-color3),
+      var(--building-color3),
+      var(--window-color3) 15%
+    );
+}
+
+.bb4 {
+  width: 11%;
+  height: 58%;
+}
+
+.bb4a {
+  width: 3%;
+  height: 10%;
+  background-color: var(--building-color4);
+}
+
+.bb4b {
+  width: 80%;
+  height: 5%;
+  background-color: var(--building-color4);
+}
+  
+.bb4c {
+  width: 100%;
+  height: 85%;
+  background-color: var(--building-color4);
+}
+
+.bb4-window {
+  width: 18%;
+  height: 90%;
+  background-color: var(--window-color4);
+}
+
+/* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
+.fb1 {
+  width: 10%;
+  height: 60%;
+}
+
+.fb1a {
+  border-bottom: 7vh solid var(--building-color4);
+  border-left: 2vw solid transparent;
+  border-right: 2vw solid transparent;
+}
+
+.fb1b {
+  width: 60%;
+  height: 10%;
+  background-color: var(--building-color4);
+}
+  
+.fb1c {
+  width: 100%;
+  height: 80%;
+  background: repeating-linear-gradient(
+      90deg,
+      var(--building-color4),
+      var(--building-color4) 10%,
+      transparent 10%,
+      transparent 15%
+    ),
+    repeating-linear-gradient(  /* a second background layer: comma-separated gradients stack on top of each other */
+      var(--building-color4),
+      var(--building-color4) 10%,
+      var(--window-color4) 10%,
+      var(--window-color4) 90%
+    );
+}
+
+.fb2 {
+  width: 10%;
+  height: 40%;
+}
+
+.fb2a {
+  width: 100%;
+  border-bottom: 10vh solid var(--building-color3);
+  border-left: 1vw solid transparent;
+  border-right: 1vw solid transparent;
+}
+
+.fb2b {
+  width: 100%;
+  height: 75%;
+  background-color: var(--building-color3);
+}
+
+.fb2-window {
+  width: 22%;
+  height: 100%;
+  background-color: var(--window-color3);
+}
+
+.fb3 {
+  width: 10%;
+  height: 35%;
+}
+  
+.fb3a {
+  width: 80%;
+  height: 15%;
+  background-color: var(--building-color1);
+}
+  
+.fb3b {
+  width: 100%;
+  height: 35%;
+  background-color: var(--building-color1);
+}
+
+.fb3-window {
+  width: 25%;
+  height: 80%;
+  background-color: var(--window-color1);
+}
+
+.fb4 {
+  width: 8%;
+  height: 45%;
+  position: relative;
+  left: 10%;
+}
+
+.fb4a {
+  border-top: 5vh solid transparent;
+  border-left: 8vw solid var(--building-color1);
+}
+
+.fb4b {
+  width: 100%;
+  height: 89%;
+  background-color: var(--building-color1);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fb4-window {
+  width: 30%;
+  height: 10%;
+  border-radius: 50%;
+  background-color: var(--window-color1);
+  margin: 10%;
+}
+
+.fb5 {
+  width: 10%;
+  height: 33%;
+  position: relative;
+  right: 10%;
+  background: repeating-linear-gradient(
+      var(--building-color2),
+      var(--building-color2) 5%,
+      transparent 5%,
+      transparent 10%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--building-color2),
+      var(--building-color2) 12%,
+      var(--window-color2) 12%,
+      var(--window-color2) 44%
+    );
+}
+
+.fb6 {
+  width: 9%;
+  height: 38%;
+  background: repeating-linear-gradient(
+      90deg,
+      var(--building-color3),
+      var(--building-color3) 10%,
+      transparent 10%,
+      transparent 30%
+    ),
+    repeating-linear-gradient(
+      var(--building-color3),
+      var(--building-color3) 10%,
+      var(--window-color3) 10%,
+      var(--window-color3) 30%
+    );
+}
+
+@media (max-width: 1000px) {  /* below 1000px wide the variables get new values, so every color swaps without touching the rules above */
+  :root {
+    --building-color1: #000;
+    --building-color2: #000;
+    --building-color3: #000;
+    --building-color4: #000;
+    --window-color1: #777; 
+    --window-color2: #777;
+    --window-color3: #777;
+    --window-color4: #777;
+  }
+
+  .sky {
+    background: radial-gradient(
+        closest-corner circle at 15% 15%,
+        #ccc,
+        #ccc 20%,
+        #445 21%,
+        #223 100%
+      );
+  }
+}
+    </code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-a-city-skyline/" title="Build a City Skyline preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-a-city-skyline/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-a-city-skyline/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Build an Availability Table -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd lab</span>
+        <span class="project-name">Build an Availability Table</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: custom properties storing shorthand values (--solid-border) • color stops with two positions • dashed border style<br />Reinforced: custom properties (:root and var()) • linear-gradient() function • gradientDirection value • child combinator (&gt;) • descendant combinator • tables • caption • scope attribute • aria-label attribute • border-collapse property • logical properties (border-inline) • overflow-x property • min-width property • white-space: nowrap • display: flex • justify-content: space-between value • text-align • system-ui generic font family • box-sizing: border-box</span></div>
+        </div>
+        <div class="card-body">a weekly meeting-availability heat map: six <b>custom properties</b> shade the cells from 0 to 5+ people, <b>solid vs dashed borders</b> (also variables) mark on-the-hour vs half-hour rows, and the legend gradient reuses the same colors.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Weekly Availability&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main&gt;
+    &lt;h1&gt;Find our overlap.&lt;/h1&gt;
+    &lt;p&gt;Less scheduling ping-pong. More getting things done.&lt;/p&gt;
+    &lt;div class="table-wrap"&gt;
+      &lt;table&gt;
+        &lt;caption&gt;Weekly Meeting Availability Schedule&lt;/caption&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th scope="col"&gt;Time&lt;/th&gt;
+            &lt;th scope="col"&gt;Monday&lt;/th&gt;
+            &lt;th scope="col"&gt;Tuesday&lt;/th&gt;
+            &lt;th scope="col"&gt;Wednesday&lt;/th&gt;
+            &lt;th scope="col"&gt;Thursday&lt;/th&gt;
+            &lt;th scope="col"&gt;Friday&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr class="sharp"&gt;  &lt;!-- sharp = an on-the-hour row (solid line under it); half = a half-hour row (dashed line) --&gt;
+            &lt;th class="time" scope="row"&gt;9:00 AM&lt;/th&gt;
+            &lt;td class="available-0" aria-label="0 available"&gt;0&lt;/td&gt;
+            &lt;td class="available-1" aria-label="1 available"&gt;1&lt;/td&gt;
+            &lt;td class="available-2" aria-label="2 available"&gt;2&lt;/td&gt;
+            &lt;td class="available-3" aria-label="3 available"&gt;3&lt;/td&gt;
+            &lt;td class="available-4" aria-label="4 available"&gt;4&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr class="half"&gt;
+            &lt;th class="time" scope="row"&gt;9:30 AM&lt;/th&gt;
+            &lt;td class="available-1" aria-label="1 available"&gt;1&lt;/td&gt;
+            &lt;td class="available-2" aria-label="2 available"&gt;2&lt;/td&gt;
+            &lt;td class="available-3" aria-label="3 available"&gt;3&lt;/td&gt;
+            &lt;td class="available-4" aria-label="4 available"&gt;4&lt;/td&gt;
+            &lt;td class="available-5" aria-label="5+ available"&gt;5+&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr class="sharp"&gt;
+            &lt;th class="time" scope="row"&gt;10:00 AM&lt;/th&gt;
+            &lt;td class="available-2" aria-label="2 available"&gt;2&lt;/td&gt;
+            &lt;td class="available-3" aria-label="3 available"&gt;3&lt;/td&gt;
+            &lt;td class="available-4" aria-label="4 available"&gt;4&lt;/td&gt;
+            &lt;td class="available-5" aria-label="5+ available"&gt;5+&lt;/td&gt;
+            &lt;td class="available-0" aria-label="0 available"&gt;0&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr class="half"&gt;
+            &lt;th class="time" scope="row"&gt;10:30 AM&lt;/th&gt;
+            &lt;td class="available-3" aria-label="3 available"&gt;3&lt;/td&gt;
+            &lt;td class="available-4" aria-label="4 available"&gt;4&lt;/td&gt;
+            &lt;td class="available-5" aria-label="5+ available"&gt;5+&lt;/td&gt;
+            &lt;td class="available-0" aria-label="0 available"&gt;0&lt;/td&gt;
+            &lt;td class="available-1" aria-label="1 available"&gt;1&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr class="sharp"&gt;
+            &lt;th class="time" scope="row"&gt;11:00 AM&lt;/th&gt;
+            &lt;td class="available-4" aria-label="4 available"&gt;4&lt;/td&gt;
+            &lt;td class="available-5" aria-label="5+ available"&gt;5+&lt;/td&gt;
+            &lt;td class="available-0" aria-label="0 available"&gt;0&lt;/td&gt;
+            &lt;td class="available-1" aria-label="1 available"&gt;1&lt;/td&gt;
+            &lt;td class="available-2" aria-label="2 available"&gt;2&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr class="half"&gt;
+            &lt;th class="time" scope="row"&gt;11:30 AM&lt;/th&gt;
+            &lt;td class="available-5" aria-label="5+ available"&gt;5+&lt;/td&gt;
+            &lt;td class="available-0" aria-label="0 available"&gt;0&lt;/td&gt;
+            &lt;td class="available-1" aria-label="1 available"&gt;1&lt;/td&gt;
+            &lt;td class="available-2" aria-label="2 available"&gt;2&lt;/td&gt;
+            &lt;td class="available-3" aria-label="3 available"&gt;3&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+    &lt;div id="legend"&gt;
+      &lt;span&gt;Availability&lt;/span&gt;
+      &lt;div id="legend-gradient"&gt;&lt;/div&gt;  &lt;!-- empty on purpose: the gradient is painted by css (background-image) --&gt;
+      &lt;div class="labels"&gt;
+        &lt;span&gt;0 people&lt;/span&gt;
+        &lt;span&gt;5+ people&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>                
+:root {
+ --color0: #f3ece8;  /* the six-step color scale lives in :root; the cells and the legend both read from it */
+ --color1: #e2d5e9;
+ --color2: #c4acd3;
+ --color3: #a98cb9;
+ --color4: #856694;
+ --color5: #5d416e;
+ --solid-border: 2px solid #55465c;  /* a custom property can store a whole shorthand value (width, style, color), not just one color */
+ --dashed-border: 1px dashed #55465c;  /* dashed = a broken line; half-hour rows use it, on-the-hour rows use the solid one */
+}
+
+* { 
+    box-sizing: border-box; 
+}
+
+body { 
+    margin: 0; 
+    background: #24202b; 
+    color: #f3ece8; 
+    font-family: system-ui, sans-serif; 
+    padding: 40px 20px; 
+}
+
+main { 
+    max-width: 900px; 
+    margin: auto; 
+}
+
+h1 { 
+    color: #e4b6a1; 
+    font-size: 2.6rem; 
+    margin-bottom: 8px; 
+}
+
+p { 
+    color: #cbbbce; 
+    margin-bottom: 32px; 
+}
+
+.table-wrap { 
+    overflow-x: auto; 
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    text-align: center; 
+    color: #302337; 
+    background: #f3ece8; 
+}
+
+caption { 
+    color: #f3ece8; 
+    text-align: left; 
+    padding: 16px 0; 
+    font-size: 1.15rem; 
+    font-weight: bold; 
+}
+
+th { 
+    background: #3b3045; 
+    color: #fff; 
+    padding: 16px; 
+}
+
+td { 
+    height: 54px; 
+    min-width: 100px; 
+    border-inline: 1px solid #aa98b2; 
+}
+
+.time { 
+    white-space: nowrap; 
+    font-size: 0.9rem; 
+}
+
+.available-0 { 
+    background-color: var(--color0);  /* var() reads --color0 from :root */
+}
+
+.available-1 { 
+    background-color: 
+    var(--color1); 
+}
+
+.available-2 { 
+    background-color: var(--color2); 
+}
+
+.available-3 { 
+    background-color: var(--color3); 
+}
+
+.available-4 { 
+    background-color: var(--color4); 
+    color: white; 
+}
+
+.available-5 { 
+    background-color: var(--color5); 
+    color: white; 
+}
+
+.sharp &gt; td { 
+    border-bottom: var(--solid-border);  /* var() drops the whole stored border in: one value instead of three */
+}
+
+.half &gt; td { 
+    border-bottom: var(--dashed-border); 
+}
+
+#legend { 
+    margin: 28px auto 0; 
+    max-width: 360px; 
+    text-align: center; 
+}
+
+#legend &gt; span { 
+    display: block; 
+    margin-bottom: 10px; 
+}
+
+#legend-gradient { 
+    height: 24px; 
+    border: 1px solid #cbbbce; 
+    background-image: linear-gradient(to right, 
+    var(--color0) 0% 17%,  /* two positions on one color stop = a solid band from 0% to 17%, no blending */
+    var(--color1) 17% 33%, 
+    var(--color2) 33% 50%, 
+    var(--color3) 50% 67%, 
+    var(--color4) 67% 83%, 
+    var(--color5) 83% 100%); 
+}
+
+.labels { 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 0.8rem; 
+    margin-top: 6px; 
+}
+
+.sharp td { 
+    border-bottom: var(--solid-border); 
+}
+
+.half td { 
+    border-bottom: var(--dashed-border); 
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-an-availability-table/" title="Build an Availability Table preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-an-availability-table/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-an-availability-table/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
     
     </div>
   </details>
@@ -6520,7 +7530,7 @@ span[class~="three"] span {
       <span class="module-caret">▸</span>
       <span class="module-kicker">CSS</span>
       <span class="module-title">Grid</span>
-      <span class="module-count">3 items · 1 built</span>
+      <span class="module-count">4 items · 4 built</span> <!-- was "3 items · 1 built"; Magazine added as a new 4th row, Newspaper Layout + Product Landing Page built 2026-11-04 -->
     </summary>
     <div class="module-body">
     <details class="project-box">
@@ -6605,16 +7615,925 @@ span[class~="three"] span {
         <div class="project-links"><a href="https://builds.guerz.lol/css-grid/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/css-grid/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
       </div>
     </details>
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Design a Newspaper Layout</span>
-      <span class="archive-type">lab</span>
-    </div>
-    <div class="archive-row archive-row--cert">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build a Product Landing Page</span>
-      <span class="archive-type">cert project</span>
-    </div>
+    <details class="project-box"> <!-- BUILT: Build a Magazine -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd workshop</span>
+        <span class="project-name">Build a Magazine</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: grid line numbers (grid-column: 2 / 3) • negative grid lines (grid-column: 1 / -1) • min-content value • row-gap property • grid-template-rows property • grid-auto-flow property • grid-auto-columns property • nested grids • column-width property • text-align: justify • rem unit • html font-size: 62.5% • loading="lazy" attribute • Font Awesome icon classes<br />Reinforced: display: grid • grid-template-columns property • repeat() function • minmax() function • place-items property • gap property • object-fit property • ::first-letter pseudo-element • ::before pseudo-element • ::after pseudo-element • content property • media queries (@media with max-width) • :hover pseudo-class • Google Fonts link element • font-family • letter-spacing property • float property • universal selector (*) • box-sizing: border-box</span></div>
+        </div>
+        <div class="card-body">a magazine article laid out in <b>CSS Grid</b>: a three-column page frame with a centered content column, <b>nested grids</b> for the header and the image gallery, <b>multi-column</b> justified text with a drop cap, and a stack of media queries for phones.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Magazine&lt;/title&gt;
+    &lt;link
+      href="https://fonts.googleapis.com/css?family=Anton%7CBaskervville%7CRaleway&amp;display=swap"
+      rel="stylesheet"
+    /&gt;
+    &lt;link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    /&gt;
+    &lt;link rel="stylesheet" href="styles.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;
+      &lt;section class="heading"&gt;
+        &lt;header class="hero"&gt;
+          &lt;img
+            src="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png"
+            alt="freecodecamp logo"
+            loading="lazy"
+            class="hero-img"
+          /&gt;  &lt;!-- loading="lazy" = the browser waits to download the image until it is near the screen --&gt;
+          &lt;h1 class="hero-title"&gt;OUR NEW CURRICULUM&lt;/h1&gt;
+          &lt;p class="hero-subtitle"&gt;
+            Our efforts to restructure our curriculum with a more project-based
+            focus
+          &lt;/p&gt;
+        &lt;/header&gt;
+        &lt;div class="author"&gt;
+          &lt;p class="author-name"&gt;
+            By
+            &lt;a href="https://freecodecamp.org" target="_blank" rel="noreferrer"
+              &gt;freeCodeCamp&lt;/a
+            &gt;
+          &lt;/p&gt;
+          &lt;p class="publish-date"&gt;March 7, 2019&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="social-icons"&gt;
+          &lt;a href="https://www.facebook.com/freecodecamp/"&gt;
+            &lt;i class="fab fa-facebook-f"&gt;&lt;/i&gt;  &lt;!-- Font Awesome icon: the fab and fa classes draw the icon from the font loaded in the head --&gt;
+          &lt;/a&gt;
+          &lt;a href="https://twitter.com/freecodecamp/"&gt;
+            &lt;i class="fab fa-twitter"&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          &lt;a href="https://instagram.com/freecodecamp"&gt;
+            &lt;i class="fab fa-instagram"&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          &lt;a href="https://www.linkedin.com/school/free-code-camp/"&gt;
+            &lt;i class="fab fa-linkedin-in"&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          &lt;a href="https://www.youtube.com/freecodecamp"&gt;
+            &lt;i class="fab fa-youtube"&gt;&lt;/i&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+      &lt;section class="text"&gt;
+        &lt;p class="first-paragraph"&gt;
+          Soon the freeCodeCamp curriculum will be 100% project-driven learning. Instead of a series of coding challenges, you'll learn through building projects - step by step. Before we get into the details, let me emphasize: we are not changing the certifications. All 6 certifications will still have the same 5 required projects. We are only changing the optional coding challenges.
+        &lt;/p&gt;
+        &lt;p&gt;
+          After years - years - of pondering these two problems and how to solve them, I slipped, hit my head on the sink, and when I came to I had a revelation! A vision! A picture in my head! A picture of this! This is what makes time travel possible: the flux capacitor!
+        &lt;/p&gt;
+        &lt;p&gt;
+          It wasn't as dramatic as Doc's revelation in Back to the Future. It
+          just occurred to me while I was going for a run. The revelation: the entire curriculum should be a series of projects. Instead of individual coding challenges, we'll just have projects, each with their own seamless series of tests. Each test gives you just enough information to figure out how to get it to pass. (And you can view hints if that isn't enough.)
+        &lt;/p&gt;
+        &lt;blockquote&gt;
+          &lt;hr /&gt;
+          &lt;p class="quote"&gt;
+            The entire curriculum should be a series of projects
+          &lt;/p&gt;
+          &lt;hr /&gt;
+        &lt;/blockquote&gt;
+        &lt;p&gt;
+          No more walls of explanatory text. No more walls of tests. Just one
+          test at a time, as you build up a working project. Over the course of passing thousands of tests, you build up projects and your own understanding of coding fundamentals. There is no transition between lessons and projects, because the lessons themselves are baked into projects. And there's plenty of repetition to help you retain everything because - hey - building projects in real life has plenty of repetition.
+        &lt;/p&gt;
+        &lt;p&gt;
+          The main design challenge is taking what is currently paragraphs of explanation and instructions and packing them into a single test description text. Each project will involve dozens of tests like this. People will be coding the entire time, rather than switching back and forth from "reading mode" to "coding mode".
+        &lt;/p&gt;
+        &lt;p&gt;
+          Instead of a series of coding challenges, people will be in their code editor passing one test after another, quickly building up a project. People will get into a real flow state, similar to what they experience when they build the required projects at the end of each certification. They'll get that sense of forward progress right from the beginning. And freeCodeCamp will be a much smoother experience.
+        &lt;/p&gt;
+      &lt;/section&gt;
+      &lt;section class="text text-with-images"&gt;  &lt;!-- text-with-images is a grid inside the page grid: this section is a grid item and a grid container at once --&gt;
+        &lt;article class="brief-history"&gt;
+          &lt;h3 class="list-title"&gt;A Brief History&lt;/h3&gt;
+          &lt;p&gt;Of the Curriculum&lt;/p&gt;
+          &lt;ul class="lists"&gt;
+            &lt;li&gt;
+              &lt;h4 class="list-subtitle"&gt;V1 - 2014&lt;/h4&gt;
+              &lt;p&gt;
+                We launched freeCodeCamp with a simple list of 15 resources,
+                including Harvard's CS50 and Stanford's Database Class.
+              &lt;/p&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;h4 class="list-subtitle"&gt;V2 - 2015&lt;/h4&gt;
+              &lt;p&gt;We added interactive algorithm challenges.&lt;/p&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;h4 class="list-subtitle"&gt;V3 - 2015&lt;/h4&gt;
+              &lt;p&gt;
+                We added our own HTML+CSS challenges (before we'd been relying on
+                General Assembly's Dash course for these).
+              &lt;/p&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;h4 class="list-subtitle"&gt;V4 - 2016&lt;/h4&gt;
+              &lt;p&gt;
+                We expanded the curriculum to 3 certifications, including Front-End,
+                Back-End, and Data Visualization. They each had 10 required
+                projects, but only the Front-End section had its own challenges.
+                For the other certs, we were still using external resources like
+                Node School.
+              &lt;/p&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;h4 class="list-subtitle"&gt;V5 - 2017&lt;/h4&gt;
+              &lt;p&gt;We added the back-end and data visualization challenges.&lt;/p&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;h4 class="list-subtitle"&gt;V6 - 2018&lt;/h4&gt;
+              &lt;p&gt;
+                We launched 6 new certifications to replace our old ones. This was
+                the biggest curriculum improvement to date.
+              &lt;/p&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/article&gt;
+        &lt;aside class="image-wrapper"&gt;
+          &lt;img
+            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png"
+            alt="image of the quote machine project"
+            loading="lazy"
+            class="image-1"
+            width="600"
+            height="400"
+          /&gt;
+          &lt;img
+            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png"
+            alt="image of a calculator project"
+            loading="lazy"
+              class="image-2"
+            width="400"
+            height="400"
+          /&gt;
+          &lt;blockquote class="image-quote"&gt;
+            &lt;hr /&gt;
+            &lt;p class="quote"&gt;
+              The millions of people who are learning to code through freeCodeCamp
+              will have an even better resource to help them learn these
+              fundamentals.
+            &lt;/p&gt;
+            &lt;hr /&gt;
+          &lt;/blockquote&gt;
+          &lt;img
+            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg"
+            alt="four people working on code"
+            loading="lazy"
+            class="image-3"
+            width="600"
+            height="400"
+          /&gt;
+        &lt;/aside&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;  /* 62.5% of 16px = 10px, so 1rem = 10px and the math is easy (1.8rem = 18px) */
+}
+
+body {
+  font-family: 'Baskervville', serif;
+  color: linen;
+  background-color: rgb(20, 30, 40);
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: linen;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);  /* 3 columns: flexible side gutters around a centered content column that is never narrower than its content or wider than 94rem */
+  row-gap: 3rem;  /* row-gap = space between grid rows only (column-gap is the other direction) */
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+hr {
+  margin: 1.5rem 0;
+  border: 1px solid rgba(120, 120, 120, 0.6);
+}
+
+.heading {
+  grid-column: 2 / 3;  /* grid lines are numbered from 1: starts at line 2, ends at line 3, so it fills the middle column */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1.5rem;
+}
+
+.text {
+  grid-column: 2 / 3;
+  font-size: 1.8rem;
+  letter-spacing: 0.6px;
+  column-width: 25rem;  /* multi-column layout: the text flows into as many columns as fit, each at least 25rem wide */
+  text-align: justify;  /* justify = stretches each line so both edges are flush */
+}
+
+.hero {
+  grid-column: 1 / -1;  /* -1 = the last grid line, so 1 / -1 spans every column */
+  position: relative;
+}
+
+.hero-title {
+  text-align: center;
+  color: orangered;
+  font-size: 8rem;
+}
+
+.hero-subtitle {
+  font-size: 2.4rem;
+  color: orangered;
+  text-align: center;
+}
+
+.author {
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.author-name a:hover {
+  background-color: #306203;
+}
+
+.publish-date {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.social-icons {
+  display: grid;
+  font-size: 3rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: column;  /* new items go into new columns instead of new rows */
+  grid-auto-columns: 1fr;  /* any extra columns the grid makes by itself get equal width */
+  align-items: center;
+}
+
+.first-paragraph::first-letter {
+  font-size: 6rem;
+  color: orangered;
+  float: left;
+  margin-right: 1rem;
+}
+
+.quote {
+  color: #00beef;
+  font-size: 2.4rem;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
+.quote::before {
+  content: '" ';
+}
+
+.quote::after {
+  content: ' "';
+}
+
+.text-with-images {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.lists {
+  list-style-type: none;
+  margin-top: 2rem;
+}
+
+.lists li {
+  margin-bottom: 1.5rem;
+}
+
+.list-title, .list-subtitle {
+  color: #00beef;
+}
+
+.image-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, min-content);  /* 3 rows, each only as tall as its content (min-content) */
+  gap: 2rem;
+  place-items: center;
+}
+
+.image-1, .image-3 {
+  grid-column: 1 / -1;
+}
+
+@media only screen and (max-width: 720px) {  /* only screen = skip print; the breakpoints stack from wide to narrow: 720, 600, 550, 420 */
+  .image-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .text-with-images {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .hero-title {
+    font-size: 6rem;
+  }
+  
+  .hero-subtitle,
+  .author,
+  .quote,
+  .list-title {
+    font-size: 1.8rem;
+  }
+  
+  .social-icons {
+    font-size: 2rem;
+  }
+
+  .text {
+    font-size: 1.6rem;
+  } 
+}
+
+@media only screen and (max-width: 420px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-a-magazine/" title="Build a Magazine preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-a-magazine/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-a-magazine/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Design a Newspaper Layout -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd lab</span>
+        <span class="project-name">Design a Newspaper Layout</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: grid-template-areas • grid-area property • grid-template-rows with auto and fr • spanning cells by repeating an area name • min-width: 0 on a grid item • filter: grayscale()<br />Reinforced: display: grid • grid-template-columns property • repeat() function • fr unit • gap property • clamp() function • border-style: double • box-shadow property • object-fit property • figure and figcaption elements • letter-spacing property • text-transform property • line-height property • max-width • margin: auto centering • box-sizing: border-box • universal selector (*)</span></div>
+        </div>
+        <div class="card-body">a newspaper front page drawn with <b>grid-template-areas</b>: a masthead row, a feature plus a secondary story, a <b>grayscale</b> cover photo spanning two rows, and three small stories underneath.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;The Daily Side Quest&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main class="newspaper-layout"&gt;  &lt;!-- the grid container: its children get placed by the named areas in the css --&gt;
+      &lt;header class="title"&gt;
+        &lt;p class="edition"&gt;Independent news for easily distracted citizens&lt;/p&gt;
+        &lt;h1&gt;The Daily Side Quest&lt;/h1&gt;
+        &lt;p&gt;November 4, 2026 · Vol. 01 · All the news that fits between tabs&lt;/p&gt;
+      &lt;/header&gt;
+
+      &lt;article class="feature-article"&gt;
+        &lt;h2&gt;Local Developer Opens One Tab, Somehow Acquires Forty-Seven&lt;/h2&gt;
+        &lt;p&gt;
+          What began as a quick search for a CSS property became a sprawling
+          investigation into typography, mechanical keyboards, and whether
+          raccoons have hobbies. The original bug remains at large.
+        &lt;/p&gt;
+      &lt;/article&gt;
+
+      &lt;article class="secondary-article"&gt;
+        &lt;h2&gt;Grid Finally Agrees to Put Things Where Asked&lt;/h2&gt;
+        &lt;p&gt;
+          After tense negotiations, named grid areas have restored order to
+          the newsroom. Officials credit three equal columns and a sensible
+          gap. A rogue margin declined to comment.
+        &lt;/p&gt;
+      &lt;/article&gt;
+
+      &lt;figure class="cover-image"&gt;
+        &lt;img
+          src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/1.jpg"
+          alt="An orange-and-white cat lounging on a blanket"
+        &gt;
+        &lt;figcaption&gt;Our editor in chief, taking another paid nap.&lt;/figcaption&gt;
+      &lt;/figure&gt;
+
+      &lt;article class="small-article1"&gt;  &lt;!-- the class name matches an area name in grid-template-areas (grid-area: small-article1) --&gt;
+        &lt;h3&gt;Coffee Files for Overtime&lt;/h3&gt;
+        &lt;p&gt;
+          The newsroom's most dependable employee demands a larger mug
+          and an end to the phrase “just one more fix.”
+        &lt;/p&gt;
+      &lt;/article&gt;
+
+      &lt;article class="small-article2"&gt;
+        &lt;h3&gt;Semicolon Returns Home&lt;/h3&gt;
+        &lt;p&gt;
+          A missing punctuation mark was found three lines above the error.
+          Family members describe the reunion as painfully predictable.
+        &lt;/p&gt;
+      &lt;/article&gt;
+
+      &lt;article class="small-article3"&gt;
+        &lt;h3&gt;Weather: Cloudy With Tabs&lt;/h3&gt;
+        &lt;p&gt;
+          Expect scattered distractions throughout the afternoon, followed
+          by a strong chance of actually shipping something.
+        &lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  color: #241e2b;
+  background-color: #d8cbe3;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
+}
+
+.newspaper-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr 1fr 1fr;  /* auto = as tall as the content; 1fr = an equal share of the leftover height */
+  grid-template-areas:  /* draws the layout as a picture: each string is a row, each word is a cell */
+    "title title title"
+    "feature-article feature-article cover-image"  /* repeat a name to span cells: feature-article spans 2 columns, cover-image continues down the next row */
+    "secondary-article secondary-article cover-image"
+    "small-article1 small-article2 small-article3";
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px;
+  border: 2px solid #241e2b;
+  background-color: #fff5e8;
+  box-shadow: 8px 8px 0 #241e2b;
+}
+
+.title {
+  grid-area: title;  /* puts this element in the cell named title in grid-template-areas */
+  padding-bottom: 20px;
+  border-bottom: 5px double #241e2b;
+  text-align: center;
+}
+
+.title h1 {
+  margin: 8px 0;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.title p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.edition {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.feature-article {
+  grid-area: feature-article;
+}
+
+.secondary-article {
+  grid-area: secondary-article;
+}
+
+.cover-image {
+  grid-area: cover-image;
+  margin: 0;
+}
+
+.small-article1 {
+  grid-area: small-article1;
+}
+
+.small-article2 {
+  grid-area: small-article2;
+}
+
+.small-article3 {
+  grid-area: small-article3;
+}
+
+article {
+  min-width: 0;  /* lets a grid item shrink below its content's width, so long text can't force the column wider */
+  border-top: 2px solid #241e2b;
+  padding-top: 12px;
+}
+
+h2,
+h3 {
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+article p {
+  margin: 0;
+}
+
+.cover-image img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: 85%;
+  object-fit: cover;
+  border: 1px solid #241e2b;
+  filter: grayscale(100%);  /* grayscale() drains the color from the image; 100% = fully black and white */
+}
+
+figcaption {
+  padding-top: 8px;
+  font-size: 0.8rem;
+  font-style: italic;
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/design-a-newspaper-layout/" title="Design a Newspaper Layout preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/design-a-newspaper-layout/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/design-a-newspaper-layout/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Build a Product Landing Page -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd cert project</span>
+        <span class="project-name">Build a Product Landing Page</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: scroll-margin-top property • cursor property • iframe element (embedded video) • allowfullscreen attribute<br />Reinforced: position: fixed • z-index property • fragment links (href="#id") • display: flex • flex-wrap property • justify-content property • align-items property • gap property • aspect-ratio property • :focus-visible pseudo-class • outline-offset property • form, label for and input types • autocomplete attribute • required attribute • aria-label attribute • media queries (@media with max-width) • border-radius property • max-width • padding • box-sizing: border-box • universal selector (*)</span></div>
+        </div>
+        <div class="card-body">a product landing page for my bedmixing set: a <b>fixed</b> header whose links scroll to each section (<b>scroll-margin-top</b> keeps headings clear of it), an embedded YouTube set, and an email sign-up form.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;bedmixing&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header id="header"&gt;
+      &lt;img
+        id="header-img"
+        src="https://guerz.lol/favicon-peach.png"
+        alt="Guerz Logo"
+      &gt;
+      &lt;nav id="nav-bar" aria-label="Main navigation"&gt;
+        &lt;a class="nav-link" href="#features"&gt;Features&lt;/a&gt;
+        &lt;a class="nav-link" href="#video-section"&gt;Watch&lt;/a&gt;
+        &lt;a class="nav-link" href="#signup"&gt;Sign Up&lt;/a&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+      &lt;section id="hero"&gt;
+        &lt;h1&gt;Guerz&lt;/h1&gt;
+        &lt;p&gt;))&amp;lt;&amp;gt;(( Back and Forth Forever and Ever&lt;/p&gt;
+      &lt;/section&gt;
+
+      &lt;section id="features"&gt;
+        &lt;h2&gt;Twitch VOD&lt;/h2&gt;
+        &lt;div class="feature-list"&gt;
+          &lt;div class="feature"&gt;
+            &lt;h3&gt;twitch.tv/guerz&lt;/h3&gt;
+            &lt;p&gt;Live Stream DJ Set&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+      &lt;section id="video-section"&gt;
+        &lt;h2&gt;Bedmixing&lt;/h2&gt;
+        &lt;iframe
+          id="video"
+          src="https://www.youtube.com/embed/-4jzAhnYRsQ"
+          title="Guerz: Bedmixing DJ set"
+          allowfullscreen
+        &gt;&lt;/iframe&gt;  &lt;!-- iframe embeds another page (here a YouTube video) inside this one --&gt;
+      &lt;/section&gt;
+
+      &lt;section id="signup"&gt;
+        &lt;h2&gt;Get Guerz Updates&lt;/h2&gt;
+        &lt;form
+          id="form"
+          action="https://www.freecodecamp.org/email-submit"
+          method="post"
+        &gt;  &lt;!-- the form sends its fields to the action url; method post puts them in the request body, not the url --&gt;
+          &lt;label for="email"&gt;Email address&lt;/label&gt;
+          &lt;input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Enter your email address"
+            autocomplete="email"
+            required
+          &gt;
+          &lt;input id="submit" type="submit" value="Sign Up"&gt;  &lt;!-- type=submit makes a button that sends the form; value is its label --&gt;
+        &lt;/form&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer id="footer"&gt;
+      &lt;p&gt;Guerz - Bedmixing&lt;/p&gt;
+    &lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, Helvetica, Arial, sans-serif;
+  color: #1c1c1c;
+  padding-top: 64px;  /* pushes the page down so the fixed header doesn't cover the hero */
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background-color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 10;
+}
+
+#header-img{
+  height: 36px;
+}
+
+#nav-bar {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.nav-link:hover{
+  color: #3882f6;
+}
+
+#hero {
+  padding: 80px 24px;
+  background-color: #f4f5f7;
+  text-align: center;
+}
+
+#hero h1 {
+  font-size: 2rem;
+  max-width: 700px;
+  margin: 0 auto 16px;
+}
+
+#hero p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#features {
+  padding: 60px 24px;
+  text-align: center;
+}
+
+#features h2{
+  margin-bottom: 32px;
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.feature{
+  max-width: 220px;
+}
+.feature h3{
+  margin-bottom: 8px;
+}
+
+#video-section {
+  padding: 60px 24px;
+  background-color: #1f2937;
+  color: #e5e7eb;
+  text-align: center;
+}
+
+#video {
+  width: 100%;
+  max-width: 640px;
+  height: 360px;
+  border: none;
+  margin-top: 20px;
+}
+
+#signup {
+  padding: 60px 24px;
+  text-align: center;
+}
+
+#form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+#email {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 260px;
+}
+
+#submit {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #3882f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;  /* pointer = the hand cursor, a hint that the button is clickable */
+}
+
+#footer {
+  padding: 24px;
+  text-align: center;
+  background-color: #1f2937;
+  color: #e5e7eb;
+}
+
+@media (max-width: 600px) {
+  #hero h1{
+  font-size: 1.5rem;
+}
+  #nav-bar{
+  gap: 12px;
+}
+  .nav-link{
+  font-size: 13px;
+}
+  #video{
+  height: 220px;
+}
+}
+
+section {
+  scroll-margin-top: 80px;  /* when a nav link jumps to a section, it stops 80px early so the fixed header doesn't cover the heading */
+}
+
+#form {
+  align-items: center;
+}
+
+#email {
+  max-width: 100%;
+  min-width: 0;
+}
+
+#video {
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+.nav-link:focus-visible,
+#email:focus-visible,
+#submit:focus-visible {
+  outline: 3px solid #e5a989;
+  outline-offset: 4px;
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-a-product-landing-page/" title="Build a Product Landing Page preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-a-product-landing-page/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-a-product-landing-page/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
     
     </div>
   </details>
