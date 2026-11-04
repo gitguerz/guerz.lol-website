@@ -74,7 +74,7 @@
     <summary>
       <span class="section-caret">▸</span>
       <span class="section-title">Responsive Web Design v9</span>
-      <span class="section-count">64 built · 68 total · worked chronologically</span> <!-- REMINDER: bump "built" every time a ☐ row becomes a project-box (also update that module's "items · built" count); recounted 2026-10-05: 38 project-boxes out of 67 items; 2026-10-11: +Colored Markers = 39; +Colored Boxes = 40 (recounted from the project-boxes); 2026-10-31: recounted 41 (Registration Form + Book Inventory had not been bumped), +Game Settings Panel +Feature Selection Page = 43; 2026-10-31: +Design a Contact Form = 44; 2026-11-01: +Design a Rothko Painting +Build a Confidential Email Page = 46; +Flexbox Photo Gallery +Colorful Boxes +Pricing Plans Layout Page +Page of Playing Cards = 50; 2026-11-01: +Nutritional Label +Newspaper Article +Quiz Webpage +Tribute Page = 54; 2026-11-02: +Cat Painting +House Painting +Balance Sheet = 57; 2026-11-04: +Design a Piano +Technical Documentation Page +City Skyline +Availability Table +Magazine (new Grid row, so total 67 -> 68) +Newspaper Layout +Product Landing Page = 64 -->
+      <span class="section-count">68 built · 68 total · worked chronologically</span> <!-- REMINDER: bump "built" every time a ☐ row becomes a project-box (also update that module's "items · built" count); recounted 2026-10-05: 38 project-boxes out of 67 items; 2026-10-11: +Colored Markers = 39; +Colored Boxes = 40 (recounted from the project-boxes); 2026-10-31: recounted 41 (Registration Form + Book Inventory had not been bumped), +Game Settings Panel +Feature Selection Page = 43; 2026-10-31: +Design a Contact Form = 44; 2026-11-01: +Design a Rothko Painting +Build a Confidential Email Page = 46; +Flexbox Photo Gallery +Colorful Boxes +Pricing Plans Layout Page +Page of Playing Cards = 50; 2026-11-01: +Nutritional Label +Newspaper Article +Quiz Webpage +Tribute Page = 54; 2026-11-02: +Cat Painting +House Painting +Balance Sheet = 57; 2026-11-04: +Design a Piano +Technical Documentation Page +City Skyline +Availability Table +Magazine (new Grid row, so total 67 -> 68) +Newspaper Layout +Product Landing Page = 64; 2026-11-04: +Animated Ferris Wheel +Moon Orbit +Flappy Penguin +Personal Portfolio = 68, v9 section complete -->
     </summary>
     <div class="section-body">
 <details class="module-group" open>
@@ -8542,29 +8542,889 @@ section {
       <span class="module-caret">▸</span>
       <span class="module-kicker">CSS</span>
       <span class="module-title">Animations</span>
-      <span class="module-count">4 items</span>
+      <span class="module-count">4 items · 4 built</span> <!-- was "4 items"; all four built 2026-11-04 -->
     </summary>
     <div class="module-body">
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build an Animated Ferris Wheel</span>
-      <span class="archive-type">workshop</span>
-    </div>
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build a Moon Orbit</span>
-      <span class="archive-type">lab</span>
-    </div>
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build a Flappy Penguin</span>
-      <span class="archive-type">workshop</span>
-    </div>
-    <div class="archive-row">
-      <span class="archive-check">☐</span>
-      <span class="archive-name">Build a Personal Portfolio</span>
-      <span class="archive-type">lab</span>
-    </div>
+    <details class="project-box"> <!-- BUILT: Build an Animated Ferris Wheel -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd workshop</span>
+        <span class="project-name">Build an Animated Ferris Wheel</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: @keyframes rule • animation-name property • animation-duration property • animation-iteration-count property (infinite) • animation-timing-function property (linear, ease-in-out) • animation shorthand property • keyframe percentages (0%, 25%, 100%) • transform-origin property • animating background-color<br />Reinforced: transform: rotate() • :nth-of-type() pseudo-class • position: absolute • border-radius property • border property • vw unit • max-width and max-height • percentage width and height • background-color • margin-left</span></div>
+        </div>
+        <div class="card-body">a ferris wheel built from <b>spans and divs</b>: the whole wheel turns with one <b>@keyframes</b> rotation, and each cabin runs its own animation that <b>counter-rotates</b> so it stays upright while its <b>background-color</b> cycles.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Build an Animated Ferris Wheel&lt;/title&gt;
+    &lt;link rel="stylesheet" href="./styles.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="wheel"&gt;
+      &lt;span class="line"&gt;&lt;/span&gt;  &lt;!-- empty on purpose: the css draws each spoke as a thin bar and rotates it around the wheel's center --&gt;
+      &lt;span class="line"&gt;&lt;/span&gt;
+      &lt;span class="line"&gt;&lt;/span&gt;
+      &lt;span class="line"&gt;&lt;/span&gt;
+      &lt;span class="line"&gt;&lt;/span&gt;
+      &lt;span class="line"&gt;&lt;/span&gt;
+
+      &lt;div class="cabin"&gt;&lt;/div&gt;
+      &lt;div class="cabin"&gt;&lt;/div&gt;
+      &lt;div class="cabin"&gt;&lt;/div&gt;
+      &lt;div class="cabin"&gt;&lt;/div&gt;
+      &lt;div class="cabin"&gt;&lt;/div&gt;
+      &lt;div class="cabin"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>.wheel {
+  border: 2px solid black;
+  border-radius: 50%;
+  margin-left: 50px;
+  position: absolute;
+  height: 55vw;
+  width: 55vw;
+  max-width: 500px;
+  max-height: 500px;
+  animation-name: wheel;  /* names the @keyframes block to play (the @keyframes wheel rule at the bottom) */
+  animation-duration: 10s;  /* one full cycle takes 10 seconds */
+  animation-iteration-count: infinite;  /* infinite = repeat forever instead of stopping after one cycle */
+  animation-timing-function: linear;  /* linear = the same speed the whole way, so the wheel turns steadily */
+}
+
+.line {
+  background-color: black;
+  width: 50%;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0% 0%;  /* the point an element rotates around: 0% 0% is its top-left corner, so each spoke pivots from the wheel's center */
+}
+
+.line:nth-of-type(2) {
+  transform: rotate(60deg);
+}
+
+.line:nth-of-type(3) {
+  transform: rotate(120deg);
+}
+
+.line:nth-of-type(4) {
+  transform: rotate(180deg);
+}
+
+.line:nth-of-type(5) {
+  transform: rotate(240deg);
+}
+
+.line:nth-of-type(6) {
+  transform: rotate(300deg);
+}
+
+.cabin {
+  background-color: red;
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  border: 2px solid;
+  transform-origin: 50% 0%;
+  animation: cabins 10s ease-in-out infinite;  /* animation shorthand: name, duration, timing function and iteration count in one line; ease-in-out = slow start, slow end */
+}
+
+.cabin:nth-of-type(1) {
+  right: -8.5%;
+  top: 50%;
+}
+
+.cabin:nth-of-type(2) {
+  right: 17%;
+  top: 93.5%;
+}
+
+.cabin:nth-of-type(3) {
+  right: 67%;
+  top: 93.5%;
+}
+
+.cabin:nth-of-type(4) {
+  left: -8.5%;
+  top: 50%;
+}
+
+.cabin:nth-of-type(5) {
+  left: 17%;
+  top: 7%;
+}
+
+.cabin:nth-of-type(6) {
+  right: 17%;
+  top: 7%;
+}
+
+@keyframes wheel {  /* @keyframes defines the animation: which styles the element has at each point from 0% to 100% */
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cabins {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {  /* a percentage is a step along the timeline; the browser blends between steps (here red fades to yellow) */
+    background-color: yellow;
+  }
+  50% {
+    background-color: purple;
+  }
+  75% {
+    background-color: yellow;
+  }
+
+  100% {
+    transform: rotate(-360deg);  /* spins the cabin the opposite way to the wheel, so the cabins stay upright */
+  }
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-an-animated-ferris-wheel/" title="Build an Animated Ferris Wheel preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-an-animated-ferris-wheel/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-an-animated-ferris-wheel/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Build a Moon Orbit -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd lab</span>
+        <span class="project-name">Build a Moon Orbit</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: ellipse shape for radial-gradient() • inset box-shadow • chaining transform functions (rotate + translate)<br />Reinforced: @keyframes rule • animation shorthand property • linear timing • infinite iteration • transform-origin property • translate(-50%, -50%) centering • radial-gradient() function • box-shadow property • 8-digit hex colors with alpha • border-radius property • position: absolute • position: relative • role="img" with aria-label • display: flex centering • vh unit • box-sizing: border-box • universal selector (*) • viewport meta tag</span></div>
+        </div>
+        <div class="card-body">a moon circling a planet: the <b>orbit</b> ring rotates with a <b>@keyframes</b> animation, so the moon riding on its edge travels the circle, and the <b>inset box-shadow</b> plus <b>radial-gradient</b> give both bodies a lit side and a shadow side.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Build a Moon Orbit&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="space" role="img" aria-label="The Moon orbiting Earth"&gt;
+      &lt;div class="earth"&gt;&lt;/div&gt;
+      &lt;div class="orbit"&gt;  &lt;!-- the orbit is the ring that spins; the moon sits on its edge, so it travels around Earth as the ring turns --&gt;
+        &lt;div class="moon"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #100f1c;
+  background-image: radial-gradient(
+    ellipse at center,  /* ellipse (instead of circle) stretches the glow to fit the box's shape */
+    #302740 0%,
+    #100f1c 70%
+  );
+}
+
+.space {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.earth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #8274b0;
+  background-image: radial-gradient(
+    circle at 30% 30%,
+    #edb598 0%,
+    #a28abf 35%,
+    #494164 75%
+  );
+  box-shadow:
+    inset -12px -8px 20px #211b3d,  /* inset = the shadow is drawn inside the shape, which darkens one side of the planet */
+    0 0 35px #a28abf55;
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  transform-origin: 0 0;
+  border: 1px solid #b6a4cd44;
+  border-radius: 50%;
+  animation: orbit 5s linear infinite;
+}
+
+.moon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-color: #edb598;
+  box-shadow:
+    inset -6px -4px 8px #936d77,
+    0 0 15px #edb59844;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translate(-50%, -50%);  /* two transform functions chained in one value; the animation replaces the element's transform, so translate is repeated here to keep the orbit centered while rotate spins it */
+  }
+
+  100% {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-a-moon-orbit/" title="Build a Moon Orbit preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-a-moon-orbit/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-a-moon-orbit/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Build a Flappy Penguin -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd workshop</span>
+        <span class="project-name">Build a Flappy Penguin</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: transform: scaleX(-1) to flip an element • @keyframes with only some steps (no 0% or 100%) • opacity property (percentage) • rgb() color function • emoji as page content<br />Reinforced: custom properties and var() • transform: scale(), skew() and rotate() • transition property • :active pseudo-class • cursor property • z-index property • border-radius property • linear-gradient() function • calc() function • overflow property • font shorthand • compound class selectors • universal selector (*) • ::before pseudo-element • margin: auto centering • transform-origin property • animation shorthand property</span></div>
+        </div>
+        <div class="card-body">a penguin made of <b>divs</b> that waves with a <b>@keyframes</b> animation: the wave only defines the middle steps, so the browser fills in the start and end from the element's own styles, and a <b>scaleX(-1)</b> mirrors the second wing.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;link rel="stylesheet" href="./styles.css" /&gt;
+    &lt;title&gt;Build a Flappy Penguin&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;div class="left-mountain"&gt;&lt;/div&gt;
+    &lt;div class="back-mountain"&gt;&lt;/div&gt;
+    &lt;div class="sun"&gt;&lt;/div&gt;
+    &lt;div class="penguin"&gt;
+      &lt;div class="penguin-head"&gt;
+        &lt;div class="face left"&gt;&lt;/div&gt;
+        &lt;div class="face right"&gt;&lt;/div&gt;
+        &lt;div class="chin"&gt;&lt;/div&gt;
+        &lt;div class="eye left"&gt;
+          &lt;div class="eye-lid"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="eye right"&gt;
+          &lt;div class="eye-lid"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="blush left"&gt;&lt;/div&gt;
+        &lt;div class="blush right"&gt;&lt;/div&gt;
+        &lt;div class="beak top"&gt;&lt;/div&gt;
+        &lt;div class="beak bottom"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="shirt"&gt;
+        &lt;div&gt;💜&lt;/div&gt;  &lt;!-- an emoji is just a text character, so it can go straight into the html --&gt;
+        &lt;p&gt;I CSS&lt;/p&gt;
+      &lt;/div&gt; 
+      &lt;div class="penguin-body"&gt;
+        &lt;div class="arm left"&gt;&lt;/div&gt;
+        &lt;div class="arm right"&gt;&lt;/div&gt;
+        &lt;div class="foot left"&gt;&lt;/div&gt;
+        &lt;div class="foot right"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="ground"&gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>:root {
+  --penguin-face: white;
+  --penguin-picorna: orange;
+  --penguin-skin: gray;
+}
+
+body {
+  background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));  /* rgb(red, green, blue) sets a color with three channel values from 0 to 255 */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.left-mountain {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
+  position: absolute;
+  transform: skew(0deg, 44deg);
+  z-index: 2;
+  margin-top: 100px;
+}
+
+.back-mountain {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255));
+  position: absolute;
+  z-index: 1;
+  transform: rotate(45deg);
+  left: 110px;
+  top: 225px;
+}
+
+.sun {
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  position: absolute;
+  border-radius: 50%;
+  top: -75px;
+  right: -75px;
+}
+
+.penguin {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  margin-top: 75px;
+  z-index: 4;
+  position: relative;
+  transition: transform 1s ease-in-out 0ms;
+}
+
+.penguin * {
+  position: absolute;
+}
+
+.penguin:active {
+  transform: scale(1.5);
+  cursor: not-allowed;
+}
+
+.penguin-head {
+  width: 50%;
+  height: 45%;
+  background: linear-gradient(
+    45deg,
+    var(--penguin-skin),
+    rgb(239, 240, 228)
+  );
+  border-radius: 70% 70% 65% 65%;
+  top: 10%;
+  left: 25%;
+  z-index: 1;
+}
+
+.face {
+  width: 60%;
+  height: 70%;
+  background-color: var(--penguin-face);
+  border-radius: 70% 70% 60% 60%;
+  top: 15%;
+}
+
+.face.left {
+  left: 5%;
+}
+
+.face.right {
+  right: 5%;
+}
+
+.chin {
+  width: 90%;
+  height: 70%;
+  background-color: var(--penguin-face);
+  top: 25%;
+  left: 5%;
+  border-radius: 70% 70% 100% 100%;
+}
+
+.eye {
+  width: 15%;
+  height: 17%;
+  background-color: black;
+  top: 45%;
+  border-radius: 50%;
+}
+
+.eye.left {
+  left: 25%;
+}
+
+.eye.right {
+  right: 25%;
+}
+
+.eye-lid {
+  width: 150%;
+  height: 100%;
+  background-color: var(--penguin-face);
+  top: 25%;
+  left: -23%;
+  border-radius: 50%;
+}
+
+.blush {
+  width: 15%;
+  height: 10%;
+  background-color: pink;
+  top: 65%;
+  border-radius: 50%;
+}
+
+.blush.left {
+  left: 15%;
+}
+
+.blush.right {
+  right: 15%;
+}
+
+.beak {
+  height: 10%;
+  background-color: var(--penguin-picorna);
+  border-radius: 50%;
+}
+
+.beak.top {
+  width: 20%;
+  top: 60%;
+  left: 40%;
+}
+
+.beak.bottom {
+  width: 16%;
+  top: 65%;
+  left: 42%;
+}
+
+.shirt {
+  font: bold 25px Helvetica, sans-serif;
+  top: 165px;
+  left: 127.5px;
+  z-index: 1;
+  color: #6a6969;
+}
+
+.shirt div {
+  font-weight: initial;
+  top: 22.5px;
+  left: 12px;
+}
+
+.penguin-body {
+  width: 53%;
+  height: 45%;
+  background: linear-gradient(
+    45deg,
+    rgb(134, 133, 133) 0%,
+    rgb(234, 231, 231) 25%,
+    white 67%
+  );
+  border-radius: 80% 80% 100% 100%;
+  top: 40%;
+  left: 23.5%;
+}
+
+.penguin-body::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 45%;
+  background-color: var(--penguin-skin);
+  top: 10%;
+  left: 25%;
+  border-radius: 0% 0% 100% 100%;
+  opacity: 70%;  /* opacity: 0 is invisible and 100% is solid; 70% lets whatever is behind show through */
+}
+
+.arm {
+  width: 30%;
+  height: 60%;
+  background: linear-gradient(
+    90deg,
+    var(--penguin-skin),
+    rgb(209, 210, 199)
+  );
+  border-radius: 30% 30% 30% 120%;
+  z-index: -1;
+}
+
+.arm.left {
+  top: 35%;
+  left: 5%;
+  transform-origin: top left;
+  transform: rotate(130deg) scaleX(-1);  /* scaleX(-1) flips the element horizontally, like a mirror image */
+  animation: 3s linear infinite wave;
+}
+
+.arm.right {
+  top: 0%;
+  right: -5%;
+  transform: rotate(-45deg);
+}
+
+@keyframes wave {  /* no 0% or 100% step: the browser uses the arm's normal transform for those, so it waves for the first 40% of each cycle, then rests */
+  10% {
+    transform: rotate(110deg) scaleX(-1);
+  }
+  20% {
+    transform: rotate(130deg) scaleX(-1);
+  }
+  30% {
+    transform: rotate(110deg) scaleX(-1);
+  }
+  40% {
+    transform: rotate(130deg) scaleX(-1);
+  }
+}
+
+.foot {
+  width: 15%;
+  height: 30%;
+  background-color: var(--penguin-picorna);
+  top: 85%;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.foot.left {
+  left: 25%;
+  transform: rotate(80deg);
+}
+
+.foot.right {
+  right: 25%;
+  transform: rotate(-80deg);
+}
+
+.ground {
+  width: 100vw;
+  height: calc(100vh - 300px);
+  background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
+  z-index: 3;
+  position: absolute;
+  margin-top: -58px;
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-a-flappy-penguin/" title="Build a Flappy Penguin preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-a-flappy-penguin/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-a-flappy-penguin/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
+    <details class="project-box"> <!-- BUILT: Build a Personal Portfolio -->
+      <summary>
+        <span class="project-caret">▸</span>
+        <span class="badge badge--lavender">rwd lab</span>
+        <span class="project-name">Build a Personal Portfolio</span>
+        <span class="project-stack">html + css</span>
+      </summary>
+      <div class="project-inner">
+        <div class="project-meta">
+          <div class="meta-row"><span class="meta-key">Learned Concepts</span><span class="meta-val">Introduced: target="_blank" attribute • text-decoration: none • footer element<br />Reinforced: position: fixed • z-index property • flex properties (display, justify-content, align-items, flex-direction, flex-wrap) • gap property • list-style: none • :hover pseudo-class • linear-gradient() function • border-radius property • overflow property • media queries (@media with max-width) • fragment links (href="#id") • rem unit • vh unit • id selectors • box-sizing: border-box</span></div>
+        </div>
+        <div class="card-body">my own portfolio page: a <b>fixed</b> navbar with <b>fragment links</b>, a full-height welcome gradient, a flex-wrapped grid of project tiles that open in a <b>new tab</b>, a contact button, and a <b>footer</b>.</div>
+        <div class="view-pane" data-pane="html">
+          <div class="pane-label">html</div>
+          <div class="code-block code-block--peach">
+            <div class="code-bar">
+              <span class="code-file">index.html</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Build a Personal Portfolio&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;nav id="navbar"&gt;
+    &lt;div class="nav-logo"&gt;guerz.lol&lt;/div&gt;
+    &lt;ul class="nav-links"&gt;
+      &lt;li&gt;&lt;a href="#welcome-section"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#project-section"&gt;Projects&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+  &lt;section id="welcome-section"&gt;
+    &lt;h1&gt;Oh, Hey, I am Guerz.&lt;/h1&gt;
+    &lt;p&gt;It's pronounced: "Guerz".&lt;/p&gt;
+  &lt;/section&gt;
+  &lt;section id="project-section"&gt;
+    &lt;h2&gt;Stuff I've built&lt;/h2&gt;
+    &lt;div class="projects-grid"&gt;
+      &lt;a href="https://guerz.lol" target="_blank" class="project-tile"&gt;  &lt;!-- target="_blank" opens the link in a new browser tab --&gt;
+        &lt;div class="project-thumb"&gt;&lt;/div&gt;
+        &lt;p class="project-title"&gt;guerz.lol&lt;/p&gt;
+      &lt;/a&gt;
+      &lt;a href="https://twitch.tv/guerz" target="_blank" class="project-tile"&gt;
+        &lt;div class="project-thumb"&gt;&lt;/div&gt;
+        &lt;p class="project-title"&gt;ttv/guerz&lt;/p&gt;
+      &lt;/a&gt;
+      &lt;a href="#" class="project-tile"&gt;
+        &lt;div class="project-thumb"&gt;&lt;/div&gt;
+        &lt;p class="project-title"&gt;fCC cert projects&lt;/p&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  &lt;section id="contact"&gt;
+    &lt;h2&gt;Find me elsewhere&lt;/h2&gt;
+    &lt;p&gt;Come hang in the stream or poke around the code.&lt;/p&gt;
+    &lt;a id="profile-link" href="https://github.com./gitguerz" target="_blank"&gt;GitHub&lt;/a&gt;
+  &lt;/section&gt;
+  &lt;footer&gt;  &lt;!-- footer = the closing section of the page, usually credits or contact info --&gt;
+    &lt;p&gt;Built by Guerz — {decompress} · guerz.lol&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="css">
+          <div class="pane-label">css</div>
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="code-file">styles.css</span>
+              <button class="code-copy" type="button">copy</button>
+            </div>
+            <pre class="code"><code> {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, Helvetica, Arial, sans-serif;
+  color: #e5e7eb;
+  background-color: #111827;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 10;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #f9fafb;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #e5e7eb;
+  text-decoration: none;  /* removes the default underline from links */
+}
+
+.nav-links a:hover { color: #a78bfa; }
+
+#welcome-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 24px;
+  background: linear-gradient(135deg, #1f2937 0%, #4c1d95 100%);
+}
+
+#welcome-section h1 {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+#welcome-section p {
+  font-size: 1.2rem;
+  color: #c4b5fd;
+}
+
+#project-section {
+  padding: 80px 24px;
+  text-align: center;
+}
+
+#project-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.project-tile {
+  width: 260px;
+  background-color: #1f2937;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #e5e7eb;
+}
+
+.project-thumb {
+  height: 150px;
+  background: linear-gradient(135deg, #4c1d95 0%, #a78bfa 100%);
+}
+
+.project-title {
+  padding: 14px;
+  font-weight: 600;
+}
+
+#contact {
+  padding: 80px 24px;
+  text-align: center;
+  background-color: #0f1420;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+#profile-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background-color: #7c3aed;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+footer {
+  padding: 24px;
+  text-align: center;
+  background-color: #1f2937;
+  color: #9ca3af;
+}
+
+@media (max-width: 600px) {
+  #welcome-section h1 { font-size: 2rem; }
+  .nav-links { gap: 12px; }
+  .nav-logo { font-size: 0.95rem; }
+}</code></pre>
+          </div>
+        </div>
+        <div class="view-pane" data-pane="preview">
+          <div class="pane-label">preview</div>
+          <iframe class="preview-frame" data-src="https://builds.guerz.lol/build-a-personal-portfolio/" title="Build a Personal Portfolio preview" loading="lazy"></iframe>
+        </div>
+        <div class="project-links"><a href="https://builds.guerz.lol/build-a-personal-portfolio/" target="_blank" rel="noopener noreferrer">↗ open in new tab</a><a href="https://github.com/gitguerz/freecodecamp-responsive-web-design/blob/main/build-a-personal-portfolio/index.html" target="_blank" rel="noopener noreferrer">↗ github</a></div>
+      </div>
+    </details>
     </div>
   </details>
     </div>
