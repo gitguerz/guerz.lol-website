@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://guerz.lol/</loc></url>
-  <url><loc>https://guerz.lol/about.html</loc></url>
-  <url><loc>https://guerz.lol/updates.html</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://guerz.lol/playbooks.html</loc></url>
-  <url><loc>https://guerz.lol/playbooks/web-dev-playbook.html</loc></url>
-  <url><loc>https://guerz.lol/playbooks/fullsail-playbook.html</loc></url>
-  <url><loc>https://guerz.lol/fcc-build-archive.html</loc></url>
-  <url><loc>https://guerz.lol/sandbox.html</loc></url>
-  <url><loc>https://guerz.lol/toolshed.html</loc></url>
+  <url><loc>https://guerz.lol/about</loc></url> <!-- List the final clean URL; preserve any lastmod date. -->
+  <url><loc>https://guerz.lol/updates</loc><lastmod>2026-11-09</lastmod></url> <!-- List the final clean URL; preserve any lastmod date. -->
+  <url><loc>https://guerz.lol/playbooks</loc></url> <!-- List the final clean URL; preserve any lastmod date. -->
+  <url><loc>https://guerz.lol/playbooks/web-dev-playbook</loc></url> <!-- List the final clean URL; preserve any lastmod date. -->
+  <url><loc>https://guerz.lol/playbooks/fullsail-playbook</loc></url> <!-- List the final clean URL; preserve any lastmod date. -->
+  <url><loc>https://guerz.lol/fcc-build-archive</loc></url> <!-- List the final clean URL; preserve any lastmod date. -->
+  <url><loc>https://guerz.lol/sandbox</loc></url> <!-- List the final clean URL; preserve any lastmod date. -->
+  <url><loc>https://guerz.lol/toolshed</loc></url> <!-- List the final clean URL; preserve any lastmod date. -->
   <url><loc>https://guerz.lol/toolshed/wp-workshop/</loc></url>
 </urlset>
