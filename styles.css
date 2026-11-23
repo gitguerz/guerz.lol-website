@@ -1004,9 +1004,9 @@ html[data-theme="night"] .card--timeline {         /* night mode re-tints the sa
   max-width: 620px;                                 /* cap it on wide screens so the boxes stay small */
   margin: 4px auto 0;                               /* centered, a little air above */
 }
-.tl-months, .tl-grid {                             /* both rows share the same 28 week columns, so labels line up */
+.tl-months, .tl-grid {                             /* both rows share the same 30 week columns, so labels line up */
   display: grid;                                    /* grid layout */
-  grid-template-columns: repeat(28, 1fr);                /* one column per week */
+  grid-template-columns: repeat(30, 1fr);                /* one column per week */
   gap: 3px;                                         /* the little gutters between boxes */
 }
 .tl-months { margin-bottom: 4px; }                 /* small gap between the labels and the boxes */
