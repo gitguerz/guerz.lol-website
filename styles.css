@@ -814,6 +814,11 @@ h2.card-eyebrow, h3.card-eyebrow, h2.callout-title, h2.card-title, h2.post-title
   width: 100%;                                 /* fills the figure's width */
   height: auto;                                /* keeps him a perfect circle at any width */
 }
+.jeffran-img--selfie {                         /* modifier: the selfie version of the About image (new CSS gets its own scoped class) */
+  border-radius: 50%;                          /* 50% on a square = a perfect circle (border-radius works on the site, unlike GitHub READMEs) */
+  aspect-ratio: 1;                             /* stay square at any width so the circle never turns into an oval */
+  object-fit: cover;                           /* if the box ever isn't square, crop the photo instead of squishing it */
+}
 .jeffran-caption {                             /* "illustrated with Gemini" */
   font: 12.5px/1.4 'IBM Plex Mono', monospace; /* same small mono as the footer notes */
   color: var(--muted);                         /* muted purple by day, lavender by night (flips with the theme) */

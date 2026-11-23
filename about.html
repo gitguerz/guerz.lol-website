@@ -71,17 +71,15 @@
         </div>
       </div>
     </div>
-    <!-- Jeffran replaces the hex on this page only (the homepage keeps the hex); <figure> pairs the image with its caption -->
+    <!-- the selfie replaces Jeffran on this page only (the homepage keeps the hex); <figure> keeps the .jeffran box sizing -->
     <figure class="jeffran">
-      <!-- <picture> lets the browser grab the light WebP, or fall back to the PNG if it can't read WebP -->
+      <!-- <picture> lets the browser grab the light WebP, or fall back to the JPG if it can't read WebP -->
       <picture>
-        <!-- WebP first: ~50 KB vs ~300 KB for the PNG -->
-        <source srcset="assets/brand/jeffran-440.webp" type="image/webp">
-        <!-- PNG fallback; width/height reserve his space so the page doesn't jump while he loads -->
-        <img class="jeffran-img" src="assets/brand/jeffran-440.png" width="220" height="220" alt="Jeffran, a molting penguin in purple headphones, coding on a laptop with the ))&lt;&gt;(( logo.">
+        <!-- WebP first: ~26 KB vs ~40 KB for the JPG -->
+        <source srcset="assets/brand/guerz-selfie-440.webp" type="image/webp">
+        <!-- JPG fallback; width/height reserve the space so the page doesn't jump while it loads; jeffran-img--selfie rounds it into a circle (styles.css) -->
+        <img class="jeffran-img jeffran-img--selfie" src="assets/brand/guerz-selfie-440.jpg" width="220" height="220" alt="Guerz in profile, eyes closed, wearing rose-tinted glasses, looking up and to the right.">
       </picture>
-      <!-- small muted credit line under him -->
-      <figcaption class="jeffran-caption">illustrated with Gemini</figcaption>
     </figure>
   </div>
 
