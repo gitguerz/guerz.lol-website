@@ -57,8 +57,12 @@
 
 <main class="container" id="main" tabindex="-1">
 
-  <!-- userinfo-row stacks the {Guerz} card on top, then the hex under it, both centered, at every screen size -->
+  <!-- userinfo-row stacks the hex on top, then the {Guerz} card under it, both centered, at every screen size -->
   <div class="userinfo-row">
+    <!-- the hex comes BEFORE the card in the markup, so it sits above it -->
+    <!-- avatar-frame::after paints the sheen; theme.js swaps the img between the peach and lavender hex -->
+    <span class="avatar-frame"><img class="avatar" id="avatar-img" src="favicon-peach.png" alt="guerz avatar"></span>
+
     <div class="userinfo">
       <div class="userinfo-body">
         <div class="userinfo-name">{Guerz}</div>
@@ -73,9 +77,6 @@
         </div>
       </div>
     </div>
-    <!-- the hex comes AFTER the card in the markup, so it sits below it (and screen readers meet the name first) -->
-    <!-- avatar-frame::after paints the sheen; theme.js swaps the img between the peach and lavender hex -->
-    <span class="avatar-frame"><img class="avatar" id="avatar-img" src="favicon-peach.png" alt="guerz avatar"></span>
   </div>
 
   <!-- ===== the poem — peach, lavender border (its own box now) ===== -->
