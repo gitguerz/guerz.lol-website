@@ -26,7 +26,8 @@ My corner of the world wide web: part web dev portfolio, part brain dump, part p
 | `toolshed/discogs-seller-operating-system-v2-6.html` | The Turntable Line: Discogs seller operating system |
 | `toolshed/cloudflare-field-plan/` | Cloudflare Field Plan: GitHub Pages → Cloudflare Workers roadmap |
 | `toolshed/quality-control-desk/` | Visibility & Quality Control Desk: search visibility + site review checklist |
-| `toolshed/wp-workshop/` | WordPress 101 / The Blog Archive Engine: road map for blog.guerz.lol |
+| `toolshed/blog-level-up/` | Level Up Your Blog: a generic, platform-flexible path to start and keep a blog |
+| `toolshed/wp-workshop/` | (retired from the gallery) WordPress 101 / The Blog Archive Engine, kept on disk |
 | `toolshed/roadmap-thumbs/` | Preview thumbnails for the toolshed cards |
 
 ## Folders

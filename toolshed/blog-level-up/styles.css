@@ -1,0 +1,195 @@
+/* Level Up Your Blog — styles.css */
+/* Original design by Guerz, CC BY-NC-SA 4.0. Every rule has a plain-English comment. */
+
+/* ---------- 1. THEME TOKENS: every color lives here so dark mode only swaps values ---------- */
+:root, [data-theme="light"] { /* light theme is the default */
+  --paper: #fbf5e8;        /* page background, warm newsprint */
+  --paper2: #fffdf7;       /* card background, a lighter paper */
+  --ink: #173c7a;          /* cobalt ink for headings and borders */
+  --ink-dark: #17202e;     /* near-black for body text */
+  --muted: #5a554d;        /* softer text for hints (kept dark enough to read) */
+  --rule: #d4c7ad;         /* thin divider lines */
+  --tomato: #b83a22;       /* accent for links and kickers (darkened for contrast) */
+  --tomato-soft: #f8ded5;  /* pale accent background */
+  --blue-soft: #dce8f8;    /* pale blue background for selected things */
+  --green: #2c6a45;        /* success color */
+  --green-soft: #dcebdc;   /* pale green background */
+  --yellow: #f4c84a;       /* poster yellow */
+  --shadow: 0 12px 28px rgb(23 60 122 / 9%); /* soft drop shadow */
+}
+[data-theme="dark"] { /* dark theme overrides the same names */
+  --paper: #181a1d;
+  --paper2: #222428;
+  --ink: #9fc4ff;
+  --ink-dark: #f3ecdf;
+  --muted: #c8c0b2;
+  --rule: #4f4b43;
+  --tomato: #f18b76;
+  --tomato-soft: #4d2d29;
+  --blue-soft: #293b55;
+  --green: #9bcc9d;
+  --green-soft: #2d4531;
+  --yellow: #e8c462;
+  --shadow: 0 12px 28px rgb(0 0 0 / 30%);
+}
+:root { /* type and spacing tokens do not change between themes */
+  --display: "Newsreader", Georgia, serif;             /* headline font, falls back to Georgia */
+  --body: "Archivo Narrow", Arial, sans-serif;         /* body font, falls back to Arial */
+  --mono: "DM Mono", ui-monospace, monospace;          /* code-ish font for small labels */
+  --xs: clamp(.75rem, .72rem + .2vw, .875rem);         /* smallest text, scales with screen */
+  --sm: clamp(.875rem, .83rem + .25vw, 1rem);          /* small text */
+  --base: clamp(1rem, .95rem + .25vw, 1.125rem);       /* normal text */
+  --lg: clamp(1.2rem, 1rem + .7vw, 1.6rem);            /* large text */
+  --xl: clamp(1.8rem, 1.2rem + 2vw, 3rem);             /* section headings */
+  --hero: clamp(2.7rem, 1.3rem + 5vw, 6.4rem);         /* giant hero title */
+  --s2: .5rem; --s3: .75rem; --s4: 1rem; --s5: 1.25rem; /* spacing steps */
+  --s6: 1.5rem; --s8: 2rem; --s10: 2.5rem; --s12: 3rem; --s16: 4rem;
+  --ease: 180ms cubic-bezier(.16, 1, .3, 1);           /* shared animation timing */
+}
+
+/* ---------- 2. BASELINE ---------- */
+* { box-sizing: border-box; margin: 0; } /* padding counts inside widths; remove default margins */
+html { scroll-behavior: smooth; scroll-padding-top: 1rem; } /* smooth jumps, small gap above targets */
+body { /* the whole page */
+  min-height: 100dvh;                    /* at least one full screen tall */
+  color: var(--ink-dark);                /* body text color */
+  background: radial-gradient(circle at 1px 1px, color-mix(in srgb, var(--ink-dark) 7%, transparent) 1px, transparent 0) 0 0 / 7px 7px, var(--paper); /* faint dot grain over paper */
+  font: 400 var(--base)/1.55 var(--body);/* size, weight, line height, family */
+}
+button, input, select, textarea { font: inherit; color: inherit; } /* form controls use the page font */
+button { cursor: pointer; }              /* pointer hand on buttons */
+a { color: var(--tomato); text-decoration-thickness: 2px; text-underline-offset: 3px; } /* visible, underlined links */
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; } /* clear keyboard focus ring */
+.shell { width: min(1140px, calc(100% - 2.5rem)); margin: auto; } /* centered column with side gutters */
+.skip-link { position: absolute; left: -9999px; } /* hide the skip link off-screen */
+.skip-link:focus { top: 1rem; left: 1rem; z-index: 30; padding: var(--s3); background: var(--yellow); color: var(--ink-dark); } /* show it when focused */
+[hidden] { display: none !important; }   /* the hidden attribute always wins over other display rules */
+
+/* ---------- 3. MASTHEAD ---------- */
+.masthead { border-bottom: 5px solid var(--ink); background: var(--paper2); } /* top bar with a thick rule */
+.masthead-row { display: flex; min-height: 70px; align-items: center; justify-content: space-between; gap: var(--s4); } /* brand left, toggle right */
+.brand { display: flex; align-items: center; gap: var(--s3); color: var(--ink); font: 700 var(--sm)/1 var(--body); letter-spacing: .02em; text-decoration: none; text-transform: uppercase; } /* logo link */
+.brand-block { display: grid; width: 37px; height: 37px; place-items: center; background: var(--ink); color: var(--paper2); font: 700 .95rem/1 var(--mono); } /* square LV badge */
+.back-link { margin-left: auto; margin-right: var(--s4); color: var(--ink); font: 700 var(--sm)/1 var(--body); text-transform: uppercase; } /* small link back to the toolshed, pushed next to the theme button */
+.theme-toggle { width: 44px; height: 44px; border: 2px solid var(--ink); border-radius: 50%; background: var(--paper2); color: var(--ink); } /* round theme button, 44px for easy tapping */
+
+/* ---------- 4. HERO ---------- */
+.hero { padding: clamp(var(--s12), 8vw, var(--s16)) 0 var(--s10); } /* roomy top and bottom */
+.kicker { color: var(--tomato); font: 700 var(--xs)/1 var(--body); letter-spacing: .13em; text-transform: uppercase; } /* small label above headings */
+.hero-grid { display: grid; grid-template-columns: 1.4fr .6fr; gap: var(--s10); align-items: end; margin-top: var(--s3); } /* title left, poster right */
+.hero h1 { max-width: 12ch; margin: 0 0 var(--s5); color: var(--ink); font: 700 var(--hero)/.88 var(--display); letter-spacing: -.07em; } /* giant title */
+.deck { max-width: 62ch; color: var(--muted); font-size: var(--lg); } /* intro paragraph */
+.hero-actions { display: flex; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s6); } /* button row that wraps on phones */
+.button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: .62rem .9rem; border: 2px solid var(--ink); border-radius: 0; background: var(--paper2); color: var(--ink); font: 700 var(--sm)/1 var(--body); letter-spacing: .02em; text-decoration: none; text-transform: uppercase; transition: transform var(--ease), box-shadow var(--ease); } /* square print-style button */
+.button-publish { border-color: var(--tomato); background: var(--tomato); color: #fff; } /* the main call to action */
+[data-theme="dark"] .button-publish { color: #17202e; } /* dark tomato is light, so the button text flips to dark for contrast */
+.button:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--ink); } /* lifts on hover */
+.hero-poster { display: grid; min-height: 300px; align-content: space-between; padding: var(--s5); background: var(--yellow); color: #17202e; clip-path: polygon(1% 2%, 99% 0, 97% 97%, 2% 100%, 0 45%); transform: rotate(2deg); box-shadow: var(--shadow); } /* torn yellow poster */
+.poster-top, .poster-bottom { font: 700 var(--xs)/1.2 var(--mono); letter-spacing: .05em; } /* tiny poster labels */
+.hero-poster strong { font: 700 clamp(2.3rem, 5vw, 4.5rem)/.78 var(--body); letter-spacing: -.07em; } /* big poster words */
+
+/* ---------- 5. ROUTE PICKER ---------- */
+.route-picker { padding: var(--s10) 0; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); } /* band between two rules */
+.section-heading { display: grid; grid-template-columns: .8fr 1.2fr; gap: var(--s6); align-items: start; } /* heading left, paragraph right */
+.section-heading h2 { margin: var(--s2) 0; font: 700 var(--xl)/.95 var(--display); letter-spacing: -.045em; } /* section title */
+.section-heading p:last-child { color: var(--muted); } /* explanatory paragraph */
+.route-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s4); margin: var(--s8) 0 0; padding: 0; border: 0; } /* three route cards in a row */
+.route-options legend { grid-column: 1 / -1; margin-bottom: var(--s2); font: 700 var(--sm)/1 var(--body); text-transform: uppercase; } /* group label */
+.route-card { display: grid; grid-template-columns: auto auto 1fr; gap: var(--s3); padding: var(--s5); border: 2px solid var(--ink); background: var(--paper2); cursor: pointer; } /* clickable card */
+.route-card:has(input:checked) { background: var(--blue-soft); box-shadow: 5px 5px 0 var(--ink); } /* selected card pops */
+.route-card input { width: 20px; height: 20px; margin-top: .15rem; accent-color: var(--tomato); } /* radio button color */
+.route-tab { display: grid; width: 27px; height: 27px; place-items: center; background: var(--ink); color: var(--paper2); font: 500 var(--xs)/1 var(--mono); } /* A, B, C badge */
+.route-card strong { display: block; font: 700 var(--lg)/1 var(--display); } /* card title */
+.route-card small { display: block; margin-top: .4rem; color: var(--muted); font-size: var(--sm); } /* card description */
+.route-result { margin-top: var(--s5); padding: var(--s4); border-left: 5px solid var(--tomato); background: var(--tomato-soft); font-weight: 700; } /* guidance for the chosen route */
+
+/* ---------- 6. LEDGER (experience, rank, controls) ---------- */
+.ledger { display: grid; grid-template-columns: .8fr 1.35fr .85fr; margin: var(--s10) 0; border: 2px solid var(--ink); background: var(--paper2); } /* three cells side by side */
+.ledger-cell { padding: var(--s5); border-right: 2px solid var(--ink); } /* each cell, divided by rules */
+.ledger-cell:last-child { border-right: 0; } /* no rule after the last cell */
+.ink-cell { background: var(--ink); color: var(--paper2); } /* the XP cell is filled with ink */
+[data-theme="dark"] .ink-cell { color: #17202e; } /* flip text color so it stays readable in dark mode */
+.ledger-label { font: 700 var(--xs)/1 var(--body); letter-spacing: .1em; text-transform: uppercase; } /* tiny caps label */
+.ledger-number { font: 700 clamp(3rem, 6vw, 5rem)/1 var(--display); } /* big XP number */
+.ledger-unit { font: 700 var(--lg)/1 var(--body); } /* the "XP" word */
+.progress-track { display: block; width: 100%; height: 14px; margin: var(--s3) 0; border: 0; accent-color: var(--yellow); } /* native progress bar, no inline style needed */
+.rank { margin: var(--s2) 0 var(--s4); color: var(--tomato); font: 700 var(--xl)/1 var(--display); } /* current title, like "Draft writer" */
+.assignment { padding: var(--s3); border-left: 5px solid var(--green); background: var(--green-soft); } /* the next-move box */
+.utility-cell { display: grid; align-content: start; gap: var(--s2); } /* stack the desk buttons */
+.utility-button { min-height: 44px; padding: .5rem .7rem; border: 2px solid var(--ink); background: var(--paper); color: var(--ink-dark); text-align: left; font-weight: 700; } /* small control button */
+.utility-button[aria-pressed="true"] { background: var(--yellow); color: #17202e; } /* focus mode on state */
+.utility-danger { border-color: var(--tomato); color: var(--tomato); } /* reset button looks cautious */
+
+/* ---------- 7. FILTER STRIP ---------- */
+.filter-strip { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3); margin-bottom: var(--s6); font-size: var(--sm); } /* row with a select */
+.filter-strip label { font-weight: 700; text-transform: uppercase; } /* "Show levels" label */
+.filter-strip select { min-height: 44px; padding: .4rem .6rem; border: 2px solid var(--ink); background: var(--paper2); } /* dropdown */
+.filter-strip span { color: var(--muted); } /* privacy hint */
+
+/* ---------- 8. LEVELS ---------- */
+.workshop { display: grid; gap: var(--s8); } /* space between level cards */
+.station { border: 2px solid var(--ink); background: var(--paper2); box-shadow: var(--shadow); } /* one level card */
+body.focused .station:not(.focus-station) { display: none; } /* focus mode hides every other level */
+.station-head { display: grid; grid-template-columns: auto 1fr auto; gap: var(--s4); align-items: center; padding: var(--s4) var(--s5); border-bottom: 2px solid var(--ink); background: var(--blue-soft); } /* level header strip */
+.station-number { display: grid; min-width: 64px; padding: .35rem .5rem; place-items: center; background: var(--ink); color: var(--paper2); font: 700 var(--xl)/1 var(--display); text-align: center; } /* big level number */
+[data-theme="dark"] .station-number { color: #17202e; } /* readable on the light dark-mode ink */
+.lvl-word { display: block; font: 700 var(--xs)/1 var(--mono); letter-spacing: .15em; } /* small LVL above the digit */
+.station-head h2 { font: 700 var(--xl)/1 var(--display); letter-spacing: -.04em; } /* level title */
+.station-badge { padding: .3rem .6rem; border: 2px solid var(--tomato); color: var(--tomato); font: 700 var(--xs)/1 var(--mono); text-transform: uppercase; } /* tag like "Own the keys" */
+.station-body { display: grid; grid-template-columns: 1.5fr .5fr; gap: var(--s6); padding: var(--s5); } /* tasks left, check note right */
+.station-intro { max-width: 62ch; margin-bottom: var(--s4); color: var(--muted); font-size: var(--lg); } /* level intro */
+details { margin-bottom: var(--s4); border: 2px dashed var(--ink); background: var(--paper); } /* tips panel */
+summary { padding: var(--s3); font-weight: 700; cursor: pointer; } /* clickable panel title */
+.details-content { padding: 0 var(--s4) var(--s4); } /* panel body spacing */
+.details-content ol, .details-content ul { padding-left: 1.3rem; } /* indent lists */
+.details-content pre { padding: var(--s3); background: var(--ink-dark); color: var(--paper2); font: 500 var(--sm)/1.5 var(--mono); overflow-x: auto; } /* code-ish box for category examples */
+[data-theme="dark"] .details-content pre { background: var(--paper); color: var(--ink-dark); } /* keep it readable in dark mode */
+.task-list { display: grid; gap: var(--s3); } /* stack of tasks */
+.task { display: grid; grid-template-columns: auto 1fr auto; gap: var(--s3); align-items: start; padding: var(--s3); border: 2px solid var(--rule); background: var(--paper); cursor: pointer; } /* one task row */
+.task:has(input:checked) { border-color: var(--green); background: var(--green-soft); } /* done tasks turn green */
+.task input { width: 22px; height: 22px; margin-top: .15rem; accent-color: var(--green); } /* checkbox */
+.task strong { display: block; } /* task title */
+.task small { display: block; margin-top: .2rem; color: var(--muted); font-size: var(--sm); } /* task hint */
+.task em { color: var(--muted); font: 500 var(--xs)/1 var(--mono); } /* 3.2 style task number */
+.instructor-note { align-self: start; padding: var(--s4); border: 2px solid var(--green); background: var(--green-soft); } /* level-up check box */
+.instructor-note strong { display: block; margin-bottom: var(--s2); font: 700 var(--xs)/1 var(--body); letter-spacing: .1em; text-transform: uppercase; } /* its small heading */
+
+/* ---------- 9. BOSS CHECKS, PARKED, NOTES ---------- */
+.test-register, .parked, .rules, .field-notes, .linear-notes { margin-top: var(--s12); padding-top: var(--s8); border-top: 2px solid var(--ink); } /* shared section spacing */
+.test-register { display: grid; grid-template-columns: .8fr 1.2fr; gap: var(--s8); } /* heading left, list right */
+.test-register h2, .parked h2, .rules h2, .field-notes h2, .linear-notes h2 { margin: var(--s2) 0 var(--s3); font: 700 var(--xl)/.95 var(--display); letter-spacing: -.045em; } /* section headings */
+.test-list { display: grid; gap: var(--s2); } /* stack the checks */
+.test-list label { display: grid; grid-template-columns: auto 1fr; gap: var(--s3); padding: var(--s3); border: 2px solid var(--rule); background: var(--paper2); cursor: pointer; } /* one check row */
+.test-list input { width: 22px; height: 22px; accent-color: var(--tomato); } /* its checkbox */
+.parked-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s6); margin-top: var(--s4); } /* two columns */
+.parked h3 { margin-bottom: var(--s2); font: 700 var(--lg)/1 var(--display); } /* column heading */
+.parked ul { padding-left: 1.3rem; } /* indent lists */
+.notes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s6); margin-top: var(--s4); } /* two-up layout */
+.notes-grid label span { display: block; margin-bottom: var(--s2); font-weight: 700; } /* textarea label */
+.notes-grid textarea { width: 100%; min-height: 150px; padding: var(--s3); border: 2px solid var(--ink); background: var(--paper2); resize: vertical; } /* note box */
+.rules { display: grid; grid-template-columns: .8fr 1.2fr; gap: var(--s8); } /* heading left, the four rules right */
+.rules-list { display: grid; gap: var(--s3); padding-left: 1.4rem; } /* numbered list of rules */
+.rules-list li { padding: var(--s3); border-left: 5px solid var(--tomato); background: var(--paper2); } /* each rule as a card strip */
+.hero-rule { max-width: 62ch; margin-top: var(--s4); padding: var(--s3); border-left: 5px solid var(--yellow); background: var(--paper2); font-size: var(--sm); } /* short rules reminder under the intro */
+.site-footer { margin-top: var(--s16); padding: var(--s6) 0; border-top: 5px solid var(--ink); background: var(--paper2); font-weight: 700; } /* bottom bar */
+
+/* ---------- 10. TOAST ---------- */
+.toast { position: fixed; right: var(--s4); bottom: var(--s4); z-index: 40; max-width: min(360px, calc(100% - 2rem)); padding: var(--s3) var(--s4); border: 2px solid var(--ink); background: var(--yellow); color: #17202e; font-weight: 700; opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity var(--ease), transform var(--ease); } /* hidden by default */
+.toast.show { opacity: 1; transform: none; } /* visible when app.js adds .show */
+
+/* ---------- 11. RESPONSIVE: collapse columns on smaller screens ---------- */
+@media (max-width: 860px) { /* tablets and phones */
+  .hero-grid, .section-heading, .route-options, .ledger, .station-body, .test-register, .rules, .parked-grid, .notes-grid { grid-template-columns: 1fr; } /* everything stacks */
+  .ledger-cell { border-right: 0; border-bottom: 2px solid var(--ink); } /* rules go underneath instead */
+  .ledger-cell:last-child { border-bottom: 0; } /* no rule under the last one */
+  .station-head { grid-template-columns: auto 1fr; } /* badge wraps below */
+  .station-badge { grid-column: 1 / -1; justify-self: start; } /* badge on its own row */
+  .hero-poster { min-height: 200px; } /* shorter poster */
+}
+
+/* ---------- 12. REDUCED MOTION: respect people who turn animation off ---------- */
+@media (prefers-reduced-motion: reduce) { /* user setting */
+  html { scroll-behavior: auto; } /* no smooth scrolling */
+  *, *::before, *::after { transition: none !important; } /* no transitions */
+  .hero-poster { transform: none; } /* no tilt */
+}
