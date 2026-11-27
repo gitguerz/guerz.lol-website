@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daily Habit &amp; Focus Dashboard | guerz.lol</title>
-  <meta name="description" content="A lightweight daily habit tracker, focus timer, and quick notes dashboard with dark mode, browser storage, and one-click Obsidian export." />
+  <title>Habit Dashboard</title>
+  <meta name="description" content="A lightweight daily habit tracker, PomoGuerzo focus timer, and quick notes dashboard with dark mode, browser storage, and one-click Obsidian export." />
   <link rel="icon" type="image/png" href="../../favicon-peach.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&family=IBM+Plex+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="top-bar">
     <div class="top-title">
       <a class="back-link" href="../../toolshed.html">← Toolshed</a>
-      <h1>My Dashboard</h1>
+      <p class="top-eyebrow">Toolshed · habits, focus, notes</p>
+      <h1>Habit Dashboard</h1>
     </div>
     <div class="top-actions">
       <button id="copy-obsidian" type="button">Copy to Obsidian</button>
@@ -21,9 +25,9 @@
   </header>
 
   <main class="dashboard">
-    <!-- Left Card: Habit Tracker -->
+    <!-- Left Card: Tracker -->
     <section class="card">
-      <h2>Daily Habit Tracker</h2>
+      <h2>Tracker</h2>
       <p id="streak" class="streak">Streak: 0 days</p>
       <p id="progress">0 of 3 completed</p>
 
@@ -35,14 +39,15 @@
       <ul id="habit-list"></ul>
     </section>
 
-    <!-- Right Card: Focus Timer -->
+    <!-- Right Card: PomoGuerzo -->
     <section class="card timer-card">
-      <h2>Focus Timer</h2>
+      <h2>PomoGuerzo</h2>
       <p id="session-count" class="streak">Focus sessions today: 0</p>
 
       <div class="modes">
         <button id="focus-mode" class="mode-btn active" type="button">Focus (25m)</button>
         <button id="break-mode" class="mode-btn" type="button">Short Break (5m)</button>
+        <button id="long-break-mode" class="mode-btn" type="button">Long Break (35m)</button>
       </div>
 
       <div id="timer" class="timer-display">25:00</div>
@@ -71,8 +76,18 @@
         rows="4"
         placeholder="Jot down quick thoughts, JS takeaways, or blockers..."
       ></textarea>
+      <div class="note-actions">
+        <button id="log-note-btn" class="primary-btn" type="button">Log note</button>
+        <span class="muted">Saves this note to the log below, with a timestamp.</span>
+      </div>
+
+      <h3 class="log-title">Note log</h3>
+      <p id="note-log-empty" class="muted">No logged notes yet.</p>
+      <ul id="note-log" class="note-log"></ul>
     </section>
   </main>
+
+  <p class="liner-note">Liner note: an idea sparked by Guerz, crafted by Gemma (Gemini) and Bonnie (Claude). Everything saves in this browser only.</p>
 
   <script src="app.js" defer></script>
 </body>

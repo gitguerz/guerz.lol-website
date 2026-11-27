@@ -1,183 +1,255 @@
-* { box-sizing: border-box; }
+/* Daily Habit & Focus Dashboard — guerz.lol brutalist cream/peach/lavender skin.
+   JS toggles body.dark, so night mode hangs off that class (the JS is untouched). */
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: #f1f5f9;
-  color: #0f172a;
-  margin: 0;
-  padding: 32px 16px;
+:root {                                              /* day-mode tokens, same palette as the site */
+  --peach: #F4AD7D;                                  /* site peach */
+  --lavender: #b3a8cc;                               /* site lavender */
+  --ink: #3a2b22;                                    /* warm brown ink (borders, text on peach) */
+  --bg: #fbe9da;                                     /* cream page background (hex fallback) */
+  --paper: #ffffff;                                  /* card surface */
+  --paper-2: #fdf0e4;                                /* inset surface (inputs, timer face) */
+  --text: #3a2b22;                                   /* body text */
+  --muted: #6a5d94;                                  /* muted purple, 5.2:1 on paper */
+  --shadow: #3a2b22;                                 /* hard drop-shadow color */
+  --accent: var(--peach);                            /* primary buttons + active states */
+  --good: #8fbf90;                                   /* done-habit green dot/fill */
+  --danger: #a3303a;                                 /* delete hover */
+  --focus: #3a2b22;                                  /* keyboard focus ring */
+  --link: #0b27b5;                                   /* site day link color */
+  --wine: #6a1f2e;                                   /* the site's wine red (the GuerzBook card color) */
 }
 
-.top-bar {
-  max-width: 880px;
-  margin: 0 auto 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+@supports (color: oklch(0.94 0.035 55)) {            /* use the exact site cream where oklch exists */
+  :root { --bg: oklch(0.94 0.035 55); }              /* same value as styles.css --bg */
 }
 
-.top-title {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+body.dark {                                          /* night-mode tokens */
+  --bg: #17131f;                                     /* deep purple-black */
+  --paper: #221d2d;                                  /* card surface */
+  --paper-2: #2c2539;                                /* inset surface */
+  --text: #eee6f5;                                   /* light text */
+  --muted: #b3a8cc;                                  /* lavender muted */
+  --shadow: #000000;                                 /* black hard shadow */
+  --accent: var(--lavender);                         /* lavender replaces peach at night */
+  --good: #6fa37a;                                   /* softer green on dark */
+  --danger: #ff8a8a;                                 /* lighter red on dark */
+  --focus: #e8b48f;                                  /* peach focus ring on dark */
+  --link: #ffe14d;                                   /* site night link color */
+  --wine: #7a2434;                                   /* site night wine, lifted a hair so it shows on the dark bg */
 }
 
-.back-link {
-  font-size: 13px;
-  font-weight: 600;
-  color: #475569;
-  text-decoration: none;
+* { box-sizing: border-box; }                        /* padding never grows an element's width */
+
+body {                                               /* the page */
+  font-family: 'Space Grotesk', system-ui, sans-serif; /* site body font, system fallback */
+  background: var(--bg);                               /* cream or night */
+  color: var(--text);                                  /* readable text on either */
+  margin: 0;                                           /* kill default margin */
+  padding: 32px 16px 48px;                             /* breathing room */
+  line-height: 1.5;                                    /* comfortable reading */
+  transition: background .25s ease, color .25s ease;   /* soft theme swap */
 }
 
-.back-link:hover { text-decoration: underline; }
-
-.top-bar h1 { margin: 0; font-size: 26px; }
-.top-actions { display: flex; gap: 8px; }
-
-.dashboard {
-  max-width: 880px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-  align-items: start;
+:focus-visible {                                     /* keyboard focus everywhere */
+  outline: 3px solid var(--focus);                   /* thick, high-contrast ring */
+  outline-offset: 3px;                               /* gap so it never hides the border */
 }
 
-.card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+/* ---------- top bar ---------- */
+.top-bar {                                           /* title row */
+  max-width: 880px;                                  /* match the dashboard width */
+  margin: 0 auto 28px;                               /* centered, space below */
+  display: flex;                                     /* title left, buttons right */
+  justify-content: space-between;                    /* push them apart */
+  align-items: flex-end;                             /* sit on the same baseline */
+  flex-wrap: wrap;                                   /* stack on narrow screens */
+  gap: 16px;                                         /* space when wrapped */
 }
 
-h2 { margin: 0 0 12px; font-size: 22px; }
+.top-title { display: flex; flex-direction: column; gap: 4px; } /* back link / eyebrow / h1 stacked */
 
-.streak {
-  display: inline-block;
-  background: #fef3c7;
-  color: #92400e;
-  font-weight: 600;
-  font-size: 13px;
-  padding: 5px 12px;
-  border-radius: 999px;
-  margin: 0 0 10px;
+.back-link {                                         /* ← Toolshed */
+  font-size: 13px;                                   /* small */
+  font-weight: 700;                                  /* bold so it reads as a control */
+  color: var(--link);                                /* site link color */
+  text-underline-offset: 3px;                        /* underline sits clear of the text */
+}
+.back-link:hover { color: var(--text); }             /* quiet hover */
+
+.top-eyebrow {                                       /* tiny label above the title */
+  margin: 8px 0 0;                                   /* space from back link */
+  font: 700 12px/1 'IBM Plex Mono', monospace;       /* mono caption */
+  letter-spacing: .14em;                             /* wide tracking */
+  text-transform: uppercase;                         /* caps */
+  color: var(--muted);                               /* muted purple */
 }
 
-.add-form, .habit-row, .modes, .controls, .custom-form {
-  display: flex;
-  gap: 8px;
+.top-bar h1 {                                        /* page title */
+  margin: 0;                                         /* no default margin */
+  font: 800 clamp(40px, 7vw, 64px)/0.95 'Big Shoulders Display', 'Space Grotesk', sans-serif; /* brutalist heading */
+  text-transform: uppercase;                         /* shouty caps like the site headings */
+  letter-spacing: .01em;                             /* a touch of air */
 }
 
-.add-form { margin-bottom: 14px; }
+.top-actions { display: flex; gap: 10px; flex-wrap: wrap; } /* the two top buttons */
 
-.add-form input, .custom-form input {
-  padding: 10px 12px;
-  font-size: 14px;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
+/* ---------- layout ---------- */
+.dashboard {                                         /* card grid */
+  max-width: 880px;                                  /* readable width */
+  margin: 0 auto;                                    /* centered */
+  display: grid;                                     /* grid of cards */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* two columns, one on phones */
+  gap: 28px;                                         /* room for the hard shadows */
+  align-items: start;                                /* cards keep their own height */
 }
 
-.add-form input { flex: 1; min-width: 0; }
-.custom-form input { width: 90px; text-align: center; }
+.card {                                              /* every card */
+  background: var(--paper);                          /* surface */
+  border: 2px solid var(--ink);                      /* heavy ink border (stays dark in both themes) */
+  border-radius: 14px;                               /* soft corners, hard shadow */
+  padding: 24px;                                     /* inner space */
+  box-shadow: 6px 6px 0 var(--peach);                /* hard peach shadow */
+}
+body.dark .card { border-color: var(--lavender); box-shadow: 6px 6px 0 var(--shadow); } /* night: lavender edge, black shadow */
+.timer-card { box-shadow: 6px 6px 0 var(--lavender); } /* timer gets the lavender shadow for rhythm */
+body.dark .timer-card { box-shadow: 6px 6px 0 var(--shadow); } /* night: back to black */
 
-button {
-  padding: 10px 16px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 10px;
-  border: 1px solid #cbd5e1;
-  background: #ffffff;
-  color: #0f172a;
-  cursor: pointer;
+h2 {                                                 /* card headings */
+  margin: 0 0 14px;                                  /* space below */
+  font: 800 28px/1 'Big Shoulders Display', 'Space Grotesk', sans-serif; /* brutalist heading */
+  text-transform: uppercase;                         /* caps */
+  letter-spacing: .02em;                             /* air */
 }
 
-.primary-btn {
-  background: #0f172a;
-  color: #ffffff;
-  border-color: #0f172a;
+/* ---------- streak chip + progress ---------- */
+.streak {                                            /* streak / sessions pill */
+  display: inline-block;                             /* shrink to text */
+  background: var(--lavender);                       /* lavender pill */
+  color: var(--ink);                                 /* dark ink: 6:1 on lavender */
+  border: 2px solid var(--ink);                      /* ink outline */
+  font-weight: 700;                                  /* bold */
+  font-size: 13px;                                   /* small */
+  padding: 4px 12px;                                 /* pill padding */
+  border-radius: 999px;                              /* fully round */
+  margin: 0 0 10px;                                  /* space below */
+}
+#progress { margin: 0 0 16px; color: var(--muted); font-weight: 600; } /* "x of y completed" */
+
+/* ---------- forms + inputs ---------- */
+.add-form, .habit-row, .modes, .controls, .custom-form { display: flex; gap: 10px; } /* shared flex rows */
+.add-form { margin-bottom: 16px; }                   /* space under the add form */
+
+input, textarea {                                    /* every text field */
+  font-family: inherit;                              /* use the body font */
+  font-size: 15px;                                   /* >=15px so iOS doesn't zoom */
+  background: var(--paper-2);                        /* inset cream */
+  color: var(--text);                                /* readable */
+  border: 2px solid var(--ink);                      /* ink border */
+  border-radius: 10px;                               /* soft corners */
+  padding: 10px 12px;                                /* comfortable */
+}
+body.dark input, body.dark textarea { border-color: var(--lavender); } /* night: lavender border */
+input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; } /* readable placeholder */
+.add-form input { flex: 1; min-width: 0; }           /* habit input fills the row */
+.custom-form input { width: 120px; text-align: center; } /* narrow minutes box */
+
+/* ---------- buttons ---------- */
+button {                                             /* every button */
+  font-family: inherit;                              /* body font */
+  font-size: 14px;                                   /* readable */
+  font-weight: 700;                                  /* bold */
+  min-height: 44px;                                  /* comfortable touch target */
+  padding: 10px 16px;                                /* inner space */
+  background: var(--paper);                          /* neutral surface */
+  color: var(--text);                                /* readable */
+  border: 2px solid var(--ink);                      /* ink border */
+  border-radius: 10px;                               /* soft corners */
+  box-shadow: 3px 3px 0 var(--ink);                  /* small hard shadow */
+  cursor: pointer;                                   /* pointer cursor */
+  transition: transform .08s ease, box-shadow .08s ease, background .15s ease; /* snappy press */
+}
+body.dark button { border-color: var(--lavender); box-shadow: 3px 3px 0 var(--shadow); } /* night buttons */
+button:hover { background: var(--paper-2); }         /* hover tint */
+button:active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--ink); } /* press into the page */
+
+.primary-btn { background: var(--accent); color: var(--ink); } /* peach by day, lavender by night, ink text */
+.primary-btn:hover { background: var(--accent); filter: brightness(1.06); } /* gentle lift */
+
+/* ---------- habit list ---------- */
+ul { list-style: none; padding: 0; margin: 0; }      /* strip bullets */
+li { margin-bottom: 10px; }                          /* space between rows */
+.habit-btn { flex: 1; text-align: left; }            /* habit button fills the row */
+.habit-btn.done {                                    /* completed habit */
+  background: var(--lavender);                       /* lavender fill */
+  color: var(--ink);                                 /* ink text: 6:1 */
+  text-decoration: line-through;                     /* struck through (not color alone) */
+}
+body.dark .habit-btn.done { background: var(--lavender); color: var(--ink); } /* keep it readable at night */
+.delete-btn { color: var(--muted); padding: 10px 14px; } /* the × button */
+.delete-btn:hover { color: var(--danger); }          /* red on hover */
+
+/* ---------- focus timer ---------- */
+.timer-card { text-align: center; }                  /* center everything in the card */
+.modes, .controls, .custom-form { justify-content: center; flex-wrap: wrap; } /* centered rows */
+.mode-btn.active { background: var(--accent); color: var(--ink); box-shadow: 0 0 0 var(--ink); transform: translate(3px, 3px); } /* active mode looks pressed in */
+
+.timer-display {                                     /* the big clock */
+  font: 700 clamp(56px, 12vw, 84px)/1 'IBM Plex Mono', ui-monospace, monospace; /* big mono digits */
+  font-variant-numeric: tabular-nums;                /* digits never jiggle */
+  background: var(--paper-2);                        /* inset face */
+  border: 2px solid var(--ink);                      /* ink frame */
+  border-radius: 12px;                               /* soft corners */
+  padding: 18px 8px;                                 /* roomy face */
+  margin: 20px 0 10px;                               /* space around */
+  box-shadow: inset 4px 4px 0 rgba(58, 43, 34, .12); /* inset bevel */
+}
+body.dark .timer-display { border-color: var(--lavender); box-shadow: inset 4px 4px 0 rgba(0, 0, 0, .35); } /* night clock */
+
+.status { min-height: 24px; color: var(--muted); font-weight: 700; margin: 0 0 18px; } /* "time's up" line */
+.custom-form { margin-top: 18px; }                   /* space above the minutes form */
+
+/* ---------- quick notes ---------- */
+.full-width { grid-column: 1 / -1; box-shadow: 6px 6px 0 var(--wine); } /* notes span both columns, wine red shadow */
+body.dark .full-width { box-shadow: 6px 6px 0 var(--wine); } /* night keeps the wine shadow (lifted wine token) */
+.notes-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; } /* title + status */
+.notes-header h2 { margin: 0; }                      /* no extra margin in the row */
+.muted { font: 700 12px 'IBM Plex Mono', monospace; color: var(--muted); } /* "Saved" label */
+textarea { width: 100%; line-height: 1.5; resize: vertical; min-height: 112px; } /* notes box */
+
+/* ---------- note log ---------- */
+.note-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 12px 0 4px; } /* Log note button + hint */
+.log-title { margin: 22px 0 10px; font: 800 20px/1 'Big Shoulders Display', 'Space Grotesk', sans-serif; text-transform: uppercase; letter-spacing: .02em; } /* "Note log" heading */
+.note-log { display: grid; gap: 10px; }              /* stack of logged notes */
+.note-row {                                          /* one logged note */
+  display: flex;                                     /* text left, delete right */
+  gap: 10px;                                         /* space between */
+  align-items: flex-start;                           /* delete sits at the top */
+  background: var(--paper-2);                        /* inset surface */
+  border: 2px solid var(--ink);                      /* ink border */
+  border-radius: 10px;                               /* soft corners */
+  padding: 10px 12px;                                /* inner space */
+  margin: 0;                                         /* grid gap handles spacing */
+}
+body.dark .note-row { border-color: var(--lavender); } /* night border */
+.note-body { flex: 1; min-width: 0; }                /* text takes the space, can shrink */
+.note-time { display: block; font: 700 12px 'IBM Plex Mono', monospace; color: var(--muted); margin-bottom: 4px; } /* timestamp */
+.note-text { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; } /* keep line breaks, wrap long words */
+
+/* ---------- liner note ---------- */
+.liner-note {                                        /* credit line at the bottom */
+  max-width: 880px;                                  /* match the grid */
+  margin: 36px auto 0;                               /* centered, space above */
+  font-size: 13px;                                   /* small print */
+  color: var(--muted);                               /* muted */
+  text-align: center;                                /* centered */
 }
 
-ul { list-style: none; padding: 0; margin: 0; }
-li { margin-bottom: 8px; }
-
-.habit-btn { flex: 1; text-align: left; }
-.habit-btn.done {
-  background: #ecfdf5;
-  border-color: #10b981;
-  color: #065f46;
-  text-decoration: line-through;
+/* ---------- small screens + motion ---------- */
+@media (max-width: 420px) {                          /* very narrow phones */
+  .dashboard { grid-template-columns: 1fr; }         /* single column, no overflow */
+  .card { padding: 18px; }                           /* tighter cards */
 }
-
-.delete-btn { color: #64748b; padding: 10px 12px; }
-.delete-btn:hover { background: #fef2f2; color: #dc2626; }
-
-/* Focus timer card */
-.timer-card { text-align: center; }
-.modes, .controls, .custom-form { justify-content: center; }
-
-.mode-btn.active {
-  background: #ecfdf5;
-  border-color: #10b981;
-  color: #065f46;
+@media (prefers-reduced-motion: reduce) {            /* respect motion settings */
+  *, *::before, *::after { transition: none !important; } /* no transitions */
+  button:active, .mode-btn.active { transform: none; } /* no press movement */
 }
-
-.timer-display {
-  font-size: 64px;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  margin: 20px 0 6px;
-}
-
-.status {
-  min-height: 22px;
-  color: #059669;
-  font-weight: 600;
-  margin: 0 0 18px;
-}
-
-.custom-form { margin-top: 16px; }
-
-/* Quick notes card */
-.full-width { grid-column: 1 / -1; }
-.notes-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.notes-header h2 { margin: 0; }
-.muted { font-size: 12px; color: #64748b; }
-
-textarea {
-  width: 100%;
-  padding: 12px;
-  font-family: inherit;
-  font-size: 14px;
-  line-height: 1.5;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  resize: vertical;
-}
-
-/* Dark mode overrides */
-body.dark { background: #0f172a; color: #f8fafc; }
-body.dark .back-link { color: #94a3b8; }
-body.dark .card { background: #1e293b; border-color: #334155; }
-body.dark button { background: #1e293b; color: #f8fafc; border-color: #475569; }
-body.dark .primary-btn { background: #10b981; color: #0f172a; border-color: #10b981; }
-body.dark input,
-body.dark textarea {
-  background: #0f172a;
-  color: #f8fafc;
-  border-color: #475569;
-}
-body.dark .habit-btn.done,
-body.dark .mode-btn.active {
-  background: #064e3b;
-  border-color: #10b981;
-  color: #a7f3d0;
-}
-body.dark .streak { background: #451a03; color: #fde68a; }

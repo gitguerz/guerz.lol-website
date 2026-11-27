@@ -5,7 +5,10 @@ const STORAGE_KEY = "daily-habit-tracker-v1";
 const defaultHabits = [
   { id: 1, name: "Drink a glass of water", done: false },
   { id: 2, name: "Take a 10-minute walk", done: false },
-  { id: 3, name: "Read for 15 minutes", done: false }
+  { id: 3, name: "Read for 15 minutes", done: false },
+  { id: 4, name: "Study Full Sail", done: false },            // new default habit: Full Sail coursework
+  { id: 5, name: "Study freeCodeCamp", done: false },        // new default habit: fCC
+  { id: 6, name: "Study frontendmentor.io", done: false }    // new default habit: Frontend Mentor
 ];
 
 function getDateKey(daysAgo = 0) {
@@ -144,6 +147,7 @@ const statusEl = document.getElementById("status");
 const sessionCountEl = document.getElementById("session-count");
 const focusModeBtn = document.getElementById("focus-mode");
 const breakModeBtn = document.getElementById("break-mode");
+const longBreakModeBtn = document.getElementById("long-break-mode"); // the new 35-minute long break button
 const customForm = document.getElementById("custom-form");
 const customMinutesInput = document.getElementById("custom-minutes");
 
@@ -165,7 +169,7 @@ function formatTime(totalSeconds) {
 function renderTimer() {
   timerEl.textContent = formatTime(secondsLeft);
   sessionCountEl.textContent = `Focus sessions today: ${focusSessionsToday}`;
-  document.title = `${formatTime(secondsLeft)} · Dashboard`;
+  document.title = "Habit Dashboard"; // tab title stays fixed (the countdown no longer shows in the tab)
 }
 
 function playChime() {
@@ -198,6 +202,7 @@ function setDuration(minutes, activeBtn, countsAsFocus) {
   statusEl.textContent = "";
   focusModeBtn.classList.toggle("active", activeBtn === focusModeBtn);
   breakModeBtn.classList.toggle("active", activeBtn === breakModeBtn);
+  longBreakModeBtn.classList.toggle("active", activeBtn === longBreakModeBtn); // highlight long break when chosen
   renderTimer();
 }
 
@@ -233,6 +238,7 @@ document.getElementById("reset-btn").addEventListener("click", () => {
 
 focusModeBtn.addEventListener("click", () => setDuration(25, focusModeBtn, true));
 breakModeBtn.addEventListener("click", () => setDuration(5, breakModeBtn, false));
+longBreakModeBtn.addEventListener("click", () => setDuration(35, longBreakModeBtn, false)); // 35 min, not counted as focus
 
 customForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -278,8 +284,13 @@ function buildObsidianMarkdown() {
     .map((h) => `- [${h.done ? "x" : " "}] ${h.name}`)
     .join("\n");
 
-  const noteText = quickNotesEl.value.trim();
-  const noteBlock = noteText ? ["", "### Notes", noteText] : [];
+  const noteText = quickNotesEl.value.trim();                         // the unlogged draft in the textarea
+  const logLines = noteLog                                            // each logged note becomes one bullet
+    .map((n) => `- ${formatNoteTime(n.time)} — ${n.text.replace(/\n/g, "\n  ")}`) // indent extra lines so the bullet holds together
+    .join("\n");                                                      // one bullet per line
+  const noteBlock = (noteText || logLines)                            // only add a Notes section if there is something
+    ? ["", "### Notes", ...(logLines ? [logLines] : []), ...(noteText ? [noteText] : [])]
+    : [];                                                             // otherwise no Notes section
 
   return [
     `## Daily Check-In — ${today}`,
@@ -333,6 +344,91 @@ quickNotesEl.addEventListener("input", () => {
     notesStatusEl.textContent = "Not saved";
   }
 });
+
+// ========================
+// 6. NOTE LOG (ADD + DELETE)
+// ========================
+const NOTE_LOG_KEY = "dashboard-note-log-v1";                 // localStorage key for the log
+const logNoteBtn = document.getElementById("log-note-btn");   // the "Log note" button
+const noteLogEl = document.getElementById("note-log");        // the <ul> that holds logged notes
+const noteLogEmptyEl = document.getElementById("note-log-empty"); // the "No logged notes yet." line
+
+function loadNoteLog() {                                      // read the saved log
+  try {                                                       // storage can throw (private mode etc.)
+    const saved = JSON.parse(localStorage.getItem(NOTE_LOG_KEY) || "[]"); // parse saved JSON, default empty
+    return Array.isArray(saved) ? saved : [];                 // guard against bad data
+  } catch {
+    return [];                                                // fall back to an empty log
+  }
+}
+
+let noteLog = loadNoteLog();                                  // the log in memory: [{ id, text, time }]
+let nextNoteId = Math.max(0, ...noteLog.map((n) => n.id)) + 1; // next unused id
+
+function saveNoteLog() {                                      // write the log back to storage
+  try {
+    localStorage.setItem(NOTE_LOG_KEY, JSON.stringify(noteLog)); // save as JSON
+  } catch {}                                                  // ignore storage errors
+}
+
+function formatNoteTime(iso) {                                // "2026-11-27 04:05" style stamp
+  const d = new Date(iso);                                    // turn the saved string into a Date
+  const date = d.toLocaleDateString("en-CA");                 // YYYY-MM-DD
+  const time = d.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" }); // 4:05 AM
+  return `${date} ${time}`;                                   // combine the two
+}
+
+function renderNoteLog() {                                    // redraw the whole list
+  noteLogEl.innerHTML = "";                                   // clear old rows
+  noteLogEmptyEl.hidden = noteLog.length > 0;                 // show the empty message only when no notes
+  [...noteLog].reverse().forEach((note) => {                  // newest first
+    const li = document.createElement("li");                  // one row per note
+    li.className = "note-row";                                // styled by style.css
+
+    const body = document.createElement("div");               // holds the time + text
+    body.className = "note-body";                             // styled by style.css
+
+    const time = document.createElement("time");              // semantic timestamp
+    time.className = "note-time";                             // styled by style.css
+    time.dateTime = note.time;                                // machine-readable time
+    time.textContent = formatNoteTime(note.time);             // human-readable time
+
+    const text = document.createElement("p");                 // the note text
+    text.className = "note-text";                             // styled by style.css (keeps line breaks)
+    text.textContent = note.text;                             // textContent so pasted HTML can't run
+
+    const del = document.createElement("button");             // delete button
+    del.className = "delete-btn";                             // reuse the habit × style
+    del.type = "button";                                      // never submits a form
+    del.textContent = "×";                                    // the × symbol
+    del.setAttribute("aria-label", `Delete note from ${formatNoteTime(note.time)}`); // screen-reader label
+    del.addEventListener("click", () => {                     // delete handler
+      noteLog = noteLog.filter((n) => n.id !== note.id);      // drop this note
+      saveNoteLog();                                          // persist
+      renderNoteLog();                                        // redraw
+    });
+
+    body.appendChild(time);                                   // time goes first
+    body.appendChild(text);                                   // then the text
+    li.appendChild(body);                                     // body on the left
+    li.appendChild(del);                                      // delete on the right
+    noteLogEl.appendChild(li);                                // add the row to the list
+  });
+}
+
+logNoteBtn.addEventListener("click", () => {                  // "Log note" clicked
+  const text = quickNotesEl.value.trim();                     // take the textarea text
+  if (!text) return;                                          // ignore empty notes
+  noteLog.push({ id: nextNoteId++, text, time: new Date().toISOString() }); // add with a timestamp
+  saveNoteLog();                                              // persist the log
+  quickNotesEl.value = "";                                    // clear the textarea
+  try { localStorage.setItem(NOTES_KEY, ""); } catch {}       // clear the saved draft too
+  notesStatusEl.textContent = "Logged";                       // tiny confirmation
+  renderNoteLog();                                            // redraw the list
+  quickNotesEl.focus();                                       // ready for the next note
+});
+
+renderNoteLog();                                              // draw saved notes on page load
 
 saveState();
 renderHabits();
