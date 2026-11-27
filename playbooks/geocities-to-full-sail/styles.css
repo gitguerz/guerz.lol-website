@@ -1,0 +1,565 @@
+/* ─── RESET ─────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+/* ─── ROOT ───────────────────────────────────────────────── */
+.gr{
+  --bg:       #07070E;
+  --surf:     #0D0D1C;
+  --surf2:    #131325;
+  --bdr:      #1C1C35;
+  --bdr2:     #252540;
+  --txt:      #E4E2F5;
+  --txt2:     #7A789A;
+  --txt3:     #3E3C58;
+  --fcc:      #F1BE32;
+
+  --p1: #00D4A8;
+  --p2: #A87CF8;
+  --p3: #F7C948;
+  --p4: #FF6872;
+  --p5: #52AEFF;
+  --p6: #3DDC84;
+  --p7: #FF6EB3;
+
+  font-family: 'IBM Plex Mono', monospace;
+  background: var(--bg);
+  background-image:
+    radial-gradient(circle, #1C1C35 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: var(--txt);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ─── SCAN LINE OVERLAY ──────────────────────────────────── */
+.gr::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events:none;
+  z-index:0;
+}
+
+.gr > *{position:relative;z-index:1}
+
+/* ─── HERO ───────────────────────────────────────────────── */
+.gr-hero{
+  padding: 3rem 2.5rem 2rem;
+  border-bottom: 1px solid var(--bdr);
+  position: relative;
+  overflow: hidden;
+}
+.gr-hero-ghost{
+  position: absolute;
+  right: -20px; top: -20px;
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(80px, 14vw, 160px);
+  font-weight: 700;
+  color: var(--txt);
+  opacity: 0.025;
+  pointer-events: none;
+  line-height: 1;
+  letter-spacing: -4px;
+  white-space: nowrap;
+  user-select: none;
+}
+.gr-eyebrow{
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--txt3);
+  margin-bottom: 0.75rem;
+}
+.gr-title{
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--txt);
+  margin-bottom: 1rem;
+}
+.gr-title-accent{ color: var(--p1); }
+.gr-title-dim{ color: var(--txt2); font-weight: 300; }
+
+.gr-origin{
+  font-size: 12px;
+  color: var(--txt2);
+  max-width: 620px;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  border-left: 2px solid var(--p2);
+  padding-left: 1rem;
+}
+.gr-origin strong{ color: var(--p2); font-style: normal; }
+.gr-origin a{ color: var(--p2); text-decoration: none; }
+.gr-origin a:hover{ text-decoration: underline; }
+
+.gr-chips{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.gr-chip{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 2px;
+  border: 1px solid;
+}
+.chip-red  { color: var(--p4); border-color: var(--p4); background: rgba(255,104,114,0.07); }
+.chip-blue { color: var(--p5); border-color: var(--p5); background: rgba(82,174,255,0.07); }
+.chip-grn  { color: var(--p6); border-color: var(--p6); background: rgba(61,220,132,0.07); }
+.chip-gold { color: var(--p3); border-color: var(--p3); background: rgba(247,201,72,0.07); }
+
+/* ─── FCC BANNER ─────────────────────────────────────────── */
+.gr-fcc{
+  margin: 1.5rem 2.5rem;
+  border: 1px solid rgba(241,190,50,0.3);
+  border-left: 3px solid var(--fcc);
+  border-radius: 3px;
+  background: rgba(241,190,50,0.04);
+  padding: 0.875rem 1.25rem;
+}
+.gr-fcc-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+.gr-fcc-title{
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--fcc);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.gr-fcc-sub{
+  font-size: 10px;
+  color: rgba(241,190,50,0.6);
+}
+.gr-fcc-tracks{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+.gr-fcc-track{
+  font-size: 10px;
+  padding: 3px 10px;
+  border: 1px solid rgba(241,190,50,0.25);
+  border-radius: 2px;
+  color: rgba(241,190,50,0.75);
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+.gr-fcc-track:hover{ background: rgba(241,190,50,0.1); }
+.gr-fcc-track.done{
+  background: rgba(241,190,50,0.15);
+  border-color: var(--fcc);
+  color: var(--fcc);
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+.gr-fcc-link{
+  font-size: 10px;
+  color: var(--fcc);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.gr-fcc-link:hover{ text-decoration: underline; }
+
+/* ─── OVERALL PROGRESS ───────────────────────────────────── */
+.gr-overall{
+  padding: 1.25rem 2.5rem;
+  background: var(--surf);
+  border-bottom: 1px solid var(--bdr);
+  border-top: 1px solid var(--bdr);
+}
+.gr-overall-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+.gr-overall-label{
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--txt3);
+}
+.gr-overall-stats{
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.gr-overall-pct{
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--p1);
+  line-height: 1;
+}
+.gr-overall-count{
+  font-size: 10px;
+  color: var(--txt3);
+}
+.gr-track{
+  height: 5px;
+  background: var(--bdr2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.gr-fill{
+  height: 100%;
+  background: linear-gradient(90deg, var(--p1), var(--p2), var(--p7));
+  border-radius: 3px;
+  transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
+  width: 0%;
+}
+
+/* ─── PHASES CONTAINER ───────────────────────────────────── */
+.gr-phases{
+  padding: 1.5rem 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+/* ─── PHASE CARD ─────────────────────────────────────────── */
+.gr-phase{
+  border: 1px solid var(--bdr);
+  border-left-width: 3px;
+  border-radius: 3px;
+  background: var(--surf);
+  overflow: hidden;
+  transition: border-color 0.2s, background 0.2s;
+}
+.gr-phase:hover{ background: var(--surf2); }
+
+/* header */
+.gr-phase-hd{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+.gr-phase-hd-ghost{
+  position: absolute;
+  right: 3rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  opacity: 0.05;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.gr-phase-num{
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 2.5rem;
+  flex-shrink: 0;
+}
+.gr-phase-info{ flex: 1; min-width: 0; }
+.gr-phase-name{
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--txt);
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+.gr-phase-meta{
+  font-size: 10px;
+  color: var(--txt3);
+  letter-spacing: 0.05em;
+}
+.gr-phase-right{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+.gr-phase-prog{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  min-width: 70px;
+}
+.gr-phase-pct{
+  font-size: 10px;
+  color: var(--txt3);
+}
+.gr-phase-track{
+  width: 70px;
+  height: 3px;
+  background: var(--bdr2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.gr-phase-fill{
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+.gr-chevron{
+  color: var(--txt3);
+  font-size: 12px;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+.gr-phase.open .gr-chevron{ transform: rotate(180deg); }
+
+/* body */
+.gr-phase-bd{
+  display: none;
+  border-top: 1px solid var(--bdr);
+  padding: 1rem 1.25rem 1.25rem;
+}
+.gr-phase.open .gr-phase-bd{ display: block; }
+
+.gr-phase-desc{
+  font-size: 11px;
+  color: var(--txt2);
+  line-height: 1.8;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid var(--bdr);
+  margin-bottom: 0.875rem;
+}
+
+/* ─── TASKS ──────────────────────────────────────────────── */
+.gr-tasks{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+.gr-task{
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0.875rem;
+  border: 1px solid var(--bdr);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.gr-task:hover{ background: rgba(255,255,255,0.02); }
+.gr-task.done{ opacity: 0.45; }
+
+/* checkbox */
+.gr-cb{
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--bdr2);
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: transparent;
+  transition: all 0.18s cubic-bezier(0.175,0.885,0.32,1.275);
+}
+.gr-task:hover .gr-cb{ border-color: var(--txt3); }
+.gr-task.done .gr-cb{
+  transform: scale(1.1);
+  color: var(--bg);
+}
+
+.gr-task-body{ flex: 1; min-width: 0; }
+.gr-task-name{
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--txt);
+  margin-bottom: 3px;
+  line-height: 1.4;
+}
+.gr-task.done .gr-task-name{
+  text-decoration: line-through;
+  color: var(--txt3);
+}
+.gr-task-detail{
+  font-size: 11px;
+  color: var(--txt3);
+  line-height: 1.7;
+}
+.gr-task.done .gr-task-detail{ color: var(--txt3); opacity: 0.5; }
+
+/* resources */
+.gr-resources{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
+}
+.gr-res{
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 2px;
+  border: 1px solid;
+  text-decoration: none;
+  transition: opacity 0.15s;
+  cursor: pointer;
+}
+.gr-res:hover{ opacity: 0.75; }
+.gr-res .star{ font-size: 8px; }
+
+/* ─── TIPS ───────────────────────────────────────────────── */
+.gr-tips{
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.gr-tip{
+  font-size: 11px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 2px;
+  border-left: 2px solid;
+  line-height: 1.7;
+}
+.gr-tip b{
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  opacity: 0.8;
+}
+.tip-affine{ border-color: var(--p2); background: rgba(168,124,248,0.05); color: rgba(168,124,248,0.9); }
+.tip-m4    { border-color: var(--p6); background: rgba(61,220,132,0.05);  color: rgba(61,220,132,0.9); }
+.tip-adhd  { border-color: var(--p3); background: rgba(247,201,72,0.05);  color: rgba(247,201,72,0.9); }
+.tip-extra { border-color: var(--p5); background: rgba(82,174,255,0.05);  color: rgba(82,174,255,0.9); }
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+.gr-footer{
+  border-top: 1px solid var(--bdr);
+  padding: 2.5rem;
+  text-align: center;
+  background: var(--surf);
+}
+.gr-countdown-label{
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--txt3);
+  margin-bottom: 0.5rem;
+}
+.gr-countdown-num{
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(3rem,7vw,5rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--p4);
+  margin-bottom: 0.25rem;
+  letter-spacing: -2px;
+}
+.gr-countdown-days{
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--txt3);
+  margin-bottom: 1rem;
+}
+.gr-fullsail{
+  font-size: 11px;
+  color: var(--txt3);
+  letter-spacing: 0.1em;
+}
+.gr-fullsail strong{ color: var(--p5); }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media(max-width:640px){
+  .gr-hero, .gr-phases, .gr-footer, .gr-fcc{ padding-left: 1.25rem; padding-right: 1.25rem; }
+  .gr-overall{ padding-left: 1.25rem; padding-right: 1.25rem; }
+  .gr-phase-prog{ display: none; }
+  .gr-phase-hd-ghost{ display: none; }
+  .gr-hero-ghost{ display: none; }
+}
+
+/* ─── ANIMATIONS ─────────────────────────────────────────── */
+@keyframes fadeIn{
+  from{ opacity:0; transform:translateY(6px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+.gr-phase-bd.open{
+  animation: fadeIn 0.2s ease forwards;
+}
+
+/* ─── PHASE COLOUR MODIFIERS ─────────────────────────────────
+   Each phase wrapper gets .gr-ph-pN, which sets --phc.
+   Children read --phc instead of carrying inline style="". */
+.gr-ph-p1{ --phc: var(--p1); }
+.gr-ph-p2{ --phc: var(--p2); }
+.gr-ph-p3{ --phc: var(--p3); }
+.gr-ph-p4{ --phc: var(--p4); }
+.gr-ph-p5{ --phc: var(--p5); }
+.gr-ph-p6{ --phc: var(--p6); }
+.gr-ph-p7{ --phc: var(--p7); }
+.gr-phase-hd-ghost,
+.gr-phase-num,
+.gr-chevron{ color: var(--phc); }
+.gr-phase-fill{ background: var(--phc); }
+.gr-res{
+  color: var(--phc);
+  border-color: color-mix(in srgb, var(--phc) 19%, transparent);
+  background: color-mix(in srgb, var(--phc) 4%, transparent);
+}
+.gr-task.done .gr-cb{
+  background: var(--phc);
+  border-color: var(--phc);
+}
+
+/* ─── RELIC NOTICE ───────────────────────────────────────────
+   One-line archive note under the eyebrow. Delete the <p> to remove. */
+.gr-relic{
+  font-size: 11px;
+  color: var(--p3);
+  border: 1px solid rgba(247,201,72,0.3);
+  border-radius: 2px;
+  background: rgba(247,201,72,0.05);
+  padding: 6px 12px;
+  margin-bottom: 1rem;
+  max-width: 620px;
+  line-height: 1.6;
+}
+
