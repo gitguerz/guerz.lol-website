@@ -23,6 +23,7 @@
   --muted: #6a5d94; /* 5.2:1 on paper — SC 1.4.3 */
   --shadow: #3a2b22;
   --focus-ring: #3a2b22;
+  --grid-line: rgba(58, 43, 34, .07);   /* site-wide background grid lines by day: warm-brown ink, very faint */
   /* link colors (day): all 4.5:1+ on peach, lavender, cream and white */
   --link: #0b27b5;               /* unvisited: deep blue */
   --link-visited: #5b1a7a;       /* visited: plum */
@@ -42,6 +43,7 @@ html[data-theme="night"] {
   --wine-ink: #f6e9dd;
   --wine-quiet: #cfc6e0;
   --focus-ring: #e8b48f;
+  --grid-line: rgba(179, 168, 204, .09); /* site-wide background grid lines at night: lavender, very faint */
   /* link colors (night, dark surfaces): all 4.5:1+ on #17131f, #221d2d, #241f30 and both wines */
   --link: #ffe14d;               /* unvisited: warm yellow */
   --link-visited: #c9a7ff;       /* visited: soft violet */
@@ -54,11 +56,19 @@ html[data-theme="night"] {
 html, body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
   color: var(--text);
   font-family: 'Space Grotesk', sans-serif;
   transition: background .25s ease, color .25s ease;
 }
+
+html {                                             /* the page background + the site-wide grid live on html so they cover the whole scrollable canvas */
+  background-color: var(--bg);                     /* day cream or night purple-black */
+  background-image:                                /* two layers of 2px lines make the grid */
+    linear-gradient(var(--grid-line) 2px, transparent 2px),          /* horizontal lines */
+    linear-gradient(90deg, var(--grid-line) 2px, transparent 2px);   /* vertical lines */
+  background-size: 40px 40px;                      /* one 40px square per grid cell */
+}
+body { background: transparent; }                  /* body lets the html grid show through (a solid body would cover it) */
 
 /* ---------- links (site-wide) ----------
    every rule here is wrapped in :where(), which gives it ZERO specificity, so any class rule
