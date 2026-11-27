@@ -27,6 +27,7 @@ My corner of the world wide web: part web dev portfolio, part brain dump, part p
 | `toolshed/cloudflare-field-plan/` | Cloudflare Field Plan: GitHub Pages → Cloudflare Workers roadmap |
 | `toolshed/quality-control-desk/` | Visibility & Quality Control Desk: search visibility + site review checklist |
 | `toolshed/blog-level-up/` | Level Up Your Blog: a generic, platform-flexible path to start and keep a blog |
+| `toolshed/productivity-dashboard/` | Daily Habit & Focus Dashboard: habit tracker with streaks, focus timer, quick notes, dark mode, and Obsidian export |
 | `toolshed/wp-workshop/` | (retired from the gallery) WordPress 101 / The Blog Archive Engine, kept on disk |
 | `toolshed/roadmap-thumbs/` | Preview thumbnails for the toolshed cards |
 

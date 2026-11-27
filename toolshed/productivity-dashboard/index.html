@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Habit &amp; Focus Dashboard | guerz.lol</title>
+  <meta name="description" content="A lightweight daily habit tracker, focus timer, and quick notes dashboard with dark mode, browser storage, and one-click Obsidian export." />
+  <link rel="icon" type="image/png" href="../../favicon-peach.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="top-title">
+      <a class="back-link" href="../../toolshed.html">← Toolshed</a>
+      <h1>My Dashboard</h1>
+    </div>
+    <div class="top-actions">
+      <button id="copy-obsidian" type="button">Copy to Obsidian</button>
+      <button id="theme-toggle" type="button">Dark Mode</button>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <!-- Left Card: Habit Tracker -->
+    <section class="card">
+      <h2>Daily Habit Tracker</h2>
+      <p id="streak" class="streak">Streak: 0 days</p>
+      <p id="progress">0 of 3 completed</p>
+
+      <form id="add-form" class="add-form">
+        <input id="habit-input" type="text" placeholder="Add a new habit..." autocomplete="off" />
+        <button type="submit" class="primary-btn">Add</button>
+      </form>
+
+      <ul id="habit-list"></ul>
+    </section>
+
+    <!-- Right Card: Focus Timer -->
+    <section class="card timer-card">
+      <h2>Focus Timer</h2>
+      <p id="session-count" class="streak">Focus sessions today: 0</p>
+
+      <div class="modes">
+        <button id="focus-mode" class="mode-btn active" type="button">Focus (25m)</button>
+        <button id="break-mode" class="mode-btn" type="button">Short Break (5m)</button>
+      </div>
+
+      <div id="timer" class="timer-display">25:00</div>
+      <p id="status" class="status"></p>
+
+      <div class="controls">
+        <button id="start-btn" class="primary-btn" type="button">Start</button>
+        <button id="pause-btn" type="button">Pause</button>
+        <button id="reset-btn" type="button">Reset</button>
+      </div>
+
+      <form id="custom-form" class="custom-form">
+        <input id="custom-minutes" type="number" min="1" max="120" placeholder="Minutes" />
+        <button type="submit">Set</button>
+      </form>
+    </section>
+
+    <!-- Bottom Card: Quick Notes -->
+    <section class="card full-width">
+      <div class="notes-header">
+        <h2>Quick Notes</h2>
+        <span id="notes-status" class="muted">Saved</span>
+      </div>
+      <textarea
+        id="quick-notes"
+        rows="4"
+        placeholder="Jot down quick thoughts, JS takeaways, or blockers..."
+      ></textarea>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
