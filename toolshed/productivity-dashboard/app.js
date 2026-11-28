@@ -172,21 +172,41 @@ function renderTimer() {
   document.title = "Habit Dashboard"; // tab title stays fixed (the countdown no longer shows in the tab)
 }
 
-function playChime() {
-  try {
-    const AudioCtx = window.AudioContext || window.webkitAudioContext;
-    const ctx = new AudioCtx();
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.type = "sine";
-    osc.frequency.setValueAtTime(660, ctx.currentTime);
-    gain.gain.setValueAtTime(0.15, ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.6);
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    osc.start();
-    osc.stop(ctx.currentTime + 0.6);
-  } catch {}
+let audioCtx = null; // one shared audio engine, created on the first Start click
+
+function unlockAudio() {
+  try { // audio can fail on old browsers, so never let it break the timer
+    const AudioCtx = window.AudioContext || window.webkitAudioContext; // Safari still uses the webkit name
+    if (!audioCtx) audioCtx = new AudioCtx(); // build the engine once, inside a click so the browser allows it
+    if (audioCtx.state === "suspended") audioCtx.resume(); // browsers start it paused until a user gesture wakes it
+  } catch {} // no audio support: the timer still works, just silently
+}
+
+function playBeep(startAt, freq) {
+  const osc = audioCtx.createOscillator(); // the tone generator
+  const gain = audioCtx.createGain(); // the volume knob for this one beep
+  osc.type = "square"; // square waves sound harsh and alarm-like, easy to hear
+  osc.frequency.setValueAtTime(freq, startAt); // pitch in Hz
+  gain.gain.setValueAtTime(0.0001, startAt); // start silent so there is no click
+  gain.gain.exponentialRampToValueAtTime(0.25, startAt + 0.01); // quick fade in to a safe volume
+  gain.gain.exponentialRampToValueAtTime(0.0001, startAt + 0.18); // fade out so the beep is short and clean
+  osc.connect(gain); // tone goes into the volume knob
+  gain.connect(audioCtx.destination); // volume knob goes to the speakers
+  osc.start(startAt); // begin the tone at its scheduled time
+  osc.stop(startAt + 0.2); // end it just after the fade finishes
+}
+
+function playChime() { // kept under the old name so the call in the timer does not change
+  try { // same safety net: sound should never break the timer
+    unlockAudio(); // make sure the engine exists and is awake
+    if (!audioCtx) return; // no audio support, nothing to play
+    const now = audioCtx.currentTime; // the audio clock, in seconds
+    for (let group = 0; group < 3; group++) { // three bursts of beeps
+      for (let beep = 0; beep < 3; beep++) { // three beeps in each burst
+        playBeep(now + group * 1.2 + beep * 0.3, 880); // 0.3s between beeps, 1.2s between bursts, 880Hz is an A5
+      }
+    }
+  } catch {} // swallow errors so a sound problem never stops the timer
 }
 
 function pauseTimer() {
@@ -207,6 +227,7 @@ function setDuration(minutes, activeBtn, countsAsFocus) {
 }
 
 document.getElementById("start-btn").addEventListener("click", () => {
+  unlockAudio(); // Start is a user click, the one moment browsers let us wake the audio engine
   if (timerId !== null) return;
   if (secondsLeft === 0) secondsLeft = currentDuration;
   statusEl.textContent = "";
